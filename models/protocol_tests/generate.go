@@ -182,7 +182,7 @@ func (t tplInputTestCaseData) BodyAssertions() string {
 	// Generate the body verification code
 	expectedBody := util.Trim(t.TestCase.InputTest.Body)
 	switch protocol {
-	case "ec2", "query", "computing":
+	case "ec2", "query", "computing", "script":
 		fmt.Fprintf(code, "awstesting.AssertQuery(t, `%s`, util.Trim(string(body)))",
 			expectedBody)
 	case "rest-xml":
@@ -264,7 +264,7 @@ func (i *testCase) TestCase(idx int) string {
 	if i.TestSuite.Type == TestSuiteTypeInput { // input test
 		// query test should sort body as form encoded values
 		switch i.TestSuite.API.Metadata.Protocol {
-		case "query", "ec2", "computing":
+		case "query", "ec2", "computing", "script":
 			m, _ := url.ParseQuery(i.InputTest.Body)
 			i.InputTest.Body = m.Encode()
 		case "rest-xml":
