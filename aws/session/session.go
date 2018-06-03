@@ -14,7 +14,6 @@ import (
 	"github.com/alice02/nifcloud-sdk-go/aws/client"
 	"github.com/alice02/nifcloud-sdk-go/aws/corehandlers"
 	"github.com/alice02/nifcloud-sdk-go/aws/credentials"
-	"github.com/alice02/nifcloud-sdk-go/aws/credentials/stscreds"
 	"github.com/alice02/nifcloud-sdk-go/aws/defaults"
 	"github.com/alice02/nifcloud-sdk-go/aws/endpoints"
 	"github.com/alice02/nifcloud-sdk-go/aws/request"
@@ -418,37 +417,37 @@ func mergeConfigSrcs(cfg, userCfg *aws.Config, envCfg envConfig, sharedCfg share
 			cfg.Credentials = credentials.NewStaticCredentialsFromCreds(
 				envCfg.Creds,
 			)
-		} else if envCfg.EnableSharedConfig && len(sharedCfg.AssumeRole.RoleARN) > 0 && sharedCfg.AssumeRoleSource != nil {
-			cfgCp := *cfg
-			cfgCp.Credentials = credentials.NewStaticCredentialsFromCreds(
-				sharedCfg.AssumeRoleSource.Creds,
-			)
-			if len(sharedCfg.AssumeRole.MFASerial) > 0 && sessOpts.AssumeRoleTokenProvider == nil {
-				// AssumeRole Token provider is required if doing Assume Role
-				// with MFA.
-				return AssumeRoleTokenProviderNotSetError{}
-			}
-			cfg.Credentials = stscreds.NewCredentials(
-				&Session{
-					Config:   &cfgCp,
-					Handlers: handlers.Copy(),
-				},
-				sharedCfg.AssumeRole.RoleARN,
-				func(opt *stscreds.AssumeRoleProvider) {
-					opt.RoleSessionName = sharedCfg.AssumeRole.RoleSessionName
+			// } else if envCfg.EnableSharedConfig && len(sharedCfg.AssumeRole.RoleARN) > 0 && sharedCfg.AssumeRoleSource != nil {
+			// 	cfgCp := *cfg
+			// 	cfgCp.Credentials = credentials.NewStaticCredentialsFromCreds(
+			// 		sharedCfg.AssumeRoleSource.Creds,
+			// 	)
+			// 	if len(sharedCfg.AssumeRole.MFASerial) > 0 && sessOpts.AssumeRoleTokenProvider == nil {
+			// 		// AssumeRole Token provider is required if doing Assume Role
+			// 		// with MFA.
+			// 		return AssumeRoleTokenProviderNotSetError{}
+			// 	}
+			// 	cfg.Credentials = stscreds.NewCredentials(
+			// 		&Session{
+			// 			Config:   &cfgCp,
+			// 			Handlers: handlers.Copy(),
+			// 		},
+			// 		sharedCfg.AssumeRole.RoleARN,
+			// 		func(opt *stscreds.AssumeRoleProvider) {
+			// 			opt.RoleSessionName = sharedCfg.AssumeRole.RoleSessionName
 
-					// Assume role with external ID
-					if len(sharedCfg.AssumeRole.ExternalID) > 0 {
-						opt.ExternalID = aws.String(sharedCfg.AssumeRole.ExternalID)
-					}
+			// 			// Assume role with external ID
+			// 			if len(sharedCfg.AssumeRole.ExternalID) > 0 {
+			// 				opt.ExternalID = aws.String(sharedCfg.AssumeRole.ExternalID)
+			// 			}
 
-					// Assume role with MFA
-					if len(sharedCfg.AssumeRole.MFASerial) > 0 {
-						opt.SerialNumber = aws.String(sharedCfg.AssumeRole.MFASerial)
-						opt.TokenProvider = sessOpts.AssumeRoleTokenProvider
-					}
-				},
-			)
+			// 			// Assume role with MFA
+			// 			if len(sharedCfg.AssumeRole.MFASerial) > 0 {
+			// 				opt.SerialNumber = aws.String(sharedCfg.AssumeRole.MFASerial)
+			// 				opt.TokenProvider = sessOpts.AssumeRoleTokenProvider
+			// 			}
+			// 		},
+			// 	)
 		} else if len(sharedCfg.Creds.AccessKeyID) > 0 {
 			cfg.Credentials = credentials.NewStaticCredentialsFromCreds(
 				sharedCfg.Creds,
