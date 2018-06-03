@@ -360,6 +360,12 @@ func GetCrosslinkURL(baseURL, uid string, params ...string) string {
 // ServiceIDFromUID will parse the service id from the uid and return
 // the service id that was found.
 func ServiceIDFromUID(uid string) string {
+	// Fix for NIFCLOUD computing
+	// computing uid does not include the date component, e.g. computing-3.0
+	if strings.Contains(uid, "computing") {
+		return "computing"
+	}
+
 	found := 0
 	i := len(uid) - 1
 	for ; i >= 0; i-- {
@@ -685,8 +691,8 @@ var _ {{ .StructName }}API = (*{{ .PackageName }}.{{ .StructName }})(nil)
 func (a *API) InterfaceGoCode() string {
 	a.resetImports()
 	a.imports = map[string]bool{
-		"github.com/alice02/nifcloud-sdk-go/aws":                   true,
-		"github.com/alice02/nifcloud-sdk-go/aws/request":           true,
+		"github.com/alice02/nifcloud-sdk-go/aws":          true,
+		"github.com/alice02/nifcloud-sdk-go/aws/request":  true,
 		path.Join(a.SvcClientImportPath, a.PackageName()): true,
 	}
 
