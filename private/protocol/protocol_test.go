@@ -11,6 +11,7 @@ import (
 	"github.com/alice02/nifcloud-sdk-go/aws/request"
 	"github.com/alice02/nifcloud-sdk-go/awstesting"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol"
+	"github.com/alice02/nifcloud-sdk-go/private/protocol/computing"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/ec2query"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/jsonrpc"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/query"
@@ -196,6 +197,9 @@ func TestXML(t *testing.T) {
 	checkForLeak(nil, ec2query.Build, ec2query.Unmarshal, t, expected{jsonType, true, 0, false})
 	checkForLeak(nil, ec2query.Build, ec2query.UnmarshalMeta, t, expected{jsonType, false, 2048, false})
 	checkForLeak(nil, ec2query.Build, ec2query.UnmarshalError, t, expected{jsonType, true, 0, true})
+	checkForLeak(nil, computing.Build, computing.Unmarshal, t, expected{jsonType, true, 0, false})
+	checkForLeak(nil, computing.Build, computing.UnmarshalMeta, t, expected{jsonType, false, 2048, false})
+	checkForLeak(nil, computing.Build, computing.UnmarshalError, t, expected{jsonType, true, 0, true})
 }
 
 func TestProtocol(t *testing.T) {
