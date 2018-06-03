@@ -4,10 +4,10 @@
 package s3crypto
 
 import (
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/s3"
-	"github.com/aws/aws-sdk-go/service/s3/s3crypto"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/service/s3"
+	"github.com/alice02/nifcloud-sdk-go/service/s3/s3crypto"
 
 	"github.com/gucumber/gucumber"
 )

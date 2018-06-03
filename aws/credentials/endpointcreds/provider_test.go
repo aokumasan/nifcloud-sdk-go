@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/credentials/endpointcreds"
-	"github.com/aws/aws-sdk-go/awstesting/unit"
+	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/aws/credentials/endpointcreds"
+	"github.com/alice02/nifcloud-sdk-go/awstesting/unit"
 	"github.com/stretchr/testify/assert"
 )
 

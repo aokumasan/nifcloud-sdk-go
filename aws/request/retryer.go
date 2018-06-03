@@ -3,8 +3,8 @@ package request
 import (
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
 )
 
 // Retryer is an interface to control retry logic for a given service.

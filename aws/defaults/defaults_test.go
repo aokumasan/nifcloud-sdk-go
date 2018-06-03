@@ -5,11 +5,11 @@ import (
 	"os"
 	"testing"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds"
-	"github.com/aws/aws-sdk-go/aws/credentials/endpointcreds"
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/aws/credentials/ec2rolecreds"
+	"github.com/alice02/nifcloud-sdk-go/aws/credentials/endpointcreds"
+	"github.com/alice02/nifcloud-sdk-go/aws/request"
 )
 
 func TestHTTPCredProvider(t *testing.T) {

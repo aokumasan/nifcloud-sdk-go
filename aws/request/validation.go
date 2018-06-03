@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/aws/aws-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
 )
 
 const (

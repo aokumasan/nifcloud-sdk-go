@@ -4,9 +4,9 @@
 package applicationdiscoveryservice
 
 import (
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/awstesting/integration/smoke"
-	"github.com/aws/aws-sdk-go/service/applicationdiscoveryservice"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/awstesting/integration/smoke"
+	"github.com/alice02/nifcloud-sdk-go/service/applicationdiscoveryservice"
 	"github.com/gucumber/gucumber"
 )
 

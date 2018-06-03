@@ -10,10 +10,10 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/private/protocol/jsonrpc"
-	"github.com/aws/aws-sdk-go/private/protocol/rest"
+	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/private/protocol/jsonrpc"
+	"github.com/alice02/nifcloud-sdk-go/private/protocol/rest"
 )
 
 // BuildHandler is a named request handler for building restjson protocol requests

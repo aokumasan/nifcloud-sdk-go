@@ -10,10 +10,10 @@ import (
 
 	"github.com/gucumber/gucumber"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/awstesting/mock"
-	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/awstesting/mock"
+	"github.com/alice02/nifcloud-sdk-go/service/s3"
 )
 
 func init() {

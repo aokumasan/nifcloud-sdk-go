@@ -9,15 +9,15 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/client"
-	"github.com/aws/aws-sdk-go/aws/corehandlers"
-	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/aws/aws-sdk-go/aws/credentials/stscreds"
-	"github.com/aws/aws-sdk-go/aws/defaults"
-	"github.com/aws/aws-sdk-go/aws/endpoints"
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/aws/client"
+	"github.com/alice02/nifcloud-sdk-go/aws/corehandlers"
+	"github.com/alice02/nifcloud-sdk-go/aws/credentials"
+	"github.com/alice02/nifcloud-sdk-go/aws/credentials/stscreds"
+	"github.com/alice02/nifcloud-sdk-go/aws/defaults"
+	"github.com/alice02/nifcloud-sdk-go/aws/endpoints"
+	"github.com/alice02/nifcloud-sdk-go/aws/request"
 )
 
 // A Session provides a central location to create service clients from and

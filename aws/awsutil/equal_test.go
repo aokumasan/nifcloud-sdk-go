@@ -3,8 +3,8 @@ package awsutil_test
 import (
 	"testing"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awsutil"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/awsutil"
 )
 
 func TestDeepEqual(t *testing.T) {

@@ -4,8 +4,8 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/request"
 )
 
 // SDKVersionUserAgentHandler is a request handler for adding the SDK Version

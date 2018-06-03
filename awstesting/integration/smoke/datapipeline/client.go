@@ -4,8 +4,8 @@
 package datapipeline
 
 import (
-	"github.com/aws/aws-sdk-go/awstesting/integration/smoke"
-	"github.com/aws/aws-sdk-go/service/datapipeline"
+	"github.com/alice02/nifcloud-sdk-go/awstesting/integration/smoke"
+	"github.com/alice02/nifcloud-sdk-go/service/datapipeline"
 	"github.com/gucumber/gucumber"
 )
 

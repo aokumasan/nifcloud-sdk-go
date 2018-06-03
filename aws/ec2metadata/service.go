@@ -16,12 +16,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/client"
-	"github.com/aws/aws-sdk-go/aws/client/metadata"
-	"github.com/aws/aws-sdk-go/aws/corehandlers"
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/aws/client"
+	"github.com/alice02/nifcloud-sdk-go/aws/client/metadata"
+	"github.com/alice02/nifcloud-sdk-go/aws/corehandlers"
+	"github.com/alice02/nifcloud-sdk-go/aws/request"
 )
 
 // ServiceName is the name of the service.

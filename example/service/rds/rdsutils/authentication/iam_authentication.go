@@ -10,10 +10,10 @@ import (
 
 	"github.com/go-sql-driver/mysql"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/credentials/stscreds"
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/rds/rdsutils"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/credentials/stscreds"
+	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/service/rds/rdsutils"
 )
 
 // Usage ./iam_authentication <region> <db user> <db name> <endpoint to database> <iam arn>
