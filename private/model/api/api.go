@@ -526,9 +526,14 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
     }
 
 	// Handlers
-	svc.Handlers.Sign.PushBackNamed({{if eq .Metadata.SignatureVersion "v2"}}v2{{else}}v4{{end}}.SignRequestHandler)
 	{{- if eq .Metadata.SignatureVersion "v2" }}
-		svc.Handlers.Sign.PushBackNamed(corehandlers.BuildContentLengthHandler)
+	svc.Handlers.Sign.PushBackNamed(v2.SignRequestHandler)
+	svc.Handlers.Sign.PushBackNamed(corehandlers.BuildContentLengthHandler)
+	{{- else if eq .Metadata.SignatureVersion "v2-computing" }}
+	svc.Handlers.Sign.PushBackNamed(v2computing.SignRequestHandler)
+	svc.Handlers.Sign.PushBackNamed(corehandlers.BuildContentLengthHandler)
+	{{- else }}
+	svc.Handlers.Sign.PushBackNamed(v4.SignRequestHandler)
 	{{- end }}
 	svc.Handlers.Build.PushBackNamed({{ .ProtocolPackage }}.BuildHandler)
 	svc.Handlers.Unmarshal.PushBackNamed({{ .ProtocolPackage }}.UnmarshalHandler)
@@ -581,6 +586,9 @@ func (a *API) ServiceGoCode() string {
 	a.imports["github.com/alice02/nifcloud-sdk-go/aws/request"] = true
 	if a.Metadata.SignatureVersion == "v2" {
 		a.imports["github.com/alice02/nifcloud-sdk-go/private/signer/v2"] = true
+		a.imports["github.com/alice02/nifcloud-sdk-go/aws/corehandlers"] = true
+	} else if a.Metadata.SignatureVersion == "v2-computing" {
+		a.imports["github.com/alice02/nifcloud-sdk-go/private/signer/v2computing"] = true
 		a.imports["github.com/alice02/nifcloud-sdk-go/aws/corehandlers"] = true
 	} else {
 		a.imports["github.com/alice02/nifcloud-sdk-go/aws/signer/v4"] = true
