@@ -25,7 +25,6 @@ func UnmarshalXML(v interface{}, d *xml.Decoder, wrapper string) error {
 				if wrappedChild, ok := c.Children[wrapper]; ok {
 					c = wrappedChild[0] // pull out wrapped element
 				}
-
 				err = parse(reflect.ValueOf(v), c, "")
 				if err != nil {
 					if err == io.EOF {
@@ -241,6 +240,9 @@ func parseScalar(r reflect.Value, node *XMLNode, tag reflect.StructTag) error {
 		}
 		r.Set(reflect.ValueOf(&v))
 	case *int64:
+		if node.Text == "" {
+			node.Text = "-127"
+		}
 		v, err := strconv.ParseInt(node.Text, 10, 64)
 		if err != nil {
 			return err
@@ -253,8 +255,7 @@ func parseScalar(r reflect.Value, node *XMLNode, tag reflect.StructTag) error {
 		}
 		r.Set(reflect.ValueOf(&v))
 	case *time.Time:
-		const ISO8601UTC = "2006-01-02T15:04:05Z"
-		t, err := time.Parse(ISO8601UTC, node.Text)
+		t, err := time.Parse(time.RFC3339, node.Text)
 		if err != nil {
 			return err
 		}
