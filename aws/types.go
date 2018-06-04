@@ -4,7 +4,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/aws/aws-sdk-go/internal/sdkio"
+	"github.com/alice02/nifcloud-sdk-go/internal/sdkio"
 )
 
 // ReadSeekCloser wraps a io.Reader returning a ReaderSeekerCloser. Should

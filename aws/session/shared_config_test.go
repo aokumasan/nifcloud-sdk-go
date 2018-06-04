@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/aws/aws-sdk-go/aws/credentials"
+	"github.com/alice02/nifcloud-sdk-go/aws/credentials"
 	"github.com/go-ini/ini"
 	"github.com/stretchr/testify/assert"
 )

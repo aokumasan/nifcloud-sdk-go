@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/service/sqs"
-	"github.com/aws/aws-sdk-go/service/sqs/sqsiface"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/service/sqs"
+	"github.com/alice02/nifcloud-sdk-go/service/sqs/sqsiface"
 )
 
 type mockedReceiveMsgs struct {

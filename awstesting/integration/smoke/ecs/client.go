@@ -4,9 +4,9 @@
 package ecs
 
 import (
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/awstesting/integration/smoke"
-	"github.com/aws/aws-sdk-go/service/ecs"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/awstesting/integration/smoke"
+	"github.com/alice02/nifcloud-sdk-go/service/ecs"
 	"github.com/gucumber/gucumber"
 )
 

@@ -8,12 +8,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/client"
-	"github.com/aws/aws-sdk-go/aws/client/metadata"
-	"github.com/aws/aws-sdk-go/aws/defaults"
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/aws/client"
+	"github.com/alice02/nifcloud-sdk-go/aws/client/metadata"
+	"github.com/alice02/nifcloud-sdk-go/aws/defaults"
+	"github.com/alice02/nifcloud-sdk-go/aws/request"
 )
 
 // go version 1.4 and 1.5 do not return an error. Version 1.5 will url encode

@@ -5,14 +5,14 @@ import (
 	"testing"
 	"reflect"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/client"
-	"github.com/aws/aws-sdk-go/aws/client/metadata"
-	"github.com/aws/aws-sdk-go/aws/corehandlers"
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/awstesting/unit"
-	"github.com/aws/aws-sdk-go/service/kinesis"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/aws/client"
+	"github.com/alice02/nifcloud-sdk-go/aws/client/metadata"
+	"github.com/alice02/nifcloud-sdk-go/aws/corehandlers"
+	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/awstesting/unit"
+	"github.com/alice02/nifcloud-sdk-go/service/kinesis"
 )
 
 var testSvc = func() *client.Client {

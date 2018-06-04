@@ -6,10 +6,10 @@ package mediastoredata
 import (
 	"fmt"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/awstesting/integration/smoke"
-	"github.com/aws/aws-sdk-go/service/mediastore"
-	"github.com/aws/aws-sdk-go/service/mediastoredata"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/awstesting/integration/smoke"
+	"github.com/alice02/nifcloud-sdk-go/service/mediastore"
+	"github.com/alice02/nifcloud-sdk-go/service/mediastoredata"
 	"github.com/gucumber/gucumber"
 )
 

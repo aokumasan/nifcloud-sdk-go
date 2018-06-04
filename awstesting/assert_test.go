@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 	"testing"
 
-	"github.com/aws/aws-sdk-go/awstesting"
+	"github.com/alice02/nifcloud-sdk-go/awstesting"
 )
 
 func TestAssertJSON(t *testing.T) {

@@ -240,7 +240,7 @@ func (a *API) ShapeListErrors() []*Shape {
 // resetImports resets the import map to default values.
 func (a *API) resetImports() {
 	a.imports = map[string]bool{
-		"github.com/aws/aws-sdk-go/aws": true,
+		"github.com/alice02/nifcloud-sdk-go/aws": true,
 	}
 }
 
@@ -296,16 +296,16 @@ var tplAPI = template.Must(template.New("api").Parse(`
 // APIGoCode renders the API in Go code. Returning it as a string
 func (a *API) APIGoCode() string {
 	a.resetImports()
-	a.imports["github.com/aws/aws-sdk-go/aws/awsutil"] = true
-	a.imports["github.com/aws/aws-sdk-go/aws/request"] = true
+	a.imports["github.com/alice02/nifcloud-sdk-go/aws/awsutil"] = true
+	a.imports["github.com/alice02/nifcloud-sdk-go/aws/request"] = true
 	if a.OperationHasOutputPlaceholder() {
-		a.imports["github.com/aws/aws-sdk-go/private/protocol/"+a.ProtocolPackage()] = true
-		a.imports["github.com/aws/aws-sdk-go/private/protocol"] = true
+		a.imports["github.com/alice02/nifcloud-sdk-go/private/protocol/"+a.ProtocolPackage()] = true
+		a.imports["github.com/alice02/nifcloud-sdk-go/private/protocol"] = true
 	}
 
 	for _, op := range a.Operations {
 		if op.AuthType == "none" {
-			a.imports["github.com/aws/aws-sdk-go/aws/credentials"] = true
+			a.imports["github.com/alice02/nifcloud-sdk-go/aws/credentials"] = true
 			break
 		}
 	}
@@ -360,6 +360,12 @@ func GetCrosslinkURL(baseURL, uid string, params ...string) string {
 // ServiceIDFromUID will parse the service id from the uid and return
 // the service id that was found.
 func ServiceIDFromUID(uid string) string {
+	// Fix for NIFCLOUD computing
+	// computing uid does not include the date component, e.g. computing-3.0
+	if strings.Contains(uid, "computing") {
+		return "computing"
+	}
+
 	found := 0
 	i := len(uid) - 1
 	for ; i >= 0; i-- {
@@ -520,9 +526,14 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
     }
 
 	// Handlers
-	svc.Handlers.Sign.PushBackNamed({{if eq .Metadata.SignatureVersion "v2"}}v2{{else}}v4{{end}}.SignRequestHandler)
 	{{- if eq .Metadata.SignatureVersion "v2" }}
-		svc.Handlers.Sign.PushBackNamed(corehandlers.BuildContentLengthHandler)
+	svc.Handlers.Sign.PushBackNamed(v2.SignRequestHandler)
+	svc.Handlers.Sign.PushBackNamed(corehandlers.BuildContentLengthHandler)
+	{{- else if eq .Metadata.SignatureVersion "v2-computing" }}
+	svc.Handlers.Sign.PushBackNamed(v2computing.SignRequestHandler)
+	svc.Handlers.Sign.PushBackNamed(corehandlers.BuildContentLengthHandler)
+	{{- else }}
+	svc.Handlers.Sign.PushBackNamed(v4.SignRequestHandler)
 	{{- end }}
 	svc.Handlers.Build.PushBackNamed({{ .ProtocolPackage }}.BuildHandler)
 	svc.Handlers.Unmarshal.PushBackNamed({{ .ProtocolPackage }}.UnmarshalHandler)
@@ -570,16 +581,19 @@ func (a *API) ServicePackageDoc() string {
 // ServiceGoCode renders service go code. Returning it as a string.
 func (a *API) ServiceGoCode() string {
 	a.resetImports()
-	a.imports["github.com/aws/aws-sdk-go/aws/client"] = true
-	a.imports["github.com/aws/aws-sdk-go/aws/client/metadata"] = true
-	a.imports["github.com/aws/aws-sdk-go/aws/request"] = true
+	a.imports["github.com/alice02/nifcloud-sdk-go/aws/client"] = true
+	a.imports["github.com/alice02/nifcloud-sdk-go/aws/client/metadata"] = true
+	a.imports["github.com/alice02/nifcloud-sdk-go/aws/request"] = true
 	if a.Metadata.SignatureVersion == "v2" {
-		a.imports["github.com/aws/aws-sdk-go/private/signer/v2"] = true
-		a.imports["github.com/aws/aws-sdk-go/aws/corehandlers"] = true
+		a.imports["github.com/alice02/nifcloud-sdk-go/private/signer/v2"] = true
+		a.imports["github.com/alice02/nifcloud-sdk-go/aws/corehandlers"] = true
+	} else if a.Metadata.SignatureVersion == "v2-computing" {
+		a.imports["github.com/alice02/nifcloud-sdk-go/private/signer/v2computing"] = true
+		a.imports["github.com/alice02/nifcloud-sdk-go/aws/corehandlers"] = true
 	} else {
-		a.imports["github.com/aws/aws-sdk-go/aws/signer/v4"] = true
+		a.imports["github.com/alice02/nifcloud-sdk-go/aws/signer/v4"] = true
 	}
-	a.imports["github.com/aws/aws-sdk-go/private/protocol/"+a.ProtocolPackage()] = true
+	a.imports["github.com/alice02/nifcloud-sdk-go/private/protocol/"+a.ProtocolPackage()] = true
 
 	var buf bytes.Buffer
 	err := tplService.Execute(&buf, a)
@@ -607,8 +621,8 @@ func (a *API) ExampleGoCode() string {
 		"bytes",
 		"fmt",
 		"time",
-		"github.com/aws/aws-sdk-go/aws",
-		"github.com/aws/aws-sdk-go/aws/session",
+		"github.com/alice02/nifcloud-sdk-go/aws",
+		"github.com/alice02/nifcloud-sdk-go/aws/session",
 		path.Join(a.SvcClientImportPath, a.PackageName()),
 	)
 	for k := range imports {
@@ -685,8 +699,8 @@ var _ {{ .StructName }}API = (*{{ .PackageName }}.{{ .StructName }})(nil)
 func (a *API) InterfaceGoCode() string {
 	a.resetImports()
 	a.imports = map[string]bool{
-		"github.com/aws/aws-sdk-go/aws":                   true,
-		"github.com/aws/aws-sdk-go/aws/request":           true,
+		"github.com/alice02/nifcloud-sdk-go/aws":          true,
+		"github.com/alice02/nifcloud-sdk-go/aws/request":  true,
 		path.Join(a.SvcClientImportPath, a.PackageName()): true,
 	}
 

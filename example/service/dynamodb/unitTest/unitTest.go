@@ -5,10 +5,10 @@
 package unitTest
 
 import (
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/service/dynamodb"
-	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
-	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbiface"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/service/dynamodb"
+	"github.com/alice02/nifcloud-sdk-go/service/dynamodb/dynamodbattribute"
+	"github.com/alice02/nifcloud-sdk-go/service/dynamodb/dynamodbiface"
 )
 
 // ItemGetter can be assigned a DynamoDB connector like:

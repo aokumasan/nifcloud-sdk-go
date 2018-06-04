@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/aws/aws-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/aws/request"
 )
 
 func TestAddHostExecEnvUserAgentHander(t *testing.T) {

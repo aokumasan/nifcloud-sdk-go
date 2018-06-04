@@ -13,17 +13,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/client"
-	"github.com/aws/aws-sdk-go/aws/client/metadata"
-	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/aws/signer/v4"
-	"github.com/aws/aws-sdk-go/awstesting"
-	"github.com/aws/aws-sdk-go/awstesting/unit"
-	"github.com/aws/aws-sdk-go/private/protocol"
-	"github.com/aws/aws-sdk-go/private/protocol/jsonrpc"
-	"github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil"
-	"github.com/aws/aws-sdk-go/private/util"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/client"
+	"github.com/alice02/nifcloud-sdk-go/aws/client/metadata"
+	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/aws/signer/v4"
+	"github.com/alice02/nifcloud-sdk-go/awstesting"
+	"github.com/alice02/nifcloud-sdk-go/awstesting/unit"
+	"github.com/alice02/nifcloud-sdk-go/private/protocol"
+	"github.com/alice02/nifcloud-sdk-go/private/protocol/jsonrpc"
+	"github.com/alice02/nifcloud-sdk-go/private/protocol/xml/xmlutil"
+	"github.com/alice02/nifcloud-sdk-go/private/util"
 )
 
 var _ bytes.Buffer // always import bytes

@@ -16,8 +16,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/aws/aws-sdk-go/private/model/api"
-	"github.com/aws/aws-sdk-go/private/util"
+	"github.com/alice02/nifcloud-sdk-go/private/model/api"
+	"github.com/alice02/nifcloud-sdk-go/private/util"
 )
 
 // TestSuiteTypeInput input test
@@ -93,11 +93,11 @@ var extraImports = []string{
 	"reflect",
 	"net/url",
 	"",
-	"github.com/aws/aws-sdk-go/awstesting",
-	"github.com/aws/aws-sdk-go/awstesting/unit",
-	"github.com/aws/aws-sdk-go/private/protocol",
-	"github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil",
-	"github.com/aws/aws-sdk-go/private/util",
+	"github.com/alice02/nifcloud-sdk-go/awstesting",
+	"github.com/alice02/nifcloud-sdk-go/awstesting/unit",
+	"github.com/alice02/nifcloud-sdk-go/private/protocol",
+	"github.com/alice02/nifcloud-sdk-go/private/protocol/xml/xmlutil",
+	"github.com/alice02/nifcloud-sdk-go/private/util",
 }
 
 func addImports(code string) string {
@@ -182,7 +182,7 @@ func (t tplInputTestCaseData) BodyAssertions() string {
 	// Generate the body verification code
 	expectedBody := util.Trim(t.TestCase.InputTest.Body)
 	switch protocol {
-	case "ec2", "query":
+	case "ec2", "query", "computing", "script":
 		fmt.Fprintf(code, "awstesting.AssertQuery(t, `%s`, util.Trim(string(body)))",
 			expectedBody)
 	case "rest-xml":
@@ -264,7 +264,7 @@ func (i *testCase) TestCase(idx int) string {
 	if i.TestSuite.Type == TestSuiteTypeInput { // input test
 		// query test should sort body as form encoded values
 		switch i.TestSuite.API.Metadata.Protocol {
-		case "query", "ec2":
+		case "query", "ec2", "computing", "script":
 			m, _ := url.ParseQuery(i.InputTest.Body)
 			i.InputTest.Body = m.Encode()
 		case "rest-xml":

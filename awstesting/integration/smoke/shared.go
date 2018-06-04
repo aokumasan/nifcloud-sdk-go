@@ -13,10 +13,10 @@ import (
 
 	"github.com/gucumber/gucumber"
 
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/awserr"
-	"github.com/aws/aws-sdk-go/aws/awsutil"
-	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/aws/awsutil"
+	"github.com/alice02/nifcloud-sdk-go/aws/session"
 )
 
 // Session is a shared session for all integration smoke tests to use.
