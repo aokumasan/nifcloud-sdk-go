@@ -10,8 +10,8 @@ import (
 
 	"github.com/gucumber/gucumber"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
 	"github.com/alice02/nifcloud-sdk-go/awstesting/mock"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 )
@@ -74,8 +74,8 @@ func init() {
 		gucumber.World["start"] = memStatStart
 
 		svc.PutObjectRequest(&s3.PutObjectInput{
-			Bucket: aws.String("bucketmesilly"),
-			Key:    aws.String("testKey"),
+			Bucket: nifcloud.String("bucketmesilly"),
+			Key:    nifcloud.String("testKey"),
 			Body:   bytes.NewReader(gucumber.World["file"].([]byte)),
 		})
 	})
@@ -83,8 +83,8 @@ func init() {
 	gucumber.And(`then download the file$`, func() {
 		svc := s3.New(mock.Session)
 		svc.GetObjectRequest(&s3.GetObjectInput{
-			Bucket: aws.String("bucketmesilly"),
-			Key:    aws.String("testKey"),
+			Bucket: nifcloud.String("bucketmesilly"),
+			Key:    nifcloud.String("testKey"),
 		})
 		memStatEnd := &runtime.MemStats{}
 		runtime.ReadMemStats(memStatEnd)

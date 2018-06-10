@@ -3,11 +3,11 @@
 package rdb
 
 import (
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/client"
-	"github.com/alice02/nifcloud-sdk-go/aws/client/metadata"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
-	"github.com/alice02/nifcloud-sdk-go/aws/signer/v4"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client/metadata"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/signer/v4"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/query"
 )
 
@@ -35,21 +35,21 @@ const (
 
 // New creates a new instance of the Rdb client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a Rdb client from just a session.
 //     svc := rdb.New(mySession)
 //
 //     // Create a Rdb client with additional configuration
-//     svc := rdb.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func New(p client.ConfigProvider, cfgs ...*aws.Config) *Rdb {
+//     svc := rdb.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func New(p client.ConfigProvider, cfgs ...*nifcloud.Config) *Rdb {
 	c := p.ClientConfig(EndpointsID, cfgs...)
 	return newClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *Rdb {
+func newClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *Rdb {
 	svc := &Rdb{
 		Client: client.New(
 			cfg,

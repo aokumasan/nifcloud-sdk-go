@@ -1,14 +1,14 @@
 package awstesting
 
 import (
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/client"
-	"github.com/alice02/nifcloud-sdk-go/aws/client/metadata"
-	"github.com/alice02/nifcloud-sdk-go/aws/defaults"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client/metadata"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/defaults"
 )
 
 // NewClient creates and initializes a generic service client for testing.
-func NewClient(cfgs ...*aws.Config) *client.Client {
+func NewClient(cfgs ...*nifcloud.Config) *client.Client {
 	info := metadata.ClientInfo{
 		Endpoint:    "http://endpoint",
 		SigningName: "",
@@ -16,7 +16,7 @@ func NewClient(cfgs ...*aws.Config) *client.Client {
 	def := defaults.Get()
 	def.Config.MergeIn(cfgs...)
 
-	if v := aws.StringValue(def.Config.Endpoint); len(v) > 0 {
+	if v := nifcloud.StringValue(def.Config.Endpoint); len(v) > 0 {
 		info.Endpoint = v
 	}
 

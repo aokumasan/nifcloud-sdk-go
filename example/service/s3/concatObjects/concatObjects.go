@@ -7,8 +7,8 @@ import (
 	"net/url"
 	"os"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 )
 
@@ -22,8 +22,8 @@ func (c *client) concatenate(key1, key2, key3 string, uploadID *string) (*string
 	// The first part to be uploaded which is represented as part number 1
 	foo, err := c.s3Client.UploadPartCopy(&s3.UploadPartCopyInput{
 		Bucket:     c.bucket,
-		CopySource: aws.String(url.QueryEscape(*c.bucket + "/" + key1)),
-		PartNumber: aws.Int64(1),
+		CopySource: nifcloud.String(url.QueryEscape(*c.bucket + "/" + key1)),
+		PartNumber: nifcloud.Int64(1),
 		Key:        &key3,
 		UploadId:   uploadID,
 	})
@@ -35,8 +35,8 @@ func (c *client) concatenate(key1, key2, key3 string, uploadID *string) (*string
 	// object.
 	bar, err := c.s3Client.UploadPartCopy(&s3.UploadPartCopyInput{
 		Bucket:     c.bucket,
-		CopySource: aws.String(url.QueryEscape(*c.bucket + "/" + key2)),
-		PartNumber: aws.Int64(2),
+		CopySource: nifcloud.String(url.QueryEscape(*c.bucket + "/" + key2)),
+		PartNumber: nifcloud.Int64(2),
 		Key:        &key3,
 		UploadId:   uploadID,
 	})
@@ -57,7 +57,7 @@ func main() {
 	key1 := os.Args[2]
 	key2 := os.Args[3]
 	key3 := os.Args[4]
-	sess := session.New(&aws.Config{})
+	sess := session.New(&nifcloud.Config{})
 	svc := s3.New(sess)
 
 	c := client{svc, &bucket}
@@ -88,11 +88,11 @@ func main() {
 			Parts: []*s3.CompletedPart{
 				{
 					ETag:       foo,
-					PartNumber: aws.Int64(1),
+					PartNumber: nifcloud.Int64(1),
 				},
 				{
 					ETag:       bar,
-					PartNumber: aws.Int64(2),
+					PartNumber: nifcloud.Int64(2),
 				},
 			},
 		},

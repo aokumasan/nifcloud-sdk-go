@@ -220,15 +220,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/fooservice"
 )
 
 var _ time.Duration
 var _ strings.Reader
-var _ aws.Config
+var _ nifcloud.Config
 
 func parseTime(layout, value string) *time.Time {
 	t, err := time.Parse(layout, value)
@@ -244,24 +244,24 @@ func parseTime(layout, value string) *time.Time {
 func ExampleFooService_Foo_shared00() {
 	svc := fooservice.New(session.New())
 	input := &fooservice.FooInput{
-		BarShape: aws.String("Hello world"),
+		BarShape: nifcloud.String("Hello world"),
 		ComplexField: &fooservice.ComplexShape{
-			Field: aws.String("bar"),
+			Field: nifcloud.String("bar"),
 			List: []*fooservice.NestedComplexShape{
 				{
-					NestedField: aws.String("qux"),
+					NestedField: nifcloud.String("qux"),
 				},
 			},
 		},
 		ListField: []*fooservice.ComplexShape{
 			{
-				Field: aws.String("baz"),
+				Field: nifcloud.String("baz"),
 			},
 		},
 		ListsField: [][]*fooservice.ComplexShape{
 			{
 				{
-					Field: aws.String("baz"),
+					Field: nifcloud.String("baz"),
 				},
 			},
 		},
@@ -302,13 +302,13 @@ func TestBuildShape(t *testing.T) {
 			defs: map[string]interface{}{
 				"barShape": "Hello World",
 			},
-			expected: "BarShape: aws.String(\"Hello World\"),\n",
+			expected: "BarShape: nifcloud.String(\"Hello World\"),\n",
 		},
 		{
 			defs: map[string]interface{}{
 				"BarShape": "Hello World",
 			},
-			expected: "BarShape: aws.String(\"Hello World\"),\n",
+			expected: "BarShape: nifcloud.String(\"Hello World\"),\n",
 		},
 	}
 

@@ -51,7 +51,7 @@ func (f paramFiller) paramsStructAny(value interface{}, shape *Shape) string {
 	case "string", "character":
 		v := reflect.Indirect(reflect.ValueOf(value))
 		if v.IsValid() {
-			return fmt.Sprintf("aws.String(%#v)", v.Interface())
+			return fmt.Sprintf("nifcloud.String(%#v)", v.Interface())
 		}
 	case "blob":
 		v := reflect.Indirect(reflect.ValueOf(value))
@@ -63,30 +63,30 @@ func (f paramFiller) paramsStructAny(value interface{}, shape *Shape) string {
 	case "boolean":
 		v := reflect.Indirect(reflect.ValueOf(value))
 		if v.IsValid() {
-			return fmt.Sprintf("aws.Bool(%#v)", v.Interface())
+			return fmt.Sprintf("nifcloud.Bool(%#v)", v.Interface())
 		}
 	case "integer", "long":
 		v := reflect.Indirect(reflect.ValueOf(value))
 		if v.IsValid() {
-			return fmt.Sprintf("aws.Int64(%v)", v.Interface())
+			return fmt.Sprintf("nifcloud.Int64(%v)", v.Interface())
 		}
 	case "float", "double":
 		v := reflect.Indirect(reflect.ValueOf(value))
 		if v.IsValid() {
-			return fmt.Sprintf("aws.Float64(%v)", v.Interface())
+			return fmt.Sprintf("nifcloud.Float64(%v)", v.Interface())
 		}
 	case "timestamp":
 		v := reflect.Indirect(reflect.ValueOf(value))
 		if v.IsValid() {
-			return fmt.Sprintf("aws.Time(time.Unix(%d, 0))", int(v.Float()))
+			return fmt.Sprintf("nifcloud.Time(time.Unix(%d, 0))", int(v.Float()))
 		}
 	case "jsonvalue":
 		v, err := json.Marshal(value)
 		if err != nil {
 			panic("failed to marshal JSONValue, "+err.Error())
 		}
-		const tmpl = `func() aws.JSONValue {
-			var m aws.JSONValue
+		const tmpl = `func() nifcloud.JSONValue {
+			var m nifcloud.JSONValue
 			if err := json.Unmarshal([]byte(%q), &m); err != nil {
 				panic("failed to unmarshal JSONValue, "+err.Error())
 			}

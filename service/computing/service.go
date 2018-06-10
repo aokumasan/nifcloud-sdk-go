@@ -3,11 +3,11 @@
 package computing
 
 import (
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/client"
-	"github.com/alice02/nifcloud-sdk-go/aws/client/metadata"
-	"github.com/alice02/nifcloud-sdk-go/aws/corehandlers"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client/metadata"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/corehandlers"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/computing"
 	"github.com/alice02/nifcloud-sdk-go/private/signer/v2computing"
 )
@@ -36,21 +36,21 @@ const (
 
 // New creates a new instance of the Computing client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a Computing client from just a session.
 //     svc := computing.New(mySession)
 //
 //     // Create a Computing client with additional configuration
-//     svc := computing.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func New(p client.ConfigProvider, cfgs ...*aws.Config) *Computing {
+//     svc := computing.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func New(p client.ConfigProvider, cfgs ...*nifcloud.Config) *Computing {
 	c := p.ClientConfig(EndpointsID, cfgs...)
 	return newClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *Computing {
+func newClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *Computing {
 	svc := &Computing{
 		Client: client.New(
 			cfg,

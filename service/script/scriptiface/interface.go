@@ -9,8 +9,8 @@
 package scriptiface
 
 import (
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/service/script"
 )
 
@@ -61,7 +61,7 @@ import (
 // tooling to generate mocks to satisfy the interfaces.
 type ScriptAPI interface {
 	ExecuteScript(*script.ExecuteScriptInput) (*script.ExecuteScriptOutput, error)
-	ExecuteScriptWithContext(aws.Context, *script.ExecuteScriptInput, ...request.Option) (*script.ExecuteScriptOutput, error)
+	ExecuteScriptWithContext(nifcloud.Context, *script.ExecuteScriptInput, ...request.Option) (*script.ExecuteScriptOutput, error)
 	ExecuteScriptRequest(*script.ExecuteScriptInput) (*request.Request, *script.ExecuteScriptOutput)
 }
 

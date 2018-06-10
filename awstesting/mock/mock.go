@@ -4,10 +4,10 @@ import (
 	"net/http"
 	"net/http/httptest"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/client"
-	"github.com/alice02/nifcloud-sdk-go/aws/client/metadata"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client/metadata"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 )
 
 // Session is a mock session which is used to hit the mock server
@@ -17,15 +17,15 @@ var Session = func() *session.Session {
 		w.WriteHeader(http.StatusOK)
 	}))
 
-	return session.Must(session.NewSession(&aws.Config{
-		DisableSSL: aws.Bool(true),
-		Endpoint:   aws.String(server.URL),
+	return session.Must(session.NewSession(&nifcloud.Config{
+		DisableSSL: nifcloud.Bool(true),
+		Endpoint:   nifcloud.String(server.URL),
 	}))
 }()
 
 // NewMockClient creates and initializes a client that will connect to the
 // mock server
-func NewMockClient(cfgs ...*aws.Config) *client.Client {
+func NewMockClient(cfgs ...*nifcloud.Config) *client.Client {
 	c := Session.ClientConfig("Mock", cfgs...)
 
 	svc := client.New(

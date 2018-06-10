@@ -11,14 +11,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 )
 
 func TestWriteToObject(t *testing.T) {
 	_, err := svc.PutObject(&s3.PutObjectInput{
 		Bucket: bucketName,
-		Key:    aws.String("key name"),
+		Key:    nifcloud.String("key name"),
 		Body:   bytes.NewReader([]byte("hello world")),
 	})
 	if err != nil {
@@ -27,7 +27,7 @@ func TestWriteToObject(t *testing.T) {
 
 	resp, err := svc.GetObject(&s3.GetObjectInput{
 		Bucket: bucketName,
-		Key:    aws.String("key name"),
+		Key:    nifcloud.String("key name"),
 	})
 	if err != nil {
 		t.Errorf("expect no error, got %v", err)
@@ -42,7 +42,7 @@ func TestWriteToObject(t *testing.T) {
 func TestPresignedGetPut(t *testing.T) {
 	putreq, _ := svc.PutObjectRequest(&s3.PutObjectInput{
 		Bucket: bucketName,
-		Key:    aws.String("presigned-key"),
+		Key:    nifcloud.String("presigned-key"),
 	})
 	var err error
 
@@ -73,7 +73,7 @@ func TestPresignedGetPut(t *testing.T) {
 	// Presign a GET on the same URL
 	getreq, _ := svc.GetObjectRequest(&s3.GetObjectInput{
 		Bucket: bucketName,
-		Key:    aws.String("presigned-key"),
+		Key:    nifcloud.String("presigned-key"),
 	})
 
 	var geturl string

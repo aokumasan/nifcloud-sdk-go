@@ -6,17 +6,17 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/client"
-	"github.com/alice02/nifcloud-sdk-go/aws/client/metadata"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
-	"github.com/alice02/nifcloud-sdk-go/aws/signer/v4"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client/metadata"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/signer/v4"
 	"github.com/alice02/nifcloud-sdk-go/awstesting/unit"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/rest"
 )
 
 func TestUnsetHeaders(t *testing.T) {
-	cfg := &aws.Config{Region: aws.String("us-west-2")}
+	cfg := &nifcloud.Config{Region: nifcloud.String("us-west-2")}
 	c := unit.Session.ClientConfig("testService", cfg)
 	svc := client.New(
 		*cfg,
@@ -41,13 +41,13 @@ func TestUnsetHeaders(t *testing.T) {
 	}
 
 	input := &struct {
-		Foo aws.JSONValue `location:"header" locationName:"x-amz-foo" type:"jsonvalue"`
-		Bar aws.JSONValue `location:"header" locationName:"x-amz-bar" type:"jsonvalue"`
+		Foo nifcloud.JSONValue `location:"header" locationName:"x-amz-foo" type:"jsonvalue"`
+		Bar nifcloud.JSONValue `location:"header" locationName:"x-amz-bar" type:"jsonvalue"`
 	}{}
 
 	output := &struct {
-		Foo aws.JSONValue `location:"header" locationName:"x-amz-foo" type:"jsonvalue"`
-		Bar aws.JSONValue `location:"header" locationName:"x-amz-bar" type:"jsonvalue"`
+		Foo nifcloud.JSONValue `location:"header" locationName:"x-amz-foo" type:"jsonvalue"`
+		Bar nifcloud.JSONValue `location:"header" locationName:"x-amz-bar" type:"jsonvalue"`
 	}{}
 
 	req := svc.NewRequest(op, input, output)

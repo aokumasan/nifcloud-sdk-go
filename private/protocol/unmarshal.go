@@ -4,7 +4,7 @@ import (
 	"io"
 	"io/ioutil"
 
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 )
 
 // UnmarshalDiscardBodyHandler is a named request handler to empty and close a response's body

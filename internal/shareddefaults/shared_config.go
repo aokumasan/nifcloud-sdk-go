@@ -11,7 +11,7 @@ import (
 //
 // Builds the shared config file path based on the OS's platform.
 //
-//   - Linux/Unix: $HOME/.aws/credentials
+//   - Linux/Unix: $HOME/.nifcloud/credentials
 //   - Windows: %USERPROFILE%\.aws\credentials
 func SharedCredentialsFilename() string {
 	return filepath.Join(UserHomeDir(), ".aws", "credentials")
@@ -22,7 +22,7 @@ func SharedCredentialsFilename() string {
 //
 // Builds the shared config file path based on the OS's platform.
 //
-//   - Linux/Unix: $HOME/.aws/config
+//   - Linux/Unix: $HOME/.nifcloud/config
 //   - Windows: %USERPROFILE%\.aws\config
 func SharedConfigFilename() string {
 	return filepath.Join(UserHomeDir(), ".aws", "config")

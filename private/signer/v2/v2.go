@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/credentials"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/credentials"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 )
 
 var (
@@ -32,8 +32,8 @@ type signer struct {
 	Request     *http.Request
 	Time        time.Time
 	Credentials *credentials.Credentials
-	Debug       aws.LogLevelType
-	Logger      aws.Logger
+	Debug       nifcloud.LogLevelType
+	Logger      nifcloud.Logger
 
 	Query        url.Values
 	stringToSign string
@@ -160,7 +160,7 @@ func (v2 *signer) Sign() error {
 	v2.signature = base64.StdEncoding.EncodeToString(hash.Sum(nil))
 	v2.Query.Set("Signature", v2.signature)
 
-	if v2.Debug.Matches(aws.LogDebugWithSigning) {
+	if v2.Debug.Matches(nifcloud.LogDebugWithSigning) {
 		v2.logSigningInfo()
 	}
 

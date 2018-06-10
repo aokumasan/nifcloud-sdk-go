@@ -9,8 +9,8 @@ import (
 	"bytes"
 	"encoding/xml"
 
-	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/query"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/rest"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/xml/xmlutil"

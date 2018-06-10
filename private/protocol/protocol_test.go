@@ -7,8 +7,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/alice02/nifcloud-sdk-go/aws/client/metadata"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client/metadata"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/awstesting"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/computing"

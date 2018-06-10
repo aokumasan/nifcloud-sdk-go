@@ -4,8 +4,8 @@
 package s3crypto
 
 import (
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 	"github.com/alice02/nifcloud-sdk-go/service/s3/s3crypto"
 
@@ -14,8 +14,8 @@ import (
 
 func init() {
 	gucumber.Before("@s3crypto", func() {
-		sess := session.New((&aws.Config{
-			Region: aws.String("us-west-2"),
+		sess := session.New((&nifcloud.Config{
+			Region: nifcloud.String("us-west-2"),
 		}))
 		encryptionClient := s3crypto.NewEncryptionClient(sess, nil, func(c *s3crypto.EncryptionClient) {
 		})

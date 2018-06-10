@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/s3/s3manager"
 )
 
@@ -94,13 +94,13 @@ func main() {
 	pathPtr := flag.String("path", "", "path of directory to be synced")
 	flag.Parse()
 
-	sess := session.New(&aws.Config{
+	sess := session.New(&nifcloud.Config{
 		Region: regionPtr,
 	})
 	uploader := s3manager.NewUploader(sess)
 
 	iter := NewSyncFolderIterator(*pathPtr, *bucketPtr)
-	if err := uploader.UploadWithIterator(aws.BackgroundContext(), iter); err != nil {
+	if err := uploader.UploadWithIterator(nifcloud.BackgroundContext(), iter); err != nil {
 		fmt.Fprintf(os.Stderr, "unexpected error has occured: %v", err)
 	}
 

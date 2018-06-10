@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 	"github.com/alice02/nifcloud-sdk-go/awstesting/integration"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 )
@@ -29,7 +29,7 @@ func TestMain(m *testing.M) {
 // Create a bucket for testing
 func setup() {
 	svc = s3.New(integration.Session)
-	bucketName = aws.String(
+	bucketName = nifcloud.String(
 		fmt.Sprintf("%s-%s",
 			integBucketPrefix, integration.UniqueID()))
 

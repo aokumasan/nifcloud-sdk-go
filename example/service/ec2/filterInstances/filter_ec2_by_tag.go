@@ -8,8 +8,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/ec2"
 )
 
@@ -22,14 +22,14 @@ func main() {
 
 	nameFilter := os.Args[1]
 	awsRegion := "us-east-1"
-	svc := ec2.New(sess, &aws.Config{Region: aws.String(awsRegion)})
+	svc := ec2.New(sess, &nifcloud.Config{Region: nifcloud.String(awsRegion)})
 	fmt.Printf("listing instances with tag %v in: %v\n", nameFilter, awsRegion)
 	params := &ec2.DescribeInstancesInput{
 		Filters: []*ec2.Filter{
 			{
-				Name: aws.String("tag:Name"),
+				Name: nifcloud.String("tag:Name"),
 				Values: []*string{
-					aws.String(strings.Join([]string{"*", nameFilter, "*"}, "")),
+					nifcloud.String(strings.Join([]string{"*", nameFilter, "*"}, "")),
 				},
 			},
 		},

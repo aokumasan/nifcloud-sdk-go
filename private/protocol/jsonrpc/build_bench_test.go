@@ -7,8 +7,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/awstesting"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/json/jsonutil"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/jsonrpc"
@@ -66,6 +66,6 @@ func getDynamodbPutItemParams(b *testing.B) *dynamodb.PutItemInput {
 	}
 	return &dynamodb.PutItemInput{
 		Item:      av,
-		TableName: aws.String("tablename"),
+		TableName: nifcloud.String("tablename"),
 	}
 }

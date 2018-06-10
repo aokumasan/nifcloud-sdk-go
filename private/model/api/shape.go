@@ -203,7 +203,7 @@ func (s *Shape) GoStructType(name string, ref *ShapeRef) string {
 
 	if ref.JSONValue {
 		s.API.imports["github.com/alice02/nifcloud-sdk-go/aws"] = true
-		return "aws.JSONValue"
+		return "nifcloud.JSONValue"
 	}
 
 	for _, v := range s.Validations {
@@ -259,7 +259,7 @@ func goType(s *Shape, withPkgName bool) string {
 	case "map":
 		return "map[string]" + goType(s.ValueRef.Shape, withPkgName)
 	case "jsonvalue":
-		return "aws.JSONValue"
+		return "nifcloud.JSONValue"
 	case "list":
 		return "[]" + goType(s.MemberRef.Shape, withPkgName)
 	case "boolean":

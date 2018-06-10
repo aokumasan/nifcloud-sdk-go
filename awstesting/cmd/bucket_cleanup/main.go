@@ -7,8 +7,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 )
 
@@ -35,7 +35,7 @@ func main() {
 
 	var failed bool
 	for _, b := range buckets.Buckets {
-		bucket := aws.StringValue(b.Name)
+		bucket := nifcloud.StringValue(b.Name)
 
 		if !strings.HasPrefix(bucket, bucketPrefix) {
 			continue

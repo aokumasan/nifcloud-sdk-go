@@ -6,30 +6,30 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 )
 
 var testJSONValueCases = []struct {
-	Value  aws.JSONValue
+	Value  nifcloud.JSONValue
 	Mode   EscapeMode
 	String string
 }{
 	{
-		Value: aws.JSONValue{
+		Value: nifcloud.JSONValue{
 			"abc": 123.,
 		},
 		Mode:   NoEscape,
 		String: `{"abc":123}`,
 	},
 	{
-		Value: aws.JSONValue{
+		Value: nifcloud.JSONValue{
 			"abc": 123.,
 		},
 		Mode:   Base64Escape,
 		String: `eyJhYmMiOjEyM30=`,
 	},
 	{
-		Value: aws.JSONValue{
+		Value: nifcloud.JSONValue{
 			"abc": 123.,
 		},
 		Mode:   QuotedEscape,
@@ -73,7 +73,7 @@ func TestEncodeJSONValue_PanicUnkownMode(t *testing.T) {
 		}
 	}()
 
-	val := aws.JSONValue{}
+	val := nifcloud.JSONValue{}
 
 	EncodeJSONValue(val, 123456)
 }

@@ -152,7 +152,7 @@ func (builder defaultExamplesBuilder) BuildScalar(name, memName string, ref *Sha
 			return parseTimeString(ref, memName, fmt.Sprintf("%s", v))
 		case "blob":
 			if (ref.Streaming || ref.Shape.Streaming) && isPayload {
-				return fmt.Sprintf("%s: aws.ReadSeekCloser(strings.NewReader(%q)),\n", memName, v)
+				return fmt.Sprintf("%s: nifcloud.ReadSeekCloser(strings.NewReader(%q)),\n", memName, v)
 			}
 
 			return fmt.Sprintf("%s: []byte(%q),\n", memName, v)
@@ -212,9 +212,9 @@ func (builder defaultExamplesBuilder) Imports(a *API) string {
 	"strings"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	`)
 
 	buf.WriteString(fmt.Sprintf("\"%s/%s\"", "github.com/alice02/nifcloud-sdk-go/service", a.PackageName()))

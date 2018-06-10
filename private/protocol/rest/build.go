@@ -14,9 +14,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol"
 )
 
@@ -122,7 +122,7 @@ func buildLocationElements(r *request.Request, v reflect.Value, buildGETQuery bo
 	}
 
 	r.HTTPRequest.URL.RawQuery = query.Encode()
-	if !aws.BoolValue(r.Config.DisableRestProtocolURICleaning) {
+	if !nifcloud.BoolValue(r.Config.DisableRestProtocolURICleaning) {
 		cleanPath(r.HTTPRequest.URL)
 	}
 }
@@ -273,7 +273,7 @@ func convertType(v reflect.Value, tag reflect.StructTag) (str string, err error)
 		str = strconv.FormatFloat(value, 'f', -1, 64)
 	case time.Time:
 		str = value.UTC().Format(RFC1123GMT)
-	case aws.JSONValue:
+	case nifcloud.JSONValue:
 		if len(value) == 0 {
 			return "", errValueNotSet
 		}

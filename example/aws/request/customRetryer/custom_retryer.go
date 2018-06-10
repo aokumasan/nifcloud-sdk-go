@@ -5,20 +5,20 @@ package main
 import (
 	"fmt"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
-	"github.com/alice02/nifcloud-sdk-go/aws/client"
-	"github.com/alice02/nifcloud-sdk-go/aws/credentials"
-	"github.com/alice02/nifcloud-sdk-go/aws/defaults"
-	"github.com/alice02/nifcloud-sdk-go/aws/endpoints"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/credentials"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/defaults"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/endpoints"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/cloudwatchlogs"
 )
 
 func main() {
 	sess := session.Must(
-		session.NewSession(&aws.Config{
+		session.NewSession(&nifcloud.Config{
 			// Use a custom retryer to provide custom retry rules.
 			Retryer: CustomRetryer{DefaultRetryer: client.DefaultRetryer{NumMaxRetries: 3}},
 
@@ -31,7 +31,7 @@ func main() {
 				Filename: defaults.SharedCredentialsFilename(),
 				Profile:  "default",
 			}),
-			Region: aws.String(endpoints.UsWest2RegionID),
+			Region: nifcloud.String(endpoints.UsWest2RegionID),
 		}),
 	)
 	// Add a request handler to the AfterRetry handler stack that is used by the

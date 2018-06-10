@@ -3,14 +3,14 @@
 package script
 
 import (
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awsutil"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awsutil"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 )
 
 const opExecuteScript = "ExecuteScript"
 
-// ExecuteScriptRequest generates a "aws/request.Request" representing the
+// ExecuteScriptRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ExecuteScript operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -73,7 +73,7 @@ func (c *Script) ExecuteScript(input *ExecuteScriptInput) (*ExecuteScriptOutput,
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Script) ExecuteScriptWithContext(ctx aws.Context, input *ExecuteScriptInput, opts ...request.Option) (*ExecuteScriptOutput, error) {
+func (c *Script) ExecuteScriptWithContext(ctx nifcloud.Context, input *ExecuteScriptInput, opts ...request.Option) (*ExecuteScriptOutput, error) {
 	req, out := c.ExecuteScriptRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)

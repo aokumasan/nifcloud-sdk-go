@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/alice02/nifcloud-sdk-go/aws/endpoints"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/endpoints"
 )
 
 // Demostrates how the SDK's endpoints can be enumerated over to discover

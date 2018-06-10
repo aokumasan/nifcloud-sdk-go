@@ -10,8 +10,8 @@ import (
 	"io"
 	"os"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 )
 
 // Session is a shared session for all integration tests to use.
@@ -20,17 +20,17 @@ var Session = session.Must(session.NewSession())
 func init() {
 	logLevel := Session.Config.LogLevel
 	if os.Getenv("DEBUG") != "" {
-		logLevel = aws.LogLevel(aws.LogDebug)
+		logLevel = nifcloud.LogLevel(nifcloud.LogDebug)
 	}
 	if os.Getenv("DEBUG_SIGNING") != "" {
-		logLevel = aws.LogLevel(aws.LogDebugWithSigning)
+		logLevel = nifcloud.LogLevel(nifcloud.LogDebugWithSigning)
 	}
 	if os.Getenv("DEBUG_BODY") != "" {
-		logLevel = aws.LogLevel(aws.LogDebugWithSigning | aws.LogDebugWithHTTPBody)
+		logLevel = nifcloud.LogLevel(nifcloud.LogDebugWithSigning | nifcloud.LogDebugWithHTTPBody)
 	}
 	Session.Config.LogLevel = logLevel
 
-	if aws.StringValue(Session.Config.Region) == "" {
+	if nifcloud.StringValue(Session.Config.Region) == "" {
 		panic("AWS_REGION must be configured to run integration tests")
 	}
 }

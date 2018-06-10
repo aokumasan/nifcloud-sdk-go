@@ -10,9 +10,9 @@ import (
 
 	"github.com/go-sql-driver/mysql"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/credentials/stscreds"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/credentials/stscreds"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/rds/rdsutils"
 )
 
@@ -27,7 +27,7 @@ func main() {
 	dbUser := os.Args[2]
 	dbName := os.Args[3]
 	dbEndpoint := os.Args[4]
-	awsCreds := stscreds.NewCredentials(session.New(&aws.Config{Region: &awsRegion}), os.Args[5])
+	awsCreds := stscreds.NewCredentials(session.New(&nifcloud.Config{Region: &awsRegion}), os.Args[5])
 	authToken, err := rdsutils.BuildAuthToken(dbEndpoint, awsRegion, dbUser, awsCreds)
 
 	// Create the MySQL DNS string for the DB connection

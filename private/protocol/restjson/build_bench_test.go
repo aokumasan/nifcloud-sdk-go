@@ -8,11 +8,11 @@ import (
 	"os"
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/credentials"
-	"github.com/alice02/nifcloud-sdk-go/aws/endpoints"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/credentials"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/endpoints"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/restjson"
 	"github.com/alice02/nifcloud-sdk-go/service/elastictranscoder"
 )
@@ -26,12 +26,12 @@ func TestMain(m *testing.M) {
 		w.WriteHeader(http.StatusOK)
 	}))
 
-	sess := session.Must(session.NewSession(&aws.Config{
+	sess := session.Must(session.NewSession(&nifcloud.Config{
 		Credentials:      credentials.NewStaticCredentials("Key", "Secret", "Token"),
-		Endpoint:         aws.String(server.URL),
-		S3ForcePathStyle: aws.Bool(true),
-		DisableSSL:       aws.Bool(true),
-		Region:           aws.String(endpoints.UsWest2RegionID),
+		Endpoint:         nifcloud.String(server.URL),
+		S3ForcePathStyle: nifcloud.Bool(true),
+		DisableSSL:       nifcloud.Bool(true),
+		Region:           nifcloud.String(endpoints.UsWest2RegionID),
 	}))
 	elastictranscoderSvc = elastictranscoder.New(sess)
 
@@ -97,218 +97,218 @@ func benchRESTJSONRequest(b *testing.B, reqFn func() *request.Request) {
 
 func elastictranscoderListJobsByPipeline() *elastictranscoder.ListJobsByPipelineInput {
 	return &elastictranscoder.ListJobsByPipelineInput{
-		PipelineId: aws.String("Id"), // Required
-		Ascending:  aws.String("Ascending"),
-		PageToken:  aws.String("Id"),
+		PipelineId: nifcloud.String("Id"), // Required
+		Ascending:  nifcloud.String("Ascending"),
+		PageToken:  nifcloud.String("Id"),
 	}
 }
 
 func elastictranscoderCreateJobInput() *elastictranscoder.CreateJobInput {
 	return &elastictranscoder.CreateJobInput{
 		Input: &elastictranscoder.JobInput{ // Required
-			AspectRatio: aws.String("AspectRatio"),
-			Container:   aws.String("JobContainer"),
+			AspectRatio: nifcloud.String("AspectRatio"),
+			Container:   nifcloud.String("JobContainer"),
 			DetectedProperties: &elastictranscoder.DetectedProperties{
-				DurationMillis: aws.Int64(1),
-				FileSize:       aws.Int64(1),
-				FrameRate:      aws.String("FloatString"),
-				Height:         aws.Int64(1),
-				Width:          aws.Int64(1),
+				DurationMillis: nifcloud.Int64(1),
+				FileSize:       nifcloud.Int64(1),
+				FrameRate:      nifcloud.String("FloatString"),
+				Height:         nifcloud.Int64(1),
+				Width:          nifcloud.Int64(1),
 			},
 			Encryption: &elastictranscoder.Encryption{
-				InitializationVector: aws.String("ZeroTo255String"),
-				Key:                  aws.String("Base64EncodedString"),
-				KeyMd5:               aws.String("Base64EncodedString"),
-				Mode:                 aws.String("EncryptionMode"),
+				InitializationVector: nifcloud.String("ZeroTo255String"),
+				Key:                  nifcloud.String("Base64EncodedString"),
+				KeyMd5:               nifcloud.String("Base64EncodedString"),
+				Mode:                 nifcloud.String("EncryptionMode"),
 			},
-			FrameRate:  aws.String("FrameRate"),
-			Interlaced: aws.String("Interlaced"),
-			Key:        aws.String("Key"),
-			Resolution: aws.String("Resolution"),
+			FrameRate:  nifcloud.String("FrameRate"),
+			Interlaced: nifcloud.String("Interlaced"),
+			Key:        nifcloud.String("Key"),
+			Resolution: nifcloud.String("Resolution"),
 		},
-		PipelineId: aws.String("Id"), // Required
+		PipelineId: nifcloud.String("Id"), // Required
 		Output: &elastictranscoder.CreateJobOutput{
 			AlbumArt: &elastictranscoder.JobAlbumArt{
 				Artwork: []*elastictranscoder.Artwork{
 					{ // Required
-						AlbumArtFormat: aws.String("JpgOrPng"),
+						AlbumArtFormat: nifcloud.String("JpgOrPng"),
 						Encryption: &elastictranscoder.Encryption{
-							InitializationVector: aws.String("ZeroTo255String"),
-							Key:                  aws.String("Base64EncodedString"),
-							KeyMd5:               aws.String("Base64EncodedString"),
-							Mode:                 aws.String("EncryptionMode"),
+							InitializationVector: nifcloud.String("ZeroTo255String"),
+							Key:                  nifcloud.String("Base64EncodedString"),
+							KeyMd5:               nifcloud.String("Base64EncodedString"),
+							Mode:                 nifcloud.String("EncryptionMode"),
 						},
-						InputKey:      aws.String("WatermarkKey"),
-						MaxHeight:     aws.String("DigitsOrAuto"),
-						MaxWidth:      aws.String("DigitsOrAuto"),
-						PaddingPolicy: aws.String("PaddingPolicy"),
-						SizingPolicy:  aws.String("SizingPolicy"),
+						InputKey:      nifcloud.String("WatermarkKey"),
+						MaxHeight:     nifcloud.String("DigitsOrAuto"),
+						MaxWidth:      nifcloud.String("DigitsOrAuto"),
+						PaddingPolicy: nifcloud.String("PaddingPolicy"),
+						SizingPolicy:  nifcloud.String("SizingPolicy"),
 					},
 					// More values...
 				},
-				MergePolicy: aws.String("MergePolicy"),
+				MergePolicy: nifcloud.String("MergePolicy"),
 			},
 			Captions: &elastictranscoder.Captions{
 				CaptionFormats: []*elastictranscoder.CaptionFormat{
 					{ // Required
 						Encryption: &elastictranscoder.Encryption{
-							InitializationVector: aws.String("ZeroTo255String"),
-							Key:                  aws.String("Base64EncodedString"),
-							KeyMd5:               aws.String("Base64EncodedString"),
-							Mode:                 aws.String("EncryptionMode"),
+							InitializationVector: nifcloud.String("ZeroTo255String"),
+							Key:                  nifcloud.String("Base64EncodedString"),
+							KeyMd5:               nifcloud.String("Base64EncodedString"),
+							Mode:                 nifcloud.String("EncryptionMode"),
 						},
-						Format:  aws.String("CaptionFormatFormat"),
-						Pattern: aws.String("CaptionFormatPattern"),
+						Format:  nifcloud.String("CaptionFormatFormat"),
+						Pattern: nifcloud.String("CaptionFormatPattern"),
 					},
 					// More values...
 				},
 				CaptionSources: []*elastictranscoder.CaptionSource{
 					{ // Required
 						Encryption: &elastictranscoder.Encryption{
-							InitializationVector: aws.String("ZeroTo255String"),
-							Key:                  aws.String("Base64EncodedString"),
-							KeyMd5:               aws.String("Base64EncodedString"),
-							Mode:                 aws.String("EncryptionMode"),
+							InitializationVector: nifcloud.String("ZeroTo255String"),
+							Key:                  nifcloud.String("Base64EncodedString"),
+							KeyMd5:               nifcloud.String("Base64EncodedString"),
+							Mode:                 nifcloud.String("EncryptionMode"),
 						},
-						Key:        aws.String("Key"),
-						Label:      aws.String("Name"),
-						Language:   aws.String("Key"),
-						TimeOffset: aws.String("TimeOffset"),
+						Key:        nifcloud.String("Key"),
+						Label:      nifcloud.String("Name"),
+						Language:   nifcloud.String("Key"),
+						TimeOffset: nifcloud.String("TimeOffset"),
 					},
 					// More values...
 				},
-				MergePolicy: aws.String("CaptionMergePolicy"),
+				MergePolicy: nifcloud.String("CaptionMergePolicy"),
 			},
 			Composition: []*elastictranscoder.Clip{
 				{ // Required
 					TimeSpan: &elastictranscoder.TimeSpan{
-						Duration:  aws.String("Time"),
-						StartTime: aws.String("Time"),
+						Duration:  nifcloud.String("Time"),
+						StartTime: nifcloud.String("Time"),
 					},
 				},
 				// More values...
 			},
 			Encryption: &elastictranscoder.Encryption{
-				InitializationVector: aws.String("ZeroTo255String"),
-				Key:                  aws.String("Base64EncodedString"),
-				KeyMd5:               aws.String("Base64EncodedString"),
-				Mode:                 aws.String("EncryptionMode"),
+				InitializationVector: nifcloud.String("ZeroTo255String"),
+				Key:                  nifcloud.String("Base64EncodedString"),
+				KeyMd5:               nifcloud.String("Base64EncodedString"),
+				Mode:                 nifcloud.String("EncryptionMode"),
 			},
-			Key:             aws.String("Key"),
-			PresetId:        aws.String("Id"),
-			Rotate:          aws.String("Rotate"),
-			SegmentDuration: aws.String("FloatString"),
+			Key:             nifcloud.String("Key"),
+			PresetId:        nifcloud.String("Id"),
+			Rotate:          nifcloud.String("Rotate"),
+			SegmentDuration: nifcloud.String("FloatString"),
 			ThumbnailEncryption: &elastictranscoder.Encryption{
-				InitializationVector: aws.String("ZeroTo255String"),
-				Key:                  aws.String("Base64EncodedString"),
-				KeyMd5:               aws.String("Base64EncodedString"),
-				Mode:                 aws.String("EncryptionMode"),
+				InitializationVector: nifcloud.String("ZeroTo255String"),
+				Key:                  nifcloud.String("Base64EncodedString"),
+				KeyMd5:               nifcloud.String("Base64EncodedString"),
+				Mode:                 nifcloud.String("EncryptionMode"),
 			},
-			ThumbnailPattern: aws.String("ThumbnailPattern"),
+			ThumbnailPattern: nifcloud.String("ThumbnailPattern"),
 			Watermarks: []*elastictranscoder.JobWatermark{
 				{ // Required
 					Encryption: &elastictranscoder.Encryption{
-						InitializationVector: aws.String("ZeroTo255String"),
-						Key:                  aws.String("Base64EncodedString"),
-						KeyMd5:               aws.String("Base64EncodedString"),
-						Mode:                 aws.String("EncryptionMode"),
+						InitializationVector: nifcloud.String("ZeroTo255String"),
+						Key:                  nifcloud.String("Base64EncodedString"),
+						KeyMd5:               nifcloud.String("Base64EncodedString"),
+						Mode:                 nifcloud.String("EncryptionMode"),
 					},
-					InputKey:          aws.String("WatermarkKey"),
-					PresetWatermarkId: aws.String("PresetWatermarkId"),
+					InputKey:          nifcloud.String("WatermarkKey"),
+					PresetWatermarkId: nifcloud.String("PresetWatermarkId"),
 				},
 				// More values...
 			},
 		},
-		OutputKeyPrefix: aws.String("Key"),
+		OutputKeyPrefix: nifcloud.String("Key"),
 		Outputs: []*elastictranscoder.CreateJobOutput{
 			{ // Required
 				AlbumArt: &elastictranscoder.JobAlbumArt{
 					Artwork: []*elastictranscoder.Artwork{
 						{ // Required
-							AlbumArtFormat: aws.String("JpgOrPng"),
+							AlbumArtFormat: nifcloud.String("JpgOrPng"),
 							Encryption: &elastictranscoder.Encryption{
-								InitializationVector: aws.String("ZeroTo255String"),
-								Key:                  aws.String("Base64EncodedString"),
-								KeyMd5:               aws.String("Base64EncodedString"),
-								Mode:                 aws.String("EncryptionMode"),
+								InitializationVector: nifcloud.String("ZeroTo255String"),
+								Key:                  nifcloud.String("Base64EncodedString"),
+								KeyMd5:               nifcloud.String("Base64EncodedString"),
+								Mode:                 nifcloud.String("EncryptionMode"),
 							},
-							InputKey:      aws.String("WatermarkKey"),
-							MaxHeight:     aws.String("DigitsOrAuto"),
-							MaxWidth:      aws.String("DigitsOrAuto"),
-							PaddingPolicy: aws.String("PaddingPolicy"),
-							SizingPolicy:  aws.String("SizingPolicy"),
+							InputKey:      nifcloud.String("WatermarkKey"),
+							MaxHeight:     nifcloud.String("DigitsOrAuto"),
+							MaxWidth:      nifcloud.String("DigitsOrAuto"),
+							PaddingPolicy: nifcloud.String("PaddingPolicy"),
+							SizingPolicy:  nifcloud.String("SizingPolicy"),
 						},
 						// More values...
 					},
-					MergePolicy: aws.String("MergePolicy"),
+					MergePolicy: nifcloud.String("MergePolicy"),
 				},
 				Captions: &elastictranscoder.Captions{
 					CaptionFormats: []*elastictranscoder.CaptionFormat{
 						{ // Required
 							Encryption: &elastictranscoder.Encryption{
-								InitializationVector: aws.String("ZeroTo255String"),
-								Key:                  aws.String("Base64EncodedString"),
-								KeyMd5:               aws.String("Base64EncodedString"),
-								Mode:                 aws.String("EncryptionMode"),
+								InitializationVector: nifcloud.String("ZeroTo255String"),
+								Key:                  nifcloud.String("Base64EncodedString"),
+								KeyMd5:               nifcloud.String("Base64EncodedString"),
+								Mode:                 nifcloud.String("EncryptionMode"),
 							},
-							Format:  aws.String("CaptionFormatFormat"),
-							Pattern: aws.String("CaptionFormatPattern"),
+							Format:  nifcloud.String("CaptionFormatFormat"),
+							Pattern: nifcloud.String("CaptionFormatPattern"),
 						},
 						// More values...
 					},
 					CaptionSources: []*elastictranscoder.CaptionSource{
 						{ // Required
 							Encryption: &elastictranscoder.Encryption{
-								InitializationVector: aws.String("ZeroTo255String"),
-								Key:                  aws.String("Base64EncodedString"),
-								KeyMd5:               aws.String("Base64EncodedString"),
-								Mode:                 aws.String("EncryptionMode"),
+								InitializationVector: nifcloud.String("ZeroTo255String"),
+								Key:                  nifcloud.String("Base64EncodedString"),
+								KeyMd5:               nifcloud.String("Base64EncodedString"),
+								Mode:                 nifcloud.String("EncryptionMode"),
 							},
-							Key:        aws.String("Key"),
-							Label:      aws.String("Name"),
-							Language:   aws.String("Key"),
-							TimeOffset: aws.String("TimeOffset"),
+							Key:        nifcloud.String("Key"),
+							Label:      nifcloud.String("Name"),
+							Language:   nifcloud.String("Key"),
+							TimeOffset: nifcloud.String("TimeOffset"),
 						},
 						// More values...
 					},
-					MergePolicy: aws.String("CaptionMergePolicy"),
+					MergePolicy: nifcloud.String("CaptionMergePolicy"),
 				},
 				Composition: []*elastictranscoder.Clip{
 					{ // Required
 						TimeSpan: &elastictranscoder.TimeSpan{
-							Duration:  aws.String("Time"),
-							StartTime: aws.String("Time"),
+							Duration:  nifcloud.String("Time"),
+							StartTime: nifcloud.String("Time"),
 						},
 					},
 					// More values...
 				},
 				Encryption: &elastictranscoder.Encryption{
-					InitializationVector: aws.String("ZeroTo255String"),
-					Key:                  aws.String("Base64EncodedString"),
-					KeyMd5:               aws.String("Base64EncodedString"),
-					Mode:                 aws.String("EncryptionMode"),
+					InitializationVector: nifcloud.String("ZeroTo255String"),
+					Key:                  nifcloud.String("Base64EncodedString"),
+					KeyMd5:               nifcloud.String("Base64EncodedString"),
+					Mode:                 nifcloud.String("EncryptionMode"),
 				},
-				Key:             aws.String("Key"),
-				PresetId:        aws.String("Id"),
-				Rotate:          aws.String("Rotate"),
-				SegmentDuration: aws.String("FloatString"),
+				Key:             nifcloud.String("Key"),
+				PresetId:        nifcloud.String("Id"),
+				Rotate:          nifcloud.String("Rotate"),
+				SegmentDuration: nifcloud.String("FloatString"),
 				ThumbnailEncryption: &elastictranscoder.Encryption{
-					InitializationVector: aws.String("ZeroTo255String"),
-					Key:                  aws.String("Base64EncodedString"),
-					KeyMd5:               aws.String("Base64EncodedString"),
-					Mode:                 aws.String("EncryptionMode"),
+					InitializationVector: nifcloud.String("ZeroTo255String"),
+					Key:                  nifcloud.String("Base64EncodedString"),
+					KeyMd5:               nifcloud.String("Base64EncodedString"),
+					Mode:                 nifcloud.String("EncryptionMode"),
 				},
-				ThumbnailPattern: aws.String("ThumbnailPattern"),
+				ThumbnailPattern: nifcloud.String("ThumbnailPattern"),
 				Watermarks: []*elastictranscoder.JobWatermark{
 					{ // Required
 						Encryption: &elastictranscoder.Encryption{
-							InitializationVector: aws.String("ZeroTo255String"),
-							Key:                  aws.String("Base64EncodedString"),
-							KeyMd5:               aws.String("Base64EncodedString"),
-							Mode:                 aws.String("EncryptionMode"),
+							InitializationVector: nifcloud.String("ZeroTo255String"),
+							Key:                  nifcloud.String("Base64EncodedString"),
+							KeyMd5:               nifcloud.String("Base64EncodedString"),
+							Mode:                 nifcloud.String("EncryptionMode"),
 						},
-						InputKey:          aws.String("WatermarkKey"),
-						PresetWatermarkId: aws.String("PresetWatermarkId"),
+						InputKey:          nifcloud.String("WatermarkKey"),
+						PresetWatermarkId: nifcloud.String("PresetWatermarkId"),
 					},
 					// More values...
 				},
@@ -317,33 +317,33 @@ func elastictranscoderCreateJobInput() *elastictranscoder.CreateJobInput {
 		},
 		Playlists: []*elastictranscoder.CreateJobPlaylist{
 			{ // Required
-				Format: aws.String("PlaylistFormat"),
+				Format: nifcloud.String("PlaylistFormat"),
 				HlsContentProtection: &elastictranscoder.HlsContentProtection{
-					InitializationVector:  aws.String("ZeroTo255String"),
-					Key:                   aws.String("Base64EncodedString"),
-					KeyMd5:                aws.String("Base64EncodedString"),
-					KeyStoragePolicy:      aws.String("KeyStoragePolicy"),
-					LicenseAcquisitionUrl: aws.String("ZeroTo512String"),
-					Method:                aws.String("HlsContentProtectionMethod"),
+					InitializationVector:  nifcloud.String("ZeroTo255String"),
+					Key:                   nifcloud.String("Base64EncodedString"),
+					KeyMd5:                nifcloud.String("Base64EncodedString"),
+					KeyStoragePolicy:      nifcloud.String("KeyStoragePolicy"),
+					LicenseAcquisitionUrl: nifcloud.String("ZeroTo512String"),
+					Method:                nifcloud.String("HlsContentProtectionMethod"),
 				},
-				Name: aws.String("Filename"),
+				Name: nifcloud.String("Filename"),
 				OutputKeys: []*string{
-					aws.String("Key"), // Required
+					nifcloud.String("Key"), // Required
 					// More values...
 				},
 				PlayReadyDrm: &elastictranscoder.PlayReadyDrm{
-					Format:                aws.String("PlayReadyDrmFormatString"),
-					InitializationVector:  aws.String("ZeroTo255String"),
-					Key:                   aws.String("NonEmptyBase64EncodedString"),
-					KeyId:                 aws.String("KeyIdGuid"),
-					KeyMd5:                aws.String("NonEmptyBase64EncodedString"),
-					LicenseAcquisitionUrl: aws.String("OneTo512String"),
+					Format:                nifcloud.String("PlayReadyDrmFormatString"),
+					InitializationVector:  nifcloud.String("ZeroTo255String"),
+					Key:                   nifcloud.String("NonEmptyBase64EncodedString"),
+					KeyId:                 nifcloud.String("KeyIdGuid"),
+					KeyMd5:                nifcloud.String("NonEmptyBase64EncodedString"),
+					LicenseAcquisitionUrl: nifcloud.String("OneTo512String"),
 				},
 			},
 			// More values...
 		},
 		UserMetadata: map[string]*string{
-			"Key": aws.String("String"), // Required
+			"Key": nifcloud.String("String"), // Required
 			// More values...
 		},
 	}

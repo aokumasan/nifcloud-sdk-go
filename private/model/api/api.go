@@ -296,8 +296,8 @@ var tplAPI = template.Must(template.New("api").Parse(`
 // APIGoCode renders the API in Go code. Returning it as a string
 func (a *API) APIGoCode() string {
 	a.resetImports()
-	a.imports["github.com/alice02/nifcloud-sdk-go/aws/awsutil"] = true
-	a.imports["github.com/alice02/nifcloud-sdk-go/aws/request"] = true
+	a.imports["github.com/alice02/nifcloud-sdk-go/nifcloud/awsutil"] = true
+	a.imports["github.com/alice02/nifcloud-sdk-go/nifcloud/request"] = true
 	if a.OperationHasOutputPlaceholder() {
 		a.imports["github.com/alice02/nifcloud-sdk-go/private/protocol/"+a.ProtocolPackage()] = true
 		a.imports["github.com/alice02/nifcloud-sdk-go/private/protocol"] = true
@@ -305,7 +305,7 @@ func (a *API) APIGoCode() string {
 
 	for _, op := range a.Operations {
 		if op.AuthType == "none" {
-			a.imports["github.com/alice02/nifcloud-sdk-go/aws/credentials"] = true
+			a.imports["github.com/alice02/nifcloud-sdk-go/nifcloud/credentials"] = true
 			break
 		}
 	}
@@ -414,8 +414,8 @@ var tplServiceDoc = template.Must(template.New("service docs").Funcs(template.Fu
 // See the SDK's documentation for more information on how to use the SDK.
 // https://docs.aws.amazon.com/sdk-for-go/api/
 // 
-// See aws.Config documentation for more information on configuring SDK clients.
-// https://docs.aws.amazon.com/sdk-for-go/api/aws/#Config
+// See nifcloud.Config documentation for more information on configuring SDK clients.
+// https://docs.aws.amazon.com/sdk-for-go/api/nifcloud/#Config
 //
 // See the {{ .Metadata.ServiceFullName }} client {{ .StructName }} for more
 // information on creating client for this service.
@@ -475,15 +475,15 @@ const (
 
 // New creates a new instance of the {{ .StructName }} client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a {{ .StructName }} client from just a session.
 //     svc := {{ .PackageName }}.New(mySession)
 //
 //     // Create a {{ .StructName }} client with additional configuration
-//     svc := {{ .PackageName }}.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func New(p client.ConfigProvider, cfgs ...*aws.Config) *{{ .StructName }} {
+//     svc := {{ .PackageName }}.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func New(p client.ConfigProvider, cfgs ...*nifcloud.Config) *{{ .StructName }} {
 	{{ if .Metadata.NoResolveEndpoint -}}
 		var c client.Config
 		if v, ok := p.(client.ConfigNoResolveEndpointProvider); ok {
@@ -504,7 +504,7 @@ func New(p client.ConfigProvider, cfgs ...*aws.Config) *{{ .StructName }} {
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *{{ .StructName }} {
+func newClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *{{ .StructName }} {
     svc := &{{ .StructName }}{
     	Client: client.New(
     		cfg,
@@ -581,17 +581,17 @@ func (a *API) ServicePackageDoc() string {
 // ServiceGoCode renders service go code. Returning it as a string.
 func (a *API) ServiceGoCode() string {
 	a.resetImports()
-	a.imports["github.com/alice02/nifcloud-sdk-go/aws/client"] = true
-	a.imports["github.com/alice02/nifcloud-sdk-go/aws/client/metadata"] = true
-	a.imports["github.com/alice02/nifcloud-sdk-go/aws/request"] = true
+	a.imports["github.com/alice02/nifcloud-sdk-go/nifcloud/client"] = true
+	a.imports["github.com/alice02/nifcloud-sdk-go/nifcloud/client/metadata"] = true
+	a.imports["github.com/alice02/nifcloud-sdk-go/nifcloud/request"] = true
 	if a.Metadata.SignatureVersion == "v2" {
 		a.imports["github.com/alice02/nifcloud-sdk-go/private/signer/v2"] = true
-		a.imports["github.com/alice02/nifcloud-sdk-go/aws/corehandlers"] = true
+		a.imports["github.com/alice02/nifcloud-sdk-go/nifcloud/corehandlers"] = true
 	} else if a.Metadata.SignatureVersion == "v2-computing" {
 		a.imports["github.com/alice02/nifcloud-sdk-go/private/signer/v2computing"] = true
-		a.imports["github.com/alice02/nifcloud-sdk-go/aws/corehandlers"] = true
+		a.imports["github.com/alice02/nifcloud-sdk-go/nifcloud/corehandlers"] = true
 	} else {
-		a.imports["github.com/alice02/nifcloud-sdk-go/aws/signer/v4"] = true
+		a.imports["github.com/alice02/nifcloud-sdk-go/nifcloud/signer/v4"] = true
 	}
 	a.imports["github.com/alice02/nifcloud-sdk-go/private/protocol/"+a.ProtocolPackage()] = true
 
@@ -622,7 +622,7 @@ func (a *API) ExampleGoCode() string {
 		"fmt",
 		"time",
 		"github.com/alice02/nifcloud-sdk-go/aws",
-		"github.com/alice02/nifcloud-sdk-go/aws/session",
+		"github.com/alice02/nifcloud-sdk-go/nifcloud/session",
 		path.Join(a.SvcClientImportPath, a.PackageName()),
 	)
 	for k := range imports {
@@ -700,7 +700,7 @@ func (a *API) InterfaceGoCode() string {
 	a.resetImports()
 	a.imports = map[string]bool{
 		"github.com/alice02/nifcloud-sdk-go/aws":          true,
-		"github.com/alice02/nifcloud-sdk-go/aws/request":  true,
+		"github.com/alice02/nifcloud-sdk-go/nifcloud/request":  true,
 		path.Join(a.SvcClientImportPath, a.PackageName()): true,
 	}
 

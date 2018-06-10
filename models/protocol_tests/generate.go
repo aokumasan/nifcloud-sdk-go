@@ -63,7 +63,7 @@ var _ = ioutil.Discard
 var _ = util.Trim("")
 var _ = url.Values{}
 var _ = io.EOF
-var _ = aws.String
+var _ = nifcloud.String
 var _ = fmt.Println
 var _ = reflect.Value{}
 
@@ -129,7 +129,7 @@ func (t *testSuite) TestSuite() string {
 
 var tplInputTestCase = template.Must(template.New("inputcase").Parse(`
 func Test{{ .OpName }}(t *testing.T) {
-	svc := New{{ .TestCase.TestSuite.API.StructName }}(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := New{{ .TestCase.TestSuite.API.StructName }}(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	{{ if ne .ParamsString "" }}input := {{ .ParamsString }}
 	{{ range $k, $v := .JSONValues -}}
 	input.{{ $k }} = {{ $v }} 
@@ -226,7 +226,7 @@ func fmtAssertNil(v string) string {
 
 var tplOutputTestCase = template.Must(template.New("outputcase").Parse(`
 func Test{{ .OpName }}(t *testing.T) {
-	svc := New{{ .TestCase.TestSuite.API.StructName }}(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := New{{ .TestCase.TestSuite.API.StructName }}(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 
 	buf := bytes.NewReader([]byte({{ .Body }}))
 	req, out := svc.{{ .TestCase.Given.ExportedName }}Request(nil)
@@ -318,7 +318,7 @@ func (i *testCase) TestCase(idx int) string {
 }
 
 func serializeJSONValue(m map[string]interface{}) string {
-	str := "aws.JSONValue"
+	str := "nifcloud.JSONValue"
 	str += walkMap(m)
 	return str
 }

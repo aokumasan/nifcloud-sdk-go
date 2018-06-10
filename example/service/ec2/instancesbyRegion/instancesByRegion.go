@@ -8,8 +8,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/ec2"
 )
 
@@ -42,16 +42,16 @@ func main() {
 	}
 
 	for _, region := range regions {
-		sess := session.Must(session.NewSession(&aws.Config{
-			Region: aws.String(region),
+		sess := session.Must(session.NewSession(&nifcloud.Config{
+			Region: nifcloud.String(region),
 		}))
 
 		ec2Svc := ec2.New(sess)
 		params := &ec2.DescribeInstancesInput{
 			Filters: []*ec2.Filter{
 				&ec2.Filter{
-					Name:   aws.String("instance-state-name"),
-					Values: aws.StringSlice(states),
+					Name:   nifcloud.String("instance-state-name"),
+					Values: nifcloud.StringSlice(states),
 				},
 			},
 		}
@@ -78,7 +78,7 @@ func main() {
 }
 
 func fetchRegion() ([]string, error) {
-	awsSession := session.Must(session.NewSession(&aws.Config{}))
+	awsSession := session.Must(session.NewSession(&nifcloud.Config{}))
 
 	svc := ec2.New(awsSession)
 	awsRegions, err := svc.DescribeRegions(&ec2.DescribeRegionsInput{})

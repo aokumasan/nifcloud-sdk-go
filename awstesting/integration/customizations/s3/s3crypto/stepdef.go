@@ -12,8 +12,8 @@ import (
 
 	"github.com/gucumber/gucumber"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/kms"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 	"github.com/alice02/nifcloud-sdk-go/service/s3/s3crypto"
@@ -27,8 +27,8 @@ func init() {
 			s3Client := gucumber.World["client"].(*s3.S3)
 
 			out, err := s3Client.ListObjects(&s3.ListObjectsInput{
-				Bucket: aws.String(bucket),
-				Prefix: aws.String(baseFolder + "/" + prefix),
+				Bucket: nifcloud.String(bucket),
+				Prefix: nifcloud.String(baseFolder + "/" + prefix),
 			})
 			if err != nil {
 				gucumber.T.Errorf("expect no error, got %v", err)
@@ -38,7 +38,7 @@ func init() {
 			for _, obj := range out.Contents {
 				plaintextKey := obj.Key
 				ptObj, err := s3Client.GetObject(&s3.GetObjectInput{
-					Bucket: aws.String(bucket),
+					Bucket: nifcloud.String(bucket),
 					Key:    plaintextKey,
 				})
 				if err != nil {
@@ -72,7 +72,7 @@ func init() {
 
 			// To get metadata for encryption key
 			ctObj, err := s3Client.GetObject(&s3.GetObjectInput{
-				Bucket: aws.String(bucket),
+				Bucket: nifcloud.String(bucket),
 				Key:    &cipherKey,
 			})
 			if err != nil {
@@ -85,7 +85,7 @@ func init() {
 			}
 
 			ctObj, err = s3CryptoClient.GetObject(&s3.GetObjectInput{
-				Bucket: aws.String(bucket),
+				Bucket: nifcloud.String(bucket),
 				Key:    &cipherKey,
 			},
 			)
@@ -131,7 +131,7 @@ func init() {
 			}
 			gucumber.World["Masterkey"] = b64Arn
 
-			handler = s3crypto.NewKMSKeyGenerator(kms.New(session.New(&aws.Config{
+			handler = s3crypto.NewKMSKeyGenerator(kms.New(session.New(&nifcloud.Config{
 				Region: &v2,
 			})), arn)
 			if err != nil {
@@ -150,8 +150,8 @@ func init() {
 			gucumber.T.Skip()
 		}
 
-		sess := session.New(&aws.Config{
-			Region: aws.String("us-west-2"),
+		sess := session.New(&nifcloud.Config{
+			Region: nifcloud.String("us-west-2"),
 		})
 		c := s3crypto.NewEncryptionClient(sess, builder, func(c *s3crypto.EncryptionClient) {
 		})
@@ -168,7 +168,7 @@ func init() {
 		for caseKey, plaintext := range plaintexts {
 			input := &s3.PutObjectInput{
 				Bucket: &bucket,
-				Key:    aws.String("crypto_tests/" + cek + "/" + folder + "/language_" + language + "/ciphertext_test_case_" + caseKey),
+				Key:    nifcloud.String("crypto_tests/" + cek + "/" + folder + "/language_" + language + "/ciphertext_test_case_" + caseKey),
 				Body:   bytes.NewReader(plaintext),
 				Metadata: map[string]*string{
 					"Masterkey": &key,
@@ -185,7 +185,7 @@ func init() {
 
 func getAliasInformation(alias, region string) (string, error) {
 	arn := ""
-	svc := kms.New(session.New(&aws.Config{
+	svc := kms.New(session.New(&nifcloud.Config{
 		Region: &region,
 	}))
 

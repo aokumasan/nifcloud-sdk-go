@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol"
 )
 
@@ -51,7 +51,7 @@ func buildAny(value reflect.Value, buf *bytes.Buffer, tag reflect.StructTag) err
 			}
 		case reflect.Map:
 			// cannot be a JSONValue map
-			if _, ok := value.Interface().(aws.JSONValue); !ok {
+			if _, ok := value.Interface().(nifcloud.JSONValue); !ok {
 				t = "map"
 			}
 		}
@@ -234,7 +234,7 @@ func buildScalar(v reflect.Value, buf *bytes.Buffer, tag reflect.StructTag) erro
 				}
 				buf.WriteByte('"')
 			}
-		case aws.JSONValue:
+		case nifcloud.JSONValue:
 			str, err := protocol.EncodeJSONValue(converted, protocol.QuotedEscape)
 			if err != nil {
 				return fmt.Errorf("unable to encode JSONValue, %v", err)

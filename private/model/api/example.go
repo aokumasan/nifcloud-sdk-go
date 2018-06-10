@@ -179,13 +179,13 @@ func getValue(t, v string) string {
 	}
 	switch t {
 	case "string":
-		return fmt.Sprintf("aws.String(%q)", v)
+		return fmt.Sprintf("nifcloud.String(%q)", v)
 	case "integer", "long", "int64":
-		return fmt.Sprintf("aws.Int64(%s)", v)
+		return fmt.Sprintf("nifcloud.Int64(%s)", v)
 	case "float", "float64", "double":
-		return fmt.Sprintf("aws.Float64(%s)", v)
+		return fmt.Sprintf("nifcloud.Float64(%s)", v)
 	case "boolean":
-		return fmt.Sprintf("aws.Bool(%s)", v)
+		return fmt.Sprintf("nifcloud.Bool(%s)", v)
 	default:
 		panic("Unsupported type: " + t)
 	}
@@ -249,7 +249,7 @@ import (
 
 var _ time.Duration
 var _ strings.Reader
-var _ aws.Config
+var _ nifcloud.Config
 
 func parseTime(layout, value string) *time.Time {
 	t, err := time.Parse(layout, value)
