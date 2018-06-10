@@ -9,8 +9,8 @@
 package nasiface
 
 import (
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/service/nas"
 )
 
@@ -61,47 +61,47 @@ import (
 // tooling to generate mocks to satisfy the interfaces.
 type NasAPI interface {
 	AuthorizeNASSecurityGroupIngress(*nas.AuthorizeNASSecurityGroupIngressInput) (*nas.AuthorizeNASSecurityGroupIngressOutput, error)
-	AuthorizeNASSecurityGroupIngressWithContext(aws.Context, *nas.AuthorizeNASSecurityGroupIngressInput, ...request.Option) (*nas.AuthorizeNASSecurityGroupIngressOutput, error)
+	AuthorizeNASSecurityGroupIngressWithContext(nifcloud.Context, *nas.AuthorizeNASSecurityGroupIngressInput, ...request.Option) (*nas.AuthorizeNASSecurityGroupIngressOutput, error)
 	AuthorizeNASSecurityGroupIngressRequest(*nas.AuthorizeNASSecurityGroupIngressInput) (*request.Request, *nas.AuthorizeNASSecurityGroupIngressOutput)
 
 	CreateNASInstance(*nas.CreateNASInstanceInput) (*nas.CreateNASInstanceOutput, error)
-	CreateNASInstanceWithContext(aws.Context, *nas.CreateNASInstanceInput, ...request.Option) (*nas.CreateNASInstanceOutput, error)
+	CreateNASInstanceWithContext(nifcloud.Context, *nas.CreateNASInstanceInput, ...request.Option) (*nas.CreateNASInstanceOutput, error)
 	CreateNASInstanceRequest(*nas.CreateNASInstanceInput) (*request.Request, *nas.CreateNASInstanceOutput)
 
 	CreateNASSecurityGroup(*nas.CreateNASSecurityGroupInput) (*nas.CreateNASSecurityGroupOutput, error)
-	CreateNASSecurityGroupWithContext(aws.Context, *nas.CreateNASSecurityGroupInput, ...request.Option) (*nas.CreateNASSecurityGroupOutput, error)
+	CreateNASSecurityGroupWithContext(nifcloud.Context, *nas.CreateNASSecurityGroupInput, ...request.Option) (*nas.CreateNASSecurityGroupOutput, error)
 	CreateNASSecurityGroupRequest(*nas.CreateNASSecurityGroupInput) (*request.Request, *nas.CreateNASSecurityGroupOutput)
 
 	DeleteNASInstance(*nas.DeleteNASInstanceInput) (*nas.DeleteNASInstanceOutput, error)
-	DeleteNASInstanceWithContext(aws.Context, *nas.DeleteNASInstanceInput, ...request.Option) (*nas.DeleteNASInstanceOutput, error)
+	DeleteNASInstanceWithContext(nifcloud.Context, *nas.DeleteNASInstanceInput, ...request.Option) (*nas.DeleteNASInstanceOutput, error)
 	DeleteNASInstanceRequest(*nas.DeleteNASInstanceInput) (*request.Request, *nas.DeleteNASInstanceOutput)
 
 	DeleteNASSecurityGroup(*nas.DeleteNASSecurityGroupInput) (*nas.DeleteNASSecurityGroupOutput, error)
-	DeleteNASSecurityGroupWithContext(aws.Context, *nas.DeleteNASSecurityGroupInput, ...request.Option) (*nas.DeleteNASSecurityGroupOutput, error)
+	DeleteNASSecurityGroupWithContext(nifcloud.Context, *nas.DeleteNASSecurityGroupInput, ...request.Option) (*nas.DeleteNASSecurityGroupOutput, error)
 	DeleteNASSecurityGroupRequest(*nas.DeleteNASSecurityGroupInput) (*request.Request, *nas.DeleteNASSecurityGroupOutput)
 
 	DescribeNASInstances(*nas.DescribeNASInstancesInput) (*nas.DescribeNASInstancesOutput, error)
-	DescribeNASInstancesWithContext(aws.Context, *nas.DescribeNASInstancesInput, ...request.Option) (*nas.DescribeNASInstancesOutput, error)
+	DescribeNASInstancesWithContext(nifcloud.Context, *nas.DescribeNASInstancesInput, ...request.Option) (*nas.DescribeNASInstancesOutput, error)
 	DescribeNASInstancesRequest(*nas.DescribeNASInstancesInput) (*request.Request, *nas.DescribeNASInstancesOutput)
 
 	DescribeNASSecurityGroups(*nas.DescribeNASSecurityGroupsInput) (*nas.DescribeNASSecurityGroupsOutput, error)
-	DescribeNASSecurityGroupsWithContext(aws.Context, *nas.DescribeNASSecurityGroupsInput, ...request.Option) (*nas.DescribeNASSecurityGroupsOutput, error)
+	DescribeNASSecurityGroupsWithContext(nifcloud.Context, *nas.DescribeNASSecurityGroupsInput, ...request.Option) (*nas.DescribeNASSecurityGroupsOutput, error)
 	DescribeNASSecurityGroupsRequest(*nas.DescribeNASSecurityGroupsInput) (*request.Request, *nas.DescribeNASSecurityGroupsOutput)
 
 	GetMetricStatistics(*nas.GetMetricStatisticsInput) (*nas.GetMetricStatisticsOutput, error)
-	GetMetricStatisticsWithContext(aws.Context, *nas.GetMetricStatisticsInput, ...request.Option) (*nas.GetMetricStatisticsOutput, error)
+	GetMetricStatisticsWithContext(nifcloud.Context, *nas.GetMetricStatisticsInput, ...request.Option) (*nas.GetMetricStatisticsOutput, error)
 	GetMetricStatisticsRequest(*nas.GetMetricStatisticsInput) (*request.Request, *nas.GetMetricStatisticsOutput)
 
 	ModifyNASInstance(*nas.ModifyNASInstanceInput) (*nas.ModifyNASInstanceOutput, error)
-	ModifyNASInstanceWithContext(aws.Context, *nas.ModifyNASInstanceInput, ...request.Option) (*nas.ModifyNASInstanceOutput, error)
+	ModifyNASInstanceWithContext(nifcloud.Context, *nas.ModifyNASInstanceInput, ...request.Option) (*nas.ModifyNASInstanceOutput, error)
 	ModifyNASInstanceRequest(*nas.ModifyNASInstanceInput) (*request.Request, *nas.ModifyNASInstanceOutput)
 
 	ModifyNASSecurityGroup(*nas.ModifyNASSecurityGroupInput) (*nas.ModifyNASSecurityGroupOutput, error)
-	ModifyNASSecurityGroupWithContext(aws.Context, *nas.ModifyNASSecurityGroupInput, ...request.Option) (*nas.ModifyNASSecurityGroupOutput, error)
+	ModifyNASSecurityGroupWithContext(nifcloud.Context, *nas.ModifyNASSecurityGroupInput, ...request.Option) (*nas.ModifyNASSecurityGroupOutput, error)
 	ModifyNASSecurityGroupRequest(*nas.ModifyNASSecurityGroupInput) (*request.Request, *nas.ModifyNASSecurityGroupOutput)
 
 	RevokeNASSecurityGroupIngress(*nas.RevokeNASSecurityGroupIngressInput) (*nas.RevokeNASSecurityGroupIngressOutput, error)
-	RevokeNASSecurityGroupIngressWithContext(aws.Context, *nas.RevokeNASSecurityGroupIngressInput, ...request.Option) (*nas.RevokeNASSecurityGroupIngressOutput, error)
+	RevokeNASSecurityGroupIngressWithContext(nifcloud.Context, *nas.RevokeNASSecurityGroupIngressInput, ...request.Option) (*nas.RevokeNASSecurityGroupIngressOutput, error)
 	RevokeNASSecurityGroupIngressRequest(*nas.RevokeNASSecurityGroupIngressInput) (*request.Request, *nas.RevokeNASSecurityGroupIngressOutput)
 }
 

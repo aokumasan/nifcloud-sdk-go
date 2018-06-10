@@ -5,7 +5,7 @@
 package unitTest
 
 import (
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 	"github.com/alice02/nifcloud-sdk-go/service/dynamodb"
 	"github.com/alice02/nifcloud-sdk-go/service/dynamodb/dynamodbattribute"
 	"github.com/alice02/nifcloud-sdk-go/service/dynamodb/dynamodbiface"
@@ -24,12 +24,12 @@ func (ig *ItemGetter) Get(id string) (value string) {
 	var input = &dynamodb.GetItemInput{
 		Key: map[string]*dynamodb.AttributeValue{
 			"id": {
-				S: aws.String(id),
+				S: nifcloud.String(id),
 			},
 		},
-		TableName: aws.String("my_table"),
+		TableName: nifcloud.String("my_table"),
 		AttributesToGet: []*string{
-			aws.String("value"),
+			nifcloud.String("value"),
 		},
 	}
 	if output, err := ig.DynamoDB.GetItem(input); err == nil {

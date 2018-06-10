@@ -5,16 +5,16 @@ package rdb
 import (
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awsutil"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awsutil"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/query"
 )
 
 const opAddSourceIdentifierToSubscription = "AddSourceIdentifierToSubscription"
 
-// AddSourceIdentifierToSubscriptionRequest generates a "aws/request.Request" representing the
+// AddSourceIdentifierToSubscriptionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the AddSourceIdentifierToSubscription operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -77,7 +77,7 @@ func (c *Rdb) AddSourceIdentifierToSubscription(input *AddSourceIdentifierToSubs
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) AddSourceIdentifierToSubscriptionWithContext(ctx aws.Context, input *AddSourceIdentifierToSubscriptionInput, opts ...request.Option) (*AddSourceIdentifierToSubscriptionOutput, error) {
+func (c *Rdb) AddSourceIdentifierToSubscriptionWithContext(ctx nifcloud.Context, input *AddSourceIdentifierToSubscriptionInput, opts ...request.Option) (*AddSourceIdentifierToSubscriptionOutput, error) {
 	req, out := c.AddSourceIdentifierToSubscriptionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -86,7 +86,7 @@ func (c *Rdb) AddSourceIdentifierToSubscriptionWithContext(ctx aws.Context, inpu
 
 const opAuthorizeDBSecurityGroupIngress = "AuthorizeDBSecurityGroupIngress"
 
-// AuthorizeDBSecurityGroupIngressRequest generates a "aws/request.Request" representing the
+// AuthorizeDBSecurityGroupIngressRequest generates a "nifcloud/request.Request" representing the
 // client's request for the AuthorizeDBSecurityGroupIngress operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -149,7 +149,7 @@ func (c *Rdb) AuthorizeDBSecurityGroupIngress(input *AuthorizeDBSecurityGroupIng
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) AuthorizeDBSecurityGroupIngressWithContext(ctx aws.Context, input *AuthorizeDBSecurityGroupIngressInput, opts ...request.Option) (*AuthorizeDBSecurityGroupIngressOutput, error) {
+func (c *Rdb) AuthorizeDBSecurityGroupIngressWithContext(ctx nifcloud.Context, input *AuthorizeDBSecurityGroupIngressInput, opts ...request.Option) (*AuthorizeDBSecurityGroupIngressOutput, error) {
 	req, out := c.AuthorizeDBSecurityGroupIngressRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -158,7 +158,7 @@ func (c *Rdb) AuthorizeDBSecurityGroupIngressWithContext(ctx aws.Context, input 
 
 const opCopyDBSnapshot = "CopyDBSnapshot"
 
-// CopyDBSnapshotRequest generates a "aws/request.Request" representing the
+// CopyDBSnapshotRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CopyDBSnapshot operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -221,7 +221,7 @@ func (c *Rdb) CopyDBSnapshot(input *CopyDBSnapshotInput) (*CopyDBSnapshotOutput,
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) CopyDBSnapshotWithContext(ctx aws.Context, input *CopyDBSnapshotInput, opts ...request.Option) (*CopyDBSnapshotOutput, error) {
+func (c *Rdb) CopyDBSnapshotWithContext(ctx nifcloud.Context, input *CopyDBSnapshotInput, opts ...request.Option) (*CopyDBSnapshotOutput, error) {
 	req, out := c.CopyDBSnapshotRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -230,7 +230,7 @@ func (c *Rdb) CopyDBSnapshotWithContext(ctx aws.Context, input *CopyDBSnapshotIn
 
 const opCreateDBInstance = "CreateDBInstance"
 
-// CreateDBInstanceRequest generates a "aws/request.Request" representing the
+// CreateDBInstanceRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateDBInstance operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -293,7 +293,7 @@ func (c *Rdb) CreateDBInstance(input *CreateDBInstanceInput) (*CreateDBInstanceO
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) CreateDBInstanceWithContext(ctx aws.Context, input *CreateDBInstanceInput, opts ...request.Option) (*CreateDBInstanceOutput, error) {
+func (c *Rdb) CreateDBInstanceWithContext(ctx nifcloud.Context, input *CreateDBInstanceInput, opts ...request.Option) (*CreateDBInstanceOutput, error) {
 	req, out := c.CreateDBInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -302,7 +302,7 @@ func (c *Rdb) CreateDBInstanceWithContext(ctx aws.Context, input *CreateDBInstan
 
 const opCreateDBInstanceReadReplica = "CreateDBInstanceReadReplica"
 
-// CreateDBInstanceReadReplicaRequest generates a "aws/request.Request" representing the
+// CreateDBInstanceReadReplicaRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateDBInstanceReadReplica operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -365,7 +365,7 @@ func (c *Rdb) CreateDBInstanceReadReplica(input *CreateDBInstanceReadReplicaInpu
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) CreateDBInstanceReadReplicaWithContext(ctx aws.Context, input *CreateDBInstanceReadReplicaInput, opts ...request.Option) (*CreateDBInstanceReadReplicaOutput, error) {
+func (c *Rdb) CreateDBInstanceReadReplicaWithContext(ctx nifcloud.Context, input *CreateDBInstanceReadReplicaInput, opts ...request.Option) (*CreateDBInstanceReadReplicaOutput, error) {
 	req, out := c.CreateDBInstanceReadReplicaRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -374,7 +374,7 @@ func (c *Rdb) CreateDBInstanceReadReplicaWithContext(ctx aws.Context, input *Cre
 
 const opCreateDBParameterGroup = "CreateDBParameterGroup"
 
-// CreateDBParameterGroupRequest generates a "aws/request.Request" representing the
+// CreateDBParameterGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateDBParameterGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -437,7 +437,7 @@ func (c *Rdb) CreateDBParameterGroup(input *CreateDBParameterGroupInput) (*Creat
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) CreateDBParameterGroupWithContext(ctx aws.Context, input *CreateDBParameterGroupInput, opts ...request.Option) (*CreateDBParameterGroupOutput, error) {
+func (c *Rdb) CreateDBParameterGroupWithContext(ctx nifcloud.Context, input *CreateDBParameterGroupInput, opts ...request.Option) (*CreateDBParameterGroupOutput, error) {
 	req, out := c.CreateDBParameterGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -446,7 +446,7 @@ func (c *Rdb) CreateDBParameterGroupWithContext(ctx aws.Context, input *CreateDB
 
 const opCreateDBSecurityGroup = "CreateDBSecurityGroup"
 
-// CreateDBSecurityGroupRequest generates a "aws/request.Request" representing the
+// CreateDBSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateDBSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -509,7 +509,7 @@ func (c *Rdb) CreateDBSecurityGroup(input *CreateDBSecurityGroupInput) (*CreateD
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) CreateDBSecurityGroupWithContext(ctx aws.Context, input *CreateDBSecurityGroupInput, opts ...request.Option) (*CreateDBSecurityGroupOutput, error) {
+func (c *Rdb) CreateDBSecurityGroupWithContext(ctx nifcloud.Context, input *CreateDBSecurityGroupInput, opts ...request.Option) (*CreateDBSecurityGroupOutput, error) {
 	req, out := c.CreateDBSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -518,7 +518,7 @@ func (c *Rdb) CreateDBSecurityGroupWithContext(ctx aws.Context, input *CreateDBS
 
 const opCreateDBSnapshot = "CreateDBSnapshot"
 
-// CreateDBSnapshotRequest generates a "aws/request.Request" representing the
+// CreateDBSnapshotRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateDBSnapshot operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -581,7 +581,7 @@ func (c *Rdb) CreateDBSnapshot(input *CreateDBSnapshotInput) (*CreateDBSnapshotO
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) CreateDBSnapshotWithContext(ctx aws.Context, input *CreateDBSnapshotInput, opts ...request.Option) (*CreateDBSnapshotOutput, error) {
+func (c *Rdb) CreateDBSnapshotWithContext(ctx nifcloud.Context, input *CreateDBSnapshotInput, opts ...request.Option) (*CreateDBSnapshotOutput, error) {
 	req, out := c.CreateDBSnapshotRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -590,7 +590,7 @@ func (c *Rdb) CreateDBSnapshotWithContext(ctx aws.Context, input *CreateDBSnapsh
 
 const opCreateEventSubscription = "CreateEventSubscription"
 
-// CreateEventSubscriptionRequest generates a "aws/request.Request" representing the
+// CreateEventSubscriptionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateEventSubscription operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -653,7 +653,7 @@ func (c *Rdb) CreateEventSubscription(input *CreateEventSubscriptionInput) (*Cre
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) CreateEventSubscriptionWithContext(ctx aws.Context, input *CreateEventSubscriptionInput, opts ...request.Option) (*CreateEventSubscriptionOutput, error) {
+func (c *Rdb) CreateEventSubscriptionWithContext(ctx nifcloud.Context, input *CreateEventSubscriptionInput, opts ...request.Option) (*CreateEventSubscriptionOutput, error) {
 	req, out := c.CreateEventSubscriptionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -662,7 +662,7 @@ func (c *Rdb) CreateEventSubscriptionWithContext(ctx aws.Context, input *CreateE
 
 const opDeleteDBInstance = "DeleteDBInstance"
 
-// DeleteDBInstanceRequest generates a "aws/request.Request" representing the
+// DeleteDBInstanceRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteDBInstance operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -725,7 +725,7 @@ func (c *Rdb) DeleteDBInstance(input *DeleteDBInstanceInput) (*DeleteDBInstanceO
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DeleteDBInstanceWithContext(ctx aws.Context, input *DeleteDBInstanceInput, opts ...request.Option) (*DeleteDBInstanceOutput, error) {
+func (c *Rdb) DeleteDBInstanceWithContext(ctx nifcloud.Context, input *DeleteDBInstanceInput, opts ...request.Option) (*DeleteDBInstanceOutput, error) {
 	req, out := c.DeleteDBInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -734,7 +734,7 @@ func (c *Rdb) DeleteDBInstanceWithContext(ctx aws.Context, input *DeleteDBInstan
 
 const opDeleteDBParameterGroup = "DeleteDBParameterGroup"
 
-// DeleteDBParameterGroupRequest generates a "aws/request.Request" representing the
+// DeleteDBParameterGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteDBParameterGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -799,7 +799,7 @@ func (c *Rdb) DeleteDBParameterGroup(input *DeleteDBParameterGroupInput) (*Delet
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DeleteDBParameterGroupWithContext(ctx aws.Context, input *DeleteDBParameterGroupInput, opts ...request.Option) (*DeleteDBParameterGroupOutput, error) {
+func (c *Rdb) DeleteDBParameterGroupWithContext(ctx nifcloud.Context, input *DeleteDBParameterGroupInput, opts ...request.Option) (*DeleteDBParameterGroupOutput, error) {
 	req, out := c.DeleteDBParameterGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -808,7 +808,7 @@ func (c *Rdb) DeleteDBParameterGroupWithContext(ctx aws.Context, input *DeleteDB
 
 const opDeleteDBSecurityGroup = "DeleteDBSecurityGroup"
 
-// DeleteDBSecurityGroupRequest generates a "aws/request.Request" representing the
+// DeleteDBSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteDBSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -873,7 +873,7 @@ func (c *Rdb) DeleteDBSecurityGroup(input *DeleteDBSecurityGroupInput) (*DeleteD
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DeleteDBSecurityGroupWithContext(ctx aws.Context, input *DeleteDBSecurityGroupInput, opts ...request.Option) (*DeleteDBSecurityGroupOutput, error) {
+func (c *Rdb) DeleteDBSecurityGroupWithContext(ctx nifcloud.Context, input *DeleteDBSecurityGroupInput, opts ...request.Option) (*DeleteDBSecurityGroupOutput, error) {
 	req, out := c.DeleteDBSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -882,7 +882,7 @@ func (c *Rdb) DeleteDBSecurityGroupWithContext(ctx aws.Context, input *DeleteDBS
 
 const opDeleteDBSnapshot = "DeleteDBSnapshot"
 
-// DeleteDBSnapshotRequest generates a "aws/request.Request" representing the
+// DeleteDBSnapshotRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteDBSnapshot operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -945,7 +945,7 @@ func (c *Rdb) DeleteDBSnapshot(input *DeleteDBSnapshotInput) (*DeleteDBSnapshotO
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DeleteDBSnapshotWithContext(ctx aws.Context, input *DeleteDBSnapshotInput, opts ...request.Option) (*DeleteDBSnapshotOutput, error) {
+func (c *Rdb) DeleteDBSnapshotWithContext(ctx nifcloud.Context, input *DeleteDBSnapshotInput, opts ...request.Option) (*DeleteDBSnapshotOutput, error) {
 	req, out := c.DeleteDBSnapshotRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -954,7 +954,7 @@ func (c *Rdb) DeleteDBSnapshotWithContext(ctx aws.Context, input *DeleteDBSnapsh
 
 const opDeleteEventSubscription = "DeleteEventSubscription"
 
-// DeleteEventSubscriptionRequest generates a "aws/request.Request" representing the
+// DeleteEventSubscriptionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteEventSubscription operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1017,7 +1017,7 @@ func (c *Rdb) DeleteEventSubscription(input *DeleteEventSubscriptionInput) (*Del
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DeleteEventSubscriptionWithContext(ctx aws.Context, input *DeleteEventSubscriptionInput, opts ...request.Option) (*DeleteEventSubscriptionOutput, error) {
+func (c *Rdb) DeleteEventSubscriptionWithContext(ctx nifcloud.Context, input *DeleteEventSubscriptionInput, opts ...request.Option) (*DeleteEventSubscriptionOutput, error) {
 	req, out := c.DeleteEventSubscriptionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1026,7 +1026,7 @@ func (c *Rdb) DeleteEventSubscriptionWithContext(ctx aws.Context, input *DeleteE
 
 const opDescribeDBEngineVersions = "DescribeDBEngineVersions"
 
-// DescribeDBEngineVersionsRequest generates a "aws/request.Request" representing the
+// DescribeDBEngineVersionsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeDBEngineVersions operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1089,7 +1089,7 @@ func (c *Rdb) DescribeDBEngineVersions(input *DescribeDBEngineVersionsInput) (*D
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeDBEngineVersionsWithContext(ctx aws.Context, input *DescribeDBEngineVersionsInput, opts ...request.Option) (*DescribeDBEngineVersionsOutput, error) {
+func (c *Rdb) DescribeDBEngineVersionsWithContext(ctx nifcloud.Context, input *DescribeDBEngineVersionsInput, opts ...request.Option) (*DescribeDBEngineVersionsOutput, error) {
 	req, out := c.DescribeDBEngineVersionsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1098,7 +1098,7 @@ func (c *Rdb) DescribeDBEngineVersionsWithContext(ctx aws.Context, input *Descri
 
 const opDescribeDBInstances = "DescribeDBInstances"
 
-// DescribeDBInstancesRequest generates a "aws/request.Request" representing the
+// DescribeDBInstancesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeDBInstances operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1161,7 +1161,7 @@ func (c *Rdb) DescribeDBInstances(input *DescribeDBInstancesInput) (*DescribeDBI
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeDBInstancesWithContext(ctx aws.Context, input *DescribeDBInstancesInput, opts ...request.Option) (*DescribeDBInstancesOutput, error) {
+func (c *Rdb) DescribeDBInstancesWithContext(ctx nifcloud.Context, input *DescribeDBInstancesInput, opts ...request.Option) (*DescribeDBInstancesOutput, error) {
 	req, out := c.DescribeDBInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1170,7 +1170,7 @@ func (c *Rdb) DescribeDBInstancesWithContext(ctx aws.Context, input *DescribeDBI
 
 const opDescribeDBLogFiles = "DescribeDBLogFiles"
 
-// DescribeDBLogFilesRequest generates a "aws/request.Request" representing the
+// DescribeDBLogFilesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeDBLogFiles operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1233,7 +1233,7 @@ func (c *Rdb) DescribeDBLogFiles(input *DescribeDBLogFilesInput) (*DescribeDBLog
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeDBLogFilesWithContext(ctx aws.Context, input *DescribeDBLogFilesInput, opts ...request.Option) (*DescribeDBLogFilesOutput, error) {
+func (c *Rdb) DescribeDBLogFilesWithContext(ctx nifcloud.Context, input *DescribeDBLogFilesInput, opts ...request.Option) (*DescribeDBLogFilesOutput, error) {
 	req, out := c.DescribeDBLogFilesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1242,7 +1242,7 @@ func (c *Rdb) DescribeDBLogFilesWithContext(ctx aws.Context, input *DescribeDBLo
 
 const opDescribeDBParameterGroups = "DescribeDBParameterGroups"
 
-// DescribeDBParameterGroupsRequest generates a "aws/request.Request" representing the
+// DescribeDBParameterGroupsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeDBParameterGroups operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1305,7 +1305,7 @@ func (c *Rdb) DescribeDBParameterGroups(input *DescribeDBParameterGroupsInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeDBParameterGroupsWithContext(ctx aws.Context, input *DescribeDBParameterGroupsInput, opts ...request.Option) (*DescribeDBParameterGroupsOutput, error) {
+func (c *Rdb) DescribeDBParameterGroupsWithContext(ctx nifcloud.Context, input *DescribeDBParameterGroupsInput, opts ...request.Option) (*DescribeDBParameterGroupsOutput, error) {
 	req, out := c.DescribeDBParameterGroupsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1314,7 +1314,7 @@ func (c *Rdb) DescribeDBParameterGroupsWithContext(ctx aws.Context, input *Descr
 
 const opDescribeDBParameters = "DescribeDBParameters"
 
-// DescribeDBParametersRequest generates a "aws/request.Request" representing the
+// DescribeDBParametersRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeDBParameters operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1377,7 +1377,7 @@ func (c *Rdb) DescribeDBParameters(input *DescribeDBParametersInput) (*DescribeD
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeDBParametersWithContext(ctx aws.Context, input *DescribeDBParametersInput, opts ...request.Option) (*DescribeDBParametersOutput, error) {
+func (c *Rdb) DescribeDBParametersWithContext(ctx nifcloud.Context, input *DescribeDBParametersInput, opts ...request.Option) (*DescribeDBParametersOutput, error) {
 	req, out := c.DescribeDBParametersRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1386,7 +1386,7 @@ func (c *Rdb) DescribeDBParametersWithContext(ctx aws.Context, input *DescribeDB
 
 const opDescribeDBSecurityGroups = "DescribeDBSecurityGroups"
 
-// DescribeDBSecurityGroupsRequest generates a "aws/request.Request" representing the
+// DescribeDBSecurityGroupsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeDBSecurityGroups operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1449,7 +1449,7 @@ func (c *Rdb) DescribeDBSecurityGroups(input *DescribeDBSecurityGroupsInput) (*D
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeDBSecurityGroupsWithContext(ctx aws.Context, input *DescribeDBSecurityGroupsInput, opts ...request.Option) (*DescribeDBSecurityGroupsOutput, error) {
+func (c *Rdb) DescribeDBSecurityGroupsWithContext(ctx nifcloud.Context, input *DescribeDBSecurityGroupsInput, opts ...request.Option) (*DescribeDBSecurityGroupsOutput, error) {
 	req, out := c.DescribeDBSecurityGroupsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1458,7 +1458,7 @@ func (c *Rdb) DescribeDBSecurityGroupsWithContext(ctx aws.Context, input *Descri
 
 const opDescribeDBSnapshots = "DescribeDBSnapshots"
 
-// DescribeDBSnapshotsRequest generates a "aws/request.Request" representing the
+// DescribeDBSnapshotsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeDBSnapshots operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1521,7 +1521,7 @@ func (c *Rdb) DescribeDBSnapshots(input *DescribeDBSnapshotsInput) (*DescribeDBS
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeDBSnapshotsWithContext(ctx aws.Context, input *DescribeDBSnapshotsInput, opts ...request.Option) (*DescribeDBSnapshotsOutput, error) {
+func (c *Rdb) DescribeDBSnapshotsWithContext(ctx nifcloud.Context, input *DescribeDBSnapshotsInput, opts ...request.Option) (*DescribeDBSnapshotsOutput, error) {
 	req, out := c.DescribeDBSnapshotsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1530,7 +1530,7 @@ func (c *Rdb) DescribeDBSnapshotsWithContext(ctx aws.Context, input *DescribeDBS
 
 const opDescribeEngineDefaultParameters = "DescribeEngineDefaultParameters"
 
-// DescribeEngineDefaultParametersRequest generates a "aws/request.Request" representing the
+// DescribeEngineDefaultParametersRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeEngineDefaultParameters operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1593,7 +1593,7 @@ func (c *Rdb) DescribeEngineDefaultParameters(input *DescribeEngineDefaultParame
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeEngineDefaultParametersWithContext(ctx aws.Context, input *DescribeEngineDefaultParametersInput, opts ...request.Option) (*DescribeEngineDefaultParametersOutput, error) {
+func (c *Rdb) DescribeEngineDefaultParametersWithContext(ctx nifcloud.Context, input *DescribeEngineDefaultParametersInput, opts ...request.Option) (*DescribeEngineDefaultParametersOutput, error) {
 	req, out := c.DescribeEngineDefaultParametersRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1602,7 +1602,7 @@ func (c *Rdb) DescribeEngineDefaultParametersWithContext(ctx aws.Context, input 
 
 const opDescribeEventCategories = "DescribeEventCategories"
 
-// DescribeEventCategoriesRequest generates a "aws/request.Request" representing the
+// DescribeEventCategoriesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeEventCategories operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1665,7 +1665,7 @@ func (c *Rdb) DescribeEventCategories(input *DescribeEventCategoriesInput) (*Des
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeEventCategoriesWithContext(ctx aws.Context, input *DescribeEventCategoriesInput, opts ...request.Option) (*DescribeEventCategoriesOutput, error) {
+func (c *Rdb) DescribeEventCategoriesWithContext(ctx nifcloud.Context, input *DescribeEventCategoriesInput, opts ...request.Option) (*DescribeEventCategoriesOutput, error) {
 	req, out := c.DescribeEventCategoriesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1674,7 +1674,7 @@ func (c *Rdb) DescribeEventCategoriesWithContext(ctx aws.Context, input *Describ
 
 const opDescribeEventSubscriptions = "DescribeEventSubscriptions"
 
-// DescribeEventSubscriptionsRequest generates a "aws/request.Request" representing the
+// DescribeEventSubscriptionsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeEventSubscriptions operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1737,7 +1737,7 @@ func (c *Rdb) DescribeEventSubscriptions(input *DescribeEventSubscriptionsInput)
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeEventSubscriptionsWithContext(ctx aws.Context, input *DescribeEventSubscriptionsInput, opts ...request.Option) (*DescribeEventSubscriptionsOutput, error) {
+func (c *Rdb) DescribeEventSubscriptionsWithContext(ctx nifcloud.Context, input *DescribeEventSubscriptionsInput, opts ...request.Option) (*DescribeEventSubscriptionsOutput, error) {
 	req, out := c.DescribeEventSubscriptionsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1746,7 +1746,7 @@ func (c *Rdb) DescribeEventSubscriptionsWithContext(ctx aws.Context, input *Desc
 
 const opDescribeEvents = "DescribeEvents"
 
-// DescribeEventsRequest generates a "aws/request.Request" representing the
+// DescribeEventsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeEvents operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1809,7 +1809,7 @@ func (c *Rdb) DescribeEvents(input *DescribeEventsInput) (*DescribeEventsOutput,
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeEventsWithContext(ctx aws.Context, input *DescribeEventsInput, opts ...request.Option) (*DescribeEventsOutput, error) {
+func (c *Rdb) DescribeEventsWithContext(ctx nifcloud.Context, input *DescribeEventsInput, opts ...request.Option) (*DescribeEventsOutput, error) {
 	req, out := c.DescribeEventsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1818,7 +1818,7 @@ func (c *Rdb) DescribeEventsWithContext(ctx aws.Context, input *DescribeEventsIn
 
 const opDescribeOrderableDBInstanceOptions = "DescribeOrderableDBInstanceOptions"
 
-// DescribeOrderableDBInstanceOptionsRequest generates a "aws/request.Request" representing the
+// DescribeOrderableDBInstanceOptionsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeOrderableDBInstanceOptions operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1881,7 +1881,7 @@ func (c *Rdb) DescribeOrderableDBInstanceOptions(input *DescribeOrderableDBInsta
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DescribeOrderableDBInstanceOptionsWithContext(ctx aws.Context, input *DescribeOrderableDBInstanceOptionsInput, opts ...request.Option) (*DescribeOrderableDBInstanceOptionsOutput, error) {
+func (c *Rdb) DescribeOrderableDBInstanceOptionsWithContext(ctx nifcloud.Context, input *DescribeOrderableDBInstanceOptionsInput, opts ...request.Option) (*DescribeOrderableDBInstanceOptionsOutput, error) {
 	req, out := c.DescribeOrderableDBInstanceOptionsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1890,7 +1890,7 @@ func (c *Rdb) DescribeOrderableDBInstanceOptionsWithContext(ctx aws.Context, inp
 
 const opDownloadDBLogFilePortion = "DownloadDBLogFilePortion"
 
-// DownloadDBLogFilePortionRequest generates a "aws/request.Request" representing the
+// DownloadDBLogFilePortionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DownloadDBLogFilePortion operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1953,7 +1953,7 @@ func (c *Rdb) DownloadDBLogFilePortion(input *DownloadDBLogFilePortionInput) (*D
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) DownloadDBLogFilePortionWithContext(ctx aws.Context, input *DownloadDBLogFilePortionInput, opts ...request.Option) (*DownloadDBLogFilePortionOutput, error) {
+func (c *Rdb) DownloadDBLogFilePortionWithContext(ctx nifcloud.Context, input *DownloadDBLogFilePortionInput, opts ...request.Option) (*DownloadDBLogFilePortionOutput, error) {
 	req, out := c.DownloadDBLogFilePortionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1962,7 +1962,7 @@ func (c *Rdb) DownloadDBLogFilePortionWithContext(ctx aws.Context, input *Downlo
 
 const opModifyDBInstance = "ModifyDBInstance"
 
-// ModifyDBInstanceRequest generates a "aws/request.Request" representing the
+// ModifyDBInstanceRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ModifyDBInstance operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2025,7 +2025,7 @@ func (c *Rdb) ModifyDBInstance(input *ModifyDBInstanceInput) (*ModifyDBInstanceO
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) ModifyDBInstanceWithContext(ctx aws.Context, input *ModifyDBInstanceInput, opts ...request.Option) (*ModifyDBInstanceOutput, error) {
+func (c *Rdb) ModifyDBInstanceWithContext(ctx nifcloud.Context, input *ModifyDBInstanceInput, opts ...request.Option) (*ModifyDBInstanceOutput, error) {
 	req, out := c.ModifyDBInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2034,7 +2034,7 @@ func (c *Rdb) ModifyDBInstanceWithContext(ctx aws.Context, input *ModifyDBInstan
 
 const opModifyDBParameterGroup = "ModifyDBParameterGroup"
 
-// ModifyDBParameterGroupRequest generates a "aws/request.Request" representing the
+// ModifyDBParameterGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ModifyDBParameterGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2097,7 +2097,7 @@ func (c *Rdb) ModifyDBParameterGroup(input *ModifyDBParameterGroupInput) (*Modif
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) ModifyDBParameterGroupWithContext(ctx aws.Context, input *ModifyDBParameterGroupInput, opts ...request.Option) (*ModifyDBParameterGroupOutput, error) {
+func (c *Rdb) ModifyDBParameterGroupWithContext(ctx nifcloud.Context, input *ModifyDBParameterGroupInput, opts ...request.Option) (*ModifyDBParameterGroupOutput, error) {
 	req, out := c.ModifyDBParameterGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2106,7 +2106,7 @@ func (c *Rdb) ModifyDBParameterGroupWithContext(ctx aws.Context, input *ModifyDB
 
 const opModifyEventSubscription = "ModifyEventSubscription"
 
-// ModifyEventSubscriptionRequest generates a "aws/request.Request" representing the
+// ModifyEventSubscriptionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ModifyEventSubscription operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2169,7 +2169,7 @@ func (c *Rdb) ModifyEventSubscription(input *ModifyEventSubscriptionInput) (*Mod
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) ModifyEventSubscriptionWithContext(ctx aws.Context, input *ModifyEventSubscriptionInput, opts ...request.Option) (*ModifyEventSubscriptionOutput, error) {
+func (c *Rdb) ModifyEventSubscriptionWithContext(ctx nifcloud.Context, input *ModifyEventSubscriptionInput, opts ...request.Option) (*ModifyEventSubscriptionOutput, error) {
 	req, out := c.ModifyEventSubscriptionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2178,7 +2178,7 @@ func (c *Rdb) ModifyEventSubscriptionWithContext(ctx aws.Context, input *ModifyE
 
 const opNiftyFailoverDBInstance = "NiftyFailoverDBInstance"
 
-// NiftyFailoverDBInstanceRequest generates a "aws/request.Request" representing the
+// NiftyFailoverDBInstanceRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyFailoverDBInstance operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2241,7 +2241,7 @@ func (c *Rdb) NiftyFailoverDBInstance(input *NiftyFailoverDBInstanceInput) (*Nif
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) NiftyFailoverDBInstanceWithContext(ctx aws.Context, input *NiftyFailoverDBInstanceInput, opts ...request.Option) (*NiftyFailoverDBInstanceOutput, error) {
+func (c *Rdb) NiftyFailoverDBInstanceWithContext(ctx nifcloud.Context, input *NiftyFailoverDBInstanceInput, opts ...request.Option) (*NiftyFailoverDBInstanceOutput, error) {
 	req, out := c.NiftyFailoverDBInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2250,7 +2250,7 @@ func (c *Rdb) NiftyFailoverDBInstanceWithContext(ctx aws.Context, input *NiftyFa
 
 const opNiftyGetMetricStatistics = "NiftyGetMetricStatistics"
 
-// NiftyGetMetricStatisticsRequest generates a "aws/request.Request" representing the
+// NiftyGetMetricStatisticsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyGetMetricStatistics operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2313,7 +2313,7 @@ func (c *Rdb) NiftyGetMetricStatistics(input *NiftyGetMetricStatisticsInput) (*N
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) NiftyGetMetricStatisticsWithContext(ctx aws.Context, input *NiftyGetMetricStatisticsInput, opts ...request.Option) (*NiftyGetMetricStatisticsOutput, error) {
+func (c *Rdb) NiftyGetMetricStatisticsWithContext(ctx nifcloud.Context, input *NiftyGetMetricStatisticsInput, opts ...request.Option) (*NiftyGetMetricStatisticsOutput, error) {
 	req, out := c.NiftyGetMetricStatisticsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2322,7 +2322,7 @@ func (c *Rdb) NiftyGetMetricStatisticsWithContext(ctx aws.Context, input *NiftyG
 
 const opRebootDBInstance = "RebootDBInstance"
 
-// RebootDBInstanceRequest generates a "aws/request.Request" representing the
+// RebootDBInstanceRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RebootDBInstance operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2385,7 +2385,7 @@ func (c *Rdb) RebootDBInstance(input *RebootDBInstanceInput) (*RebootDBInstanceO
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) RebootDBInstanceWithContext(ctx aws.Context, input *RebootDBInstanceInput, opts ...request.Option) (*RebootDBInstanceOutput, error) {
+func (c *Rdb) RebootDBInstanceWithContext(ctx nifcloud.Context, input *RebootDBInstanceInput, opts ...request.Option) (*RebootDBInstanceOutput, error) {
 	req, out := c.RebootDBInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2394,7 +2394,7 @@ func (c *Rdb) RebootDBInstanceWithContext(ctx aws.Context, input *RebootDBInstan
 
 const opRemoveSourceIdentifierFromSubscription = "RemoveSourceIdentifierFromSubscription"
 
-// RemoveSourceIdentifierFromSubscriptionRequest generates a "aws/request.Request" representing the
+// RemoveSourceIdentifierFromSubscriptionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RemoveSourceIdentifierFromSubscription operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2457,7 +2457,7 @@ func (c *Rdb) RemoveSourceIdentifierFromSubscription(input *RemoveSourceIdentifi
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) RemoveSourceIdentifierFromSubscriptionWithContext(ctx aws.Context, input *RemoveSourceIdentifierFromSubscriptionInput, opts ...request.Option) (*RemoveSourceIdentifierFromSubscriptionOutput, error) {
+func (c *Rdb) RemoveSourceIdentifierFromSubscriptionWithContext(ctx nifcloud.Context, input *RemoveSourceIdentifierFromSubscriptionInput, opts ...request.Option) (*RemoveSourceIdentifierFromSubscriptionOutput, error) {
 	req, out := c.RemoveSourceIdentifierFromSubscriptionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2466,7 +2466,7 @@ func (c *Rdb) RemoveSourceIdentifierFromSubscriptionWithContext(ctx aws.Context,
 
 const opResetDBParameterGroup = "ResetDBParameterGroup"
 
-// ResetDBParameterGroupRequest generates a "aws/request.Request" representing the
+// ResetDBParameterGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ResetDBParameterGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2529,7 +2529,7 @@ func (c *Rdb) ResetDBParameterGroup(input *ResetDBParameterGroupInput) (*ResetDB
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) ResetDBParameterGroupWithContext(ctx aws.Context, input *ResetDBParameterGroupInput, opts ...request.Option) (*ResetDBParameterGroupOutput, error) {
+func (c *Rdb) ResetDBParameterGroupWithContext(ctx nifcloud.Context, input *ResetDBParameterGroupInput, opts ...request.Option) (*ResetDBParameterGroupOutput, error) {
 	req, out := c.ResetDBParameterGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2538,7 +2538,7 @@ func (c *Rdb) ResetDBParameterGroupWithContext(ctx aws.Context, input *ResetDBPa
 
 const opRestoreDBInstanceFromDBSnapshot = "RestoreDBInstanceFromDBSnapshot"
 
-// RestoreDBInstanceFromDBSnapshotRequest generates a "aws/request.Request" representing the
+// RestoreDBInstanceFromDBSnapshotRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RestoreDBInstanceFromDBSnapshot operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2601,7 +2601,7 @@ func (c *Rdb) RestoreDBInstanceFromDBSnapshot(input *RestoreDBInstanceFromDBSnap
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) RestoreDBInstanceFromDBSnapshotWithContext(ctx aws.Context, input *RestoreDBInstanceFromDBSnapshotInput, opts ...request.Option) (*RestoreDBInstanceFromDBSnapshotOutput, error) {
+func (c *Rdb) RestoreDBInstanceFromDBSnapshotWithContext(ctx nifcloud.Context, input *RestoreDBInstanceFromDBSnapshotInput, opts ...request.Option) (*RestoreDBInstanceFromDBSnapshotOutput, error) {
 	req, out := c.RestoreDBInstanceFromDBSnapshotRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2610,7 +2610,7 @@ func (c *Rdb) RestoreDBInstanceFromDBSnapshotWithContext(ctx aws.Context, input 
 
 const opRestoreDBInstanceToPointInTime = "RestoreDBInstanceToPointInTime"
 
-// RestoreDBInstanceToPointInTimeRequest generates a "aws/request.Request" representing the
+// RestoreDBInstanceToPointInTimeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RestoreDBInstanceToPointInTime operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2673,7 +2673,7 @@ func (c *Rdb) RestoreDBInstanceToPointInTime(input *RestoreDBInstanceToPointInTi
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) RestoreDBInstanceToPointInTimeWithContext(ctx aws.Context, input *RestoreDBInstanceToPointInTimeInput, opts ...request.Option) (*RestoreDBInstanceToPointInTimeOutput, error) {
+func (c *Rdb) RestoreDBInstanceToPointInTimeWithContext(ctx nifcloud.Context, input *RestoreDBInstanceToPointInTimeInput, opts ...request.Option) (*RestoreDBInstanceToPointInTimeOutput, error) {
 	req, out := c.RestoreDBInstanceToPointInTimeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2682,7 +2682,7 @@ func (c *Rdb) RestoreDBInstanceToPointInTimeWithContext(ctx aws.Context, input *
 
 const opRevokeDBSecurityGroupIngress = "RevokeDBSecurityGroupIngress"
 
-// RevokeDBSecurityGroupIngressRequest generates a "aws/request.Request" representing the
+// RevokeDBSecurityGroupIngressRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RevokeDBSecurityGroupIngress operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2745,7 +2745,7 @@ func (c *Rdb) RevokeDBSecurityGroupIngress(input *RevokeDBSecurityGroupIngressIn
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Rdb) RevokeDBSecurityGroupIngressWithContext(ctx aws.Context, input *RevokeDBSecurityGroupIngressInput, opts ...request.Option) (*RevokeDBSecurityGroupIngressOutput, error) {
+func (c *Rdb) RevokeDBSecurityGroupIngressWithContext(ctx nifcloud.Context, input *RevokeDBSecurityGroupIngressInput, opts ...request.Option) (*RevokeDBSecurityGroupIngressOutput, error) {
 	req, out := c.RevokeDBSecurityGroupIngressRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)

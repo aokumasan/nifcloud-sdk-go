@@ -4,8 +4,8 @@ import (
 	"encoding/xml"
 	"io/ioutil"
 
-	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 )
 
 type xmlErrorResponse struct {

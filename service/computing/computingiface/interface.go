@@ -9,8 +9,8 @@
 package computingiface
 
 import (
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/service/computing"
 )
 
@@ -61,764 +61,764 @@ import (
 // tooling to generate mocks to satisfy the interfaces.
 type ComputingAPI interface {
 	AllocateAddress(*computing.AllocateAddressInput) (*computing.AllocateAddressOutput, error)
-	AllocateAddressWithContext(aws.Context, *computing.AllocateAddressInput, ...request.Option) (*computing.AllocateAddressOutput, error)
+	AllocateAddressWithContext(nifcloud.Context, *computing.AllocateAddressInput, ...request.Option) (*computing.AllocateAddressOutput, error)
 	AllocateAddressRequest(*computing.AllocateAddressInput) (*request.Request, *computing.AllocateAddressOutput)
 
 	AssociateAddress(*computing.AssociateAddressInput) (*computing.AssociateAddressOutput, error)
-	AssociateAddressWithContext(aws.Context, *computing.AssociateAddressInput, ...request.Option) (*computing.AssociateAddressOutput, error)
+	AssociateAddressWithContext(nifcloud.Context, *computing.AssociateAddressInput, ...request.Option) (*computing.AssociateAddressOutput, error)
 	AssociateAddressRequest(*computing.AssociateAddressInput) (*request.Request, *computing.AssociateAddressOutput)
 
 	AssociateRouteTable(*computing.AssociateRouteTableInput) (*computing.AssociateRouteTableOutput, error)
-	AssociateRouteTableWithContext(aws.Context, *computing.AssociateRouteTableInput, ...request.Option) (*computing.AssociateRouteTableOutput, error)
+	AssociateRouteTableWithContext(nifcloud.Context, *computing.AssociateRouteTableInput, ...request.Option) (*computing.AssociateRouteTableOutput, error)
 	AssociateRouteTableRequest(*computing.AssociateRouteTableInput) (*request.Request, *computing.AssociateRouteTableOutput)
 
 	AssociateUsers(*computing.AssociateUsersInput) (*computing.AssociateUsersOutput, error)
-	AssociateUsersWithContext(aws.Context, *computing.AssociateUsersInput, ...request.Option) (*computing.AssociateUsersOutput, error)
+	AssociateUsersWithContext(nifcloud.Context, *computing.AssociateUsersInput, ...request.Option) (*computing.AssociateUsersOutput, error)
 	AssociateUsersRequest(*computing.AssociateUsersInput) (*request.Request, *computing.AssociateUsersOutput)
 
 	AttachVolume(*computing.AttachVolumeInput) (*computing.AttachVolumeOutput, error)
-	AttachVolumeWithContext(aws.Context, *computing.AttachVolumeInput, ...request.Option) (*computing.AttachVolumeOutput, error)
+	AttachVolumeWithContext(nifcloud.Context, *computing.AttachVolumeInput, ...request.Option) (*computing.AttachVolumeOutput, error)
 	AttachVolumeRequest(*computing.AttachVolumeInput) (*request.Request, *computing.AttachVolumeOutput)
 
 	AuthorizeSecurityGroupIngress(*computing.AuthorizeSecurityGroupIngressInput) (*computing.AuthorizeSecurityGroupIngressOutput, error)
-	AuthorizeSecurityGroupIngressWithContext(aws.Context, *computing.AuthorizeSecurityGroupIngressInput, ...request.Option) (*computing.AuthorizeSecurityGroupIngressOutput, error)
+	AuthorizeSecurityGroupIngressWithContext(nifcloud.Context, *computing.AuthorizeSecurityGroupIngressInput, ...request.Option) (*computing.AuthorizeSecurityGroupIngressOutput, error)
 	AuthorizeSecurityGroupIngressRequest(*computing.AuthorizeSecurityGroupIngressInput) (*request.Request, *computing.AuthorizeSecurityGroupIngressOutput)
 
 	CancelCopyInstances(*computing.CancelCopyInstancesInput) (*computing.CancelCopyInstancesOutput, error)
-	CancelCopyInstancesWithContext(aws.Context, *computing.CancelCopyInstancesInput, ...request.Option) (*computing.CancelCopyInstancesOutput, error)
+	CancelCopyInstancesWithContext(nifcloud.Context, *computing.CancelCopyInstancesInput, ...request.Option) (*computing.CancelCopyInstancesOutput, error)
 	CancelCopyInstancesRequest(*computing.CancelCopyInstancesInput) (*request.Request, *computing.CancelCopyInstancesOutput)
 
 	CancelUpload(*computing.CancelUploadInput) (*computing.CancelUploadOutput, error)
-	CancelUploadWithContext(aws.Context, *computing.CancelUploadInput, ...request.Option) (*computing.CancelUploadOutput, error)
+	CancelUploadWithContext(nifcloud.Context, *computing.CancelUploadInput, ...request.Option) (*computing.CancelUploadOutput, error)
 	CancelUploadRequest(*computing.CancelUploadInput) (*request.Request, *computing.CancelUploadOutput)
 
 	ClearLoadBalancerSession(*computing.ClearLoadBalancerSessionInput) (*computing.ClearLoadBalancerSessionOutput, error)
-	ClearLoadBalancerSessionWithContext(aws.Context, *computing.ClearLoadBalancerSessionInput, ...request.Option) (*computing.ClearLoadBalancerSessionOutput, error)
+	ClearLoadBalancerSessionWithContext(nifcloud.Context, *computing.ClearLoadBalancerSessionInput, ...request.Option) (*computing.ClearLoadBalancerSessionOutput, error)
 	ClearLoadBalancerSessionRequest(*computing.ClearLoadBalancerSessionInput) (*request.Request, *computing.ClearLoadBalancerSessionOutput)
 
 	ConfigureHealthCheck(*computing.ConfigureHealthCheckInput) (*computing.ConfigureHealthCheckOutput, error)
-	ConfigureHealthCheckWithContext(aws.Context, *computing.ConfigureHealthCheckInput, ...request.Option) (*computing.ConfigureHealthCheckOutput, error)
+	ConfigureHealthCheckWithContext(nifcloud.Context, *computing.ConfigureHealthCheckInput, ...request.Option) (*computing.ConfigureHealthCheckOutput, error)
 	ConfigureHealthCheckRequest(*computing.ConfigureHealthCheckInput) (*request.Request, *computing.ConfigureHealthCheckOutput)
 
 	CopyInstances(*computing.CopyInstancesInput) (*computing.CopyInstancesOutput, error)
-	CopyInstancesWithContext(aws.Context, *computing.CopyInstancesInput, ...request.Option) (*computing.CopyInstancesOutput, error)
+	CopyInstancesWithContext(nifcloud.Context, *computing.CopyInstancesInput, ...request.Option) (*computing.CopyInstancesOutput, error)
 	CopyInstancesRequest(*computing.CopyInstancesInput) (*request.Request, *computing.CopyInstancesOutput)
 
 	CreateCustomerGateway(*computing.CreateCustomerGatewayInput) (*computing.CreateCustomerGatewayOutput, error)
-	CreateCustomerGatewayWithContext(aws.Context, *computing.CreateCustomerGatewayInput, ...request.Option) (*computing.CreateCustomerGatewayOutput, error)
+	CreateCustomerGatewayWithContext(nifcloud.Context, *computing.CreateCustomerGatewayInput, ...request.Option) (*computing.CreateCustomerGatewayOutput, error)
 	CreateCustomerGatewayRequest(*computing.CreateCustomerGatewayInput) (*request.Request, *computing.CreateCustomerGatewayOutput)
 
 	CreateDhcpOptions(*computing.CreateDhcpOptionsInput) (*computing.CreateDhcpOptionsOutput, error)
-	CreateDhcpOptionsWithContext(aws.Context, *computing.CreateDhcpOptionsInput, ...request.Option) (*computing.CreateDhcpOptionsOutput, error)
+	CreateDhcpOptionsWithContext(nifcloud.Context, *computing.CreateDhcpOptionsInput, ...request.Option) (*computing.CreateDhcpOptionsOutput, error)
 	CreateDhcpOptionsRequest(*computing.CreateDhcpOptionsInput) (*request.Request, *computing.CreateDhcpOptionsOutput)
 
 	CreateImage(*computing.CreateImageInput) (*computing.CreateImageOutput, error)
-	CreateImageWithContext(aws.Context, *computing.CreateImageInput, ...request.Option) (*computing.CreateImageOutput, error)
+	CreateImageWithContext(nifcloud.Context, *computing.CreateImageInput, ...request.Option) (*computing.CreateImageOutput, error)
 	CreateImageRequest(*computing.CreateImageInput) (*request.Request, *computing.CreateImageOutput)
 
 	CreateKeyPair(*computing.CreateKeyPairInput) (*computing.CreateKeyPairOutput, error)
-	CreateKeyPairWithContext(aws.Context, *computing.CreateKeyPairInput, ...request.Option) (*computing.CreateKeyPairOutput, error)
+	CreateKeyPairWithContext(nifcloud.Context, *computing.CreateKeyPairInput, ...request.Option) (*computing.CreateKeyPairOutput, error)
 	CreateKeyPairRequest(*computing.CreateKeyPairInput) (*request.Request, *computing.CreateKeyPairOutput)
 
 	CreateLoadBalancer(*computing.CreateLoadBalancerInput) (*computing.CreateLoadBalancerOutput, error)
-	CreateLoadBalancerWithContext(aws.Context, *computing.CreateLoadBalancerInput, ...request.Option) (*computing.CreateLoadBalancerOutput, error)
+	CreateLoadBalancerWithContext(nifcloud.Context, *computing.CreateLoadBalancerInput, ...request.Option) (*computing.CreateLoadBalancerOutput, error)
 	CreateLoadBalancerRequest(*computing.CreateLoadBalancerInput) (*request.Request, *computing.CreateLoadBalancerOutput)
 
 	CreateRoute(*computing.CreateRouteInput) (*computing.CreateRouteOutput, error)
-	CreateRouteWithContext(aws.Context, *computing.CreateRouteInput, ...request.Option) (*computing.CreateRouteOutput, error)
+	CreateRouteWithContext(nifcloud.Context, *computing.CreateRouteInput, ...request.Option) (*computing.CreateRouteOutput, error)
 	CreateRouteRequest(*computing.CreateRouteInput) (*request.Request, *computing.CreateRouteOutput)
 
 	CreateRouteTable(*computing.CreateRouteTableInput) (*computing.CreateRouteTableOutput, error)
-	CreateRouteTableWithContext(aws.Context, *computing.CreateRouteTableInput, ...request.Option) (*computing.CreateRouteTableOutput, error)
+	CreateRouteTableWithContext(nifcloud.Context, *computing.CreateRouteTableInput, ...request.Option) (*computing.CreateRouteTableOutput, error)
 	CreateRouteTableRequest(*computing.CreateRouteTableInput) (*request.Request, *computing.CreateRouteTableOutput)
 
 	CreateSecurityGroup(*computing.CreateSecurityGroupInput) (*computing.CreateSecurityGroupOutput, error)
-	CreateSecurityGroupWithContext(aws.Context, *computing.CreateSecurityGroupInput, ...request.Option) (*computing.CreateSecurityGroupOutput, error)
+	CreateSecurityGroupWithContext(nifcloud.Context, *computing.CreateSecurityGroupInput, ...request.Option) (*computing.CreateSecurityGroupOutput, error)
 	CreateSecurityGroupRequest(*computing.CreateSecurityGroupInput) (*request.Request, *computing.CreateSecurityGroupOutput)
 
 	CreateSslCertificate(*computing.CreateSslCertificateInput) (*computing.CreateSslCertificateOutput, error)
-	CreateSslCertificateWithContext(aws.Context, *computing.CreateSslCertificateInput, ...request.Option) (*computing.CreateSslCertificateOutput, error)
+	CreateSslCertificateWithContext(nifcloud.Context, *computing.CreateSslCertificateInput, ...request.Option) (*computing.CreateSslCertificateOutput, error)
 	CreateSslCertificateRequest(*computing.CreateSslCertificateInput) (*request.Request, *computing.CreateSslCertificateOutput)
 
 	CreateVolume(*computing.CreateVolumeInput) (*computing.CreateVolumeOutput, error)
-	CreateVolumeWithContext(aws.Context, *computing.CreateVolumeInput, ...request.Option) (*computing.CreateVolumeOutput, error)
+	CreateVolumeWithContext(nifcloud.Context, *computing.CreateVolumeInput, ...request.Option) (*computing.CreateVolumeOutput, error)
 	CreateVolumeRequest(*computing.CreateVolumeInput) (*request.Request, *computing.CreateVolumeOutput)
 
 	CreateVpnConnection(*computing.CreateVpnConnectionInput) (*computing.CreateVpnConnectionOutput, error)
-	CreateVpnConnectionWithContext(aws.Context, *computing.CreateVpnConnectionInput, ...request.Option) (*computing.CreateVpnConnectionOutput, error)
+	CreateVpnConnectionWithContext(nifcloud.Context, *computing.CreateVpnConnectionInput, ...request.Option) (*computing.CreateVpnConnectionOutput, error)
 	CreateVpnConnectionRequest(*computing.CreateVpnConnectionInput) (*request.Request, *computing.CreateVpnConnectionOutput)
 
 	CreateVpnGateway(*computing.CreateVpnGatewayInput) (*computing.CreateVpnGatewayOutput, error)
-	CreateVpnGatewayWithContext(aws.Context, *computing.CreateVpnGatewayInput, ...request.Option) (*computing.CreateVpnGatewayOutput, error)
+	CreateVpnGatewayWithContext(nifcloud.Context, *computing.CreateVpnGatewayInput, ...request.Option) (*computing.CreateVpnGatewayOutput, error)
 	CreateVpnGatewayRequest(*computing.CreateVpnGatewayInput) (*request.Request, *computing.CreateVpnGatewayOutput)
 
 	DeleteCustomerGateway(*computing.DeleteCustomerGatewayInput) (*computing.DeleteCustomerGatewayOutput, error)
-	DeleteCustomerGatewayWithContext(aws.Context, *computing.DeleteCustomerGatewayInput, ...request.Option) (*computing.DeleteCustomerGatewayOutput, error)
+	DeleteCustomerGatewayWithContext(nifcloud.Context, *computing.DeleteCustomerGatewayInput, ...request.Option) (*computing.DeleteCustomerGatewayOutput, error)
 	DeleteCustomerGatewayRequest(*computing.DeleteCustomerGatewayInput) (*request.Request, *computing.DeleteCustomerGatewayOutput)
 
 	DeleteDhcpOptions(*computing.DeleteDhcpOptionsInput) (*computing.DeleteDhcpOptionsOutput, error)
-	DeleteDhcpOptionsWithContext(aws.Context, *computing.DeleteDhcpOptionsInput, ...request.Option) (*computing.DeleteDhcpOptionsOutput, error)
+	DeleteDhcpOptionsWithContext(nifcloud.Context, *computing.DeleteDhcpOptionsInput, ...request.Option) (*computing.DeleteDhcpOptionsOutput, error)
 	DeleteDhcpOptionsRequest(*computing.DeleteDhcpOptionsInput) (*request.Request, *computing.DeleteDhcpOptionsOutput)
 
 	DeleteImage(*computing.DeleteImageInput) (*computing.DeleteImageOutput, error)
-	DeleteImageWithContext(aws.Context, *computing.DeleteImageInput, ...request.Option) (*computing.DeleteImageOutput, error)
+	DeleteImageWithContext(nifcloud.Context, *computing.DeleteImageInput, ...request.Option) (*computing.DeleteImageOutput, error)
 	DeleteImageRequest(*computing.DeleteImageInput) (*request.Request, *computing.DeleteImageOutput)
 
 	DeleteKeyPair(*computing.DeleteKeyPairInput) (*computing.DeleteKeyPairOutput, error)
-	DeleteKeyPairWithContext(aws.Context, *computing.DeleteKeyPairInput, ...request.Option) (*computing.DeleteKeyPairOutput, error)
+	DeleteKeyPairWithContext(nifcloud.Context, *computing.DeleteKeyPairInput, ...request.Option) (*computing.DeleteKeyPairOutput, error)
 	DeleteKeyPairRequest(*computing.DeleteKeyPairInput) (*request.Request, *computing.DeleteKeyPairOutput)
 
 	DeleteLoadBalancer(*computing.DeleteLoadBalancerInput) (*computing.DeleteLoadBalancerOutput, error)
-	DeleteLoadBalancerWithContext(aws.Context, *computing.DeleteLoadBalancerInput, ...request.Option) (*computing.DeleteLoadBalancerOutput, error)
+	DeleteLoadBalancerWithContext(nifcloud.Context, *computing.DeleteLoadBalancerInput, ...request.Option) (*computing.DeleteLoadBalancerOutput, error)
 	DeleteLoadBalancerRequest(*computing.DeleteLoadBalancerInput) (*request.Request, *computing.DeleteLoadBalancerOutput)
 
 	DeleteRoute(*computing.DeleteRouteInput) (*computing.DeleteRouteOutput, error)
-	DeleteRouteWithContext(aws.Context, *computing.DeleteRouteInput, ...request.Option) (*computing.DeleteRouteOutput, error)
+	DeleteRouteWithContext(nifcloud.Context, *computing.DeleteRouteInput, ...request.Option) (*computing.DeleteRouteOutput, error)
 	DeleteRouteRequest(*computing.DeleteRouteInput) (*request.Request, *computing.DeleteRouteOutput)
 
 	DeleteRouteTable(*computing.DeleteRouteTableInput) (*computing.DeleteRouteTableOutput, error)
-	DeleteRouteTableWithContext(aws.Context, *computing.DeleteRouteTableInput, ...request.Option) (*computing.DeleteRouteTableOutput, error)
+	DeleteRouteTableWithContext(nifcloud.Context, *computing.DeleteRouteTableInput, ...request.Option) (*computing.DeleteRouteTableOutput, error)
 	DeleteRouteTableRequest(*computing.DeleteRouteTableInput) (*request.Request, *computing.DeleteRouteTableOutput)
 
 	DeleteSecurityGroup(*computing.DeleteSecurityGroupInput) (*computing.DeleteSecurityGroupOutput, error)
-	DeleteSecurityGroupWithContext(aws.Context, *computing.DeleteSecurityGroupInput, ...request.Option) (*computing.DeleteSecurityGroupOutput, error)
+	DeleteSecurityGroupWithContext(nifcloud.Context, *computing.DeleteSecurityGroupInput, ...request.Option) (*computing.DeleteSecurityGroupOutput, error)
 	DeleteSecurityGroupRequest(*computing.DeleteSecurityGroupInput) (*request.Request, *computing.DeleteSecurityGroupOutput)
 
 	DeleteSslCertificate(*computing.DeleteSslCertificateInput) (*computing.DeleteSslCertificateOutput, error)
-	DeleteSslCertificateWithContext(aws.Context, *computing.DeleteSslCertificateInput, ...request.Option) (*computing.DeleteSslCertificateOutput, error)
+	DeleteSslCertificateWithContext(nifcloud.Context, *computing.DeleteSslCertificateInput, ...request.Option) (*computing.DeleteSslCertificateOutput, error)
 	DeleteSslCertificateRequest(*computing.DeleteSslCertificateInput) (*request.Request, *computing.DeleteSslCertificateOutput)
 
 	DeleteVolume(*computing.DeleteVolumeInput) (*computing.DeleteVolumeOutput, error)
-	DeleteVolumeWithContext(aws.Context, *computing.DeleteVolumeInput, ...request.Option) (*computing.DeleteVolumeOutput, error)
+	DeleteVolumeWithContext(nifcloud.Context, *computing.DeleteVolumeInput, ...request.Option) (*computing.DeleteVolumeOutput, error)
 	DeleteVolumeRequest(*computing.DeleteVolumeInput) (*request.Request, *computing.DeleteVolumeOutput)
 
 	DeleteVpnConnection(*computing.DeleteVpnConnectionInput) (*computing.DeleteVpnConnectionOutput, error)
-	DeleteVpnConnectionWithContext(aws.Context, *computing.DeleteVpnConnectionInput, ...request.Option) (*computing.DeleteVpnConnectionOutput, error)
+	DeleteVpnConnectionWithContext(nifcloud.Context, *computing.DeleteVpnConnectionInput, ...request.Option) (*computing.DeleteVpnConnectionOutput, error)
 	DeleteVpnConnectionRequest(*computing.DeleteVpnConnectionInput) (*request.Request, *computing.DeleteVpnConnectionOutput)
 
 	DeleteVpnGateway(*computing.DeleteVpnGatewayInput) (*computing.DeleteVpnGatewayOutput, error)
-	DeleteVpnGatewayWithContext(aws.Context, *computing.DeleteVpnGatewayInput, ...request.Option) (*computing.DeleteVpnGatewayOutput, error)
+	DeleteVpnGatewayWithContext(nifcloud.Context, *computing.DeleteVpnGatewayInput, ...request.Option) (*computing.DeleteVpnGatewayOutput, error)
 	DeleteVpnGatewayRequest(*computing.DeleteVpnGatewayInput) (*request.Request, *computing.DeleteVpnGatewayOutput)
 
 	DeregisterInstancesFromLoadBalancer(*computing.DeregisterInstancesFromLoadBalancerInput) (*computing.DeregisterInstancesFromLoadBalancerOutput, error)
-	DeregisterInstancesFromLoadBalancerWithContext(aws.Context, *computing.DeregisterInstancesFromLoadBalancerInput, ...request.Option) (*computing.DeregisterInstancesFromLoadBalancerOutput, error)
+	DeregisterInstancesFromLoadBalancerWithContext(nifcloud.Context, *computing.DeregisterInstancesFromLoadBalancerInput, ...request.Option) (*computing.DeregisterInstancesFromLoadBalancerOutput, error)
 	DeregisterInstancesFromLoadBalancerRequest(*computing.DeregisterInstancesFromLoadBalancerInput) (*request.Request, *computing.DeregisterInstancesFromLoadBalancerOutput)
 
 	DeregisterInstancesFromSecurityGroup(*computing.DeregisterInstancesFromSecurityGroupInput) (*computing.DeregisterInstancesFromSecurityGroupOutput, error)
-	DeregisterInstancesFromSecurityGroupWithContext(aws.Context, *computing.DeregisterInstancesFromSecurityGroupInput, ...request.Option) (*computing.DeregisterInstancesFromSecurityGroupOutput, error)
+	DeregisterInstancesFromSecurityGroupWithContext(nifcloud.Context, *computing.DeregisterInstancesFromSecurityGroupInput, ...request.Option) (*computing.DeregisterInstancesFromSecurityGroupOutput, error)
 	DeregisterInstancesFromSecurityGroupRequest(*computing.DeregisterInstancesFromSecurityGroupInput) (*request.Request, *computing.DeregisterInstancesFromSecurityGroupOutput)
 
 	DescribeAddresses(*computing.DescribeAddressesInput) (*computing.DescribeAddressesOutput, error)
-	DescribeAddressesWithContext(aws.Context, *computing.DescribeAddressesInput, ...request.Option) (*computing.DescribeAddressesOutput, error)
+	DescribeAddressesWithContext(nifcloud.Context, *computing.DescribeAddressesInput, ...request.Option) (*computing.DescribeAddressesOutput, error)
 	DescribeAddressesRequest(*computing.DescribeAddressesInput) (*request.Request, *computing.DescribeAddressesOutput)
 
 	DescribeAssociatedUsers(*computing.DescribeAssociatedUsersInput) (*computing.DescribeAssociatedUsersOutput, error)
-	DescribeAssociatedUsersWithContext(aws.Context, *computing.DescribeAssociatedUsersInput, ...request.Option) (*computing.DescribeAssociatedUsersOutput, error)
+	DescribeAssociatedUsersWithContext(nifcloud.Context, *computing.DescribeAssociatedUsersInput, ...request.Option) (*computing.DescribeAssociatedUsersOutput, error)
 	DescribeAssociatedUsersRequest(*computing.DescribeAssociatedUsersInput) (*request.Request, *computing.DescribeAssociatedUsersOutput)
 
 	DescribeAvailabilityZones(*computing.DescribeAvailabilityZonesInput) (*computing.DescribeAvailabilityZonesOutput, error)
-	DescribeAvailabilityZonesWithContext(aws.Context, *computing.DescribeAvailabilityZonesInput, ...request.Option) (*computing.DescribeAvailabilityZonesOutput, error)
+	DescribeAvailabilityZonesWithContext(nifcloud.Context, *computing.DescribeAvailabilityZonesInput, ...request.Option) (*computing.DescribeAvailabilityZonesOutput, error)
 	DescribeAvailabilityZonesRequest(*computing.DescribeAvailabilityZonesInput) (*request.Request, *computing.DescribeAvailabilityZonesOutput)
 
 	DescribeCustomerGateways(*computing.DescribeCustomerGatewaysInput) (*computing.DescribeCustomerGatewaysOutput, error)
-	DescribeCustomerGatewaysWithContext(aws.Context, *computing.DescribeCustomerGatewaysInput, ...request.Option) (*computing.DescribeCustomerGatewaysOutput, error)
+	DescribeCustomerGatewaysWithContext(nifcloud.Context, *computing.DescribeCustomerGatewaysInput, ...request.Option) (*computing.DescribeCustomerGatewaysOutput, error)
 	DescribeCustomerGatewaysRequest(*computing.DescribeCustomerGatewaysInput) (*request.Request, *computing.DescribeCustomerGatewaysOutput)
 
 	DescribeDhcpOptions(*computing.DescribeDhcpOptionsInput) (*computing.DescribeDhcpOptionsOutput, error)
-	DescribeDhcpOptionsWithContext(aws.Context, *computing.DescribeDhcpOptionsInput, ...request.Option) (*computing.DescribeDhcpOptionsOutput, error)
+	DescribeDhcpOptionsWithContext(nifcloud.Context, *computing.DescribeDhcpOptionsInput, ...request.Option) (*computing.DescribeDhcpOptionsOutput, error)
 	DescribeDhcpOptionsRequest(*computing.DescribeDhcpOptionsInput) (*request.Request, *computing.DescribeDhcpOptionsOutput)
 
 	DescribeImages(*computing.DescribeImagesInput) (*computing.DescribeImagesOutput, error)
-	DescribeImagesWithContext(aws.Context, *computing.DescribeImagesInput, ...request.Option) (*computing.DescribeImagesOutput, error)
+	DescribeImagesWithContext(nifcloud.Context, *computing.DescribeImagesInput, ...request.Option) (*computing.DescribeImagesOutput, error)
 	DescribeImagesRequest(*computing.DescribeImagesInput) (*request.Request, *computing.DescribeImagesOutput)
 
 	DescribeInstanceAttribute(*computing.DescribeInstanceAttributeInput) (*computing.DescribeInstanceAttributeOutput, error)
-	DescribeInstanceAttributeWithContext(aws.Context, *computing.DescribeInstanceAttributeInput, ...request.Option) (*computing.DescribeInstanceAttributeOutput, error)
+	DescribeInstanceAttributeWithContext(nifcloud.Context, *computing.DescribeInstanceAttributeInput, ...request.Option) (*computing.DescribeInstanceAttributeOutput, error)
 	DescribeInstanceAttributeRequest(*computing.DescribeInstanceAttributeInput) (*request.Request, *computing.DescribeInstanceAttributeOutput)
 
 	DescribeInstanceHealth(*computing.DescribeInstanceHealthInput) (*computing.DescribeInstanceHealthOutput, error)
-	DescribeInstanceHealthWithContext(aws.Context, *computing.DescribeInstanceHealthInput, ...request.Option) (*computing.DescribeInstanceHealthOutput, error)
+	DescribeInstanceHealthWithContext(nifcloud.Context, *computing.DescribeInstanceHealthInput, ...request.Option) (*computing.DescribeInstanceHealthOutput, error)
 	DescribeInstanceHealthRequest(*computing.DescribeInstanceHealthInput) (*request.Request, *computing.DescribeInstanceHealthOutput)
 
 	DescribeInstances(*computing.DescribeInstancesInput) (*computing.DescribeInstancesOutput, error)
-	DescribeInstancesWithContext(aws.Context, *computing.DescribeInstancesInput, ...request.Option) (*computing.DescribeInstancesOutput, error)
+	DescribeInstancesWithContext(nifcloud.Context, *computing.DescribeInstancesInput, ...request.Option) (*computing.DescribeInstancesOutput, error)
 	DescribeInstancesRequest(*computing.DescribeInstancesInput) (*request.Request, *computing.DescribeInstancesOutput)
 
 	DescribeKeyPairs(*computing.DescribeKeyPairsInput) (*computing.DescribeKeyPairsOutput, error)
-	DescribeKeyPairsWithContext(aws.Context, *computing.DescribeKeyPairsInput, ...request.Option) (*computing.DescribeKeyPairsOutput, error)
+	DescribeKeyPairsWithContext(nifcloud.Context, *computing.DescribeKeyPairsInput, ...request.Option) (*computing.DescribeKeyPairsOutput, error)
 	DescribeKeyPairsRequest(*computing.DescribeKeyPairsInput) (*request.Request, *computing.DescribeKeyPairsOutput)
 
 	DescribeLoadBalancers(*computing.DescribeLoadBalancersInput) (*computing.DescribeLoadBalancersOutput, error)
-	DescribeLoadBalancersWithContext(aws.Context, *computing.DescribeLoadBalancersInput, ...request.Option) (*computing.DescribeLoadBalancersOutput, error)
+	DescribeLoadBalancersWithContext(nifcloud.Context, *computing.DescribeLoadBalancersInput, ...request.Option) (*computing.DescribeLoadBalancersOutput, error)
 	DescribeLoadBalancersRequest(*computing.DescribeLoadBalancersInput) (*request.Request, *computing.DescribeLoadBalancersOutput)
 
 	DescribeRegions(*computing.DescribeRegionsInput) (*computing.DescribeRegionsOutput, error)
-	DescribeRegionsWithContext(aws.Context, *computing.DescribeRegionsInput, ...request.Option) (*computing.DescribeRegionsOutput, error)
+	DescribeRegionsWithContext(nifcloud.Context, *computing.DescribeRegionsInput, ...request.Option) (*computing.DescribeRegionsOutput, error)
 	DescribeRegionsRequest(*computing.DescribeRegionsInput) (*request.Request, *computing.DescribeRegionsOutput)
 
 	DescribeResources(*computing.DescribeResourcesInput) (*computing.DescribeResourcesOutput, error)
-	DescribeResourcesWithContext(aws.Context, *computing.DescribeResourcesInput, ...request.Option) (*computing.DescribeResourcesOutput, error)
+	DescribeResourcesWithContext(nifcloud.Context, *computing.DescribeResourcesInput, ...request.Option) (*computing.DescribeResourcesOutput, error)
 	DescribeResourcesRequest(*computing.DescribeResourcesInput) (*request.Request, *computing.DescribeResourcesOutput)
 
 	DescribeRouteTables(*computing.DescribeRouteTablesInput) (*computing.DescribeRouteTablesOutput, error)
-	DescribeRouteTablesWithContext(aws.Context, *computing.DescribeRouteTablesInput, ...request.Option) (*computing.DescribeRouteTablesOutput, error)
+	DescribeRouteTablesWithContext(nifcloud.Context, *computing.DescribeRouteTablesInput, ...request.Option) (*computing.DescribeRouteTablesOutput, error)
 	DescribeRouteTablesRequest(*computing.DescribeRouteTablesInput) (*request.Request, *computing.DescribeRouteTablesOutput)
 
 	DescribeSecurityActivities(*computing.DescribeSecurityActivitiesInput) (*computing.DescribeSecurityActivitiesOutput, error)
-	DescribeSecurityActivitiesWithContext(aws.Context, *computing.DescribeSecurityActivitiesInput, ...request.Option) (*computing.DescribeSecurityActivitiesOutput, error)
+	DescribeSecurityActivitiesWithContext(nifcloud.Context, *computing.DescribeSecurityActivitiesInput, ...request.Option) (*computing.DescribeSecurityActivitiesOutput, error)
 	DescribeSecurityActivitiesRequest(*computing.DescribeSecurityActivitiesInput) (*request.Request, *computing.DescribeSecurityActivitiesOutput)
 
 	DescribeSecurityGroupOption(*computing.DescribeSecurityGroupOptionInput) (*computing.DescribeSecurityGroupOptionOutput, error)
-	DescribeSecurityGroupOptionWithContext(aws.Context, *computing.DescribeSecurityGroupOptionInput, ...request.Option) (*computing.DescribeSecurityGroupOptionOutput, error)
+	DescribeSecurityGroupOptionWithContext(nifcloud.Context, *computing.DescribeSecurityGroupOptionInput, ...request.Option) (*computing.DescribeSecurityGroupOptionOutput, error)
 	DescribeSecurityGroupOptionRequest(*computing.DescribeSecurityGroupOptionInput) (*request.Request, *computing.DescribeSecurityGroupOptionOutput)
 
 	DescribeSecurityGroups(*computing.DescribeSecurityGroupsInput) (*computing.DescribeSecurityGroupsOutput, error)
-	DescribeSecurityGroupsWithContext(aws.Context, *computing.DescribeSecurityGroupsInput, ...request.Option) (*computing.DescribeSecurityGroupsOutput, error)
+	DescribeSecurityGroupsWithContext(nifcloud.Context, *computing.DescribeSecurityGroupsInput, ...request.Option) (*computing.DescribeSecurityGroupsOutput, error)
 	DescribeSecurityGroupsRequest(*computing.DescribeSecurityGroupsInput) (*request.Request, *computing.DescribeSecurityGroupsOutput)
 
 	DescribeServiceStatus(*computing.DescribeServiceStatusInput) (*computing.DescribeServiceStatusOutput, error)
-	DescribeServiceStatusWithContext(aws.Context, *computing.DescribeServiceStatusInput, ...request.Option) (*computing.DescribeServiceStatusOutput, error)
+	DescribeServiceStatusWithContext(nifcloud.Context, *computing.DescribeServiceStatusInput, ...request.Option) (*computing.DescribeServiceStatusOutput, error)
 	DescribeServiceStatusRequest(*computing.DescribeServiceStatusInput) (*request.Request, *computing.DescribeServiceStatusOutput)
 
 	DescribeSslCertificateAttribute(*computing.DescribeSslCertificateAttributeInput) (*computing.DescribeSslCertificateAttributeOutput, error)
-	DescribeSslCertificateAttributeWithContext(aws.Context, *computing.DescribeSslCertificateAttributeInput, ...request.Option) (*computing.DescribeSslCertificateAttributeOutput, error)
+	DescribeSslCertificateAttributeWithContext(nifcloud.Context, *computing.DescribeSslCertificateAttributeInput, ...request.Option) (*computing.DescribeSslCertificateAttributeOutput, error)
 	DescribeSslCertificateAttributeRequest(*computing.DescribeSslCertificateAttributeInput) (*request.Request, *computing.DescribeSslCertificateAttributeOutput)
 
 	DescribeSslCertificates(*computing.DescribeSslCertificatesInput) (*computing.DescribeSslCertificatesOutput, error)
-	DescribeSslCertificatesWithContext(aws.Context, *computing.DescribeSslCertificatesInput, ...request.Option) (*computing.DescribeSslCertificatesOutput, error)
+	DescribeSslCertificatesWithContext(nifcloud.Context, *computing.DescribeSslCertificatesInput, ...request.Option) (*computing.DescribeSslCertificatesOutput, error)
 	DescribeSslCertificatesRequest(*computing.DescribeSslCertificatesInput) (*request.Request, *computing.DescribeSslCertificatesOutput)
 
 	DescribeUploads(*computing.DescribeUploadsInput) (*computing.DescribeUploadsOutput, error)
-	DescribeUploadsWithContext(aws.Context, *computing.DescribeUploadsInput, ...request.Option) (*computing.DescribeUploadsOutput, error)
+	DescribeUploadsWithContext(nifcloud.Context, *computing.DescribeUploadsInput, ...request.Option) (*computing.DescribeUploadsOutput, error)
 	DescribeUploadsRequest(*computing.DescribeUploadsInput) (*request.Request, *computing.DescribeUploadsOutput)
 
 	DescribeUsage(*computing.DescribeUsageInput) (*computing.DescribeUsageOutput, error)
-	DescribeUsageWithContext(aws.Context, *computing.DescribeUsageInput, ...request.Option) (*computing.DescribeUsageOutput, error)
+	DescribeUsageWithContext(nifcloud.Context, *computing.DescribeUsageInput, ...request.Option) (*computing.DescribeUsageOutput, error)
 	DescribeUsageRequest(*computing.DescribeUsageInput) (*request.Request, *computing.DescribeUsageOutput)
 
 	DescribeUserActivities(*computing.DescribeUserActivitiesInput) (*computing.DescribeUserActivitiesOutput, error)
-	DescribeUserActivitiesWithContext(aws.Context, *computing.DescribeUserActivitiesInput, ...request.Option) (*computing.DescribeUserActivitiesOutput, error)
+	DescribeUserActivitiesWithContext(nifcloud.Context, *computing.DescribeUserActivitiesInput, ...request.Option) (*computing.DescribeUserActivitiesOutput, error)
 	DescribeUserActivitiesRequest(*computing.DescribeUserActivitiesInput) (*request.Request, *computing.DescribeUserActivitiesOutput)
 
 	DescribeVolumes(*computing.DescribeVolumesInput) (*computing.DescribeVolumesOutput, error)
-	DescribeVolumesWithContext(aws.Context, *computing.DescribeVolumesInput, ...request.Option) (*computing.DescribeVolumesOutput, error)
+	DescribeVolumesWithContext(nifcloud.Context, *computing.DescribeVolumesInput, ...request.Option) (*computing.DescribeVolumesOutput, error)
 	DescribeVolumesRequest(*computing.DescribeVolumesInput) (*request.Request, *computing.DescribeVolumesOutput)
 
 	DescribeVpnConnections(*computing.DescribeVpnConnectionsInput) (*computing.DescribeVpnConnectionsOutput, error)
-	DescribeVpnConnectionsWithContext(aws.Context, *computing.DescribeVpnConnectionsInput, ...request.Option) (*computing.DescribeVpnConnectionsOutput, error)
+	DescribeVpnConnectionsWithContext(nifcloud.Context, *computing.DescribeVpnConnectionsInput, ...request.Option) (*computing.DescribeVpnConnectionsOutput, error)
 	DescribeVpnConnectionsRequest(*computing.DescribeVpnConnectionsInput) (*request.Request, *computing.DescribeVpnConnectionsOutput)
 
 	DescribeVpnGateways(*computing.DescribeVpnGatewaysInput) (*computing.DescribeVpnGatewaysOutput, error)
-	DescribeVpnGatewaysWithContext(aws.Context, *computing.DescribeVpnGatewaysInput, ...request.Option) (*computing.DescribeVpnGatewaysOutput, error)
+	DescribeVpnGatewaysWithContext(nifcloud.Context, *computing.DescribeVpnGatewaysInput, ...request.Option) (*computing.DescribeVpnGatewaysOutput, error)
 	DescribeVpnGatewaysRequest(*computing.DescribeVpnGatewaysInput) (*request.Request, *computing.DescribeVpnGatewaysOutput)
 
 	DetachVolume(*computing.DetachVolumeInput) (*computing.DetachVolumeOutput, error)
-	DetachVolumeWithContext(aws.Context, *computing.DetachVolumeInput, ...request.Option) (*computing.DetachVolumeOutput, error)
+	DetachVolumeWithContext(nifcloud.Context, *computing.DetachVolumeInput, ...request.Option) (*computing.DetachVolumeOutput, error)
 	DetachVolumeRequest(*computing.DetachVolumeInput) (*request.Request, *computing.DetachVolumeOutput)
 
 	DisassociateAddress(*computing.DisassociateAddressInput) (*computing.DisassociateAddressOutput, error)
-	DisassociateAddressWithContext(aws.Context, *computing.DisassociateAddressInput, ...request.Option) (*computing.DisassociateAddressOutput, error)
+	DisassociateAddressWithContext(nifcloud.Context, *computing.DisassociateAddressInput, ...request.Option) (*computing.DisassociateAddressOutput, error)
 	DisassociateAddressRequest(*computing.DisassociateAddressInput) (*request.Request, *computing.DisassociateAddressOutput)
 
 	DisassociateRouteTable(*computing.DisassociateRouteTableInput) (*computing.DisassociateRouteTableOutput, error)
-	DisassociateRouteTableWithContext(aws.Context, *computing.DisassociateRouteTableInput, ...request.Option) (*computing.DisassociateRouteTableOutput, error)
+	DisassociateRouteTableWithContext(nifcloud.Context, *computing.DisassociateRouteTableInput, ...request.Option) (*computing.DisassociateRouteTableOutput, error)
 	DisassociateRouteTableRequest(*computing.DisassociateRouteTableInput) (*request.Request, *computing.DisassociateRouteTableOutput)
 
 	DissociateUsers(*computing.DissociateUsersInput) (*computing.DissociateUsersOutput, error)
-	DissociateUsersWithContext(aws.Context, *computing.DissociateUsersInput, ...request.Option) (*computing.DissociateUsersOutput, error)
+	DissociateUsersWithContext(nifcloud.Context, *computing.DissociateUsersInput, ...request.Option) (*computing.DissociateUsersOutput, error)
 	DissociateUsersRequest(*computing.DissociateUsersInput) (*request.Request, *computing.DissociateUsersOutput)
 
 	DownloadSslCertificate(*computing.DownloadSslCertificateInput) (*computing.DownloadSslCertificateOutput, error)
-	DownloadSslCertificateWithContext(aws.Context, *computing.DownloadSslCertificateInput, ...request.Option) (*computing.DownloadSslCertificateOutput, error)
+	DownloadSslCertificateWithContext(nifcloud.Context, *computing.DownloadSslCertificateInput, ...request.Option) (*computing.DownloadSslCertificateOutput, error)
 	DownloadSslCertificateRequest(*computing.DownloadSslCertificateInput) (*request.Request, *computing.DownloadSslCertificateOutput)
 
 	ImportInstance(*computing.ImportInstanceInput) (*computing.ImportInstanceOutput, error)
-	ImportInstanceWithContext(aws.Context, *computing.ImportInstanceInput, ...request.Option) (*computing.ImportInstanceOutput, error)
+	ImportInstanceWithContext(nifcloud.Context, *computing.ImportInstanceInput, ...request.Option) (*computing.ImportInstanceOutput, error)
 	ImportInstanceRequest(*computing.ImportInstanceInput) (*request.Request, *computing.ImportInstanceOutput)
 
 	ImportKeyPair(*computing.ImportKeyPairInput) (*computing.ImportKeyPairOutput, error)
-	ImportKeyPairWithContext(aws.Context, *computing.ImportKeyPairInput, ...request.Option) (*computing.ImportKeyPairOutput, error)
+	ImportKeyPairWithContext(nifcloud.Context, *computing.ImportKeyPairInput, ...request.Option) (*computing.ImportKeyPairOutput, error)
 	ImportKeyPairRequest(*computing.ImportKeyPairInput) (*request.Request, *computing.ImportKeyPairOutput)
 
 	ModifyImageAttribute(*computing.ModifyImageAttributeInput) (*computing.ModifyImageAttributeOutput, error)
-	ModifyImageAttributeWithContext(aws.Context, *computing.ModifyImageAttributeInput, ...request.Option) (*computing.ModifyImageAttributeOutput, error)
+	ModifyImageAttributeWithContext(nifcloud.Context, *computing.ModifyImageAttributeInput, ...request.Option) (*computing.ModifyImageAttributeOutput, error)
 	ModifyImageAttributeRequest(*computing.ModifyImageAttributeInput) (*request.Request, *computing.ModifyImageAttributeOutput)
 
 	ModifyInstanceAttribute(*computing.ModifyInstanceAttributeInput) (*computing.ModifyInstanceAttributeOutput, error)
-	ModifyInstanceAttributeWithContext(aws.Context, *computing.ModifyInstanceAttributeInput, ...request.Option) (*computing.ModifyInstanceAttributeOutput, error)
+	ModifyInstanceAttributeWithContext(nifcloud.Context, *computing.ModifyInstanceAttributeInput, ...request.Option) (*computing.ModifyInstanceAttributeOutput, error)
 	ModifyInstanceAttributeRequest(*computing.ModifyInstanceAttributeInput) (*request.Request, *computing.ModifyInstanceAttributeOutput)
 
 	ModifySslCertificateAttribute(*computing.ModifySslCertificateAttributeInput) (*computing.ModifySslCertificateAttributeOutput, error)
-	ModifySslCertificateAttributeWithContext(aws.Context, *computing.ModifySslCertificateAttributeInput, ...request.Option) (*computing.ModifySslCertificateAttributeOutput, error)
+	ModifySslCertificateAttributeWithContext(nifcloud.Context, *computing.ModifySslCertificateAttributeInput, ...request.Option) (*computing.ModifySslCertificateAttributeOutput, error)
 	ModifySslCertificateAttributeRequest(*computing.ModifySslCertificateAttributeInput) (*request.Request, *computing.ModifySslCertificateAttributeOutput)
 
 	ModifyVolumeAttribute(*computing.ModifyVolumeAttributeInput) (*computing.ModifyVolumeAttributeOutput, error)
-	ModifyVolumeAttributeWithContext(aws.Context, *computing.ModifyVolumeAttributeInput, ...request.Option) (*computing.ModifyVolumeAttributeOutput, error)
+	ModifyVolumeAttributeWithContext(nifcloud.Context, *computing.ModifyVolumeAttributeInput, ...request.Option) (*computing.ModifyVolumeAttributeOutput, error)
 	ModifyVolumeAttributeRequest(*computing.ModifyVolumeAttributeInput) (*request.Request, *computing.ModifyVolumeAttributeOutput)
 
 	NiftyAssociateImage(*computing.NiftyAssociateImageInput) (*computing.NiftyAssociateImageOutput, error)
-	NiftyAssociateImageWithContext(aws.Context, *computing.NiftyAssociateImageInput, ...request.Option) (*computing.NiftyAssociateImageOutput, error)
+	NiftyAssociateImageWithContext(nifcloud.Context, *computing.NiftyAssociateImageInput, ...request.Option) (*computing.NiftyAssociateImageOutput, error)
 	NiftyAssociateImageRequest(*computing.NiftyAssociateImageInput) (*request.Request, *computing.NiftyAssociateImageOutput)
 
 	NiftyAssociateNatTable(*computing.NiftyAssociateNatTableInput) (*computing.NiftyAssociateNatTableOutput, error)
-	NiftyAssociateNatTableWithContext(aws.Context, *computing.NiftyAssociateNatTableInput, ...request.Option) (*computing.NiftyAssociateNatTableOutput, error)
+	NiftyAssociateNatTableWithContext(nifcloud.Context, *computing.NiftyAssociateNatTableInput, ...request.Option) (*computing.NiftyAssociateNatTableOutput, error)
 	NiftyAssociateNatTableRequest(*computing.NiftyAssociateNatTableInput) (*request.Request, *computing.NiftyAssociateNatTableOutput)
 
 	NiftyAssociateRouteTableWithVpnGateway(*computing.NiftyAssociateRouteTableWithVpnGatewayInput) (*computing.NiftyAssociateRouteTableWithVpnGatewayOutput, error)
-	NiftyAssociateRouteTableWithVpnGatewayWithContext(aws.Context, *computing.NiftyAssociateRouteTableWithVpnGatewayInput, ...request.Option) (*computing.NiftyAssociateRouteTableWithVpnGatewayOutput, error)
+	NiftyAssociateRouteTableWithVpnGatewayWithContext(nifcloud.Context, *computing.NiftyAssociateRouteTableWithVpnGatewayInput, ...request.Option) (*computing.NiftyAssociateRouteTableWithVpnGatewayOutput, error)
 	NiftyAssociateRouteTableWithVpnGatewayRequest(*computing.NiftyAssociateRouteTableWithVpnGatewayInput) (*request.Request, *computing.NiftyAssociateRouteTableWithVpnGatewayOutput)
 
 	NiftyConfigureElasticLoadBalancerHealthCheck(*computing.NiftyConfigureElasticLoadBalancerHealthCheckInput) (*computing.NiftyConfigureElasticLoadBalancerHealthCheckOutput, error)
-	NiftyConfigureElasticLoadBalancerHealthCheckWithContext(aws.Context, *computing.NiftyConfigureElasticLoadBalancerHealthCheckInput, ...request.Option) (*computing.NiftyConfigureElasticLoadBalancerHealthCheckOutput, error)
+	NiftyConfigureElasticLoadBalancerHealthCheckWithContext(nifcloud.Context, *computing.NiftyConfigureElasticLoadBalancerHealthCheckInput, ...request.Option) (*computing.NiftyConfigureElasticLoadBalancerHealthCheckOutput, error)
 	NiftyConfigureElasticLoadBalancerHealthCheckRequest(*computing.NiftyConfigureElasticLoadBalancerHealthCheckInput) (*request.Request, *computing.NiftyConfigureElasticLoadBalancerHealthCheckOutput)
 
 	NiftyCreateAlarm(*computing.NiftyCreateAlarmInput) (*computing.NiftyCreateAlarmOutput, error)
-	NiftyCreateAlarmWithContext(aws.Context, *computing.NiftyCreateAlarmInput, ...request.Option) (*computing.NiftyCreateAlarmOutput, error)
+	NiftyCreateAlarmWithContext(nifcloud.Context, *computing.NiftyCreateAlarmInput, ...request.Option) (*computing.NiftyCreateAlarmOutput, error)
 	NiftyCreateAlarmRequest(*computing.NiftyCreateAlarmInput) (*request.Request, *computing.NiftyCreateAlarmOutput)
 
 	NiftyCreateAutoScalingGroup(*computing.NiftyCreateAutoScalingGroupInput) (*computing.NiftyCreateAutoScalingGroupOutput, error)
-	NiftyCreateAutoScalingGroupWithContext(aws.Context, *computing.NiftyCreateAutoScalingGroupInput, ...request.Option) (*computing.NiftyCreateAutoScalingGroupOutput, error)
+	NiftyCreateAutoScalingGroupWithContext(nifcloud.Context, *computing.NiftyCreateAutoScalingGroupInput, ...request.Option) (*computing.NiftyCreateAutoScalingGroupOutput, error)
 	NiftyCreateAutoScalingGroupRequest(*computing.NiftyCreateAutoScalingGroupInput) (*request.Request, *computing.NiftyCreateAutoScalingGroupOutput)
 
 	NiftyCreateDhcpConfig(*computing.NiftyCreateDhcpConfigInput) (*computing.NiftyCreateDhcpConfigOutput, error)
-	NiftyCreateDhcpConfigWithContext(aws.Context, *computing.NiftyCreateDhcpConfigInput, ...request.Option) (*computing.NiftyCreateDhcpConfigOutput, error)
+	NiftyCreateDhcpConfigWithContext(nifcloud.Context, *computing.NiftyCreateDhcpConfigInput, ...request.Option) (*computing.NiftyCreateDhcpConfigOutput, error)
 	NiftyCreateDhcpConfigRequest(*computing.NiftyCreateDhcpConfigInput) (*request.Request, *computing.NiftyCreateDhcpConfigOutput)
 
 	NiftyCreateDhcpIpAddressPool(*computing.NiftyCreateDhcpIpAddressPoolInput) (*computing.NiftyCreateDhcpIpAddressPoolOutput, error)
-	NiftyCreateDhcpIpAddressPoolWithContext(aws.Context, *computing.NiftyCreateDhcpIpAddressPoolInput, ...request.Option) (*computing.NiftyCreateDhcpIpAddressPoolOutput, error)
+	NiftyCreateDhcpIpAddressPoolWithContext(nifcloud.Context, *computing.NiftyCreateDhcpIpAddressPoolInput, ...request.Option) (*computing.NiftyCreateDhcpIpAddressPoolOutput, error)
 	NiftyCreateDhcpIpAddressPoolRequest(*computing.NiftyCreateDhcpIpAddressPoolInput) (*request.Request, *computing.NiftyCreateDhcpIpAddressPoolOutput)
 
 	NiftyCreateDhcpStaticMapping(*computing.NiftyCreateDhcpStaticMappingInput) (*computing.NiftyCreateDhcpStaticMappingOutput, error)
-	NiftyCreateDhcpStaticMappingWithContext(aws.Context, *computing.NiftyCreateDhcpStaticMappingInput, ...request.Option) (*computing.NiftyCreateDhcpStaticMappingOutput, error)
+	NiftyCreateDhcpStaticMappingWithContext(nifcloud.Context, *computing.NiftyCreateDhcpStaticMappingInput, ...request.Option) (*computing.NiftyCreateDhcpStaticMappingOutput, error)
 	NiftyCreateDhcpStaticMappingRequest(*computing.NiftyCreateDhcpStaticMappingInput) (*request.Request, *computing.NiftyCreateDhcpStaticMappingOutput)
 
 	NiftyCreateElasticLoadBalancer(*computing.NiftyCreateElasticLoadBalancerInput) (*computing.NiftyCreateElasticLoadBalancerOutput, error)
-	NiftyCreateElasticLoadBalancerWithContext(aws.Context, *computing.NiftyCreateElasticLoadBalancerInput, ...request.Option) (*computing.NiftyCreateElasticLoadBalancerOutput, error)
+	NiftyCreateElasticLoadBalancerWithContext(nifcloud.Context, *computing.NiftyCreateElasticLoadBalancerInput, ...request.Option) (*computing.NiftyCreateElasticLoadBalancerOutput, error)
 	NiftyCreateElasticLoadBalancerRequest(*computing.NiftyCreateElasticLoadBalancerInput) (*request.Request, *computing.NiftyCreateElasticLoadBalancerOutput)
 
 	NiftyCreateInstanceSnapshot(*computing.NiftyCreateInstanceSnapshotInput) (*computing.NiftyCreateInstanceSnapshotOutput, error)
-	NiftyCreateInstanceSnapshotWithContext(aws.Context, *computing.NiftyCreateInstanceSnapshotInput, ...request.Option) (*computing.NiftyCreateInstanceSnapshotOutput, error)
+	NiftyCreateInstanceSnapshotWithContext(nifcloud.Context, *computing.NiftyCreateInstanceSnapshotInput, ...request.Option) (*computing.NiftyCreateInstanceSnapshotOutput, error)
 	NiftyCreateInstanceSnapshotRequest(*computing.NiftyCreateInstanceSnapshotInput) (*request.Request, *computing.NiftyCreateInstanceSnapshotOutput)
 
 	NiftyCreateNatRule(*computing.NiftyCreateNatRuleInput) (*computing.NiftyCreateNatRuleOutput, error)
-	NiftyCreateNatRuleWithContext(aws.Context, *computing.NiftyCreateNatRuleInput, ...request.Option) (*computing.NiftyCreateNatRuleOutput, error)
+	NiftyCreateNatRuleWithContext(nifcloud.Context, *computing.NiftyCreateNatRuleInput, ...request.Option) (*computing.NiftyCreateNatRuleOutput, error)
 	NiftyCreateNatRuleRequest(*computing.NiftyCreateNatRuleInput) (*request.Request, *computing.NiftyCreateNatRuleOutput)
 
 	NiftyCreateNatTable(*computing.NiftyCreateNatTableInput) (*computing.NiftyCreateNatTableOutput, error)
-	NiftyCreateNatTableWithContext(aws.Context, *computing.NiftyCreateNatTableInput, ...request.Option) (*computing.NiftyCreateNatTableOutput, error)
+	NiftyCreateNatTableWithContext(nifcloud.Context, *computing.NiftyCreateNatTableInput, ...request.Option) (*computing.NiftyCreateNatTableOutput, error)
 	NiftyCreateNatTableRequest(*computing.NiftyCreateNatTableInput) (*request.Request, *computing.NiftyCreateNatTableOutput)
 
 	NiftyCreatePrivateLan(*computing.NiftyCreatePrivateLanInput) (*computing.NiftyCreatePrivateLanOutput, error)
-	NiftyCreatePrivateLanWithContext(aws.Context, *computing.NiftyCreatePrivateLanInput, ...request.Option) (*computing.NiftyCreatePrivateLanOutput, error)
+	NiftyCreatePrivateLanWithContext(nifcloud.Context, *computing.NiftyCreatePrivateLanInput, ...request.Option) (*computing.NiftyCreatePrivateLanOutput, error)
 	NiftyCreatePrivateLanRequest(*computing.NiftyCreatePrivateLanInput) (*request.Request, *computing.NiftyCreatePrivateLanOutput)
 
 	NiftyCreateRouter(*computing.NiftyCreateRouterInput) (*computing.NiftyCreateRouterOutput, error)
-	NiftyCreateRouterWithContext(aws.Context, *computing.NiftyCreateRouterInput, ...request.Option) (*computing.NiftyCreateRouterOutput, error)
+	NiftyCreateRouterWithContext(nifcloud.Context, *computing.NiftyCreateRouterInput, ...request.Option) (*computing.NiftyCreateRouterOutput, error)
 	NiftyCreateRouterRequest(*computing.NiftyCreateRouterInput) (*request.Request, *computing.NiftyCreateRouterOutput)
 
 	NiftyCreateSeparateInstanceRule(*computing.NiftyCreateSeparateInstanceRuleInput) (*computing.NiftyCreateSeparateInstanceRuleOutput, error)
-	NiftyCreateSeparateInstanceRuleWithContext(aws.Context, *computing.NiftyCreateSeparateInstanceRuleInput, ...request.Option) (*computing.NiftyCreateSeparateInstanceRuleOutput, error)
+	NiftyCreateSeparateInstanceRuleWithContext(nifcloud.Context, *computing.NiftyCreateSeparateInstanceRuleInput, ...request.Option) (*computing.NiftyCreateSeparateInstanceRuleOutput, error)
 	NiftyCreateSeparateInstanceRuleRequest(*computing.NiftyCreateSeparateInstanceRuleInput) (*request.Request, *computing.NiftyCreateSeparateInstanceRuleOutput)
 
 	NiftyCreateWebProxy(*computing.NiftyCreateWebProxyInput) (*computing.NiftyCreateWebProxyOutput, error)
-	NiftyCreateWebProxyWithContext(aws.Context, *computing.NiftyCreateWebProxyInput, ...request.Option) (*computing.NiftyCreateWebProxyOutput, error)
+	NiftyCreateWebProxyWithContext(nifcloud.Context, *computing.NiftyCreateWebProxyInput, ...request.Option) (*computing.NiftyCreateWebProxyOutput, error)
 	NiftyCreateWebProxyRequest(*computing.NiftyCreateWebProxyInput) (*request.Request, *computing.NiftyCreateWebProxyOutput)
 
 	NiftyDeleteAlarm(*computing.NiftyDeleteAlarmInput) (*computing.NiftyDeleteAlarmOutput, error)
-	NiftyDeleteAlarmWithContext(aws.Context, *computing.NiftyDeleteAlarmInput, ...request.Option) (*computing.NiftyDeleteAlarmOutput, error)
+	NiftyDeleteAlarmWithContext(nifcloud.Context, *computing.NiftyDeleteAlarmInput, ...request.Option) (*computing.NiftyDeleteAlarmOutput, error)
 	NiftyDeleteAlarmRequest(*computing.NiftyDeleteAlarmInput) (*request.Request, *computing.NiftyDeleteAlarmOutput)
 
 	NiftyDeleteAutoScalingGroup(*computing.NiftyDeleteAutoScalingGroupInput) (*computing.NiftyDeleteAutoScalingGroupOutput, error)
-	NiftyDeleteAutoScalingGroupWithContext(aws.Context, *computing.NiftyDeleteAutoScalingGroupInput, ...request.Option) (*computing.NiftyDeleteAutoScalingGroupOutput, error)
+	NiftyDeleteAutoScalingGroupWithContext(nifcloud.Context, *computing.NiftyDeleteAutoScalingGroupInput, ...request.Option) (*computing.NiftyDeleteAutoScalingGroupOutput, error)
 	NiftyDeleteAutoScalingGroupRequest(*computing.NiftyDeleteAutoScalingGroupInput) (*request.Request, *computing.NiftyDeleteAutoScalingGroupOutput)
 
 	NiftyDeleteDhcpConfig(*computing.NiftyDeleteDhcpConfigInput) (*computing.NiftyDeleteDhcpConfigOutput, error)
-	NiftyDeleteDhcpConfigWithContext(aws.Context, *computing.NiftyDeleteDhcpConfigInput, ...request.Option) (*computing.NiftyDeleteDhcpConfigOutput, error)
+	NiftyDeleteDhcpConfigWithContext(nifcloud.Context, *computing.NiftyDeleteDhcpConfigInput, ...request.Option) (*computing.NiftyDeleteDhcpConfigOutput, error)
 	NiftyDeleteDhcpConfigRequest(*computing.NiftyDeleteDhcpConfigInput) (*request.Request, *computing.NiftyDeleteDhcpConfigOutput)
 
 	NiftyDeleteDhcpIpAddressPool(*computing.NiftyDeleteDhcpIpAddressPoolInput) (*computing.NiftyDeleteDhcpIpAddressPoolOutput, error)
-	NiftyDeleteDhcpIpAddressPoolWithContext(aws.Context, *computing.NiftyDeleteDhcpIpAddressPoolInput, ...request.Option) (*computing.NiftyDeleteDhcpIpAddressPoolOutput, error)
+	NiftyDeleteDhcpIpAddressPoolWithContext(nifcloud.Context, *computing.NiftyDeleteDhcpIpAddressPoolInput, ...request.Option) (*computing.NiftyDeleteDhcpIpAddressPoolOutput, error)
 	NiftyDeleteDhcpIpAddressPoolRequest(*computing.NiftyDeleteDhcpIpAddressPoolInput) (*request.Request, *computing.NiftyDeleteDhcpIpAddressPoolOutput)
 
 	NiftyDeleteDhcpStaticMapping(*computing.NiftyDeleteDhcpStaticMappingInput) (*computing.NiftyDeleteDhcpStaticMappingOutput, error)
-	NiftyDeleteDhcpStaticMappingWithContext(aws.Context, *computing.NiftyDeleteDhcpStaticMappingInput, ...request.Option) (*computing.NiftyDeleteDhcpStaticMappingOutput, error)
+	NiftyDeleteDhcpStaticMappingWithContext(nifcloud.Context, *computing.NiftyDeleteDhcpStaticMappingInput, ...request.Option) (*computing.NiftyDeleteDhcpStaticMappingOutput, error)
 	NiftyDeleteDhcpStaticMappingRequest(*computing.NiftyDeleteDhcpStaticMappingInput) (*request.Request, *computing.NiftyDeleteDhcpStaticMappingOutput)
 
 	NiftyDeleteElasticLoadBalancer(*computing.NiftyDeleteElasticLoadBalancerInput) (*computing.NiftyDeleteElasticLoadBalancerOutput, error)
-	NiftyDeleteElasticLoadBalancerWithContext(aws.Context, *computing.NiftyDeleteElasticLoadBalancerInput, ...request.Option) (*computing.NiftyDeleteElasticLoadBalancerOutput, error)
+	NiftyDeleteElasticLoadBalancerWithContext(nifcloud.Context, *computing.NiftyDeleteElasticLoadBalancerInput, ...request.Option) (*computing.NiftyDeleteElasticLoadBalancerOutput, error)
 	NiftyDeleteElasticLoadBalancerRequest(*computing.NiftyDeleteElasticLoadBalancerInput) (*request.Request, *computing.NiftyDeleteElasticLoadBalancerOutput)
 
 	NiftyDeleteInstanceSnapshot(*computing.NiftyDeleteInstanceSnapshotInput) (*computing.NiftyDeleteInstanceSnapshotOutput, error)
-	NiftyDeleteInstanceSnapshotWithContext(aws.Context, *computing.NiftyDeleteInstanceSnapshotInput, ...request.Option) (*computing.NiftyDeleteInstanceSnapshotOutput, error)
+	NiftyDeleteInstanceSnapshotWithContext(nifcloud.Context, *computing.NiftyDeleteInstanceSnapshotInput, ...request.Option) (*computing.NiftyDeleteInstanceSnapshotOutput, error)
 	NiftyDeleteInstanceSnapshotRequest(*computing.NiftyDeleteInstanceSnapshotInput) (*request.Request, *computing.NiftyDeleteInstanceSnapshotOutput)
 
 	NiftyDeleteNatRule(*computing.NiftyDeleteNatRuleInput) (*computing.NiftyDeleteNatRuleOutput, error)
-	NiftyDeleteNatRuleWithContext(aws.Context, *computing.NiftyDeleteNatRuleInput, ...request.Option) (*computing.NiftyDeleteNatRuleOutput, error)
+	NiftyDeleteNatRuleWithContext(nifcloud.Context, *computing.NiftyDeleteNatRuleInput, ...request.Option) (*computing.NiftyDeleteNatRuleOutput, error)
 	NiftyDeleteNatRuleRequest(*computing.NiftyDeleteNatRuleInput) (*request.Request, *computing.NiftyDeleteNatRuleOutput)
 
 	NiftyDeleteNatTable(*computing.NiftyDeleteNatTableInput) (*computing.NiftyDeleteNatTableOutput, error)
-	NiftyDeleteNatTableWithContext(aws.Context, *computing.NiftyDeleteNatTableInput, ...request.Option) (*computing.NiftyDeleteNatTableOutput, error)
+	NiftyDeleteNatTableWithContext(nifcloud.Context, *computing.NiftyDeleteNatTableInput, ...request.Option) (*computing.NiftyDeleteNatTableOutput, error)
 	NiftyDeleteNatTableRequest(*computing.NiftyDeleteNatTableInput) (*request.Request, *computing.NiftyDeleteNatTableOutput)
 
 	NiftyDeletePrivateLan(*computing.NiftyDeletePrivateLanInput) (*computing.NiftyDeletePrivateLanOutput, error)
-	NiftyDeletePrivateLanWithContext(aws.Context, *computing.NiftyDeletePrivateLanInput, ...request.Option) (*computing.NiftyDeletePrivateLanOutput, error)
+	NiftyDeletePrivateLanWithContext(nifcloud.Context, *computing.NiftyDeletePrivateLanInput, ...request.Option) (*computing.NiftyDeletePrivateLanOutput, error)
 	NiftyDeletePrivateLanRequest(*computing.NiftyDeletePrivateLanInput) (*request.Request, *computing.NiftyDeletePrivateLanOutput)
 
 	NiftyDeleteRouter(*computing.NiftyDeleteRouterInput) (*computing.NiftyDeleteRouterOutput, error)
-	NiftyDeleteRouterWithContext(aws.Context, *computing.NiftyDeleteRouterInput, ...request.Option) (*computing.NiftyDeleteRouterOutput, error)
+	NiftyDeleteRouterWithContext(nifcloud.Context, *computing.NiftyDeleteRouterInput, ...request.Option) (*computing.NiftyDeleteRouterOutput, error)
 	NiftyDeleteRouterRequest(*computing.NiftyDeleteRouterInput) (*request.Request, *computing.NiftyDeleteRouterOutput)
 
 	NiftyDeleteSeparateInstanceRule(*computing.NiftyDeleteSeparateInstanceRuleInput) (*computing.NiftyDeleteSeparateInstanceRuleOutput, error)
-	NiftyDeleteSeparateInstanceRuleWithContext(aws.Context, *computing.NiftyDeleteSeparateInstanceRuleInput, ...request.Option) (*computing.NiftyDeleteSeparateInstanceRuleOutput, error)
+	NiftyDeleteSeparateInstanceRuleWithContext(nifcloud.Context, *computing.NiftyDeleteSeparateInstanceRuleInput, ...request.Option) (*computing.NiftyDeleteSeparateInstanceRuleOutput, error)
 	NiftyDeleteSeparateInstanceRuleRequest(*computing.NiftyDeleteSeparateInstanceRuleInput) (*request.Request, *computing.NiftyDeleteSeparateInstanceRuleOutput)
 
 	NiftyDeleteWebProxy(*computing.NiftyDeleteWebProxyInput) (*computing.NiftyDeleteWebProxyOutput, error)
-	NiftyDeleteWebProxyWithContext(aws.Context, *computing.NiftyDeleteWebProxyInput, ...request.Option) (*computing.NiftyDeleteWebProxyOutput, error)
+	NiftyDeleteWebProxyWithContext(nifcloud.Context, *computing.NiftyDeleteWebProxyInput, ...request.Option) (*computing.NiftyDeleteWebProxyOutput, error)
 	NiftyDeleteWebProxyRequest(*computing.NiftyDeleteWebProxyInput) (*request.Request, *computing.NiftyDeleteWebProxyOutput)
 
 	NiftyDeregisterInstancesFromElasticLoadBalancer(*computing.NiftyDeregisterInstancesFromElasticLoadBalancerInput) (*computing.NiftyDeregisterInstancesFromElasticLoadBalancerOutput, error)
-	NiftyDeregisterInstancesFromElasticLoadBalancerWithContext(aws.Context, *computing.NiftyDeregisterInstancesFromElasticLoadBalancerInput, ...request.Option) (*computing.NiftyDeregisterInstancesFromElasticLoadBalancerOutput, error)
+	NiftyDeregisterInstancesFromElasticLoadBalancerWithContext(nifcloud.Context, *computing.NiftyDeregisterInstancesFromElasticLoadBalancerInput, ...request.Option) (*computing.NiftyDeregisterInstancesFromElasticLoadBalancerOutput, error)
 	NiftyDeregisterInstancesFromElasticLoadBalancerRequest(*computing.NiftyDeregisterInstancesFromElasticLoadBalancerInput) (*request.Request, *computing.NiftyDeregisterInstancesFromElasticLoadBalancerOutput)
 
 	NiftyDeregisterInstancesFromSeparateInstanceRule(*computing.NiftyDeregisterInstancesFromSeparateInstanceRuleInput) (*computing.NiftyDeregisterInstancesFromSeparateInstanceRuleOutput, error)
-	NiftyDeregisterInstancesFromSeparateInstanceRuleWithContext(aws.Context, *computing.NiftyDeregisterInstancesFromSeparateInstanceRuleInput, ...request.Option) (*computing.NiftyDeregisterInstancesFromSeparateInstanceRuleOutput, error)
+	NiftyDeregisterInstancesFromSeparateInstanceRuleWithContext(nifcloud.Context, *computing.NiftyDeregisterInstancesFromSeparateInstanceRuleInput, ...request.Option) (*computing.NiftyDeregisterInstancesFromSeparateInstanceRuleOutput, error)
 	NiftyDeregisterInstancesFromSeparateInstanceRuleRequest(*computing.NiftyDeregisterInstancesFromSeparateInstanceRuleInput) (*request.Request, *computing.NiftyDeregisterInstancesFromSeparateInstanceRuleOutput)
 
 	NiftyDeregisterRoutersFromSecurityGroup(*computing.NiftyDeregisterRoutersFromSecurityGroupInput) (*computing.NiftyDeregisterRoutersFromSecurityGroupOutput, error)
-	NiftyDeregisterRoutersFromSecurityGroupWithContext(aws.Context, *computing.NiftyDeregisterRoutersFromSecurityGroupInput, ...request.Option) (*computing.NiftyDeregisterRoutersFromSecurityGroupOutput, error)
+	NiftyDeregisterRoutersFromSecurityGroupWithContext(nifcloud.Context, *computing.NiftyDeregisterRoutersFromSecurityGroupInput, ...request.Option) (*computing.NiftyDeregisterRoutersFromSecurityGroupOutput, error)
 	NiftyDeregisterRoutersFromSecurityGroupRequest(*computing.NiftyDeregisterRoutersFromSecurityGroupInput) (*request.Request, *computing.NiftyDeregisterRoutersFromSecurityGroupOutput)
 
 	NiftyDeregisterVpnGatewaysFromSecurityGroup(*computing.NiftyDeregisterVpnGatewaysFromSecurityGroupInput) (*computing.NiftyDeregisterVpnGatewaysFromSecurityGroupOutput, error)
-	NiftyDeregisterVpnGatewaysFromSecurityGroupWithContext(aws.Context, *computing.NiftyDeregisterVpnGatewaysFromSecurityGroupInput, ...request.Option) (*computing.NiftyDeregisterVpnGatewaysFromSecurityGroupOutput, error)
+	NiftyDeregisterVpnGatewaysFromSecurityGroupWithContext(nifcloud.Context, *computing.NiftyDeregisterVpnGatewaysFromSecurityGroupInput, ...request.Option) (*computing.NiftyDeregisterVpnGatewaysFromSecurityGroupOutput, error)
 	NiftyDeregisterVpnGatewaysFromSecurityGroupRequest(*computing.NiftyDeregisterVpnGatewaysFromSecurityGroupInput) (*request.Request, *computing.NiftyDeregisterVpnGatewaysFromSecurityGroupOutput)
 
 	NiftyDescribeAlarmHistory(*computing.NiftyDescribeAlarmHistoryInput) (*computing.NiftyDescribeAlarmHistoryOutput, error)
-	NiftyDescribeAlarmHistoryWithContext(aws.Context, *computing.NiftyDescribeAlarmHistoryInput, ...request.Option) (*computing.NiftyDescribeAlarmHistoryOutput, error)
+	NiftyDescribeAlarmHistoryWithContext(nifcloud.Context, *computing.NiftyDescribeAlarmHistoryInput, ...request.Option) (*computing.NiftyDescribeAlarmHistoryOutput, error)
 	NiftyDescribeAlarmHistoryRequest(*computing.NiftyDescribeAlarmHistoryInput) (*request.Request, *computing.NiftyDescribeAlarmHistoryOutput)
 
 	NiftyDescribeAlarmRulesActivities(*computing.NiftyDescribeAlarmRulesActivitiesInput) (*computing.NiftyDescribeAlarmRulesActivitiesOutput, error)
-	NiftyDescribeAlarmRulesActivitiesWithContext(aws.Context, *computing.NiftyDescribeAlarmRulesActivitiesInput, ...request.Option) (*computing.NiftyDescribeAlarmRulesActivitiesOutput, error)
+	NiftyDescribeAlarmRulesActivitiesWithContext(nifcloud.Context, *computing.NiftyDescribeAlarmRulesActivitiesInput, ...request.Option) (*computing.NiftyDescribeAlarmRulesActivitiesOutput, error)
 	NiftyDescribeAlarmRulesActivitiesRequest(*computing.NiftyDescribeAlarmRulesActivitiesInput) (*request.Request, *computing.NiftyDescribeAlarmRulesActivitiesOutput)
 
 	NiftyDescribeAlarms(*computing.NiftyDescribeAlarmsInput) (*computing.NiftyDescribeAlarmsOutput, error)
-	NiftyDescribeAlarmsWithContext(aws.Context, *computing.NiftyDescribeAlarmsInput, ...request.Option) (*computing.NiftyDescribeAlarmsOutput, error)
+	NiftyDescribeAlarmsWithContext(nifcloud.Context, *computing.NiftyDescribeAlarmsInput, ...request.Option) (*computing.NiftyDescribeAlarmsOutput, error)
 	NiftyDescribeAlarmsRequest(*computing.NiftyDescribeAlarmsInput) (*request.Request, *computing.NiftyDescribeAlarmsOutput)
 
 	NiftyDescribeAlarmsPartitions(*computing.NiftyDescribeAlarmsPartitionsInput) (*computing.NiftyDescribeAlarmsPartitionsOutput, error)
-	NiftyDescribeAlarmsPartitionsWithContext(aws.Context, *computing.NiftyDescribeAlarmsPartitionsInput, ...request.Option) (*computing.NiftyDescribeAlarmsPartitionsOutput, error)
+	NiftyDescribeAlarmsPartitionsWithContext(nifcloud.Context, *computing.NiftyDescribeAlarmsPartitionsInput, ...request.Option) (*computing.NiftyDescribeAlarmsPartitionsOutput, error)
 	NiftyDescribeAlarmsPartitionsRequest(*computing.NiftyDescribeAlarmsPartitionsInput) (*request.Request, *computing.NiftyDescribeAlarmsPartitionsOutput)
 
 	NiftyDescribeAutoScalingGroups(*computing.NiftyDescribeAutoScalingGroupsInput) (*computing.NiftyDescribeAutoScalingGroupsOutput, error)
-	NiftyDescribeAutoScalingGroupsWithContext(aws.Context, *computing.NiftyDescribeAutoScalingGroupsInput, ...request.Option) (*computing.NiftyDescribeAutoScalingGroupsOutput, error)
+	NiftyDescribeAutoScalingGroupsWithContext(nifcloud.Context, *computing.NiftyDescribeAutoScalingGroupsInput, ...request.Option) (*computing.NiftyDescribeAutoScalingGroupsOutput, error)
 	NiftyDescribeAutoScalingGroupsRequest(*computing.NiftyDescribeAutoScalingGroupsInput) (*request.Request, *computing.NiftyDescribeAutoScalingGroupsOutput)
 
 	NiftyDescribeCorporateInfoForCertificate(*computing.NiftyDescribeCorporateInfoForCertificateInput) (*computing.NiftyDescribeCorporateInfoForCertificateOutput, error)
-	NiftyDescribeCorporateInfoForCertificateWithContext(aws.Context, *computing.NiftyDescribeCorporateInfoForCertificateInput, ...request.Option) (*computing.NiftyDescribeCorporateInfoForCertificateOutput, error)
+	NiftyDescribeCorporateInfoForCertificateWithContext(nifcloud.Context, *computing.NiftyDescribeCorporateInfoForCertificateInput, ...request.Option) (*computing.NiftyDescribeCorporateInfoForCertificateOutput, error)
 	NiftyDescribeCorporateInfoForCertificateRequest(*computing.NiftyDescribeCorporateInfoForCertificateInput) (*request.Request, *computing.NiftyDescribeCorporateInfoForCertificateOutput)
 
 	NiftyDescribeDhcpConfigs(*computing.NiftyDescribeDhcpConfigsInput) (*computing.NiftyDescribeDhcpConfigsOutput, error)
-	NiftyDescribeDhcpConfigsWithContext(aws.Context, *computing.NiftyDescribeDhcpConfigsInput, ...request.Option) (*computing.NiftyDescribeDhcpConfigsOutput, error)
+	NiftyDescribeDhcpConfigsWithContext(nifcloud.Context, *computing.NiftyDescribeDhcpConfigsInput, ...request.Option) (*computing.NiftyDescribeDhcpConfigsOutput, error)
 	NiftyDescribeDhcpConfigsRequest(*computing.NiftyDescribeDhcpConfigsInput) (*request.Request, *computing.NiftyDescribeDhcpConfigsOutput)
 
 	NiftyDescribeDhcpStatus(*computing.NiftyDescribeDhcpStatusInput) (*computing.NiftyDescribeDhcpStatusOutput, error)
-	NiftyDescribeDhcpStatusWithContext(aws.Context, *computing.NiftyDescribeDhcpStatusInput, ...request.Option) (*computing.NiftyDescribeDhcpStatusOutput, error)
+	NiftyDescribeDhcpStatusWithContext(nifcloud.Context, *computing.NiftyDescribeDhcpStatusInput, ...request.Option) (*computing.NiftyDescribeDhcpStatusOutput, error)
 	NiftyDescribeDhcpStatusRequest(*computing.NiftyDescribeDhcpStatusInput) (*request.Request, *computing.NiftyDescribeDhcpStatusOutput)
 
 	NiftyDescribeElasticLoadBalancers(*computing.NiftyDescribeElasticLoadBalancersInput) (*computing.NiftyDescribeElasticLoadBalancersOutput, error)
-	NiftyDescribeElasticLoadBalancersWithContext(aws.Context, *computing.NiftyDescribeElasticLoadBalancersInput, ...request.Option) (*computing.NiftyDescribeElasticLoadBalancersOutput, error)
+	NiftyDescribeElasticLoadBalancersWithContext(nifcloud.Context, *computing.NiftyDescribeElasticLoadBalancersInput, ...request.Option) (*computing.NiftyDescribeElasticLoadBalancersOutput, error)
 	NiftyDescribeElasticLoadBalancersRequest(*computing.NiftyDescribeElasticLoadBalancersInput) (*request.Request, *computing.NiftyDescribeElasticLoadBalancersOutput)
 
 	NiftyDescribeInstanceElasticLoadBalancerHealth(*computing.NiftyDescribeInstanceElasticLoadBalancerHealthInput) (*computing.NiftyDescribeInstanceElasticLoadBalancerHealthOutput, error)
-	NiftyDescribeInstanceElasticLoadBalancerHealthWithContext(aws.Context, *computing.NiftyDescribeInstanceElasticLoadBalancerHealthInput, ...request.Option) (*computing.NiftyDescribeInstanceElasticLoadBalancerHealthOutput, error)
+	NiftyDescribeInstanceElasticLoadBalancerHealthWithContext(nifcloud.Context, *computing.NiftyDescribeInstanceElasticLoadBalancerHealthInput, ...request.Option) (*computing.NiftyDescribeInstanceElasticLoadBalancerHealthOutput, error)
 	NiftyDescribeInstanceElasticLoadBalancerHealthRequest(*computing.NiftyDescribeInstanceElasticLoadBalancerHealthInput) (*request.Request, *computing.NiftyDescribeInstanceElasticLoadBalancerHealthOutput)
 
 	NiftyDescribeInstanceSnapshots(*computing.NiftyDescribeInstanceSnapshotsInput) (*computing.NiftyDescribeInstanceSnapshotsOutput, error)
-	NiftyDescribeInstanceSnapshotsWithContext(aws.Context, *computing.NiftyDescribeInstanceSnapshotsInput, ...request.Option) (*computing.NiftyDescribeInstanceSnapshotsOutput, error)
+	NiftyDescribeInstanceSnapshotsWithContext(nifcloud.Context, *computing.NiftyDescribeInstanceSnapshotsInput, ...request.Option) (*computing.NiftyDescribeInstanceSnapshotsOutput, error)
 	NiftyDescribeInstanceSnapshotsRequest(*computing.NiftyDescribeInstanceSnapshotsInput) (*request.Request, *computing.NiftyDescribeInstanceSnapshotsOutput)
 
 	NiftyDescribeNatTables(*computing.NiftyDescribeNatTablesInput) (*computing.NiftyDescribeNatTablesOutput, error)
-	NiftyDescribeNatTablesWithContext(aws.Context, *computing.NiftyDescribeNatTablesInput, ...request.Option) (*computing.NiftyDescribeNatTablesOutput, error)
+	NiftyDescribeNatTablesWithContext(nifcloud.Context, *computing.NiftyDescribeNatTablesInput, ...request.Option) (*computing.NiftyDescribeNatTablesOutput, error)
 	NiftyDescribeNatTablesRequest(*computing.NiftyDescribeNatTablesInput) (*request.Request, *computing.NiftyDescribeNatTablesOutput)
 
 	NiftyDescribePerformanceChart(*computing.NiftyDescribePerformanceChartInput) (*computing.NiftyDescribePerformanceChartOutput, error)
-	NiftyDescribePerformanceChartWithContext(aws.Context, *computing.NiftyDescribePerformanceChartInput, ...request.Option) (*computing.NiftyDescribePerformanceChartOutput, error)
+	NiftyDescribePerformanceChartWithContext(nifcloud.Context, *computing.NiftyDescribePerformanceChartInput, ...request.Option) (*computing.NiftyDescribePerformanceChartOutput, error)
 	NiftyDescribePerformanceChartRequest(*computing.NiftyDescribePerformanceChartInput) (*request.Request, *computing.NiftyDescribePerformanceChartOutput)
 
 	NiftyDescribePrivateLans(*computing.NiftyDescribePrivateLansInput) (*computing.NiftyDescribePrivateLansOutput, error)
-	NiftyDescribePrivateLansWithContext(aws.Context, *computing.NiftyDescribePrivateLansInput, ...request.Option) (*computing.NiftyDescribePrivateLansOutput, error)
+	NiftyDescribePrivateLansWithContext(nifcloud.Context, *computing.NiftyDescribePrivateLansInput, ...request.Option) (*computing.NiftyDescribePrivateLansOutput, error)
 	NiftyDescribePrivateLansRequest(*computing.NiftyDescribePrivateLansInput) (*request.Request, *computing.NiftyDescribePrivateLansOutput)
 
 	NiftyDescribeRouters(*computing.NiftyDescribeRoutersInput) (*computing.NiftyDescribeRoutersOutput, error)
-	NiftyDescribeRoutersWithContext(aws.Context, *computing.NiftyDescribeRoutersInput, ...request.Option) (*computing.NiftyDescribeRoutersOutput, error)
+	NiftyDescribeRoutersWithContext(nifcloud.Context, *computing.NiftyDescribeRoutersInput, ...request.Option) (*computing.NiftyDescribeRoutersOutput, error)
 	NiftyDescribeRoutersRequest(*computing.NiftyDescribeRoutersInput) (*request.Request, *computing.NiftyDescribeRoutersOutput)
 
 	NiftyDescribeScalingActivities(*computing.NiftyDescribeScalingActivitiesInput) (*computing.NiftyDescribeScalingActivitiesOutput, error)
-	NiftyDescribeScalingActivitiesWithContext(aws.Context, *computing.NiftyDescribeScalingActivitiesInput, ...request.Option) (*computing.NiftyDescribeScalingActivitiesOutput, error)
+	NiftyDescribeScalingActivitiesWithContext(nifcloud.Context, *computing.NiftyDescribeScalingActivitiesInput, ...request.Option) (*computing.NiftyDescribeScalingActivitiesOutput, error)
 	NiftyDescribeScalingActivitiesRequest(*computing.NiftyDescribeScalingActivitiesInput) (*request.Request, *computing.NiftyDescribeScalingActivitiesOutput)
 
 	NiftyDescribeSeparateInstanceRules(*computing.NiftyDescribeSeparateInstanceRulesInput) (*computing.NiftyDescribeSeparateInstanceRulesOutput, error)
-	NiftyDescribeSeparateInstanceRulesWithContext(aws.Context, *computing.NiftyDescribeSeparateInstanceRulesInput, ...request.Option) (*computing.NiftyDescribeSeparateInstanceRulesOutput, error)
+	NiftyDescribeSeparateInstanceRulesWithContext(nifcloud.Context, *computing.NiftyDescribeSeparateInstanceRulesInput, ...request.Option) (*computing.NiftyDescribeSeparateInstanceRulesOutput, error)
 	NiftyDescribeSeparateInstanceRulesRequest(*computing.NiftyDescribeSeparateInstanceRulesInput) (*request.Request, *computing.NiftyDescribeSeparateInstanceRulesOutput)
 
 	NiftyDescribeVpnGatewayActivities(*computing.NiftyDescribeVpnGatewayActivitiesInput) (*computing.NiftyDescribeVpnGatewayActivitiesOutput, error)
-	NiftyDescribeVpnGatewayActivitiesWithContext(aws.Context, *computing.NiftyDescribeVpnGatewayActivitiesInput, ...request.Option) (*computing.NiftyDescribeVpnGatewayActivitiesOutput, error)
+	NiftyDescribeVpnGatewayActivitiesWithContext(nifcloud.Context, *computing.NiftyDescribeVpnGatewayActivitiesInput, ...request.Option) (*computing.NiftyDescribeVpnGatewayActivitiesOutput, error)
 	NiftyDescribeVpnGatewayActivitiesRequest(*computing.NiftyDescribeVpnGatewayActivitiesInput) (*request.Request, *computing.NiftyDescribeVpnGatewayActivitiesOutput)
 
 	NiftyDescribeWebProxies(*computing.NiftyDescribeWebProxiesInput) (*computing.NiftyDescribeWebProxiesOutput, error)
-	NiftyDescribeWebProxiesWithContext(aws.Context, *computing.NiftyDescribeWebProxiesInput, ...request.Option) (*computing.NiftyDescribeWebProxiesOutput, error)
+	NiftyDescribeWebProxiesWithContext(nifcloud.Context, *computing.NiftyDescribeWebProxiesInput, ...request.Option) (*computing.NiftyDescribeWebProxiesOutput, error)
 	NiftyDescribeWebProxiesRequest(*computing.NiftyDescribeWebProxiesInput) (*request.Request, *computing.NiftyDescribeWebProxiesOutput)
 
 	NiftyDisableDhcp(*computing.NiftyDisableDhcpInput) (*computing.NiftyDisableDhcpOutput, error)
-	NiftyDisableDhcpWithContext(aws.Context, *computing.NiftyDisableDhcpInput, ...request.Option) (*computing.NiftyDisableDhcpOutput, error)
+	NiftyDisableDhcpWithContext(nifcloud.Context, *computing.NiftyDisableDhcpInput, ...request.Option) (*computing.NiftyDisableDhcpOutput, error)
 	NiftyDisableDhcpRequest(*computing.NiftyDisableDhcpInput) (*request.Request, *computing.NiftyDisableDhcpOutput)
 
 	NiftyDisassociateNatTable(*computing.NiftyDisassociateNatTableInput) (*computing.NiftyDisassociateNatTableOutput, error)
-	NiftyDisassociateNatTableWithContext(aws.Context, *computing.NiftyDisassociateNatTableInput, ...request.Option) (*computing.NiftyDisassociateNatTableOutput, error)
+	NiftyDisassociateNatTableWithContext(nifcloud.Context, *computing.NiftyDisassociateNatTableInput, ...request.Option) (*computing.NiftyDisassociateNatTableOutput, error)
 	NiftyDisassociateNatTableRequest(*computing.NiftyDisassociateNatTableInput) (*request.Request, *computing.NiftyDisassociateNatTableOutput)
 
 	NiftyDisassociateRouteTableFromVpnGateway(*computing.NiftyDisassociateRouteTableFromVpnGatewayInput) (*computing.NiftyDisassociateRouteTableFromVpnGatewayOutput, error)
-	NiftyDisassociateRouteTableFromVpnGatewayWithContext(aws.Context, *computing.NiftyDisassociateRouteTableFromVpnGatewayInput, ...request.Option) (*computing.NiftyDisassociateRouteTableFromVpnGatewayOutput, error)
+	NiftyDisassociateRouteTableFromVpnGatewayWithContext(nifcloud.Context, *computing.NiftyDisassociateRouteTableFromVpnGatewayInput, ...request.Option) (*computing.NiftyDisassociateRouteTableFromVpnGatewayOutput, error)
 	NiftyDisassociateRouteTableFromVpnGatewayRequest(*computing.NiftyDisassociateRouteTableFromVpnGatewayInput) (*request.Request, *computing.NiftyDisassociateRouteTableFromVpnGatewayOutput)
 
 	NiftyEnableDhcp(*computing.NiftyEnableDhcpInput) (*computing.NiftyEnableDhcpOutput, error)
-	NiftyEnableDhcpWithContext(aws.Context, *computing.NiftyEnableDhcpInput, ...request.Option) (*computing.NiftyEnableDhcpOutput, error)
+	NiftyEnableDhcpWithContext(nifcloud.Context, *computing.NiftyEnableDhcpInput, ...request.Option) (*computing.NiftyEnableDhcpOutput, error)
 	NiftyEnableDhcpRequest(*computing.NiftyEnableDhcpInput) (*request.Request, *computing.NiftyEnableDhcpOutput)
 
 	NiftyModifyAddressAttribute(*computing.NiftyModifyAddressAttributeInput) (*computing.NiftyModifyAddressAttributeOutput, error)
-	NiftyModifyAddressAttributeWithContext(aws.Context, *computing.NiftyModifyAddressAttributeInput, ...request.Option) (*computing.NiftyModifyAddressAttributeOutput, error)
+	NiftyModifyAddressAttributeWithContext(nifcloud.Context, *computing.NiftyModifyAddressAttributeInput, ...request.Option) (*computing.NiftyModifyAddressAttributeOutput, error)
 	NiftyModifyAddressAttributeRequest(*computing.NiftyModifyAddressAttributeInput) (*request.Request, *computing.NiftyModifyAddressAttributeOutput)
 
 	NiftyModifyCustomerGatewayAttribute(*computing.NiftyModifyCustomerGatewayAttributeInput) (*computing.NiftyModifyCustomerGatewayAttributeOutput, error)
-	NiftyModifyCustomerGatewayAttributeWithContext(aws.Context, *computing.NiftyModifyCustomerGatewayAttributeInput, ...request.Option) (*computing.NiftyModifyCustomerGatewayAttributeOutput, error)
+	NiftyModifyCustomerGatewayAttributeWithContext(nifcloud.Context, *computing.NiftyModifyCustomerGatewayAttributeInput, ...request.Option) (*computing.NiftyModifyCustomerGatewayAttributeOutput, error)
 	NiftyModifyCustomerGatewayAttributeRequest(*computing.NiftyModifyCustomerGatewayAttributeInput) (*request.Request, *computing.NiftyModifyCustomerGatewayAttributeOutput)
 
 	NiftyModifyElasticLoadBalancerAttributes(*computing.NiftyModifyElasticLoadBalancerAttributesInput) (*computing.NiftyModifyElasticLoadBalancerAttributesOutput, error)
-	NiftyModifyElasticLoadBalancerAttributesWithContext(aws.Context, *computing.NiftyModifyElasticLoadBalancerAttributesInput, ...request.Option) (*computing.NiftyModifyElasticLoadBalancerAttributesOutput, error)
+	NiftyModifyElasticLoadBalancerAttributesWithContext(nifcloud.Context, *computing.NiftyModifyElasticLoadBalancerAttributesInput, ...request.Option) (*computing.NiftyModifyElasticLoadBalancerAttributesOutput, error)
 	NiftyModifyElasticLoadBalancerAttributesRequest(*computing.NiftyModifyElasticLoadBalancerAttributesInput) (*request.Request, *computing.NiftyModifyElasticLoadBalancerAttributesOutput)
 
 	NiftyModifyInstanceSnapshotAttribute(*computing.NiftyModifyInstanceSnapshotAttributeInput) (*computing.NiftyModifyInstanceSnapshotAttributeOutput, error)
-	NiftyModifyInstanceSnapshotAttributeWithContext(aws.Context, *computing.NiftyModifyInstanceSnapshotAttributeInput, ...request.Option) (*computing.NiftyModifyInstanceSnapshotAttributeOutput, error)
+	NiftyModifyInstanceSnapshotAttributeWithContext(nifcloud.Context, *computing.NiftyModifyInstanceSnapshotAttributeInput, ...request.Option) (*computing.NiftyModifyInstanceSnapshotAttributeOutput, error)
 	NiftyModifyInstanceSnapshotAttributeRequest(*computing.NiftyModifyInstanceSnapshotAttributeInput) (*request.Request, *computing.NiftyModifyInstanceSnapshotAttributeOutput)
 
 	NiftyModifyKeyPairAttribute(*computing.NiftyModifyKeyPairAttributeInput) (*computing.NiftyModifyKeyPairAttributeOutput, error)
-	NiftyModifyKeyPairAttributeWithContext(aws.Context, *computing.NiftyModifyKeyPairAttributeInput, ...request.Option) (*computing.NiftyModifyKeyPairAttributeOutput, error)
+	NiftyModifyKeyPairAttributeWithContext(nifcloud.Context, *computing.NiftyModifyKeyPairAttributeInput, ...request.Option) (*computing.NiftyModifyKeyPairAttributeOutput, error)
 	NiftyModifyKeyPairAttributeRequest(*computing.NiftyModifyKeyPairAttributeInput) (*request.Request, *computing.NiftyModifyKeyPairAttributeOutput)
 
 	NiftyModifyPrivateLanAttribute(*computing.NiftyModifyPrivateLanAttributeInput) (*computing.NiftyModifyPrivateLanAttributeOutput, error)
-	NiftyModifyPrivateLanAttributeWithContext(aws.Context, *computing.NiftyModifyPrivateLanAttributeInput, ...request.Option) (*computing.NiftyModifyPrivateLanAttributeOutput, error)
+	NiftyModifyPrivateLanAttributeWithContext(nifcloud.Context, *computing.NiftyModifyPrivateLanAttributeInput, ...request.Option) (*computing.NiftyModifyPrivateLanAttributeOutput, error)
 	NiftyModifyPrivateLanAttributeRequest(*computing.NiftyModifyPrivateLanAttributeInput) (*request.Request, *computing.NiftyModifyPrivateLanAttributeOutput)
 
 	NiftyModifyRouterAttribute(*computing.NiftyModifyRouterAttributeInput) (*computing.NiftyModifyRouterAttributeOutput, error)
-	NiftyModifyRouterAttributeWithContext(aws.Context, *computing.NiftyModifyRouterAttributeInput, ...request.Option) (*computing.NiftyModifyRouterAttributeOutput, error)
+	NiftyModifyRouterAttributeWithContext(nifcloud.Context, *computing.NiftyModifyRouterAttributeInput, ...request.Option) (*computing.NiftyModifyRouterAttributeOutput, error)
 	NiftyModifyRouterAttributeRequest(*computing.NiftyModifyRouterAttributeInput) (*request.Request, *computing.NiftyModifyRouterAttributeOutput)
 
 	NiftyModifyVpnGatewayAttribute(*computing.NiftyModifyVpnGatewayAttributeInput) (*computing.NiftyModifyVpnGatewayAttributeOutput, error)
-	NiftyModifyVpnGatewayAttributeWithContext(aws.Context, *computing.NiftyModifyVpnGatewayAttributeInput, ...request.Option) (*computing.NiftyModifyVpnGatewayAttributeOutput, error)
+	NiftyModifyVpnGatewayAttributeWithContext(nifcloud.Context, *computing.NiftyModifyVpnGatewayAttributeInput, ...request.Option) (*computing.NiftyModifyVpnGatewayAttributeOutput, error)
 	NiftyModifyVpnGatewayAttributeRequest(*computing.NiftyModifyVpnGatewayAttributeInput) (*request.Request, *computing.NiftyModifyVpnGatewayAttributeOutput)
 
 	NiftyModifyWebProxyAttribute(*computing.NiftyModifyWebProxyAttributeInput) (*computing.NiftyModifyWebProxyAttributeOutput, error)
-	NiftyModifyWebProxyAttributeWithContext(aws.Context, *computing.NiftyModifyWebProxyAttributeInput, ...request.Option) (*computing.NiftyModifyWebProxyAttributeOutput, error)
+	NiftyModifyWebProxyAttributeWithContext(nifcloud.Context, *computing.NiftyModifyWebProxyAttributeInput, ...request.Option) (*computing.NiftyModifyWebProxyAttributeOutput, error)
 	NiftyModifyWebProxyAttributeRequest(*computing.NiftyModifyWebProxyAttributeInput) (*request.Request, *computing.NiftyModifyWebProxyAttributeOutput)
 
 	NiftyRebootRouters(*computing.NiftyRebootRoutersInput) (*computing.NiftyRebootRoutersOutput, error)
-	NiftyRebootRoutersWithContext(aws.Context, *computing.NiftyRebootRoutersInput, ...request.Option) (*computing.NiftyRebootRoutersOutput, error)
+	NiftyRebootRoutersWithContext(nifcloud.Context, *computing.NiftyRebootRoutersInput, ...request.Option) (*computing.NiftyRebootRoutersOutput, error)
 	NiftyRebootRoutersRequest(*computing.NiftyRebootRoutersInput) (*request.Request, *computing.NiftyRebootRoutersOutput)
 
 	NiftyRebootVpnGateways(*computing.NiftyRebootVpnGatewaysInput) (*computing.NiftyRebootVpnGatewaysOutput, error)
-	NiftyRebootVpnGatewaysWithContext(aws.Context, *computing.NiftyRebootVpnGatewaysInput, ...request.Option) (*computing.NiftyRebootVpnGatewaysOutput, error)
+	NiftyRebootVpnGatewaysWithContext(nifcloud.Context, *computing.NiftyRebootVpnGatewaysInput, ...request.Option) (*computing.NiftyRebootVpnGatewaysOutput, error)
 	NiftyRebootVpnGatewaysRequest(*computing.NiftyRebootVpnGatewaysInput) (*request.Request, *computing.NiftyRebootVpnGatewaysOutput)
 
 	NiftyRegisterInstancesWithElasticLoadBalancer(*computing.NiftyRegisterInstancesWithElasticLoadBalancerInput) (*computing.NiftyRegisterInstancesWithElasticLoadBalancerOutput, error)
-	NiftyRegisterInstancesWithElasticLoadBalancerWithContext(aws.Context, *computing.NiftyRegisterInstancesWithElasticLoadBalancerInput, ...request.Option) (*computing.NiftyRegisterInstancesWithElasticLoadBalancerOutput, error)
+	NiftyRegisterInstancesWithElasticLoadBalancerWithContext(nifcloud.Context, *computing.NiftyRegisterInstancesWithElasticLoadBalancerInput, ...request.Option) (*computing.NiftyRegisterInstancesWithElasticLoadBalancerOutput, error)
 	NiftyRegisterInstancesWithElasticLoadBalancerRequest(*computing.NiftyRegisterInstancesWithElasticLoadBalancerInput) (*request.Request, *computing.NiftyRegisterInstancesWithElasticLoadBalancerOutput)
 
 	NiftyRegisterInstancesWithSeparateInstanceRule(*computing.NiftyRegisterInstancesWithSeparateInstanceRuleInput) (*computing.NiftyRegisterInstancesWithSeparateInstanceRuleOutput, error)
-	NiftyRegisterInstancesWithSeparateInstanceRuleWithContext(aws.Context, *computing.NiftyRegisterInstancesWithSeparateInstanceRuleInput, ...request.Option) (*computing.NiftyRegisterInstancesWithSeparateInstanceRuleOutput, error)
+	NiftyRegisterInstancesWithSeparateInstanceRuleWithContext(nifcloud.Context, *computing.NiftyRegisterInstancesWithSeparateInstanceRuleInput, ...request.Option) (*computing.NiftyRegisterInstancesWithSeparateInstanceRuleOutput, error)
 	NiftyRegisterInstancesWithSeparateInstanceRuleRequest(*computing.NiftyRegisterInstancesWithSeparateInstanceRuleInput) (*request.Request, *computing.NiftyRegisterInstancesWithSeparateInstanceRuleOutput)
 
 	NiftyRegisterPortWithElasticLoadBalancer(*computing.NiftyRegisterPortWithElasticLoadBalancerInput) (*computing.NiftyRegisterPortWithElasticLoadBalancerOutput, error)
-	NiftyRegisterPortWithElasticLoadBalancerWithContext(aws.Context, *computing.NiftyRegisterPortWithElasticLoadBalancerInput, ...request.Option) (*computing.NiftyRegisterPortWithElasticLoadBalancerOutput, error)
+	NiftyRegisterPortWithElasticLoadBalancerWithContext(nifcloud.Context, *computing.NiftyRegisterPortWithElasticLoadBalancerInput, ...request.Option) (*computing.NiftyRegisterPortWithElasticLoadBalancerOutput, error)
 	NiftyRegisterPortWithElasticLoadBalancerRequest(*computing.NiftyRegisterPortWithElasticLoadBalancerInput) (*request.Request, *computing.NiftyRegisterPortWithElasticLoadBalancerOutput)
 
 	NiftyRegisterRoutersWithSecurityGroup(*computing.NiftyRegisterRoutersWithSecurityGroupInput) (*computing.NiftyRegisterRoutersWithSecurityGroupOutput, error)
-	NiftyRegisterRoutersWithSecurityGroupWithContext(aws.Context, *computing.NiftyRegisterRoutersWithSecurityGroupInput, ...request.Option) (*computing.NiftyRegisterRoutersWithSecurityGroupOutput, error)
+	NiftyRegisterRoutersWithSecurityGroupWithContext(nifcloud.Context, *computing.NiftyRegisterRoutersWithSecurityGroupInput, ...request.Option) (*computing.NiftyRegisterRoutersWithSecurityGroupOutput, error)
 	NiftyRegisterRoutersWithSecurityGroupRequest(*computing.NiftyRegisterRoutersWithSecurityGroupInput) (*request.Request, *computing.NiftyRegisterRoutersWithSecurityGroupOutput)
 
 	NiftyRegisterVpnGatewaysWithSecurityGroup(*computing.NiftyRegisterVpnGatewaysWithSecurityGroupInput) (*computing.NiftyRegisterVpnGatewaysWithSecurityGroupOutput, error)
-	NiftyRegisterVpnGatewaysWithSecurityGroupWithContext(aws.Context, *computing.NiftyRegisterVpnGatewaysWithSecurityGroupInput, ...request.Option) (*computing.NiftyRegisterVpnGatewaysWithSecurityGroupOutput, error)
+	NiftyRegisterVpnGatewaysWithSecurityGroupWithContext(nifcloud.Context, *computing.NiftyRegisterVpnGatewaysWithSecurityGroupInput, ...request.Option) (*computing.NiftyRegisterVpnGatewaysWithSecurityGroupOutput, error)
 	NiftyRegisterVpnGatewaysWithSecurityGroupRequest(*computing.NiftyRegisterVpnGatewaysWithSecurityGroupInput) (*request.Request, *computing.NiftyRegisterVpnGatewaysWithSecurityGroupOutput)
 
 	NiftyReleaseRouterBackupState(*computing.NiftyReleaseRouterBackupStateInput) (*computing.NiftyReleaseRouterBackupStateOutput, error)
-	NiftyReleaseRouterBackupStateWithContext(aws.Context, *computing.NiftyReleaseRouterBackupStateInput, ...request.Option) (*computing.NiftyReleaseRouterBackupStateOutput, error)
+	NiftyReleaseRouterBackupStateWithContext(nifcloud.Context, *computing.NiftyReleaseRouterBackupStateInput, ...request.Option) (*computing.NiftyReleaseRouterBackupStateOutput, error)
 	NiftyReleaseRouterBackupStateRequest(*computing.NiftyReleaseRouterBackupStateInput) (*request.Request, *computing.NiftyReleaseRouterBackupStateOutput)
 
 	NiftyReleaseVpnGatewayBackupState(*computing.NiftyReleaseVpnGatewayBackupStateInput) (*computing.NiftyReleaseVpnGatewayBackupStateOutput, error)
-	NiftyReleaseVpnGatewayBackupStateWithContext(aws.Context, *computing.NiftyReleaseVpnGatewayBackupStateInput, ...request.Option) (*computing.NiftyReleaseVpnGatewayBackupStateOutput, error)
+	NiftyReleaseVpnGatewayBackupStateWithContext(nifcloud.Context, *computing.NiftyReleaseVpnGatewayBackupStateInput, ...request.Option) (*computing.NiftyReleaseVpnGatewayBackupStateOutput, error)
 	NiftyReleaseVpnGatewayBackupStateRequest(*computing.NiftyReleaseVpnGatewayBackupStateInput) (*request.Request, *computing.NiftyReleaseVpnGatewayBackupStateOutput)
 
 	NiftyReplaceDhcpConfig(*computing.NiftyReplaceDhcpConfigInput) (*computing.NiftyReplaceDhcpConfigOutput, error)
-	NiftyReplaceDhcpConfigWithContext(aws.Context, *computing.NiftyReplaceDhcpConfigInput, ...request.Option) (*computing.NiftyReplaceDhcpConfigOutput, error)
+	NiftyReplaceDhcpConfigWithContext(nifcloud.Context, *computing.NiftyReplaceDhcpConfigInput, ...request.Option) (*computing.NiftyReplaceDhcpConfigOutput, error)
 	NiftyReplaceDhcpConfigRequest(*computing.NiftyReplaceDhcpConfigInput) (*request.Request, *computing.NiftyReplaceDhcpConfigOutput)
 
 	NiftyReplaceDhcpOption(*computing.NiftyReplaceDhcpOptionInput) (*computing.NiftyReplaceDhcpOptionOutput, error)
-	NiftyReplaceDhcpOptionWithContext(aws.Context, *computing.NiftyReplaceDhcpOptionInput, ...request.Option) (*computing.NiftyReplaceDhcpOptionOutput, error)
+	NiftyReplaceDhcpOptionWithContext(nifcloud.Context, *computing.NiftyReplaceDhcpOptionInput, ...request.Option) (*computing.NiftyReplaceDhcpOptionOutput, error)
 	NiftyReplaceDhcpOptionRequest(*computing.NiftyReplaceDhcpOptionInput) (*request.Request, *computing.NiftyReplaceDhcpOptionOutput)
 
 	NiftyReplaceElasticLoadBalancerLatestVersion(*computing.NiftyReplaceElasticLoadBalancerLatestVersionInput) (*computing.NiftyReplaceElasticLoadBalancerLatestVersionOutput, error)
-	NiftyReplaceElasticLoadBalancerLatestVersionWithContext(aws.Context, *computing.NiftyReplaceElasticLoadBalancerLatestVersionInput, ...request.Option) (*computing.NiftyReplaceElasticLoadBalancerLatestVersionOutput, error)
+	NiftyReplaceElasticLoadBalancerLatestVersionWithContext(nifcloud.Context, *computing.NiftyReplaceElasticLoadBalancerLatestVersionInput, ...request.Option) (*computing.NiftyReplaceElasticLoadBalancerLatestVersionOutput, error)
 	NiftyReplaceElasticLoadBalancerLatestVersionRequest(*computing.NiftyReplaceElasticLoadBalancerLatestVersionInput) (*request.Request, *computing.NiftyReplaceElasticLoadBalancerLatestVersionOutput)
 
 	NiftyReplaceNatRule(*computing.NiftyReplaceNatRuleInput) (*computing.NiftyReplaceNatRuleOutput, error)
-	NiftyReplaceNatRuleWithContext(aws.Context, *computing.NiftyReplaceNatRuleInput, ...request.Option) (*computing.NiftyReplaceNatRuleOutput, error)
+	NiftyReplaceNatRuleWithContext(nifcloud.Context, *computing.NiftyReplaceNatRuleInput, ...request.Option) (*computing.NiftyReplaceNatRuleOutput, error)
 	NiftyReplaceNatRuleRequest(*computing.NiftyReplaceNatRuleInput) (*request.Request, *computing.NiftyReplaceNatRuleOutput)
 
 	NiftyReplaceNatTableAssociation(*computing.NiftyReplaceNatTableAssociationInput) (*computing.NiftyReplaceNatTableAssociationOutput, error)
-	NiftyReplaceNatTableAssociationWithContext(aws.Context, *computing.NiftyReplaceNatTableAssociationInput, ...request.Option) (*computing.NiftyReplaceNatTableAssociationOutput, error)
+	NiftyReplaceNatTableAssociationWithContext(nifcloud.Context, *computing.NiftyReplaceNatTableAssociationInput, ...request.Option) (*computing.NiftyReplaceNatTableAssociationOutput, error)
 	NiftyReplaceNatTableAssociationRequest(*computing.NiftyReplaceNatTableAssociationInput) (*request.Request, *computing.NiftyReplaceNatTableAssociationOutput)
 
 	NiftyReplaceRouteTableAssociationWithVpnGateway(*computing.NiftyReplaceRouteTableAssociationWithVpnGatewayInput) (*computing.NiftyReplaceRouteTableAssociationWithVpnGatewayOutput, error)
-	NiftyReplaceRouteTableAssociationWithVpnGatewayWithContext(aws.Context, *computing.NiftyReplaceRouteTableAssociationWithVpnGatewayInput, ...request.Option) (*computing.NiftyReplaceRouteTableAssociationWithVpnGatewayOutput, error)
+	NiftyReplaceRouteTableAssociationWithVpnGatewayWithContext(nifcloud.Context, *computing.NiftyReplaceRouteTableAssociationWithVpnGatewayInput, ...request.Option) (*computing.NiftyReplaceRouteTableAssociationWithVpnGatewayOutput, error)
 	NiftyReplaceRouteTableAssociationWithVpnGatewayRequest(*computing.NiftyReplaceRouteTableAssociationWithVpnGatewayInput) (*request.Request, *computing.NiftyReplaceRouteTableAssociationWithVpnGatewayOutput)
 
 	NiftyReplaceRouterLatestVersion(*computing.NiftyReplaceRouterLatestVersionInput) (*computing.NiftyReplaceRouterLatestVersionOutput, error)
-	NiftyReplaceRouterLatestVersionWithContext(aws.Context, *computing.NiftyReplaceRouterLatestVersionInput, ...request.Option) (*computing.NiftyReplaceRouterLatestVersionOutput, error)
+	NiftyReplaceRouterLatestVersionWithContext(nifcloud.Context, *computing.NiftyReplaceRouterLatestVersionInput, ...request.Option) (*computing.NiftyReplaceRouterLatestVersionOutput, error)
 	NiftyReplaceRouterLatestVersionRequest(*computing.NiftyReplaceRouterLatestVersionInput) (*request.Request, *computing.NiftyReplaceRouterLatestVersionOutput)
 
 	NiftyReplaceVpnGatewayLatestVersion(*computing.NiftyReplaceVpnGatewayLatestVersionInput) (*computing.NiftyReplaceVpnGatewayLatestVersionOutput, error)
-	NiftyReplaceVpnGatewayLatestVersionWithContext(aws.Context, *computing.NiftyReplaceVpnGatewayLatestVersionInput, ...request.Option) (*computing.NiftyReplaceVpnGatewayLatestVersionOutput, error)
+	NiftyReplaceVpnGatewayLatestVersionWithContext(nifcloud.Context, *computing.NiftyReplaceVpnGatewayLatestVersionInput, ...request.Option) (*computing.NiftyReplaceVpnGatewayLatestVersionOutput, error)
 	NiftyReplaceVpnGatewayLatestVersionRequest(*computing.NiftyReplaceVpnGatewayLatestVersionInput) (*request.Request, *computing.NiftyReplaceVpnGatewayLatestVersionOutput)
 
 	NiftyRestoreInstanceSnapshot(*computing.NiftyRestoreInstanceSnapshotInput) (*computing.NiftyRestoreInstanceSnapshotOutput, error)
-	NiftyRestoreInstanceSnapshotWithContext(aws.Context, *computing.NiftyRestoreInstanceSnapshotInput, ...request.Option) (*computing.NiftyRestoreInstanceSnapshotOutput, error)
+	NiftyRestoreInstanceSnapshotWithContext(nifcloud.Context, *computing.NiftyRestoreInstanceSnapshotInput, ...request.Option) (*computing.NiftyRestoreInstanceSnapshotOutput, error)
 	NiftyRestoreInstanceSnapshotRequest(*computing.NiftyRestoreInstanceSnapshotInput) (*request.Request, *computing.NiftyRestoreInstanceSnapshotOutput)
 
 	NiftyRestoreRouterPreviousVersion(*computing.NiftyRestoreRouterPreviousVersionInput) (*computing.NiftyRestoreRouterPreviousVersionOutput, error)
-	NiftyRestoreRouterPreviousVersionWithContext(aws.Context, *computing.NiftyRestoreRouterPreviousVersionInput, ...request.Option) (*computing.NiftyRestoreRouterPreviousVersionOutput, error)
+	NiftyRestoreRouterPreviousVersionWithContext(nifcloud.Context, *computing.NiftyRestoreRouterPreviousVersionInput, ...request.Option) (*computing.NiftyRestoreRouterPreviousVersionOutput, error)
 	NiftyRestoreRouterPreviousVersionRequest(*computing.NiftyRestoreRouterPreviousVersionInput) (*request.Request, *computing.NiftyRestoreRouterPreviousVersionOutput)
 
 	NiftyRestoreVpnGatewayPreviousVersion(*computing.NiftyRestoreVpnGatewayPreviousVersionInput) (*computing.NiftyRestoreVpnGatewayPreviousVersionOutput, error)
-	NiftyRestoreVpnGatewayPreviousVersionWithContext(aws.Context, *computing.NiftyRestoreVpnGatewayPreviousVersionInput, ...request.Option) (*computing.NiftyRestoreVpnGatewayPreviousVersionOutput, error)
+	NiftyRestoreVpnGatewayPreviousVersionWithContext(nifcloud.Context, *computing.NiftyRestoreVpnGatewayPreviousVersionInput, ...request.Option) (*computing.NiftyRestoreVpnGatewayPreviousVersionOutput, error)
 	NiftyRestoreVpnGatewayPreviousVersionRequest(*computing.NiftyRestoreVpnGatewayPreviousVersionInput) (*request.Request, *computing.NiftyRestoreVpnGatewayPreviousVersionOutput)
 
 	NiftyRetryImportInstance(*computing.NiftyRetryImportInstanceInput) (*computing.NiftyRetryImportInstanceOutput, error)
-	NiftyRetryImportInstanceWithContext(aws.Context, *computing.NiftyRetryImportInstanceInput, ...request.Option) (*computing.NiftyRetryImportInstanceOutput, error)
+	NiftyRetryImportInstanceWithContext(nifcloud.Context, *computing.NiftyRetryImportInstanceInput, ...request.Option) (*computing.NiftyRetryImportInstanceOutput, error)
 	NiftyRetryImportInstanceRequest(*computing.NiftyRetryImportInstanceInput) (*request.Request, *computing.NiftyRetryImportInstanceOutput)
 
 	NiftyUpdateAlarm(*computing.NiftyUpdateAlarmInput) (*computing.NiftyUpdateAlarmOutput, error)
-	NiftyUpdateAlarmWithContext(aws.Context, *computing.NiftyUpdateAlarmInput, ...request.Option) (*computing.NiftyUpdateAlarmOutput, error)
+	NiftyUpdateAlarmWithContext(nifcloud.Context, *computing.NiftyUpdateAlarmInput, ...request.Option) (*computing.NiftyUpdateAlarmOutput, error)
 	NiftyUpdateAlarmRequest(*computing.NiftyUpdateAlarmInput) (*request.Request, *computing.NiftyUpdateAlarmOutput)
 
 	NiftyUpdateAutoScalingGroup(*computing.NiftyUpdateAutoScalingGroupInput) (*computing.NiftyUpdateAutoScalingGroupOutput, error)
-	NiftyUpdateAutoScalingGroupWithContext(aws.Context, *computing.NiftyUpdateAutoScalingGroupInput, ...request.Option) (*computing.NiftyUpdateAutoScalingGroupOutput, error)
+	NiftyUpdateAutoScalingGroupWithContext(nifcloud.Context, *computing.NiftyUpdateAutoScalingGroupInput, ...request.Option) (*computing.NiftyUpdateAutoScalingGroupOutput, error)
 	NiftyUpdateAutoScalingGroupRequest(*computing.NiftyUpdateAutoScalingGroupInput) (*request.Request, *computing.NiftyUpdateAutoScalingGroupOutput)
 
 	NiftyUpdateElasticLoadBalancer(*computing.NiftyUpdateElasticLoadBalancerInput) (*computing.NiftyUpdateElasticLoadBalancerOutput, error)
-	NiftyUpdateElasticLoadBalancerWithContext(aws.Context, *computing.NiftyUpdateElasticLoadBalancerInput, ...request.Option) (*computing.NiftyUpdateElasticLoadBalancerOutput, error)
+	NiftyUpdateElasticLoadBalancerWithContext(nifcloud.Context, *computing.NiftyUpdateElasticLoadBalancerInput, ...request.Option) (*computing.NiftyUpdateElasticLoadBalancerOutput, error)
 	NiftyUpdateElasticLoadBalancerRequest(*computing.NiftyUpdateElasticLoadBalancerInput) (*request.Request, *computing.NiftyUpdateElasticLoadBalancerOutput)
 
 	NiftyUpdateInstanceNetworkInterfaces(*computing.NiftyUpdateInstanceNetworkInterfacesInput) (*computing.NiftyUpdateInstanceNetworkInterfacesOutput, error)
-	NiftyUpdateInstanceNetworkInterfacesWithContext(aws.Context, *computing.NiftyUpdateInstanceNetworkInterfacesInput, ...request.Option) (*computing.NiftyUpdateInstanceNetworkInterfacesOutput, error)
+	NiftyUpdateInstanceNetworkInterfacesWithContext(nifcloud.Context, *computing.NiftyUpdateInstanceNetworkInterfacesInput, ...request.Option) (*computing.NiftyUpdateInstanceNetworkInterfacesOutput, error)
 	NiftyUpdateInstanceNetworkInterfacesRequest(*computing.NiftyUpdateInstanceNetworkInterfacesInput) (*request.Request, *computing.NiftyUpdateInstanceNetworkInterfacesOutput)
 
 	NiftyUpdateRouterNetworkInterfaces(*computing.NiftyUpdateRouterNetworkInterfacesInput) (*computing.NiftyUpdateRouterNetworkInterfacesOutput, error)
-	NiftyUpdateRouterNetworkInterfacesWithContext(aws.Context, *computing.NiftyUpdateRouterNetworkInterfacesInput, ...request.Option) (*computing.NiftyUpdateRouterNetworkInterfacesOutput, error)
+	NiftyUpdateRouterNetworkInterfacesWithContext(nifcloud.Context, *computing.NiftyUpdateRouterNetworkInterfacesInput, ...request.Option) (*computing.NiftyUpdateRouterNetworkInterfacesOutput, error)
 	NiftyUpdateRouterNetworkInterfacesRequest(*computing.NiftyUpdateRouterNetworkInterfacesInput) (*request.Request, *computing.NiftyUpdateRouterNetworkInterfacesOutput)
 
 	NiftyUpdateSeparateInstanceRule(*computing.NiftyUpdateSeparateInstanceRuleInput) (*computing.NiftyUpdateSeparateInstanceRuleOutput, error)
-	NiftyUpdateSeparateInstanceRuleWithContext(aws.Context, *computing.NiftyUpdateSeparateInstanceRuleInput, ...request.Option) (*computing.NiftyUpdateSeparateInstanceRuleOutput, error)
+	NiftyUpdateSeparateInstanceRuleWithContext(nifcloud.Context, *computing.NiftyUpdateSeparateInstanceRuleInput, ...request.Option) (*computing.NiftyUpdateSeparateInstanceRuleOutput, error)
 	NiftyUpdateSeparateInstanceRuleRequest(*computing.NiftyUpdateSeparateInstanceRuleInput) (*request.Request, *computing.NiftyUpdateSeparateInstanceRuleOutput)
 
 	NiftyUpdateVpnGatewayNetworkInterfaces(*computing.NiftyUpdateVpnGatewayNetworkInterfacesInput) (*computing.NiftyUpdateVpnGatewayNetworkInterfacesOutput, error)
-	NiftyUpdateVpnGatewayNetworkInterfacesWithContext(aws.Context, *computing.NiftyUpdateVpnGatewayNetworkInterfacesInput, ...request.Option) (*computing.NiftyUpdateVpnGatewayNetworkInterfacesOutput, error)
+	NiftyUpdateVpnGatewayNetworkInterfacesWithContext(nifcloud.Context, *computing.NiftyUpdateVpnGatewayNetworkInterfacesInput, ...request.Option) (*computing.NiftyUpdateVpnGatewayNetworkInterfacesOutput, error)
 	NiftyUpdateVpnGatewayNetworkInterfacesRequest(*computing.NiftyUpdateVpnGatewayNetworkInterfacesInput) (*request.Request, *computing.NiftyUpdateVpnGatewayNetworkInterfacesOutput)
 
 	RebootInstances(*computing.RebootInstancesInput) (*computing.RebootInstancesOutput, error)
-	RebootInstancesWithContext(aws.Context, *computing.RebootInstancesInput, ...request.Option) (*computing.RebootInstancesOutput, error)
+	RebootInstancesWithContext(nifcloud.Context, *computing.RebootInstancesInput, ...request.Option) (*computing.RebootInstancesOutput, error)
 	RebootInstancesRequest(*computing.RebootInstancesInput) (*request.Request, *computing.RebootInstancesOutput)
 
 	RegisterCorporateInfoForCertificate(*computing.RegisterCorporateInfoForCertificateInput) (*computing.RegisterCorporateInfoForCertificateOutput, error)
-	RegisterCorporateInfoForCertificateWithContext(aws.Context, *computing.RegisterCorporateInfoForCertificateInput, ...request.Option) (*computing.RegisterCorporateInfoForCertificateOutput, error)
+	RegisterCorporateInfoForCertificateWithContext(nifcloud.Context, *computing.RegisterCorporateInfoForCertificateInput, ...request.Option) (*computing.RegisterCorporateInfoForCertificateOutput, error)
 	RegisterCorporateInfoForCertificateRequest(*computing.RegisterCorporateInfoForCertificateInput) (*request.Request, *computing.RegisterCorporateInfoForCertificateOutput)
 
 	RegisterInstancesWithLoadBalancer(*computing.RegisterInstancesWithLoadBalancerInput) (*computing.RegisterInstancesWithLoadBalancerOutput, error)
-	RegisterInstancesWithLoadBalancerWithContext(aws.Context, *computing.RegisterInstancesWithLoadBalancerInput, ...request.Option) (*computing.RegisterInstancesWithLoadBalancerOutput, error)
+	RegisterInstancesWithLoadBalancerWithContext(nifcloud.Context, *computing.RegisterInstancesWithLoadBalancerInput, ...request.Option) (*computing.RegisterInstancesWithLoadBalancerOutput, error)
 	RegisterInstancesWithLoadBalancerRequest(*computing.RegisterInstancesWithLoadBalancerInput) (*request.Request, *computing.RegisterInstancesWithLoadBalancerOutput)
 
 	RegisterInstancesWithSecurityGroup(*computing.RegisterInstancesWithSecurityGroupInput) (*computing.RegisterInstancesWithSecurityGroupOutput, error)
-	RegisterInstancesWithSecurityGroupWithContext(aws.Context, *computing.RegisterInstancesWithSecurityGroupInput, ...request.Option) (*computing.RegisterInstancesWithSecurityGroupOutput, error)
+	RegisterInstancesWithSecurityGroupWithContext(nifcloud.Context, *computing.RegisterInstancesWithSecurityGroupInput, ...request.Option) (*computing.RegisterInstancesWithSecurityGroupOutput, error)
 	RegisterInstancesWithSecurityGroupRequest(*computing.RegisterInstancesWithSecurityGroupInput) (*request.Request, *computing.RegisterInstancesWithSecurityGroupOutput)
 
 	RegisterPortWithLoadBalancer(*computing.RegisterPortWithLoadBalancerInput) (*computing.RegisterPortWithLoadBalancerOutput, error)
-	RegisterPortWithLoadBalancerWithContext(aws.Context, *computing.RegisterPortWithLoadBalancerInput, ...request.Option) (*computing.RegisterPortWithLoadBalancerOutput, error)
+	RegisterPortWithLoadBalancerWithContext(nifcloud.Context, *computing.RegisterPortWithLoadBalancerInput, ...request.Option) (*computing.RegisterPortWithLoadBalancerOutput, error)
 	RegisterPortWithLoadBalancerRequest(*computing.RegisterPortWithLoadBalancerInput) (*request.Request, *computing.RegisterPortWithLoadBalancerOutput)
 
 	ReleaseAddress(*computing.ReleaseAddressInput) (*computing.ReleaseAddressOutput, error)
-	ReleaseAddressWithContext(aws.Context, *computing.ReleaseAddressInput, ...request.Option) (*computing.ReleaseAddressOutput, error)
+	ReleaseAddressWithContext(nifcloud.Context, *computing.ReleaseAddressInput, ...request.Option) (*computing.ReleaseAddressOutput, error)
 	ReleaseAddressRequest(*computing.ReleaseAddressInput) (*request.Request, *computing.ReleaseAddressOutput)
 
 	ReplaceRoute(*computing.ReplaceRouteInput) (*computing.ReplaceRouteOutput, error)
-	ReplaceRouteWithContext(aws.Context, *computing.ReplaceRouteInput, ...request.Option) (*computing.ReplaceRouteOutput, error)
+	ReplaceRouteWithContext(nifcloud.Context, *computing.ReplaceRouteInput, ...request.Option) (*computing.ReplaceRouteOutput, error)
 	ReplaceRouteRequest(*computing.ReplaceRouteInput) (*request.Request, *computing.ReplaceRouteOutput)
 
 	ReplaceRouteTableAssociation(*computing.ReplaceRouteTableAssociationInput) (*computing.ReplaceRouteTableAssociationOutput, error)
-	ReplaceRouteTableAssociationWithContext(aws.Context, *computing.ReplaceRouteTableAssociationInput, ...request.Option) (*computing.ReplaceRouteTableAssociationOutput, error)
+	ReplaceRouteTableAssociationWithContext(nifcloud.Context, *computing.ReplaceRouteTableAssociationInput, ...request.Option) (*computing.ReplaceRouteTableAssociationOutput, error)
 	ReplaceRouteTableAssociationRequest(*computing.ReplaceRouteTableAssociationInput) (*request.Request, *computing.ReplaceRouteTableAssociationOutput)
 
 	RevokeSecurityGroupIngress(*computing.RevokeSecurityGroupIngressInput) (*computing.RevokeSecurityGroupIngressOutput, error)
-	RevokeSecurityGroupIngressWithContext(aws.Context, *computing.RevokeSecurityGroupIngressInput, ...request.Option) (*computing.RevokeSecurityGroupIngressOutput, error)
+	RevokeSecurityGroupIngressWithContext(nifcloud.Context, *computing.RevokeSecurityGroupIngressInput, ...request.Option) (*computing.RevokeSecurityGroupIngressOutput, error)
 	RevokeSecurityGroupIngressRequest(*computing.RevokeSecurityGroupIngressInput) (*request.Request, *computing.RevokeSecurityGroupIngressOutput)
 
 	RunInstances(*computing.RunInstancesInput) (*computing.RunInstancesOutput, error)
-	RunInstancesWithContext(aws.Context, *computing.RunInstancesInput, ...request.Option) (*computing.RunInstancesOutput, error)
+	RunInstancesWithContext(nifcloud.Context, *computing.RunInstancesInput, ...request.Option) (*computing.RunInstancesOutput, error)
 	RunInstancesRequest(*computing.RunInstancesInput) (*request.Request, *computing.RunInstancesOutput)
 
 	SetFilterForLoadBalancer(*computing.SetFilterForLoadBalancerInput) (*computing.SetFilterForLoadBalancerOutput, error)
-	SetFilterForLoadBalancerWithContext(aws.Context, *computing.SetFilterForLoadBalancerInput, ...request.Option) (*computing.SetFilterForLoadBalancerOutput, error)
+	SetFilterForLoadBalancerWithContext(nifcloud.Context, *computing.SetFilterForLoadBalancerInput, ...request.Option) (*computing.SetFilterForLoadBalancerOutput, error)
 	SetFilterForLoadBalancerRequest(*computing.SetFilterForLoadBalancerInput) (*request.Request, *computing.SetFilterForLoadBalancerOutput)
 
 	StartInstances(*computing.StartInstancesInput) (*computing.StartInstancesOutput, error)
-	StartInstancesWithContext(aws.Context, *computing.StartInstancesInput, ...request.Option) (*computing.StartInstancesOutput, error)
+	StartInstancesWithContext(nifcloud.Context, *computing.StartInstancesInput, ...request.Option) (*computing.StartInstancesOutput, error)
 	StartInstancesRequest(*computing.StartInstancesInput) (*request.Request, *computing.StartInstancesOutput)
 
 	StopInstances(*computing.StopInstancesInput) (*computing.StopInstancesOutput, error)
-	StopInstancesWithContext(aws.Context, *computing.StopInstancesInput, ...request.Option) (*computing.StopInstancesOutput, error)
+	StopInstancesWithContext(nifcloud.Context, *computing.StopInstancesInput, ...request.Option) (*computing.StopInstancesOutput, error)
 	StopInstancesRequest(*computing.StopInstancesInput) (*request.Request, *computing.StopInstancesOutput)
 
 	TerminateInstances(*computing.TerminateInstancesInput) (*computing.TerminateInstancesOutput, error)
-	TerminateInstancesWithContext(aws.Context, *computing.TerminateInstancesInput, ...request.Option) (*computing.TerminateInstancesOutput, error)
+	TerminateInstancesWithContext(nifcloud.Context, *computing.TerminateInstancesInput, ...request.Option) (*computing.TerminateInstancesOutput, error)
 	TerminateInstancesRequest(*computing.TerminateInstancesInput) (*request.Request, *computing.TerminateInstancesOutput)
 
 	UpdateLoadBalancer(*computing.UpdateLoadBalancerInput) (*computing.UpdateLoadBalancerOutput, error)
-	UpdateLoadBalancerWithContext(aws.Context, *computing.UpdateLoadBalancerInput, ...request.Option) (*computing.UpdateLoadBalancerOutput, error)
+	UpdateLoadBalancerWithContext(nifcloud.Context, *computing.UpdateLoadBalancerInput, ...request.Option) (*computing.UpdateLoadBalancerOutput, error)
 	UpdateLoadBalancerRequest(*computing.UpdateLoadBalancerInput) (*request.Request, *computing.UpdateLoadBalancerOutput)
 
 	UpdateLoadBalancerOption(*computing.UpdateLoadBalancerOptionInput) (*computing.UpdateLoadBalancerOptionOutput, error)
-	UpdateLoadBalancerOptionWithContext(aws.Context, *computing.UpdateLoadBalancerOptionInput, ...request.Option) (*computing.UpdateLoadBalancerOptionOutput, error)
+	UpdateLoadBalancerOptionWithContext(nifcloud.Context, *computing.UpdateLoadBalancerOptionInput, ...request.Option) (*computing.UpdateLoadBalancerOptionOutput, error)
 	UpdateLoadBalancerOptionRequest(*computing.UpdateLoadBalancerOptionInput) (*request.Request, *computing.UpdateLoadBalancerOptionOutput)
 
 	UpdateSecurityGroup(*computing.UpdateSecurityGroupInput) (*computing.UpdateSecurityGroupOutput, error)
-	UpdateSecurityGroupWithContext(aws.Context, *computing.UpdateSecurityGroupInput, ...request.Option) (*computing.UpdateSecurityGroupOutput, error)
+	UpdateSecurityGroupWithContext(nifcloud.Context, *computing.UpdateSecurityGroupInput, ...request.Option) (*computing.UpdateSecurityGroupOutput, error)
 	UpdateSecurityGroupRequest(*computing.UpdateSecurityGroupInput) (*request.Request, *computing.UpdateSecurityGroupOutput)
 
 	UpdateSecurityGroupOption(*computing.UpdateSecurityGroupOptionInput) (*computing.UpdateSecurityGroupOptionOutput, error)
-	UpdateSecurityGroupOptionWithContext(aws.Context, *computing.UpdateSecurityGroupOptionInput, ...request.Option) (*computing.UpdateSecurityGroupOptionOutput, error)
+	UpdateSecurityGroupOptionWithContext(nifcloud.Context, *computing.UpdateSecurityGroupOptionInput, ...request.Option) (*computing.UpdateSecurityGroupOptionOutput, error)
 	UpdateSecurityGroupOptionRequest(*computing.UpdateSecurityGroupOptionInput) (*request.Request, *computing.UpdateSecurityGroupOptionOutput)
 
 	UploadSslCertificate(*computing.UploadSslCertificateInput) (*computing.UploadSslCertificateOutput, error)
-	UploadSslCertificateWithContext(aws.Context, *computing.UploadSslCertificateInput, ...request.Option) (*computing.UploadSslCertificateOutput, error)
+	UploadSslCertificateWithContext(nifcloud.Context, *computing.UploadSslCertificateInput, ...request.Option) (*computing.UploadSslCertificateOutput, error)
 	UploadSslCertificateRequest(*computing.UploadSslCertificateInput) (*request.Request, *computing.UploadSslCertificateOutput)
 
 	WaitUntilInstanceDeleted(*computing.DescribeInstancesInput) error
-	WaitUntilInstanceDeletedWithContext(aws.Context, *computing.DescribeInstancesInput, ...request.WaiterOption) error
+	WaitUntilInstanceDeletedWithContext(nifcloud.Context, *computing.DescribeInstancesInput, ...request.WaiterOption) error
 
 	WaitUntilInstanceExists(*computing.DescribeInstancesInput) error
-	WaitUntilInstanceExistsWithContext(aws.Context, *computing.DescribeInstancesInput, ...request.WaiterOption) error
+	WaitUntilInstanceExistsWithContext(nifcloud.Context, *computing.DescribeInstancesInput, ...request.WaiterOption) error
 
 	WaitUntilInstanceRunning(*computing.DescribeInstancesInput) error
-	WaitUntilInstanceRunningWithContext(aws.Context, *computing.DescribeInstancesInput, ...request.WaiterOption) error
+	WaitUntilInstanceRunningWithContext(nifcloud.Context, *computing.DescribeInstancesInput, ...request.WaiterOption) error
 
 	WaitUntilInstanceStopped(*computing.DescribeInstancesInput) error
-	WaitUntilInstanceStoppedWithContext(aws.Context, *computing.DescribeInstancesInput, ...request.WaiterOption) error
+	WaitUntilInstanceStoppedWithContext(nifcloud.Context, *computing.DescribeInstancesInput, ...request.WaiterOption) error
 }
 
 var _ ComputingAPI = (*computing.Computing)(nil)

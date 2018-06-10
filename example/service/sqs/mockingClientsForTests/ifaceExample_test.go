@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 	"github.com/alice02/nifcloud-sdk-go/service/sqs"
 	"github.com/alice02/nifcloud-sdk-go/service/sqs/sqsiface"
 )
@@ -29,8 +29,8 @@ func TestQueueGetMessage(t *testing.T) {
 		{ // Case 1, expect parsed responses
 			Resp: sqs.ReceiveMessageOutput{
 				Messages: []*sqs.Message{
-					{Body: aws.String(`{"from":"user_1","to":"room_1","msg":"Hello!"}`)},
-					{Body: aws.String(`{"from":"user_2","to":"room_1","msg":"Hi user_1 :)"}`)},
+					{Body: nifcloud.String(`{"from":"user_1","to":"room_1","msg":"Hello!"}`)},
+					{Body: nifcloud.String(`{"from":"user_2","to":"room_1","msg":"Hi user_1 :)"}`)},
 				},
 			},
 			Expected: []Message{

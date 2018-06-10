@@ -5,8 +5,8 @@ package computing
 import (
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 )
 
 // WaitUntilInstanceDeleted uses the computing API operation
@@ -14,7 +14,7 @@ import (
 // If the condition is not met within the max attempt window, an error will
 // be returned.
 func (c *Computing) WaitUntilInstanceDeleted(input *DescribeInstancesInput) error {
-	return c.WaitUntilInstanceDeletedWithContext(aws.BackgroundContext(), input)
+	return c.WaitUntilInstanceDeletedWithContext(nifcloud.BackgroundContext(), input)
 }
 
 // WaitUntilInstanceDeletedWithContext is an extended version of WaitUntilInstanceDeleted.
@@ -25,7 +25,7 @@ func (c *Computing) WaitUntilInstanceDeleted(input *DescribeInstancesInput) erro
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) WaitUntilInstanceDeletedWithContext(ctx aws.Context, input *DescribeInstancesInput, opts ...request.WaiterOption) error {
+func (c *Computing) WaitUntilInstanceDeletedWithContext(ctx nifcloud.Context, input *DescribeInstancesInput, opts ...request.WaiterOption) error {
 	w := request.Waiter{
 		Name:        "WaitUntilInstanceDeleted",
 		MaxAttempts: 40,
@@ -65,7 +65,7 @@ func (c *Computing) WaitUntilInstanceDeletedWithContext(ctx aws.Context, input *
 // If the condition is not met within the max attempt window, an error will
 // be returned.
 func (c *Computing) WaitUntilInstanceExists(input *DescribeInstancesInput) error {
-	return c.WaitUntilInstanceExistsWithContext(aws.BackgroundContext(), input)
+	return c.WaitUntilInstanceExistsWithContext(nifcloud.BackgroundContext(), input)
 }
 
 // WaitUntilInstanceExistsWithContext is an extended version of WaitUntilInstanceExists.
@@ -76,7 +76,7 @@ func (c *Computing) WaitUntilInstanceExists(input *DescribeInstancesInput) error
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) WaitUntilInstanceExistsWithContext(ctx aws.Context, input *DescribeInstancesInput, opts ...request.WaiterOption) error {
+func (c *Computing) WaitUntilInstanceExistsWithContext(ctx nifcloud.Context, input *DescribeInstancesInput, opts ...request.WaiterOption) error {
 	w := request.Waiter{
 		Name:        "WaitUntilInstanceExists",
 		MaxAttempts: 40,
@@ -116,7 +116,7 @@ func (c *Computing) WaitUntilInstanceExistsWithContext(ctx aws.Context, input *D
 // If the condition is not met within the max attempt window, an error will
 // be returned.
 func (c *Computing) WaitUntilInstanceRunning(input *DescribeInstancesInput) error {
-	return c.WaitUntilInstanceRunningWithContext(aws.BackgroundContext(), input)
+	return c.WaitUntilInstanceRunningWithContext(nifcloud.BackgroundContext(), input)
 }
 
 // WaitUntilInstanceRunningWithContext is an extended version of WaitUntilInstanceRunning.
@@ -127,7 +127,7 @@ func (c *Computing) WaitUntilInstanceRunning(input *DescribeInstancesInput) erro
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) WaitUntilInstanceRunningWithContext(ctx aws.Context, input *DescribeInstancesInput, opts ...request.WaiterOption) error {
+func (c *Computing) WaitUntilInstanceRunningWithContext(ctx nifcloud.Context, input *DescribeInstancesInput, opts ...request.WaiterOption) error {
 	w := request.Waiter{
 		Name:        "WaitUntilInstanceRunning",
 		MaxAttempts: 40,
@@ -167,7 +167,7 @@ func (c *Computing) WaitUntilInstanceRunningWithContext(ctx aws.Context, input *
 // If the condition is not met within the max attempt window, an error will
 // be returned.
 func (c *Computing) WaitUntilInstanceStopped(input *DescribeInstancesInput) error {
-	return c.WaitUntilInstanceStoppedWithContext(aws.BackgroundContext(), input)
+	return c.WaitUntilInstanceStoppedWithContext(nifcloud.BackgroundContext(), input)
 }
 
 // WaitUntilInstanceStoppedWithContext is an extended version of WaitUntilInstanceStopped.
@@ -178,7 +178,7 @@ func (c *Computing) WaitUntilInstanceStopped(input *DescribeInstancesInput) erro
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) WaitUntilInstanceStoppedWithContext(ctx aws.Context, input *DescribeInstancesInput, opts ...request.WaiterOption) error {
+func (c *Computing) WaitUntilInstanceStoppedWithContext(ctx nifcloud.Context, input *DescribeInstancesInput, opts ...request.WaiterOption) error {
 	w := request.Waiter{
 		Name:        "WaitUntilInstanceStopped",
 		MaxAttempts: 40,

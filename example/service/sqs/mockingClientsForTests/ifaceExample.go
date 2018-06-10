@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/sqs"
 	"github.com/alice02/nifcloud-sdk-go/service/sqs/sqsiface"
 )
@@ -55,10 +55,10 @@ type Message struct {
 // occurs that error will be returned.
 func (q *Queue) GetMessages(waitTimeout int64) ([]Message, error) {
 	params := sqs.ReceiveMessageInput{
-		QueueUrl: aws.String(q.URL),
+		QueueUrl: nifcloud.String(q.URL),
 	}
 	if waitTimeout > 0 {
-		params.WaitTimeSeconds = aws.Int64(waitTimeout)
+		params.WaitTimeSeconds = nifcloud.Int64(waitTimeout)
 	}
 	resp, err := q.Client.ReceiveMessage(&params)
 	if err != nil {
@@ -68,7 +68,7 @@ func (q *Queue) GetMessages(waitTimeout int64) ([]Message, error) {
 	msgs := make([]Message, len(resp.Messages))
 	for i, msg := range resp.Messages {
 		parsedMsg := Message{}
-		if err := json.Unmarshal([]byte(aws.StringValue(msg.Body)), &parsedMsg); err != nil {
+		if err := json.Unmarshal([]byte(nifcloud.StringValue(msg.Body)), &parsedMsg); err != nil {
 			return nil, fmt.Errorf("failed to unmarshal message, %v", err)
 		}
 

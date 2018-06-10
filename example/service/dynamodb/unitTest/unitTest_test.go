@@ -7,7 +7,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 	"github.com/alice02/nifcloud-sdk-go/service/dynamodb"
 	"github.com/alice02/nifcloud-sdk-go/service/dynamodb/dynamodbiface"
 )
@@ -26,7 +26,7 @@ func (fd *fakeDynamoDB) GetItem(input *dynamodb.GetItemInput) (*dynamodb.GetItem
 	output.Item = make(map[string]*dynamodb.AttributeValue)
 	for key, value := range fd.payload {
 		output.Item[key] = &dynamodb.AttributeValue{
-			S: aws.String(value),
+			S: nifcloud.String(value),
 		}
 	}
 	return output, fd.err

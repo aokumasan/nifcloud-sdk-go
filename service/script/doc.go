@@ -17,8 +17,8 @@
 // See the SDK's documentation for more information on how to use the SDK.
 // https://docs.aws.amazon.com/sdk-for-go/api/
 //
-// See aws.Config documentation for more information on configuring SDK clients.
-// https://docs.aws.amazon.com/sdk-for-go/api/aws/#Config
+// See nifcloud.Config documentation for more information on configuring SDK clients.
+// https://docs.aws.amazon.com/sdk-for-go/api/nifcloud/#Config
 //
 // See the NIFCLOUD Script client Script for more
 // information on creating client for this service.

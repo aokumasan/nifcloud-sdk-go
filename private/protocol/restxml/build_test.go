@@ -13,11 +13,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/client"
-	"github.com/alice02/nifcloud-sdk-go/aws/client/metadata"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
-	"github.com/alice02/nifcloud-sdk-go/aws/signer/v4"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/client/metadata"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/signer/v4"
 	"github.com/alice02/nifcloud-sdk-go/awstesting"
 	"github.com/alice02/nifcloud-sdk-go/awstesting/unit"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol"
@@ -36,7 +36,7 @@ var _ = ioutil.Discard
 var _ = util.Trim("")
 var _ = url.Values{}
 var _ = io.EOF
-var _ = aws.String
+var _ = nifcloud.String
 var _ = fmt.Println
 var _ = reflect.Value{}
 
@@ -56,21 +56,21 @@ type InputService1ProtocolTest struct {
 
 // New creates a new instance of the InputService1ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService1ProtocolTest client from just a session.
 //     svc := inputservice1protocoltest.New(mySession)
 //
 //     // Create a InputService1ProtocolTest client with additional configuration
-//     svc := inputservice1protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService1ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService1ProtocolTest {
+//     svc := inputservice1protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService1ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService1ProtocolTest {
 	c := p.ClientConfig("inputservice1protocoltest", cfgs...)
 	return newInputService1ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService1ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService1ProtocolTest {
+func newInputService1ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService1ProtocolTest {
 	svc := &InputService1ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -105,7 +105,7 @@ func (c *InputService1ProtocolTest) newRequest(op *request.Operation, params, da
 
 const opInputService1TestCaseOperation1 = "OperationName"
 
-// InputService1TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService1TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService1TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -167,7 +167,7 @@ func (c *InputService1ProtocolTest) InputService1TestCaseOperation1(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService1ProtocolTest) InputService1TestCaseOperation1WithContext(ctx aws.Context, input *InputService1TestShapeInputService1TestCaseOperation2Input, opts ...request.Option) (*InputService1TestShapeInputService1TestCaseOperation1Output, error) {
+func (c *InputService1ProtocolTest) InputService1TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService1TestShapeInputService1TestCaseOperation2Input, opts ...request.Option) (*InputService1TestShapeInputService1TestCaseOperation1Output, error) {
 	req, out := c.InputService1TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -176,7 +176,7 @@ func (c *InputService1ProtocolTest) InputService1TestCaseOperation1WithContext(c
 
 const opInputService1TestCaseOperation2 = "OperationName"
 
-// InputService1TestCaseOperation2Request generates a "aws/request.Request" representing the
+// InputService1TestCaseOperation2Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService1TestCaseOperation2 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -238,7 +238,7 @@ func (c *InputService1ProtocolTest) InputService1TestCaseOperation2(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService1ProtocolTest) InputService1TestCaseOperation2WithContext(ctx aws.Context, input *InputService1TestShapeInputService1TestCaseOperation2Input, opts ...request.Option) (*InputService1TestShapeInputService1TestCaseOperation2Output, error) {
+func (c *InputService1ProtocolTest) InputService1TestCaseOperation2WithContext(ctx nifcloud.Context, input *InputService1TestShapeInputService1TestCaseOperation2Input, opts ...request.Option) (*InputService1TestShapeInputService1TestCaseOperation2Output, error) {
 	req, out := c.InputService1TestCaseOperation2Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -247,7 +247,7 @@ func (c *InputService1ProtocolTest) InputService1TestCaseOperation2WithContext(c
 
 const opInputService1TestCaseOperation3 = "OperationName"
 
-// InputService1TestCaseOperation3Request generates a "aws/request.Request" representing the
+// InputService1TestCaseOperation3Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService1TestCaseOperation3 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -309,7 +309,7 @@ func (c *InputService1ProtocolTest) InputService1TestCaseOperation3(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService1ProtocolTest) InputService1TestCaseOperation3WithContext(ctx aws.Context, input *InputService1TestShapeInputService1TestCaseOperation3Input, opts ...request.Option) (*InputService1TestShapeInputService1TestCaseOperation3Output, error) {
+func (c *InputService1ProtocolTest) InputService1TestCaseOperation3WithContext(ctx nifcloud.Context, input *InputService1TestShapeInputService1TestCaseOperation3Input, opts ...request.Option) (*InputService1TestShapeInputService1TestCaseOperation3Output, error) {
 	req, out := c.InputService1TestCaseOperation3Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -364,21 +364,21 @@ type InputService2ProtocolTest struct {
 
 // New creates a new instance of the InputService2ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService2ProtocolTest client from just a session.
 //     svc := inputservice2protocoltest.New(mySession)
 //
 //     // Create a InputService2ProtocolTest client with additional configuration
-//     svc := inputservice2protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService2ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService2ProtocolTest {
+//     svc := inputservice2protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService2ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService2ProtocolTest {
 	c := p.ClientConfig("inputservice2protocoltest", cfgs...)
 	return newInputService2ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService2ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService2ProtocolTest {
+func newInputService2ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService2ProtocolTest {
 	svc := &InputService2ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -413,7 +413,7 @@ func (c *InputService2ProtocolTest) newRequest(op *request.Operation, params, da
 
 const opInputService2TestCaseOperation1 = "OperationName"
 
-// InputService2TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService2TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService2TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -475,7 +475,7 @@ func (c *InputService2ProtocolTest) InputService2TestCaseOperation1(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService2ProtocolTest) InputService2TestCaseOperation1WithContext(ctx aws.Context, input *InputService2TestShapeInputService2TestCaseOperation1Input, opts ...request.Option) (*InputService2TestShapeInputService2TestCaseOperation1Output, error) {
+func (c *InputService2ProtocolTest) InputService2TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService2TestShapeInputService2TestCaseOperation1Input, opts ...request.Option) (*InputService2TestShapeInputService2TestCaseOperation1Output, error) {
 	req, out := c.InputService2TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -534,21 +534,21 @@ type InputService3ProtocolTest struct {
 
 // New creates a new instance of the InputService3ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService3ProtocolTest client from just a session.
 //     svc := inputservice3protocoltest.New(mySession)
 //
 //     // Create a InputService3ProtocolTest client with additional configuration
-//     svc := inputservice3protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService3ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService3ProtocolTest {
+//     svc := inputservice3protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService3ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService3ProtocolTest {
 	c := p.ClientConfig("inputservice3protocoltest", cfgs...)
 	return newInputService3ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService3ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService3ProtocolTest {
+func newInputService3ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService3ProtocolTest {
 	svc := &InputService3ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -583,7 +583,7 @@ func (c *InputService3ProtocolTest) newRequest(op *request.Operation, params, da
 
 const opInputService3TestCaseOperation1 = "OperationName"
 
-// InputService3TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService3TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService3TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -645,7 +645,7 @@ func (c *InputService3ProtocolTest) InputService3TestCaseOperation1(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService3ProtocolTest) InputService3TestCaseOperation1WithContext(ctx aws.Context, input *InputService3TestShapeInputService3TestCaseOperation2Input, opts ...request.Option) (*InputService3TestShapeInputService3TestCaseOperation1Output, error) {
+func (c *InputService3ProtocolTest) InputService3TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService3TestShapeInputService3TestCaseOperation2Input, opts ...request.Option) (*InputService3TestShapeInputService3TestCaseOperation1Output, error) {
 	req, out := c.InputService3TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -654,7 +654,7 @@ func (c *InputService3ProtocolTest) InputService3TestCaseOperation1WithContext(c
 
 const opInputService3TestCaseOperation2 = "OperationName"
 
-// InputService3TestCaseOperation2Request generates a "aws/request.Request" representing the
+// InputService3TestCaseOperation2Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService3TestCaseOperation2 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -716,7 +716,7 @@ func (c *InputService3ProtocolTest) InputService3TestCaseOperation2(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService3ProtocolTest) InputService3TestCaseOperation2WithContext(ctx aws.Context, input *InputService3TestShapeInputService3TestCaseOperation2Input, opts ...request.Option) (*InputService3TestShapeInputService3TestCaseOperation2Output, error) {
+func (c *InputService3ProtocolTest) InputService3TestCaseOperation2WithContext(ctx nifcloud.Context, input *InputService3TestShapeInputService3TestCaseOperation2Input, opts ...request.Option) (*InputService3TestShapeInputService3TestCaseOperation2Output, error) {
 	req, out := c.InputService3TestCaseOperation2Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -783,21 +783,21 @@ type InputService4ProtocolTest struct {
 
 // New creates a new instance of the InputService4ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService4ProtocolTest client from just a session.
 //     svc := inputservice4protocoltest.New(mySession)
 //
 //     // Create a InputService4ProtocolTest client with additional configuration
-//     svc := inputservice4protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService4ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService4ProtocolTest {
+//     svc := inputservice4protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService4ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService4ProtocolTest {
 	c := p.ClientConfig("inputservice4protocoltest", cfgs...)
 	return newInputService4ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService4ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService4ProtocolTest {
+func newInputService4ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService4ProtocolTest {
 	svc := &InputService4ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -832,7 +832,7 @@ func (c *InputService4ProtocolTest) newRequest(op *request.Operation, params, da
 
 const opInputService4TestCaseOperation1 = "OperationName"
 
-// InputService4TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService4TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService4TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -894,7 +894,7 @@ func (c *InputService4ProtocolTest) InputService4TestCaseOperation1(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService4ProtocolTest) InputService4TestCaseOperation1WithContext(ctx aws.Context, input *InputService4TestShapeInputService4TestCaseOperation1Input, opts ...request.Option) (*InputService4TestShapeInputService4TestCaseOperation1Output, error) {
+func (c *InputService4ProtocolTest) InputService4TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService4TestShapeInputService4TestCaseOperation1Input, opts ...request.Option) (*InputService4TestShapeInputService4TestCaseOperation1Output, error) {
 	req, out := c.InputService4TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -957,21 +957,21 @@ type InputService5ProtocolTest struct {
 
 // New creates a new instance of the InputService5ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService5ProtocolTest client from just a session.
 //     svc := inputservice5protocoltest.New(mySession)
 //
 //     // Create a InputService5ProtocolTest client with additional configuration
-//     svc := inputservice5protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService5ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService5ProtocolTest {
+//     svc := inputservice5protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService5ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService5ProtocolTest {
 	c := p.ClientConfig("inputservice5protocoltest", cfgs...)
 	return newInputService5ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService5ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService5ProtocolTest {
+func newInputService5ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService5ProtocolTest {
 	svc := &InputService5ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -1006,7 +1006,7 @@ func (c *InputService5ProtocolTest) newRequest(op *request.Operation, params, da
 
 const opInputService5TestCaseOperation1 = "OperationName"
 
-// InputService5TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService5TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService5TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1068,7 +1068,7 @@ func (c *InputService5ProtocolTest) InputService5TestCaseOperation1(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService5ProtocolTest) InputService5TestCaseOperation1WithContext(ctx aws.Context, input *InputService5TestShapeInputService5TestCaseOperation1Input, opts ...request.Option) (*InputService5TestShapeInputService5TestCaseOperation1Output, error) {
+func (c *InputService5ProtocolTest) InputService5TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService5TestShapeInputService5TestCaseOperation1Input, opts ...request.Option) (*InputService5TestShapeInputService5TestCaseOperation1Output, error) {
 	req, out := c.InputService5TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1103,21 +1103,21 @@ type InputService6ProtocolTest struct {
 
 // New creates a new instance of the InputService6ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService6ProtocolTest client from just a session.
 //     svc := inputservice6protocoltest.New(mySession)
 //
 //     // Create a InputService6ProtocolTest client with additional configuration
-//     svc := inputservice6protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService6ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService6ProtocolTest {
+//     svc := inputservice6protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService6ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService6ProtocolTest {
 	c := p.ClientConfig("inputservice6protocoltest", cfgs...)
 	return newInputService6ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService6ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService6ProtocolTest {
+func newInputService6ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService6ProtocolTest {
 	svc := &InputService6ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -1152,7 +1152,7 @@ func (c *InputService6ProtocolTest) newRequest(op *request.Operation, params, da
 
 const opInputService6TestCaseOperation1 = "OperationName"
 
-// InputService6TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService6TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService6TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1214,7 +1214,7 @@ func (c *InputService6ProtocolTest) InputService6TestCaseOperation1(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService6ProtocolTest) InputService6TestCaseOperation1WithContext(ctx aws.Context, input *InputService6TestShapeInputService6TestCaseOperation1Input, opts ...request.Option) (*InputService6TestShapeInputService6TestCaseOperation1Output, error) {
+func (c *InputService6ProtocolTest) InputService6TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService6TestShapeInputService6TestCaseOperation1Input, opts ...request.Option) (*InputService6TestShapeInputService6TestCaseOperation1Output, error) {
 	req, out := c.InputService6TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1249,21 +1249,21 @@ type InputService7ProtocolTest struct {
 
 // New creates a new instance of the InputService7ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService7ProtocolTest client from just a session.
 //     svc := inputservice7protocoltest.New(mySession)
 //
 //     // Create a InputService7ProtocolTest client with additional configuration
-//     svc := inputservice7protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService7ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService7ProtocolTest {
+//     svc := inputservice7protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService7ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService7ProtocolTest {
 	c := p.ClientConfig("inputservice7protocoltest", cfgs...)
 	return newInputService7ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService7ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService7ProtocolTest {
+func newInputService7ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService7ProtocolTest {
 	svc := &InputService7ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -1298,7 +1298,7 @@ func (c *InputService7ProtocolTest) newRequest(op *request.Operation, params, da
 
 const opInputService7TestCaseOperation1 = "OperationName"
 
-// InputService7TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService7TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService7TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1360,7 +1360,7 @@ func (c *InputService7ProtocolTest) InputService7TestCaseOperation1(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService7ProtocolTest) InputService7TestCaseOperation1WithContext(ctx aws.Context, input *InputService7TestShapeInputService7TestCaseOperation1Input, opts ...request.Option) (*InputService7TestShapeInputService7TestCaseOperation1Output, error) {
+func (c *InputService7ProtocolTest) InputService7TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService7TestShapeInputService7TestCaseOperation1Input, opts ...request.Option) (*InputService7TestShapeInputService7TestCaseOperation1Output, error) {
 	req, out := c.InputService7TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1395,21 +1395,21 @@ type InputService8ProtocolTest struct {
 
 // New creates a new instance of the InputService8ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService8ProtocolTest client from just a session.
 //     svc := inputservice8protocoltest.New(mySession)
 //
 //     // Create a InputService8ProtocolTest client with additional configuration
-//     svc := inputservice8protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService8ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService8ProtocolTest {
+//     svc := inputservice8protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService8ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService8ProtocolTest {
 	c := p.ClientConfig("inputservice8protocoltest", cfgs...)
 	return newInputService8ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService8ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService8ProtocolTest {
+func newInputService8ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService8ProtocolTest {
 	svc := &InputService8ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -1444,7 +1444,7 @@ func (c *InputService8ProtocolTest) newRequest(op *request.Operation, params, da
 
 const opInputService8TestCaseOperation1 = "OperationName"
 
-// InputService8TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService8TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService8TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1506,7 +1506,7 @@ func (c *InputService8ProtocolTest) InputService8TestCaseOperation1(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService8ProtocolTest) InputService8TestCaseOperation1WithContext(ctx aws.Context, input *InputService8TestShapeInputService8TestCaseOperation1Input, opts ...request.Option) (*InputService8TestShapeInputService8TestCaseOperation1Output, error) {
+func (c *InputService8ProtocolTest) InputService8TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService8TestShapeInputService8TestCaseOperation1Input, opts ...request.Option) (*InputService8TestShapeInputService8TestCaseOperation1Output, error) {
 	req, out := c.InputService8TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1541,21 +1541,21 @@ type InputService9ProtocolTest struct {
 
 // New creates a new instance of the InputService9ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService9ProtocolTest client from just a session.
 //     svc := inputservice9protocoltest.New(mySession)
 //
 //     // Create a InputService9ProtocolTest client with additional configuration
-//     svc := inputservice9protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService9ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService9ProtocolTest {
+//     svc := inputservice9protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService9ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService9ProtocolTest {
 	c := p.ClientConfig("inputservice9protocoltest", cfgs...)
 	return newInputService9ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService9ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService9ProtocolTest {
+func newInputService9ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService9ProtocolTest {
 	svc := &InputService9ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -1590,7 +1590,7 @@ func (c *InputService9ProtocolTest) newRequest(op *request.Operation, params, da
 
 const opInputService9TestCaseOperation1 = "OperationName"
 
-// InputService9TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService9TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService9TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1652,7 +1652,7 @@ func (c *InputService9ProtocolTest) InputService9TestCaseOperation1(input *Input
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService9ProtocolTest) InputService9TestCaseOperation1WithContext(ctx aws.Context, input *InputService9TestShapeInputService9TestCaseOperation1Input, opts ...request.Option) (*InputService9TestShapeInputService9TestCaseOperation1Output, error) {
+func (c *InputService9ProtocolTest) InputService9TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService9TestShapeInputService9TestCaseOperation1Input, opts ...request.Option) (*InputService9TestShapeInputService9TestCaseOperation1Output, error) {
 	req, out := c.InputService9TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1699,21 +1699,21 @@ type InputService10ProtocolTest struct {
 
 // New creates a new instance of the InputService10ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService10ProtocolTest client from just a session.
 //     svc := inputservice10protocoltest.New(mySession)
 //
 //     // Create a InputService10ProtocolTest client with additional configuration
-//     svc := inputservice10protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService10ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService10ProtocolTest {
+//     svc := inputservice10protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService10ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService10ProtocolTest {
 	c := p.ClientConfig("inputservice10protocoltest", cfgs...)
 	return newInputService10ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService10ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService10ProtocolTest {
+func newInputService10ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService10ProtocolTest {
 	svc := &InputService10ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -1748,7 +1748,7 @@ func (c *InputService10ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService10TestCaseOperation1 = "OperationName"
 
-// InputService10TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService10TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService10TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1810,7 +1810,7 @@ func (c *InputService10ProtocolTest) InputService10TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService10ProtocolTest) InputService10TestCaseOperation1WithContext(ctx aws.Context, input *InputService10TestShapeInputService10TestCaseOperation1Input, opts ...request.Option) (*InputService10TestShapeInputService10TestCaseOperation1Output, error) {
+func (c *InputService10ProtocolTest) InputService10TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService10TestShapeInputService10TestCaseOperation1Input, opts ...request.Option) (*InputService10TestShapeInputService10TestCaseOperation1Output, error) {
 	req, out := c.InputService10TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1866,21 +1866,21 @@ type InputService11ProtocolTest struct {
 
 // New creates a new instance of the InputService11ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService11ProtocolTest client from just a session.
 //     svc := inputservice11protocoltest.New(mySession)
 //
 //     // Create a InputService11ProtocolTest client with additional configuration
-//     svc := inputservice11protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService11ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService11ProtocolTest {
+//     svc := inputservice11protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService11ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService11ProtocolTest {
 	c := p.ClientConfig("inputservice11protocoltest", cfgs...)
 	return newInputService11ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService11ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService11ProtocolTest {
+func newInputService11ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService11ProtocolTest {
 	svc := &InputService11ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -1915,7 +1915,7 @@ func (c *InputService11ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService11TestCaseOperation1 = "OperationName"
 
-// InputService11TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService11TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService11TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1977,7 +1977,7 @@ func (c *InputService11ProtocolTest) InputService11TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService11ProtocolTest) InputService11TestCaseOperation1WithContext(ctx aws.Context, input *InputService11TestShapeInputService11TestCaseOperation1Input, opts ...request.Option) (*InputService11TestShapeInputService11TestCaseOperation1Output, error) {
+func (c *InputService11ProtocolTest) InputService11TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService11TestShapeInputService11TestCaseOperation1Input, opts ...request.Option) (*InputService11TestShapeInputService11TestCaseOperation1Output, error) {
 	req, out := c.InputService11TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2012,21 +2012,21 @@ type InputService12ProtocolTest struct {
 
 // New creates a new instance of the InputService12ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService12ProtocolTest client from just a session.
 //     svc := inputservice12protocoltest.New(mySession)
 //
 //     // Create a InputService12ProtocolTest client with additional configuration
-//     svc := inputservice12protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService12ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService12ProtocolTest {
+//     svc := inputservice12protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService12ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService12ProtocolTest {
 	c := p.ClientConfig("inputservice12protocoltest", cfgs...)
 	return newInputService12ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService12ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService12ProtocolTest {
+func newInputService12ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService12ProtocolTest {
 	svc := &InputService12ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -2061,7 +2061,7 @@ func (c *InputService12ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService12TestCaseOperation1 = "OperationName"
 
-// InputService12TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService12TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService12TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2123,7 +2123,7 @@ func (c *InputService12ProtocolTest) InputService12TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService12ProtocolTest) InputService12TestCaseOperation1WithContext(ctx aws.Context, input *InputService12TestShapeInputService12TestCaseOperation1Input, opts ...request.Option) (*InputService12TestShapeInputService12TestCaseOperation1Output, error) {
+func (c *InputService12ProtocolTest) InputService12TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService12TestShapeInputService12TestCaseOperation1Input, opts ...request.Option) (*InputService12TestShapeInputService12TestCaseOperation1Output, error) {
 	req, out := c.InputService12TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2158,21 +2158,21 @@ type InputService13ProtocolTest struct {
 
 // New creates a new instance of the InputService13ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService13ProtocolTest client from just a session.
 //     svc := inputservice13protocoltest.New(mySession)
 //
 //     // Create a InputService13ProtocolTest client with additional configuration
-//     svc := inputservice13protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService13ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService13ProtocolTest {
+//     svc := inputservice13protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService13ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService13ProtocolTest {
 	c := p.ClientConfig("inputservice13protocoltest", cfgs...)
 	return newInputService13ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService13ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService13ProtocolTest {
+func newInputService13ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService13ProtocolTest {
 	svc := &InputService13ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -2207,7 +2207,7 @@ func (c *InputService13ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService13TestCaseOperation1 = "OperationName"
 
-// InputService13TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService13TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService13TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2269,7 +2269,7 @@ func (c *InputService13ProtocolTest) InputService13TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService13ProtocolTest) InputService13TestCaseOperation1WithContext(ctx aws.Context, input *InputService13TestShapeInputService13TestCaseOperation1Input, opts ...request.Option) (*InputService13TestShapeInputService13TestCaseOperation1Output, error) {
+func (c *InputService13ProtocolTest) InputService13TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService13TestShapeInputService13TestCaseOperation1Input, opts ...request.Option) (*InputService13TestShapeInputService13TestCaseOperation1Output, error) {
 	req, out := c.InputService13TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2312,21 +2312,21 @@ type InputService14ProtocolTest struct {
 
 // New creates a new instance of the InputService14ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService14ProtocolTest client from just a session.
 //     svc := inputservice14protocoltest.New(mySession)
 //
 //     // Create a InputService14ProtocolTest client with additional configuration
-//     svc := inputservice14protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService14ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService14ProtocolTest {
+//     svc := inputservice14protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService14ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService14ProtocolTest {
 	c := p.ClientConfig("inputservice14protocoltest", cfgs...)
 	return newInputService14ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService14ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService14ProtocolTest {
+func newInputService14ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService14ProtocolTest {
 	svc := &InputService14ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -2361,7 +2361,7 @@ func (c *InputService14ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService14TestCaseOperation1 = "OperationName"
 
-// InputService14TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService14TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService14TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2423,7 +2423,7 @@ func (c *InputService14ProtocolTest) InputService14TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService14ProtocolTest) InputService14TestCaseOperation1WithContext(ctx aws.Context, input *InputService14TestShapeInputService14TestCaseOperation1Input, opts ...request.Option) (*InputService14TestShapeInputService14TestCaseOperation1Output, error) {
+func (c *InputService14ProtocolTest) InputService14TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService14TestShapeInputService14TestCaseOperation1Input, opts ...request.Option) (*InputService14TestShapeInputService14TestCaseOperation1Output, error) {
 	req, out := c.InputService14TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2466,21 +2466,21 @@ type InputService15ProtocolTest struct {
 
 // New creates a new instance of the InputService15ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService15ProtocolTest client from just a session.
 //     svc := inputservice15protocoltest.New(mySession)
 //
 //     // Create a InputService15ProtocolTest client with additional configuration
-//     svc := inputservice15protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService15ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService15ProtocolTest {
+//     svc := inputservice15protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService15ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService15ProtocolTest {
 	c := p.ClientConfig("inputservice15protocoltest", cfgs...)
 	return newInputService15ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService15ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService15ProtocolTest {
+func newInputService15ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService15ProtocolTest {
 	svc := &InputService15ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -2515,7 +2515,7 @@ func (c *InputService15ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService15TestCaseOperation1 = "OperationName"
 
-// InputService15TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService15TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService15TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2577,7 +2577,7 @@ func (c *InputService15ProtocolTest) InputService15TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService15ProtocolTest) InputService15TestCaseOperation1WithContext(ctx aws.Context, input *InputService15TestShapeInputService15TestCaseOperation2Input, opts ...request.Option) (*InputService15TestShapeInputService15TestCaseOperation1Output, error) {
+func (c *InputService15ProtocolTest) InputService15TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService15TestShapeInputService15TestCaseOperation2Input, opts ...request.Option) (*InputService15TestShapeInputService15TestCaseOperation1Output, error) {
 	req, out := c.InputService15TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2586,7 +2586,7 @@ func (c *InputService15ProtocolTest) InputService15TestCaseOperation1WithContext
 
 const opInputService15TestCaseOperation2 = "OperationName"
 
-// InputService15TestCaseOperation2Request generates a "aws/request.Request" representing the
+// InputService15TestCaseOperation2Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService15TestCaseOperation2 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2648,7 +2648,7 @@ func (c *InputService15ProtocolTest) InputService15TestCaseOperation2(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService15ProtocolTest) InputService15TestCaseOperation2WithContext(ctx aws.Context, input *InputService15TestShapeInputService15TestCaseOperation2Input, opts ...request.Option) (*InputService15TestShapeInputService15TestCaseOperation2Output, error) {
+func (c *InputService15ProtocolTest) InputService15TestCaseOperation2WithContext(ctx nifcloud.Context, input *InputService15TestShapeInputService15TestCaseOperation2Input, opts ...request.Option) (*InputService15TestShapeInputService15TestCaseOperation2Output, error) {
 	req, out := c.InputService15TestCaseOperation2Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2687,21 +2687,21 @@ type InputService16ProtocolTest struct {
 
 // New creates a new instance of the InputService16ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService16ProtocolTest client from just a session.
 //     svc := inputservice16protocoltest.New(mySession)
 //
 //     // Create a InputService16ProtocolTest client with additional configuration
-//     svc := inputservice16protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService16ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService16ProtocolTest {
+//     svc := inputservice16protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService16ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService16ProtocolTest {
 	c := p.ClientConfig("inputservice16protocoltest", cfgs...)
 	return newInputService16ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService16ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService16ProtocolTest {
+func newInputService16ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService16ProtocolTest {
 	svc := &InputService16ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -2736,7 +2736,7 @@ func (c *InputService16ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService16TestCaseOperation1 = "OperationName"
 
-// InputService16TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService16TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService16TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2798,7 +2798,7 @@ func (c *InputService16ProtocolTest) InputService16TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService16ProtocolTest) InputService16TestCaseOperation1WithContext(ctx aws.Context, input *InputService16TestShapeInputService16TestCaseOperation1Input, opts ...request.Option) (*InputService16TestShapeInputService16TestCaseOperation1Output, error) {
+func (c *InputService16ProtocolTest) InputService16TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService16TestShapeInputService16TestCaseOperation1Input, opts ...request.Option) (*InputService16TestShapeInputService16TestCaseOperation1Output, error) {
 	req, out := c.InputService16TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2833,21 +2833,21 @@ type InputService17ProtocolTest struct {
 
 // New creates a new instance of the InputService17ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService17ProtocolTest client from just a session.
 //     svc := inputservice17protocoltest.New(mySession)
 //
 //     // Create a InputService17ProtocolTest client with additional configuration
-//     svc := inputservice17protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService17ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService17ProtocolTest {
+//     svc := inputservice17protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService17ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService17ProtocolTest {
 	c := p.ClientConfig("inputservice17protocoltest", cfgs...)
 	return newInputService17ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService17ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService17ProtocolTest {
+func newInputService17ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService17ProtocolTest {
 	svc := &InputService17ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -2882,7 +2882,7 @@ func (c *InputService17ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService17TestCaseOperation1 = "OperationName"
 
-// InputService17TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService17TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService17TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2944,7 +2944,7 @@ func (c *InputService17ProtocolTest) InputService17TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService17ProtocolTest) InputService17TestCaseOperation1WithContext(ctx aws.Context, input *InputService17TestShapeInputService17TestCaseOperation2Input, opts ...request.Option) (*InputService17TestShapeInputService17TestCaseOperation1Output, error) {
+func (c *InputService17ProtocolTest) InputService17TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService17TestShapeInputService17TestCaseOperation2Input, opts ...request.Option) (*InputService17TestShapeInputService17TestCaseOperation1Output, error) {
 	req, out := c.InputService17TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2953,7 +2953,7 @@ func (c *InputService17ProtocolTest) InputService17TestCaseOperation1WithContext
 
 const opInputService17TestCaseOperation2 = "OperationName"
 
-// InputService17TestCaseOperation2Request generates a "aws/request.Request" representing the
+// InputService17TestCaseOperation2Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService17TestCaseOperation2 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3015,7 +3015,7 @@ func (c *InputService17ProtocolTest) InputService17TestCaseOperation2(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService17ProtocolTest) InputService17TestCaseOperation2WithContext(ctx aws.Context, input *InputService17TestShapeInputService17TestCaseOperation2Input, opts ...request.Option) (*InputService17TestShapeInputService17TestCaseOperation2Output, error) {
+func (c *InputService17ProtocolTest) InputService17TestCaseOperation2WithContext(ctx nifcloud.Context, input *InputService17TestShapeInputService17TestCaseOperation2Input, opts ...request.Option) (*InputService17TestShapeInputService17TestCaseOperation2Output, error) {
 	req, out := c.InputService17TestCaseOperation2Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3054,21 +3054,21 @@ type InputService18ProtocolTest struct {
 
 // New creates a new instance of the InputService18ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService18ProtocolTest client from just a session.
 //     svc := inputservice18protocoltest.New(mySession)
 //
 //     // Create a InputService18ProtocolTest client with additional configuration
-//     svc := inputservice18protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService18ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService18ProtocolTest {
+//     svc := inputservice18protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService18ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService18ProtocolTest {
 	c := p.ClientConfig("inputservice18protocoltest", cfgs...)
 	return newInputService18ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService18ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService18ProtocolTest {
+func newInputService18ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService18ProtocolTest {
 	svc := &InputService18ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -3103,7 +3103,7 @@ func (c *InputService18ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService18TestCaseOperation1 = "OperationName"
 
-// InputService18TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService18TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService18TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3165,7 +3165,7 @@ func (c *InputService18ProtocolTest) InputService18TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService18ProtocolTest) InputService18TestCaseOperation1WithContext(ctx aws.Context, input *InputService18TestShapeInputService18TestCaseOperation4Input, opts ...request.Option) (*InputService18TestShapeInputService18TestCaseOperation1Output, error) {
+func (c *InputService18ProtocolTest) InputService18TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService18TestShapeInputService18TestCaseOperation4Input, opts ...request.Option) (*InputService18TestShapeInputService18TestCaseOperation1Output, error) {
 	req, out := c.InputService18TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3174,7 +3174,7 @@ func (c *InputService18ProtocolTest) InputService18TestCaseOperation1WithContext
 
 const opInputService18TestCaseOperation2 = "OperationName"
 
-// InputService18TestCaseOperation2Request generates a "aws/request.Request" representing the
+// InputService18TestCaseOperation2Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService18TestCaseOperation2 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3236,7 +3236,7 @@ func (c *InputService18ProtocolTest) InputService18TestCaseOperation2(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService18ProtocolTest) InputService18TestCaseOperation2WithContext(ctx aws.Context, input *InputService18TestShapeInputService18TestCaseOperation4Input, opts ...request.Option) (*InputService18TestShapeInputService18TestCaseOperation2Output, error) {
+func (c *InputService18ProtocolTest) InputService18TestCaseOperation2WithContext(ctx nifcloud.Context, input *InputService18TestShapeInputService18TestCaseOperation4Input, opts ...request.Option) (*InputService18TestShapeInputService18TestCaseOperation2Output, error) {
 	req, out := c.InputService18TestCaseOperation2Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3245,7 +3245,7 @@ func (c *InputService18ProtocolTest) InputService18TestCaseOperation2WithContext
 
 const opInputService18TestCaseOperation3 = "OperationName"
 
-// InputService18TestCaseOperation3Request generates a "aws/request.Request" representing the
+// InputService18TestCaseOperation3Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService18TestCaseOperation3 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3307,7 +3307,7 @@ func (c *InputService18ProtocolTest) InputService18TestCaseOperation3(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService18ProtocolTest) InputService18TestCaseOperation3WithContext(ctx aws.Context, input *InputService18TestShapeInputService18TestCaseOperation4Input, opts ...request.Option) (*InputService18TestShapeInputService18TestCaseOperation3Output, error) {
+func (c *InputService18ProtocolTest) InputService18TestCaseOperation3WithContext(ctx nifcloud.Context, input *InputService18TestShapeInputService18TestCaseOperation4Input, opts ...request.Option) (*InputService18TestShapeInputService18TestCaseOperation3Output, error) {
 	req, out := c.InputService18TestCaseOperation3Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3316,7 +3316,7 @@ func (c *InputService18ProtocolTest) InputService18TestCaseOperation3WithContext
 
 const opInputService18TestCaseOperation4 = "OperationName"
 
-// InputService18TestCaseOperation4Request generates a "aws/request.Request" representing the
+// InputService18TestCaseOperation4Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService18TestCaseOperation4 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3378,7 +3378,7 @@ func (c *InputService18ProtocolTest) InputService18TestCaseOperation4(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService18ProtocolTest) InputService18TestCaseOperation4WithContext(ctx aws.Context, input *InputService18TestShapeInputService18TestCaseOperation4Input, opts ...request.Option) (*InputService18TestShapeInputService18TestCaseOperation4Output, error) {
+func (c *InputService18ProtocolTest) InputService18TestCaseOperation4WithContext(ctx nifcloud.Context, input *InputService18TestShapeInputService18TestCaseOperation4Input, opts ...request.Option) (*InputService18TestShapeInputService18TestCaseOperation4Output, error) {
 	req, out := c.InputService18TestCaseOperation4Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3437,21 +3437,21 @@ type InputService19ProtocolTest struct {
 
 // New creates a new instance of the InputService19ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService19ProtocolTest client from just a session.
 //     svc := inputservice19protocoltest.New(mySession)
 //
 //     // Create a InputService19ProtocolTest client with additional configuration
-//     svc := inputservice19protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService19ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService19ProtocolTest {
+//     svc := inputservice19protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService19ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService19ProtocolTest {
 	c := p.ClientConfig("inputservice19protocoltest", cfgs...)
 	return newInputService19ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService19ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService19ProtocolTest {
+func newInputService19ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService19ProtocolTest {
 	svc := &InputService19ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -3486,7 +3486,7 @@ func (c *InputService19ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService19TestCaseOperation1 = "OperationName"
 
-// InputService19TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService19TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService19TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3548,7 +3548,7 @@ func (c *InputService19ProtocolTest) InputService19TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService19ProtocolTest) InputService19TestCaseOperation1WithContext(ctx aws.Context, input *InputService19TestShapeInputService19TestCaseOperation1Input, opts ...request.Option) (*InputService19TestShapeInputService19TestCaseOperation1Output, error) {
+func (c *InputService19ProtocolTest) InputService19TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService19TestShapeInputService19TestCaseOperation1Input, opts ...request.Option) (*InputService19TestShapeInputService19TestCaseOperation1Output, error) {
 	req, out := c.InputService19TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3615,21 +3615,21 @@ type InputService20ProtocolTest struct {
 
 // New creates a new instance of the InputService20ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService20ProtocolTest client from just a session.
 //     svc := inputservice20protocoltest.New(mySession)
 //
 //     // Create a InputService20ProtocolTest client with additional configuration
-//     svc := inputservice20protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService20ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService20ProtocolTest {
+//     svc := inputservice20protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService20ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService20ProtocolTest {
 	c := p.ClientConfig("inputservice20protocoltest", cfgs...)
 	return newInputService20ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService20ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService20ProtocolTest {
+func newInputService20ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService20ProtocolTest {
 	svc := &InputService20ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -3664,7 +3664,7 @@ func (c *InputService20ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService20TestCaseOperation1 = "OperationName"
 
-// InputService20TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService20TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService20TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3726,7 +3726,7 @@ func (c *InputService20ProtocolTest) InputService20TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService20ProtocolTest) InputService20TestCaseOperation1WithContext(ctx aws.Context, input *InputService20TestShapeInputService20TestCaseOperation1Input, opts ...request.Option) (*InputService20TestShapeInputService20TestCaseOperation1Output, error) {
+func (c *InputService20ProtocolTest) InputService20TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService20TestShapeInputService20TestCaseOperation1Input, opts ...request.Option) (*InputService20TestShapeInputService20TestCaseOperation1Output, error) {
 	req, out := c.InputService20TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3769,21 +3769,21 @@ type InputService21ProtocolTest struct {
 
 // New creates a new instance of the InputService21ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService21ProtocolTest client from just a session.
 //     svc := inputservice21protocoltest.New(mySession)
 //
 //     // Create a InputService21ProtocolTest client with additional configuration
-//     svc := inputservice21protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService21ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService21ProtocolTest {
+//     svc := inputservice21protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService21ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService21ProtocolTest {
 	c := p.ClientConfig("inputservice21protocoltest", cfgs...)
 	return newInputService21ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService21ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService21ProtocolTest {
+func newInputService21ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService21ProtocolTest {
 	svc := &InputService21ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -3818,7 +3818,7 @@ func (c *InputService21ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService21TestCaseOperation1 = "OperationName"
 
-// InputService21TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService21TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService21TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3880,7 +3880,7 @@ func (c *InputService21ProtocolTest) InputService21TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService21ProtocolTest) InputService21TestCaseOperation1WithContext(ctx aws.Context, input *InputService21TestShapeInputService21TestCaseOperation2Input, opts ...request.Option) (*InputService21TestShapeInputService21TestCaseOperation1Output, error) {
+func (c *InputService21ProtocolTest) InputService21TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService21TestShapeInputService21TestCaseOperation2Input, opts ...request.Option) (*InputService21TestShapeInputService21TestCaseOperation1Output, error) {
 	req, out := c.InputService21TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3889,7 +3889,7 @@ func (c *InputService21ProtocolTest) InputService21TestCaseOperation1WithContext
 
 const opInputService21TestCaseOperation2 = "OperationName"
 
-// InputService21TestCaseOperation2Request generates a "aws/request.Request" representing the
+// InputService21TestCaseOperation2Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService21TestCaseOperation2 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3951,7 +3951,7 @@ func (c *InputService21ProtocolTest) InputService21TestCaseOperation2(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService21ProtocolTest) InputService21TestCaseOperation2WithContext(ctx aws.Context, input *InputService21TestShapeInputService21TestCaseOperation2Input, opts ...request.Option) (*InputService21TestShapeInputService21TestCaseOperation2Output, error) {
+func (c *InputService21ProtocolTest) InputService21TestCaseOperation2WithContext(ctx nifcloud.Context, input *InputService21TestShapeInputService21TestCaseOperation2Input, opts ...request.Option) (*InputService21TestShapeInputService21TestCaseOperation2Output, error) {
 	req, out := c.InputService21TestCaseOperation2Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3990,21 +3990,21 @@ type InputService22ProtocolTest struct {
 
 // New creates a new instance of the InputService22ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService22ProtocolTest client from just a session.
 //     svc := inputservice22protocoltest.New(mySession)
 //
 //     // Create a InputService22ProtocolTest client with additional configuration
-//     svc := inputservice22protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService22ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService22ProtocolTest {
+//     svc := inputservice22protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService22ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService22ProtocolTest {
 	c := p.ClientConfig("inputservice22protocoltest", cfgs...)
 	return newInputService22ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService22ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService22ProtocolTest {
+func newInputService22ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService22ProtocolTest {
 	svc := &InputService22ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -4039,7 +4039,7 @@ func (c *InputService22ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService22TestCaseOperation1 = "OperationName"
 
-// InputService22TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService22TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService22TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4101,7 +4101,7 @@ func (c *InputService22ProtocolTest) InputService22TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService22ProtocolTest) InputService22TestCaseOperation1WithContext(ctx aws.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation1Output, error) {
+func (c *InputService22ProtocolTest) InputService22TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation1Output, error) {
 	req, out := c.InputService22TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4110,7 +4110,7 @@ func (c *InputService22ProtocolTest) InputService22TestCaseOperation1WithContext
 
 const opInputService22TestCaseOperation2 = "OperationName"
 
-// InputService22TestCaseOperation2Request generates a "aws/request.Request" representing the
+// InputService22TestCaseOperation2Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService22TestCaseOperation2 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4172,7 +4172,7 @@ func (c *InputService22ProtocolTest) InputService22TestCaseOperation2(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService22ProtocolTest) InputService22TestCaseOperation2WithContext(ctx aws.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation2Output, error) {
+func (c *InputService22ProtocolTest) InputService22TestCaseOperation2WithContext(ctx nifcloud.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation2Output, error) {
 	req, out := c.InputService22TestCaseOperation2Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4181,7 +4181,7 @@ func (c *InputService22ProtocolTest) InputService22TestCaseOperation2WithContext
 
 const opInputService22TestCaseOperation3 = "OperationName"
 
-// InputService22TestCaseOperation3Request generates a "aws/request.Request" representing the
+// InputService22TestCaseOperation3Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService22TestCaseOperation3 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4243,7 +4243,7 @@ func (c *InputService22ProtocolTest) InputService22TestCaseOperation3(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService22ProtocolTest) InputService22TestCaseOperation3WithContext(ctx aws.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation3Output, error) {
+func (c *InputService22ProtocolTest) InputService22TestCaseOperation3WithContext(ctx nifcloud.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation3Output, error) {
 	req, out := c.InputService22TestCaseOperation3Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4252,7 +4252,7 @@ func (c *InputService22ProtocolTest) InputService22TestCaseOperation3WithContext
 
 const opInputService22TestCaseOperation4 = "OperationName"
 
-// InputService22TestCaseOperation4Request generates a "aws/request.Request" representing the
+// InputService22TestCaseOperation4Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService22TestCaseOperation4 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4314,7 +4314,7 @@ func (c *InputService22ProtocolTest) InputService22TestCaseOperation4(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService22ProtocolTest) InputService22TestCaseOperation4WithContext(ctx aws.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation4Output, error) {
+func (c *InputService22ProtocolTest) InputService22TestCaseOperation4WithContext(ctx nifcloud.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation4Output, error) {
 	req, out := c.InputService22TestCaseOperation4Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4323,7 +4323,7 @@ func (c *InputService22ProtocolTest) InputService22TestCaseOperation4WithContext
 
 const opInputService22TestCaseOperation5 = "OperationName"
 
-// InputService22TestCaseOperation5Request generates a "aws/request.Request" representing the
+// InputService22TestCaseOperation5Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService22TestCaseOperation5 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4385,7 +4385,7 @@ func (c *InputService22ProtocolTest) InputService22TestCaseOperation5(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService22ProtocolTest) InputService22TestCaseOperation5WithContext(ctx aws.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation5Output, error) {
+func (c *InputService22ProtocolTest) InputService22TestCaseOperation5WithContext(ctx nifcloud.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation5Output, error) {
 	req, out := c.InputService22TestCaseOperation5Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4394,7 +4394,7 @@ func (c *InputService22ProtocolTest) InputService22TestCaseOperation5WithContext
 
 const opInputService22TestCaseOperation6 = "OperationName"
 
-// InputService22TestCaseOperation6Request generates a "aws/request.Request" representing the
+// InputService22TestCaseOperation6Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService22TestCaseOperation6 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4456,7 +4456,7 @@ func (c *InputService22ProtocolTest) InputService22TestCaseOperation6(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService22ProtocolTest) InputService22TestCaseOperation6WithContext(ctx aws.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation6Output, error) {
+func (c *InputService22ProtocolTest) InputService22TestCaseOperation6WithContext(ctx nifcloud.Context, input *InputService22TestShapeInputService22TestCaseOperation6Input, opts ...request.Option) (*InputService22TestShapeInputService22TestCaseOperation6Output, error) {
 	req, out := c.InputService22TestCaseOperation6Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4547,21 +4547,21 @@ type InputService23ProtocolTest struct {
 
 // New creates a new instance of the InputService23ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService23ProtocolTest client from just a session.
 //     svc := inputservice23protocoltest.New(mySession)
 //
 //     // Create a InputService23ProtocolTest client with additional configuration
-//     svc := inputservice23protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService23ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService23ProtocolTest {
+//     svc := inputservice23protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService23ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService23ProtocolTest {
 	c := p.ClientConfig("inputservice23protocoltest", cfgs...)
 	return newInputService23ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService23ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService23ProtocolTest {
+func newInputService23ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService23ProtocolTest {
 	svc := &InputService23ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -4596,7 +4596,7 @@ func (c *InputService23ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService23TestCaseOperation1 = "OperationName"
 
-// InputService23TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService23TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService23TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4658,7 +4658,7 @@ func (c *InputService23ProtocolTest) InputService23TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService23ProtocolTest) InputService23TestCaseOperation1WithContext(ctx aws.Context, input *InputService23TestShapeInputService23TestCaseOperation1Input, opts ...request.Option) (*InputService23TestShapeInputService23TestCaseOperation1Output, error) {
+func (c *InputService23ProtocolTest) InputService23TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService23TestShapeInputService23TestCaseOperation1Input, opts ...request.Option) (*InputService23TestShapeInputService23TestCaseOperation1Output, error) {
 	req, out := c.InputService23TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4693,21 +4693,21 @@ type InputService24ProtocolTest struct {
 
 // New creates a new instance of the InputService24ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService24ProtocolTest client from just a session.
 //     svc := inputservice24protocoltest.New(mySession)
 //
 //     // Create a InputService24ProtocolTest client with additional configuration
-//     svc := inputservice24protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService24ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService24ProtocolTest {
+//     svc := inputservice24protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService24ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService24ProtocolTest {
 	c := p.ClientConfig("inputservice24protocoltest", cfgs...)
 	return newInputService24ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService24ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService24ProtocolTest {
+func newInputService24ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService24ProtocolTest {
 	svc := &InputService24ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -4742,7 +4742,7 @@ func (c *InputService24ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService24TestCaseOperation1 = "OperationName"
 
-// InputService24TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService24TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService24TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4804,7 +4804,7 @@ func (c *InputService24ProtocolTest) InputService24TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService24ProtocolTest) InputService24TestCaseOperation1WithContext(ctx aws.Context, input *InputService24TestShapeInputService24TestCaseOperation2Input, opts ...request.Option) (*InputService24TestShapeInputService24TestCaseOperation1Output, error) {
+func (c *InputService24ProtocolTest) InputService24TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService24TestShapeInputService24TestCaseOperation2Input, opts ...request.Option) (*InputService24TestShapeInputService24TestCaseOperation1Output, error) {
 	req, out := c.InputService24TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4813,7 +4813,7 @@ func (c *InputService24ProtocolTest) InputService24TestCaseOperation1WithContext
 
 const opInputService24TestCaseOperation2 = "OperationName"
 
-// InputService24TestCaseOperation2Request generates a "aws/request.Request" representing the
+// InputService24TestCaseOperation2Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService24TestCaseOperation2 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4875,7 +4875,7 @@ func (c *InputService24ProtocolTest) InputService24TestCaseOperation2(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService24ProtocolTest) InputService24TestCaseOperation2WithContext(ctx aws.Context, input *InputService24TestShapeInputService24TestCaseOperation2Input, opts ...request.Option) (*InputService24TestShapeInputService24TestCaseOperation2Output, error) {
+func (c *InputService24ProtocolTest) InputService24TestCaseOperation2WithContext(ctx nifcloud.Context, input *InputService24TestShapeInputService24TestCaseOperation2Input, opts ...request.Option) (*InputService24TestShapeInputService24TestCaseOperation2Output, error) {
 	req, out := c.InputService24TestCaseOperation2Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4914,21 +4914,21 @@ type InputService25ProtocolTest struct {
 
 // New creates a new instance of the InputService25ProtocolTest client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// nifcloud.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a InputService25ProtocolTest client from just a session.
 //     svc := inputservice25protocoltest.New(mySession)
 //
 //     // Create a InputService25ProtocolTest client with additional configuration
-//     svc := inputservice25protocoltest.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
-func NewInputService25ProtocolTest(p client.ConfigProvider, cfgs ...*aws.Config) *InputService25ProtocolTest {
+//     svc := inputservice25protocoltest.New(mySession, nifcloud.NewConfig().WithRegion("us-west-2"))
+func NewInputService25ProtocolTest(p client.ConfigProvider, cfgs ...*nifcloud.Config) *InputService25ProtocolTest {
 	c := p.ClientConfig("inputservice25protocoltest", cfgs...)
 	return newInputService25ProtocolTestClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
 }
 
 // newClient creates, initializes and returns a new service client instance.
-func newInputService25ProtocolTestClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService25ProtocolTest {
+func newInputService25ProtocolTestClient(cfg nifcloud.Config, handlers request.Handlers, endpoint, signingRegion, signingName string) *InputService25ProtocolTest {
 	svc := &InputService25ProtocolTest{
 		Client: client.New(
 			cfg,
@@ -4963,7 +4963,7 @@ func (c *InputService25ProtocolTest) newRequest(op *request.Operation, params, d
 
 const opInputService25TestCaseOperation1 = "OperationName"
 
-// InputService25TestCaseOperation1Request generates a "aws/request.Request" representing the
+// InputService25TestCaseOperation1Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService25TestCaseOperation1 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5025,7 +5025,7 @@ func (c *InputService25ProtocolTest) InputService25TestCaseOperation1(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService25ProtocolTest) InputService25TestCaseOperation1WithContext(ctx aws.Context, input *InputService25TestShapeInputService25TestCaseOperation2Input, opts ...request.Option) (*InputService25TestShapeInputService25TestCaseOperation1Output, error) {
+func (c *InputService25ProtocolTest) InputService25TestCaseOperation1WithContext(ctx nifcloud.Context, input *InputService25TestShapeInputService25TestCaseOperation2Input, opts ...request.Option) (*InputService25TestShapeInputService25TestCaseOperation1Output, error) {
 	req, out := c.InputService25TestCaseOperation1Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5034,7 +5034,7 @@ func (c *InputService25ProtocolTest) InputService25TestCaseOperation1WithContext
 
 const opInputService25TestCaseOperation2 = "OperationName"
 
-// InputService25TestCaseOperation2Request generates a "aws/request.Request" representing the
+// InputService25TestCaseOperation2Request generates a "nifcloud/request.Request" representing the
 // client's request for the InputService25TestCaseOperation2 operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5096,7 +5096,7 @@ func (c *InputService25ProtocolTest) InputService25TestCaseOperation2(input *Inp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *InputService25ProtocolTest) InputService25TestCaseOperation2WithContext(ctx aws.Context, input *InputService25TestShapeInputService25TestCaseOperation2Input, opts ...request.Option) (*InputService25TestShapeInputService25TestCaseOperation2Output, error) {
+func (c *InputService25ProtocolTest) InputService25TestCaseOperation2WithContext(ctx nifcloud.Context, input *InputService25TestShapeInputService25TestCaseOperation2Input, opts ...request.Option) (*InputService25TestShapeInputService25TestCaseOperation2Output, error) {
 	req, out := c.InputService25TestCaseOperation2Request(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5174,10 +5174,10 @@ const (
 //
 
 func TestInputService1ProtocolTestBasicXMLSerializationCase1(t *testing.T) {
-	svc := NewInputService1ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService1ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService1TestShapeInputService1TestCaseOperation2Input{
-		Description: aws.String("bar"),
-		Name:        aws.String("foo"),
+		Description: nifcloud.String("bar"),
+		Name:        nifcloud.String("foo"),
 	}
 	req, _ := svc.InputService1TestCaseOperation1Request(input)
 	r := req.HTTPRequest
@@ -5203,10 +5203,10 @@ func TestInputService1ProtocolTestBasicXMLSerializationCase1(t *testing.T) {
 }
 
 func TestInputService1ProtocolTestBasicXMLSerializationCase2(t *testing.T) {
-	svc := NewInputService1ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService1ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService1TestShapeInputService1TestCaseOperation2Input{
-		Description: aws.String("bar"),
-		Name:        aws.String("foo"),
+		Description: nifcloud.String("bar"),
+		Name:        nifcloud.String("foo"),
 	}
 	req, _ := svc.InputService1TestCaseOperation2Request(input)
 	r := req.HTTPRequest
@@ -5232,7 +5232,7 @@ func TestInputService1ProtocolTestBasicXMLSerializationCase2(t *testing.T) {
 }
 
 func TestInputService1ProtocolTestBasicXMLSerializationCase3(t *testing.T) {
-	svc := NewInputService1ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService1ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService1TestShapeInputService1TestCaseOperation3Input{}
 	req, _ := svc.InputService1TestCaseOperation3Request(input)
 	r := req.HTTPRequest
@@ -5251,12 +5251,12 @@ func TestInputService1ProtocolTestBasicXMLSerializationCase3(t *testing.T) {
 }
 
 func TestInputService2ProtocolTestSerializeOtherScalarTypesCase1(t *testing.T) {
-	svc := NewInputService2ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService2ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService2TestShapeInputService2TestCaseOperation1Input{
-		First:  aws.Bool(true),
-		Fourth: aws.Int64(3),
-		Second: aws.Bool(false),
-		Third:  aws.Float64(1.2),
+		First:  nifcloud.Bool(true),
+		Fourth: nifcloud.Int64(3),
+		Second: nifcloud.Bool(false),
+		Third:  nifcloud.Float64(1.2),
 	}
 	req, _ := svc.InputService2TestCaseOperation1Request(input)
 	r := req.HTTPRequest
@@ -5282,12 +5282,12 @@ func TestInputService2ProtocolTestSerializeOtherScalarTypesCase1(t *testing.T) {
 }
 
 func TestInputService3ProtocolTestNestedStructuresCase1(t *testing.T) {
-	svc := NewInputService3ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService3ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService3TestShapeInputService3TestCaseOperation2Input{
-		Description: aws.String("baz"),
+		Description: nifcloud.String("baz"),
 		SubStructure: &InputService3TestShapeSubStructure{
-			Bar: aws.String("b"),
-			Foo: aws.String("a"),
+			Bar: nifcloud.String("b"),
+			Foo: nifcloud.String("a"),
 		},
 	}
 	req, _ := svc.InputService3TestCaseOperation1Request(input)
@@ -5314,11 +5314,11 @@ func TestInputService3ProtocolTestNestedStructuresCase1(t *testing.T) {
 }
 
 func TestInputService3ProtocolTestNestedStructuresCase2(t *testing.T) {
-	svc := NewInputService3ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService3ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService3TestShapeInputService3TestCaseOperation2Input{
-		Description: aws.String("baz"),
+		Description: nifcloud.String("baz"),
 		SubStructure: &InputService3TestShapeSubStructure{
-			Foo: aws.String("a"),
+			Foo: nifcloud.String("a"),
 		},
 	}
 	req, _ := svc.InputService3TestCaseOperation2Request(input)
@@ -5345,9 +5345,9 @@ func TestInputService3ProtocolTestNestedStructuresCase2(t *testing.T) {
 }
 
 func TestInputService4ProtocolTestNestedStructuresCase1(t *testing.T) {
-	svc := NewInputService4ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService4ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService4TestShapeInputService4TestCaseOperation1Input{
-		Description:  aws.String("baz"),
+		Description:  nifcloud.String("baz"),
 		SubStructure: &InputService4TestShapeSubStructure{},
 	}
 	req, _ := svc.InputService4TestCaseOperation1Request(input)
@@ -5374,12 +5374,12 @@ func TestInputService4ProtocolTestNestedStructuresCase1(t *testing.T) {
 }
 
 func TestInputService5ProtocolTestNonFlattenedListsCase1(t *testing.T) {
-	svc := NewInputService5ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService5ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService5TestShapeInputService5TestCaseOperation1Input{
 		ListParam: []*string{
-			aws.String("one"),
-			aws.String("two"),
-			aws.String("three"),
+			nifcloud.String("one"),
+			nifcloud.String("two"),
+			nifcloud.String("three"),
 		},
 	}
 	req, _ := svc.InputService5TestCaseOperation1Request(input)
@@ -5406,12 +5406,12 @@ func TestInputService5ProtocolTestNonFlattenedListsCase1(t *testing.T) {
 }
 
 func TestInputService6ProtocolTestNonFlattenedListsWithLocationNameCase1(t *testing.T) {
-	svc := NewInputService6ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService6ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService6TestShapeInputService6TestCaseOperation1Input{
 		ListParam: []*string{
-			aws.String("one"),
-			aws.String("two"),
-			aws.String("three"),
+			nifcloud.String("one"),
+			nifcloud.String("two"),
+			nifcloud.String("three"),
 		},
 	}
 	req, _ := svc.InputService6TestCaseOperation1Request(input)
@@ -5438,12 +5438,12 @@ func TestInputService6ProtocolTestNonFlattenedListsWithLocationNameCase1(t *test
 }
 
 func TestInputService7ProtocolTestFlattenedListsCase1(t *testing.T) {
-	svc := NewInputService7ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService7ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService7TestShapeInputService7TestCaseOperation1Input{
 		ListParam: []*string{
-			aws.String("one"),
-			aws.String("two"),
-			aws.String("three"),
+			nifcloud.String("one"),
+			nifcloud.String("two"),
+			nifcloud.String("three"),
 		},
 	}
 	req, _ := svc.InputService7TestCaseOperation1Request(input)
@@ -5470,12 +5470,12 @@ func TestInputService7ProtocolTestFlattenedListsCase1(t *testing.T) {
 }
 
 func TestInputService8ProtocolTestFlattenedListsWithLocationNameCase1(t *testing.T) {
-	svc := NewInputService8ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService8ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService8TestShapeInputService8TestCaseOperation1Input{
 		ListParam: []*string{
-			aws.String("one"),
-			aws.String("two"),
-			aws.String("three"),
+			nifcloud.String("one"),
+			nifcloud.String("two"),
+			nifcloud.String("three"),
 		},
 	}
 	req, _ := svc.InputService8TestCaseOperation1Request(input)
@@ -5502,17 +5502,17 @@ func TestInputService8ProtocolTestFlattenedListsWithLocationNameCase1(t *testing
 }
 
 func TestInputService9ProtocolTestListOfStructuresCase1(t *testing.T) {
-	svc := NewInputService9ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService9ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService9TestShapeInputService9TestCaseOperation1Input{
 		ListParam: []*InputService9TestShapeSingleFieldStruct{
 			{
-				Element: aws.String("one"),
+				Element: nifcloud.String("one"),
 			},
 			{
-				Element: aws.String("two"),
+				Element: nifcloud.String("two"),
 			},
 			{
-				Element: aws.String("three"),
+				Element: nifcloud.String("three"),
 			},
 		},
 	}
@@ -5540,11 +5540,11 @@ func TestInputService9ProtocolTestListOfStructuresCase1(t *testing.T) {
 }
 
 func TestInputService10ProtocolTestBlobAndTimestampShapesCase1(t *testing.T) {
-	svc := NewInputService10ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService10ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService10TestShapeInputService10TestCaseOperation1Input{
 		StructureParam: &InputService10TestShapeStructureShape{
 			B: []byte("foo"),
-			T: aws.Time(time.Unix(1422172800, 0)),
+			T: nifcloud.Time(time.Unix(1422172800, 0)),
 		},
 	}
 	req, _ := svc.InputService10TestCaseOperation1Request(input)
@@ -5571,11 +5571,11 @@ func TestInputService10ProtocolTestBlobAndTimestampShapesCase1(t *testing.T) {
 }
 
 func TestInputService11ProtocolTestHeaderMapsCase1(t *testing.T) {
-	svc := NewInputService11ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService11ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService11TestShapeInputService11TestCaseOperation1Input{
 		Foo: map[string]*string{
-			"a": aws.String("b"),
-			"c": aws.String("d"),
+			"a": nifcloud.String("b"),
+			"c": nifcloud.String("d"),
 		},
 	}
 	req, _ := svc.InputService11TestCaseOperation1Request(input)
@@ -5601,11 +5601,11 @@ func TestInputService11ProtocolTestHeaderMapsCase1(t *testing.T) {
 }
 
 func TestInputService12ProtocolTestQuerystringListOfStringsCase1(t *testing.T) {
-	svc := NewInputService12ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService12ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService12TestShapeInputService12TestCaseOperation1Input{
 		Items: []*string{
-			aws.String("value1"),
-			aws.String("value2"),
+			nifcloud.String("value1"),
+			nifcloud.String("value2"),
 		},
 	}
 	req, _ := svc.InputService12TestCaseOperation1Request(input)
@@ -5625,12 +5625,12 @@ func TestInputService12ProtocolTestQuerystringListOfStringsCase1(t *testing.T) {
 }
 
 func TestInputService13ProtocolTestStringToStringMapsInQuerystringCase1(t *testing.T) {
-	svc := NewInputService13ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService13ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService13TestShapeInputService13TestCaseOperation1Input{
-		PipelineId: aws.String("foo"),
+		PipelineId: nifcloud.String("foo"),
 		QueryDoc: map[string]*string{
-			"bar":  aws.String("baz"),
-			"fizz": aws.String("buzz"),
+			"bar":  nifcloud.String("baz"),
+			"fizz": nifcloud.String("buzz"),
 		},
 	}
 	req, _ := svc.InputService13TestCaseOperation1Request(input)
@@ -5650,17 +5650,17 @@ func TestInputService13ProtocolTestStringToStringMapsInQuerystringCase1(t *testi
 }
 
 func TestInputService14ProtocolTestStringToStringListMapsInQuerystringCase1(t *testing.T) {
-	svc := NewInputService14ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService14ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService14TestShapeInputService14TestCaseOperation1Input{
-		PipelineId: aws.String("id"),
+		PipelineId: nifcloud.String("id"),
 		QueryDoc: map[string][]*string{
 			"fizz": {
-				aws.String("buzz"),
-				aws.String("pop"),
+				nifcloud.String("buzz"),
+				nifcloud.String("pop"),
 			},
 			"foo": {
-				aws.String("bar"),
-				aws.String("baz"),
+				nifcloud.String("bar"),
+				nifcloud.String("baz"),
 			},
 		},
 	}
@@ -5681,9 +5681,9 @@ func TestInputService14ProtocolTestStringToStringListMapsInQuerystringCase1(t *t
 }
 
 func TestInputService15ProtocolTestBooleanInQuerystringCase1(t *testing.T) {
-	svc := NewInputService15ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService15ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService15TestShapeInputService15TestCaseOperation2Input{
-		BoolQuery: aws.Bool(true),
+		BoolQuery: nifcloud.Bool(true),
 	}
 	req, _ := svc.InputService15TestCaseOperation1Request(input)
 	r := req.HTTPRequest
@@ -5702,9 +5702,9 @@ func TestInputService15ProtocolTestBooleanInQuerystringCase1(t *testing.T) {
 }
 
 func TestInputService15ProtocolTestBooleanInQuerystringCase2(t *testing.T) {
-	svc := NewInputService15ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService15ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService15TestShapeInputService15TestCaseOperation2Input{
-		BoolQuery: aws.Bool(false),
+		BoolQuery: nifcloud.Bool(false),
 	}
 	req, _ := svc.InputService15TestCaseOperation2Request(input)
 	r := req.HTTPRequest
@@ -5723,9 +5723,9 @@ func TestInputService15ProtocolTestBooleanInQuerystringCase2(t *testing.T) {
 }
 
 func TestInputService16ProtocolTestStringPayloadCase1(t *testing.T) {
-	svc := NewInputService16ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService16ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService16TestShapeInputService16TestCaseOperation1Input{
-		Foo: aws.String("bar"),
+		Foo: nifcloud.String("bar"),
 	}
 	req, _ := svc.InputService16TestCaseOperation1Request(input)
 	r := req.HTTPRequest
@@ -5753,7 +5753,7 @@ func TestInputService16ProtocolTestStringPayloadCase1(t *testing.T) {
 }
 
 func TestInputService17ProtocolTestBlobPayloadCase1(t *testing.T) {
-	svc := NewInputService17ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService17ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService17TestShapeInputService17TestCaseOperation2Input{
 		Foo: []byte("bar"),
 	}
@@ -5783,7 +5783,7 @@ func TestInputService17ProtocolTestBlobPayloadCase1(t *testing.T) {
 }
 
 func TestInputService17ProtocolTestBlobPayloadCase2(t *testing.T) {
-	svc := NewInputService17ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService17ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService17TestShapeInputService17TestCaseOperation2Input{}
 	req, _ := svc.InputService17TestCaseOperation2Request(input)
 	r := req.HTTPRequest
@@ -5802,10 +5802,10 @@ func TestInputService17ProtocolTestBlobPayloadCase2(t *testing.T) {
 }
 
 func TestInputService18ProtocolTestStructurePayloadCase1(t *testing.T) {
-	svc := NewInputService18ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService18ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService18TestShapeInputService18TestCaseOperation4Input{
 		Foo: &InputService18TestShapeFooShape{
-			Baz: aws.String("bar"),
+			Baz: nifcloud.String("bar"),
 		},
 	}
 	req, _ := svc.InputService18TestCaseOperation1Request(input)
@@ -5832,7 +5832,7 @@ func TestInputService18ProtocolTestStructurePayloadCase1(t *testing.T) {
 }
 
 func TestInputService18ProtocolTestStructurePayloadCase2(t *testing.T) {
-	svc := NewInputService18ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService18ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService18TestShapeInputService18TestCaseOperation4Input{}
 	req, _ := svc.InputService18TestCaseOperation2Request(input)
 	r := req.HTTPRequest
@@ -5851,7 +5851,7 @@ func TestInputService18ProtocolTestStructurePayloadCase2(t *testing.T) {
 }
 
 func TestInputService18ProtocolTestStructurePayloadCase3(t *testing.T) {
-	svc := NewInputService18ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService18ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService18TestShapeInputService18TestCaseOperation4Input{
 		Foo: &InputService18TestShapeFooShape{},
 	}
@@ -5879,7 +5879,7 @@ func TestInputService18ProtocolTestStructurePayloadCase3(t *testing.T) {
 }
 
 func TestInputService18ProtocolTestStructurePayloadCase4(t *testing.T) {
-	svc := NewInputService18ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService18ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService18TestShapeInputService18TestCaseOperation4Input{}
 	req, _ := svc.InputService18TestCaseOperation4Request(input)
 	r := req.HTTPRequest
@@ -5898,12 +5898,12 @@ func TestInputService18ProtocolTestStructurePayloadCase4(t *testing.T) {
 }
 
 func TestInputService19ProtocolTestXMLAttributeCase1(t *testing.T) {
-	svc := NewInputService19ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService19ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService19TestShapeInputService19TestCaseOperation1Input{
 		Grant: &InputService19TestShapeGrant{
 			Grantee: &InputService19TestShapeGrantee{
-				EmailAddress: aws.String("foo@example.com"),
-				Type:         aws.String("CanonicalUser"),
+				EmailAddress: nifcloud.String("foo@example.com"),
+				Type:         nifcloud.String("CanonicalUser"),
 			},
 		},
 	}
@@ -5931,10 +5931,10 @@ func TestInputService19ProtocolTestXMLAttributeCase1(t *testing.T) {
 }
 
 func TestInputService20ProtocolTestGreedyKeysCase1(t *testing.T) {
-	svc := NewInputService20ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService20ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService20TestShapeInputService20TestCaseOperation1Input{
-		Bucket: aws.String("my/bucket"),
-		Key:    aws.String("testing /123"),
+		Bucket: nifcloud.String("my/bucket"),
+		Key:    nifcloud.String("testing /123"),
 	}
 	req, _ := svc.InputService20TestCaseOperation1Request(input)
 	r := req.HTTPRequest
@@ -5953,7 +5953,7 @@ func TestInputService20ProtocolTestGreedyKeysCase1(t *testing.T) {
 }
 
 func TestInputService21ProtocolTestOmitsNullQueryParamsButSerializesEmptyStringsCase1(t *testing.T) {
-	svc := NewInputService21ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService21ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService21TestShapeInputService21TestCaseOperation2Input{}
 	req, _ := svc.InputService21TestCaseOperation1Request(input)
 	r := req.HTTPRequest
@@ -5972,9 +5972,9 @@ func TestInputService21ProtocolTestOmitsNullQueryParamsButSerializesEmptyStrings
 }
 
 func TestInputService21ProtocolTestOmitsNullQueryParamsButSerializesEmptyStringsCase2(t *testing.T) {
-	svc := NewInputService21ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService21ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService21TestShapeInputService21TestCaseOperation2Input{
-		Foo: aws.String(""),
+		Foo: nifcloud.String(""),
 	}
 	req, _ := svc.InputService21TestCaseOperation2Request(input)
 	r := req.HTTPRequest
@@ -5993,10 +5993,10 @@ func TestInputService21ProtocolTestOmitsNullQueryParamsButSerializesEmptyStrings
 }
 
 func TestInputService22ProtocolTestRecursiveShapesCase1(t *testing.T) {
-	svc := NewInputService22ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService22ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService22TestShapeInputService22TestCaseOperation6Input{
 		RecursiveStruct: &InputService22TestShapeRecursiveStructType{
-			NoRecurse: aws.String("foo"),
+			NoRecurse: nifcloud.String("foo"),
 		},
 	}
 	req, _ := svc.InputService22TestCaseOperation1Request(input)
@@ -6023,11 +6023,11 @@ func TestInputService22ProtocolTestRecursiveShapesCase1(t *testing.T) {
 }
 
 func TestInputService22ProtocolTestRecursiveShapesCase2(t *testing.T) {
-	svc := NewInputService22ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService22ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService22TestShapeInputService22TestCaseOperation6Input{
 		RecursiveStruct: &InputService22TestShapeRecursiveStructType{
 			RecursiveStruct: &InputService22TestShapeRecursiveStructType{
-				NoRecurse: aws.String("foo"),
+				NoRecurse: nifcloud.String("foo"),
 			},
 		},
 	}
@@ -6055,13 +6055,13 @@ func TestInputService22ProtocolTestRecursiveShapesCase2(t *testing.T) {
 }
 
 func TestInputService22ProtocolTestRecursiveShapesCase3(t *testing.T) {
-	svc := NewInputService22ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService22ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService22TestShapeInputService22TestCaseOperation6Input{
 		RecursiveStruct: &InputService22TestShapeRecursiveStructType{
 			RecursiveStruct: &InputService22TestShapeRecursiveStructType{
 				RecursiveStruct: &InputService22TestShapeRecursiveStructType{
 					RecursiveStruct: &InputService22TestShapeRecursiveStructType{
-						NoRecurse: aws.String("foo"),
+						NoRecurse: nifcloud.String("foo"),
 					},
 				},
 			},
@@ -6091,15 +6091,15 @@ func TestInputService22ProtocolTestRecursiveShapesCase3(t *testing.T) {
 }
 
 func TestInputService22ProtocolTestRecursiveShapesCase4(t *testing.T) {
-	svc := NewInputService22ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService22ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService22TestShapeInputService22TestCaseOperation6Input{
 		RecursiveStruct: &InputService22TestShapeRecursiveStructType{
 			RecursiveList: []*InputService22TestShapeRecursiveStructType{
 				{
-					NoRecurse: aws.String("foo"),
+					NoRecurse: nifcloud.String("foo"),
 				},
 				{
-					NoRecurse: aws.String("bar"),
+					NoRecurse: nifcloud.String("bar"),
 				},
 			},
 		},
@@ -6128,16 +6128,16 @@ func TestInputService22ProtocolTestRecursiveShapesCase4(t *testing.T) {
 }
 
 func TestInputService22ProtocolTestRecursiveShapesCase5(t *testing.T) {
-	svc := NewInputService22ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService22ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService22TestShapeInputService22TestCaseOperation6Input{
 		RecursiveStruct: &InputService22TestShapeRecursiveStructType{
 			RecursiveList: []*InputService22TestShapeRecursiveStructType{
 				{
-					NoRecurse: aws.String("foo"),
+					NoRecurse: nifcloud.String("foo"),
 				},
 				{
 					RecursiveStruct: &InputService22TestShapeRecursiveStructType{
-						NoRecurse: aws.String("bar"),
+						NoRecurse: nifcloud.String("bar"),
 					},
 				},
 			},
@@ -6167,15 +6167,15 @@ func TestInputService22ProtocolTestRecursiveShapesCase5(t *testing.T) {
 }
 
 func TestInputService22ProtocolTestRecursiveShapesCase6(t *testing.T) {
-	svc := NewInputService22ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService22ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService22TestShapeInputService22TestCaseOperation6Input{
 		RecursiveStruct: &InputService22TestShapeRecursiveStructType{
 			RecursiveMap: map[string]*InputService22TestShapeRecursiveStructType{
 				"bar": {
-					NoRecurse: aws.String("bar"),
+					NoRecurse: nifcloud.String("bar"),
 				},
 				"foo": {
-					NoRecurse: aws.String("foo"),
+					NoRecurse: nifcloud.String("foo"),
 				},
 			},
 		},
@@ -6204,9 +6204,9 @@ func TestInputService22ProtocolTestRecursiveShapesCase6(t *testing.T) {
 }
 
 func TestInputService23ProtocolTestTimestampInHeaderCase1(t *testing.T) {
-	svc := NewInputService23ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService23ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService23TestShapeInputService23TestCaseOperation1Input{
-		TimeArgInHeader: aws.Time(time.Unix(1422172800, 0)),
+		TimeArgInHeader: nifcloud.Time(time.Unix(1422172800, 0)),
 	}
 	req, _ := svc.InputService23TestCaseOperation1Request(input)
 	r := req.HTTPRequest
@@ -6228,9 +6228,9 @@ func TestInputService23ProtocolTestTimestampInHeaderCase1(t *testing.T) {
 }
 
 func TestInputService24ProtocolTestIdempotencyTokenAutoFillCase1(t *testing.T) {
-	svc := NewInputService24ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService24ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService24TestShapeInputService24TestCaseOperation2Input{
-		Token: aws.String("abc123"),
+		Token: nifcloud.String("abc123"),
 	}
 	req, _ := svc.InputService24TestCaseOperation1Request(input)
 	r := req.HTTPRequest
@@ -6256,7 +6256,7 @@ func TestInputService24ProtocolTestIdempotencyTokenAutoFillCase1(t *testing.T) {
 }
 
 func TestInputService24ProtocolTestIdempotencyTokenAutoFillCase2(t *testing.T) {
-	svc := NewInputService24ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService24ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService24TestShapeInputService24TestCaseOperation2Input{}
 	req, _ := svc.InputService24TestCaseOperation2Request(input)
 	r := req.HTTPRequest
@@ -6282,20 +6282,20 @@ func TestInputService24ProtocolTestIdempotencyTokenAutoFillCase2(t *testing.T) {
 }
 
 func TestInputService25ProtocolTestEnumCase1(t *testing.T) {
-	svc := NewInputService25ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService25ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService25TestShapeInputService25TestCaseOperation2Input{
-		FooEnum:    aws.String("foo"),
-		HeaderEnum: aws.String("baz"),
+		FooEnum:    nifcloud.String("foo"),
+		HeaderEnum: nifcloud.String("baz"),
 		ListEnums: []*string{
-			aws.String("foo"),
-			aws.String(""),
-			aws.String("bar"),
+			nifcloud.String("foo"),
+			nifcloud.String(""),
+			nifcloud.String("bar"),
 		},
-		URIFooEnum: aws.String("bar"),
+		URIFooEnum: nifcloud.String("bar"),
 		URIListEnums: []*string{
-			aws.String("0"),
-			aws.String(""),
-			aws.String("1"),
+			nifcloud.String("0"),
+			nifcloud.String(""),
+			nifcloud.String("1"),
 		},
 	}
 	req, _ := svc.InputService25TestCaseOperation1Request(input)
@@ -6325,7 +6325,7 @@ func TestInputService25ProtocolTestEnumCase1(t *testing.T) {
 }
 
 func TestInputService25ProtocolTestEnumCase2(t *testing.T) {
-	svc := NewInputService25ProtocolTest(unit.Session, &aws.Config{Endpoint: aws.String("https://test")})
+	svc := NewInputService25ProtocolTest(unit.Session, &nifcloud.Config{Endpoint: nifcloud.String("https://test")})
 	input := &InputService25TestShapeInputService25TestCaseOperation2Input{}
 	req, _ := svc.InputService25TestCaseOperation2Request(input)
 	r := req.HTTPRequest

@@ -7,9 +7,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 )
 
@@ -36,8 +36,8 @@ func main() {
 
 	svc := s3.New(sess)
 	resp, err := svc.GetObject(&s3.GetObjectInput{
-		Bucket: aws.String(os.Args[1]),
-		Key:    aws.String(os.Args[2]),
+		Bucket: nifcloud.String(os.Args[1]),
+		Key:    nifcloud.String(os.Args[2]),
 	})
 
 	if err != nil {
@@ -62,5 +62,5 @@ func main() {
 	defer resp.Body.Close()
 
 	fmt.Printf("s3://%s/%s exists. size: %d\n", os.Args[1], os.Args[2],
-		aws.Int64Value(resp.ContentLength))
+		nifcloud.Int64Value(resp.ContentLength))
 }

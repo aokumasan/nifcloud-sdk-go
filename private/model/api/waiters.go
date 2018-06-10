@@ -48,7 +48,7 @@ func (a *API) WaitersGoCode() string {
 	fmt.Fprintf(&buf, "import (\n%q\n\n%q\n%q\n)",
 		"time",
 		"github.com/alice02/nifcloud-sdk-go/aws",
-		"github.com/alice02/nifcloud-sdk-go/aws/request",
+		"github.com/alice02/nifcloud-sdk-go/nifcloud/request",
 	)
 
 	for _, w := range a.Waiters {
@@ -116,7 +116,7 @@ var waiterTmpls = template.Must(template.New("waiterTmpls").Funcs(
 // If the condition is not met within the max attempt window, an error will
 // be returned.
 func (c *{{ .Operation.API.StructName }}) WaitUntil{{ .Name }}(input {{ .Operation.InputRef.GoType }}) error {
-	return c.WaitUntil{{ .Name }}WithContext(aws.BackgroundContext(), input)
+	return c.WaitUntil{{ .Name }}WithContext(nifcloud.BackgroundContext(), input)
 }
 
 // WaitUntil{{ .Name }}WithContext is an extended version of WaitUntil{{ .Name }}.
@@ -128,7 +128,7 @@ func (c *{{ .Operation.API.StructName }}) WaitUntil{{ .Name }}(input {{ .Operati
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
 func (c *{{ .Operation.API.StructName }}) WaitUntil{{ .Name }}WithContext(` +
-	`ctx aws.Context, input {{ .Operation.InputRef.GoType }}, opts ...request.WaiterOption) error {
+	`ctx nifcloud.Context, input {{ .Operation.InputRef.GoType }}, opts ...request.WaiterOption) error {
 	w := request.Waiter{
 		Name:    "WaitUntil{{ .Name }}",
 		MaxAttempts: {{ .MaxAttempts }},
@@ -163,7 +163,7 @@ func (c *{{ .Operation.API.StructName }}) WaitUntil{{ .Name }}WithContext(` +
 
 {{ define "waiter interface" }}
 WaitUntil{{ .Name }}({{ .Operation.InputRef.GoTypeWithPkgName }}) error
-WaitUntil{{ .Name }}WithContext(aws.Context, {{ .Operation.InputRef.GoTypeWithPkgName }}, ...request.WaiterOption) error
+WaitUntil{{ .Name }}WithContext(nifcloud.Context, {{ .Operation.InputRef.GoTypeWithPkgName }}, ...request.WaiterOption) error
 {{- end }}
 `))
 

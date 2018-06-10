@@ -3,9 +3,9 @@
 package main
 
 import (
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/endpoints"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/endpoints"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/dynamodb"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 	"github.com/alice02/nifcloud-sdk-go/service/sqs"
@@ -24,8 +24,8 @@ func main() {
 		return defaultResolver.EndpointFor(service, region, optFns...)
 	}
 	sess := session.Must(session.NewSessionWithOptions(session.Options{
-		Config: aws.Config{
-			Region:           aws.String("us-west-2"),
+		Config: nifcloud.Config{
+			Region:           nifcloud.String("us-west-2"),
 			EndpointResolver: endpoints.ResolverFunc(s3CustResolverFn),
 		},
 	}))
@@ -36,8 +36,8 @@ func main() {
 	s3Svc := s3.New(sess)
 	// Operation calls will be made to the custom endpoint.
 	s3Svc.GetObject(&s3.GetObjectInput{
-		Bucket: aws.String("myBucket"),
-		Key:    aws.String("myObjectKey"),
+		Bucket: nifcloud.String("myBucket"),
+		Key:    nifcloud.String("myObjectKey"),
 	})
 
 	// Create the SQS service client with the shared session. This will
@@ -47,7 +47,7 @@ func main() {
 	// Operation calls will be made to the default endpoint for SQS for the
 	// region configured.
 	sqsSvc.ReceiveMessage(&sqs.ReceiveMessageInput{
-		QueueUrl: aws.String("my-queue-url"),
+		QueueUrl: nifcloud.String("my-queue-url"),
 	})
 
 	// Create a DynamoDB service client that will use a custom endpoint
@@ -60,7 +60,7 @@ func main() {
 			SigningRegion: "custom-signing-region",
 		}, nil
 	}
-	ddbSvc := dynamodb.New(sess, &aws.Config{
+	ddbSvc := dynamodb.New(sess, &nifcloud.Config{
 		EndpointResolver: endpoints.ResolverFunc(ddbCustResolverFn),
 	})
 	// Operation calls will be made to the custom endpoint set in the
@@ -70,8 +70,8 @@ func main() {
 	// Setting Config's Endpoint will override the EndpointResolver. Forcing
 	// the service client to make all operation to the endpoint specified
 	// the in the config.
-	ddbSvcLocal := dynamodb.New(sess, &aws.Config{
-		Endpoint: aws.String("http://localhost:8088"),
+	ddbSvcLocal := dynamodb.New(sess, &nifcloud.Config{
+		Endpoint: nifcloud.String("http://localhost:8088"),
 	})
 	ddbSvcLocal.ListTables(&dynamodb.ListTablesInput{})
 }

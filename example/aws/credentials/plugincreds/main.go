@@ -8,10 +8,10 @@ import (
 	"os"
 	"plugin"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/credentials/plugincreds"
-	"github.com/alice02/nifcloud-sdk-go/aws/endpoints"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/credentials/plugincreds"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/endpoints"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 	"github.com/alice02/nifcloud-sdk-go/service/s3/s3manager"
 )
@@ -52,13 +52,13 @@ func main() {
 
 	// Example to configure a Session with the newly created credentials that
 	// will be sourced using the plugin's functionality.
-	sess := session.Must(session.NewSession(&aws.Config{
+	sess := session.Must(session.NewSession(&nifcloud.Config{
 		Credentials: creds,
 	}))
 
 	// If the region is not available attempt to derive the bucket's region
 	// from a query to S3 for the bucket's metadata
-	region := aws.StringValue(sess.Config.Region)
+	region := nifcloud.StringValue(sess.Config.Region)
 	if len(region) == 0 {
 		region, err = s3manager.GetBucketRegion(context.Background(), sess, bucket, endpoints.UsEast1RegionID)
 		if err != nil {
@@ -67,12 +67,12 @@ func main() {
 	}
 
 	// Create the S3 service client for the target region
-	svc := s3.New(sess, aws.NewConfig().WithRegion(region))
+	svc := s3.New(sess, nifcloud.NewConfig().WithRegion(region))
 
 	// Get the object's details
 	result, err := svc.HeadObject(&s3.HeadObjectInput{
-		Bucket: aws.String(bucket),
-		Key:    aws.String(key),
+		Bucket: nifcloud.String(bucket),
+		Key:    nifcloud.String(key),
 	})
 	fmt.Println(result, err)
 }

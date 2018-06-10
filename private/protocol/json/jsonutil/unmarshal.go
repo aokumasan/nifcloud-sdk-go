@@ -9,7 +9,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol"
 )
 
@@ -54,7 +54,7 @@ func unmarshalAny(value reflect.Value, data interface{}, tag reflect.StructTag) 
 			}
 		case reflect.Map:
 			// cannot be a JSONValue map
-			if _, ok := value.Interface().(aws.JSONValue); !ok {
+			if _, ok := value.Interface().(nifcloud.JSONValue); !ok {
 				t = "map"
 			}
 		}
@@ -189,7 +189,7 @@ func unmarshalScalar(value reflect.Value, data interface{}, tag reflect.StructTa
 				return err
 			}
 			value.Set(reflect.ValueOf(b))
-		case aws.JSONValue:
+		case nifcloud.JSONValue:
 			// No need to use escaping as the value is a non-quoted string.
 			v, err := protocol.DecodeJSONValue(d, protocol.NoEscape)
 			if err != nil {

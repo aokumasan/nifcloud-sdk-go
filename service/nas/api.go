@@ -5,16 +5,16 @@ package nas
 import (
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awsutil"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awsutil"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/query"
 )
 
 const opAuthorizeNASSecurityGroupIngress = "AuthorizeNASSecurityGroupIngress"
 
-// AuthorizeNASSecurityGroupIngressRequest generates a "aws/request.Request" representing the
+// AuthorizeNASSecurityGroupIngressRequest generates a "nifcloud/request.Request" representing the
 // client's request for the AuthorizeNASSecurityGroupIngress operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -77,7 +77,7 @@ func (c *Nas) AuthorizeNASSecurityGroupIngress(input *AuthorizeNASSecurityGroupI
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Nas) AuthorizeNASSecurityGroupIngressWithContext(ctx aws.Context, input *AuthorizeNASSecurityGroupIngressInput, opts ...request.Option) (*AuthorizeNASSecurityGroupIngressOutput, error) {
+func (c *Nas) AuthorizeNASSecurityGroupIngressWithContext(ctx nifcloud.Context, input *AuthorizeNASSecurityGroupIngressInput, opts ...request.Option) (*AuthorizeNASSecurityGroupIngressOutput, error) {
 	req, out := c.AuthorizeNASSecurityGroupIngressRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -86,7 +86,7 @@ func (c *Nas) AuthorizeNASSecurityGroupIngressWithContext(ctx aws.Context, input
 
 const opCreateNASInstance = "CreateNASInstance"
 
-// CreateNASInstanceRequest generates a "aws/request.Request" representing the
+// CreateNASInstanceRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateNASInstance operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -149,7 +149,7 @@ func (c *Nas) CreateNASInstance(input *CreateNASInstanceInput) (*CreateNASInstan
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Nas) CreateNASInstanceWithContext(ctx aws.Context, input *CreateNASInstanceInput, opts ...request.Option) (*CreateNASInstanceOutput, error) {
+func (c *Nas) CreateNASInstanceWithContext(ctx nifcloud.Context, input *CreateNASInstanceInput, opts ...request.Option) (*CreateNASInstanceOutput, error) {
 	req, out := c.CreateNASInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -158,7 +158,7 @@ func (c *Nas) CreateNASInstanceWithContext(ctx aws.Context, input *CreateNASInst
 
 const opCreateNASSecurityGroup = "CreateNASSecurityGroup"
 
-// CreateNASSecurityGroupRequest generates a "aws/request.Request" representing the
+// CreateNASSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateNASSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -221,7 +221,7 @@ func (c *Nas) CreateNASSecurityGroup(input *CreateNASSecurityGroupInput) (*Creat
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Nas) CreateNASSecurityGroupWithContext(ctx aws.Context, input *CreateNASSecurityGroupInput, opts ...request.Option) (*CreateNASSecurityGroupOutput, error) {
+func (c *Nas) CreateNASSecurityGroupWithContext(ctx nifcloud.Context, input *CreateNASSecurityGroupInput, opts ...request.Option) (*CreateNASSecurityGroupOutput, error) {
 	req, out := c.CreateNASSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -230,7 +230,7 @@ func (c *Nas) CreateNASSecurityGroupWithContext(ctx aws.Context, input *CreateNA
 
 const opDeleteNASInstance = "DeleteNASInstance"
 
-// DeleteNASInstanceRequest generates a "aws/request.Request" representing the
+// DeleteNASInstanceRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteNASInstance operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -293,7 +293,7 @@ func (c *Nas) DeleteNASInstance(input *DeleteNASInstanceInput) (*DeleteNASInstan
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Nas) DeleteNASInstanceWithContext(ctx aws.Context, input *DeleteNASInstanceInput, opts ...request.Option) (*DeleteNASInstanceOutput, error) {
+func (c *Nas) DeleteNASInstanceWithContext(ctx nifcloud.Context, input *DeleteNASInstanceInput, opts ...request.Option) (*DeleteNASInstanceOutput, error) {
 	req, out := c.DeleteNASInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -302,7 +302,7 @@ func (c *Nas) DeleteNASInstanceWithContext(ctx aws.Context, input *DeleteNASInst
 
 const opDeleteNASSecurityGroup = "DeleteNASSecurityGroup"
 
-// DeleteNASSecurityGroupRequest generates a "aws/request.Request" representing the
+// DeleteNASSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteNASSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -367,7 +367,7 @@ func (c *Nas) DeleteNASSecurityGroup(input *DeleteNASSecurityGroupInput) (*Delet
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Nas) DeleteNASSecurityGroupWithContext(ctx aws.Context, input *DeleteNASSecurityGroupInput, opts ...request.Option) (*DeleteNASSecurityGroupOutput, error) {
+func (c *Nas) DeleteNASSecurityGroupWithContext(ctx nifcloud.Context, input *DeleteNASSecurityGroupInput, opts ...request.Option) (*DeleteNASSecurityGroupOutput, error) {
 	req, out := c.DeleteNASSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -376,7 +376,7 @@ func (c *Nas) DeleteNASSecurityGroupWithContext(ctx aws.Context, input *DeleteNA
 
 const opDescribeNASInstances = "DescribeNASInstances"
 
-// DescribeNASInstancesRequest generates a "aws/request.Request" representing the
+// DescribeNASInstancesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeNASInstances operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -439,7 +439,7 @@ func (c *Nas) DescribeNASInstances(input *DescribeNASInstancesInput) (*DescribeN
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Nas) DescribeNASInstancesWithContext(ctx aws.Context, input *DescribeNASInstancesInput, opts ...request.Option) (*DescribeNASInstancesOutput, error) {
+func (c *Nas) DescribeNASInstancesWithContext(ctx nifcloud.Context, input *DescribeNASInstancesInput, opts ...request.Option) (*DescribeNASInstancesOutput, error) {
 	req, out := c.DescribeNASInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -448,7 +448,7 @@ func (c *Nas) DescribeNASInstancesWithContext(ctx aws.Context, input *DescribeNA
 
 const opDescribeNASSecurityGroups = "DescribeNASSecurityGroups"
 
-// DescribeNASSecurityGroupsRequest generates a "aws/request.Request" representing the
+// DescribeNASSecurityGroupsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeNASSecurityGroups operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -511,7 +511,7 @@ func (c *Nas) DescribeNASSecurityGroups(input *DescribeNASSecurityGroupsInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Nas) DescribeNASSecurityGroupsWithContext(ctx aws.Context, input *DescribeNASSecurityGroupsInput, opts ...request.Option) (*DescribeNASSecurityGroupsOutput, error) {
+func (c *Nas) DescribeNASSecurityGroupsWithContext(ctx nifcloud.Context, input *DescribeNASSecurityGroupsInput, opts ...request.Option) (*DescribeNASSecurityGroupsOutput, error) {
 	req, out := c.DescribeNASSecurityGroupsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -520,7 +520,7 @@ func (c *Nas) DescribeNASSecurityGroupsWithContext(ctx aws.Context, input *Descr
 
 const opGetMetricStatistics = "GetMetricStatistics"
 
-// GetMetricStatisticsRequest generates a "aws/request.Request" representing the
+// GetMetricStatisticsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the GetMetricStatistics operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -583,7 +583,7 @@ func (c *Nas) GetMetricStatistics(input *GetMetricStatisticsInput) (*GetMetricSt
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Nas) GetMetricStatisticsWithContext(ctx aws.Context, input *GetMetricStatisticsInput, opts ...request.Option) (*GetMetricStatisticsOutput, error) {
+func (c *Nas) GetMetricStatisticsWithContext(ctx nifcloud.Context, input *GetMetricStatisticsInput, opts ...request.Option) (*GetMetricStatisticsOutput, error) {
 	req, out := c.GetMetricStatisticsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -592,7 +592,7 @@ func (c *Nas) GetMetricStatisticsWithContext(ctx aws.Context, input *GetMetricSt
 
 const opModifyNASInstance = "ModifyNASInstance"
 
-// ModifyNASInstanceRequest generates a "aws/request.Request" representing the
+// ModifyNASInstanceRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ModifyNASInstance operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -655,7 +655,7 @@ func (c *Nas) ModifyNASInstance(input *ModifyNASInstanceInput) (*ModifyNASInstan
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Nas) ModifyNASInstanceWithContext(ctx aws.Context, input *ModifyNASInstanceInput, opts ...request.Option) (*ModifyNASInstanceOutput, error) {
+func (c *Nas) ModifyNASInstanceWithContext(ctx nifcloud.Context, input *ModifyNASInstanceInput, opts ...request.Option) (*ModifyNASInstanceOutput, error) {
 	req, out := c.ModifyNASInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -664,7 +664,7 @@ func (c *Nas) ModifyNASInstanceWithContext(ctx aws.Context, input *ModifyNASInst
 
 const opModifyNASSecurityGroup = "ModifyNASSecurityGroup"
 
-// ModifyNASSecurityGroupRequest generates a "aws/request.Request" representing the
+// ModifyNASSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ModifyNASSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -727,7 +727,7 @@ func (c *Nas) ModifyNASSecurityGroup(input *ModifyNASSecurityGroupInput) (*Modif
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Nas) ModifyNASSecurityGroupWithContext(ctx aws.Context, input *ModifyNASSecurityGroupInput, opts ...request.Option) (*ModifyNASSecurityGroupOutput, error) {
+func (c *Nas) ModifyNASSecurityGroupWithContext(ctx nifcloud.Context, input *ModifyNASSecurityGroupInput, opts ...request.Option) (*ModifyNASSecurityGroupOutput, error) {
 	req, out := c.ModifyNASSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -736,7 +736,7 @@ func (c *Nas) ModifyNASSecurityGroupWithContext(ctx aws.Context, input *ModifyNA
 
 const opRevokeNASSecurityGroupIngress = "RevokeNASSecurityGroupIngress"
 
-// RevokeNASSecurityGroupIngressRequest generates a "aws/request.Request" representing the
+// RevokeNASSecurityGroupIngressRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RevokeNASSecurityGroupIngress operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -799,7 +799,7 @@ func (c *Nas) RevokeNASSecurityGroupIngress(input *RevokeNASSecurityGroupIngress
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Nas) RevokeNASSecurityGroupIngressWithContext(ctx aws.Context, input *RevokeNASSecurityGroupIngressInput, opts ...request.Option) (*RevokeNASSecurityGroupIngressOutput, error) {
+func (c *Nas) RevokeNASSecurityGroupIngressWithContext(ctx nifcloud.Context, input *RevokeNASSecurityGroupIngressInput, opts ...request.Option) (*RevokeNASSecurityGroupIngressOutput, error) {
 	req, out := c.RevokeNASSecurityGroupIngressRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)

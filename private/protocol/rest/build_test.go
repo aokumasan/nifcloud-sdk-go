@@ -5,8 +5,8 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 )
 
 func TestCleanPath(t *testing.T) {
@@ -28,8 +28,8 @@ func TestMarshalPath(t *testing.T) {
 		Bucket *string `location:"uri" locationName:"bucket"`
 		Key    *string `location:"uri" locationName:"key"`
 	}{
-		Bucket: aws.String("mybucket"),
-		Key:    aws.String("my/cool+thing space/object世界"),
+		Bucket: nifcloud.String("mybucket"),
+		Key:    nifcloud.String("my/cool+thing space/object世界"),
 	}
 
 	expectURL := `/mybucket/my/cool+thing space/object世界`

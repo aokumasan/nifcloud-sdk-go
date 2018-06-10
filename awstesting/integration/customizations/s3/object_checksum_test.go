@@ -10,7 +10,7 @@ import (
 	"io"
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 )
 
@@ -47,7 +47,7 @@ func SkipTestContentMD5Validate(t *testing.T) {
 	}
 
 	for i, c := range cases {
-		keyName := aws.String(c.Name)
+		keyName := nifcloud.String(c.Name)
 		req, _ := svc.PutObjectRequest(&s3.PutObjectInput{
 			Bucket: bucketName,
 			Key:    keyName,
@@ -70,7 +70,7 @@ func SkipTestContentMD5Validate(t *testing.T) {
 
 		expectBody := c.Body
 		if c.RangeGet != nil {
-			getObjIn.Range = aws.String(fmt.Sprintf("bytes=%d-%d", c.RangeGet[0], c.RangeGet[1]-1))
+			getObjIn.Range = nifcloud.String(fmt.Sprintf("bytes=%d-%d", c.RangeGet[0], c.RangeGet[1]-1))
 			expectBody = c.Body[c.RangeGet[0]:c.RangeGet[1]]
 		}
 

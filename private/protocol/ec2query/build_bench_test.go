@@ -5,8 +5,8 @@ package ec2query_test
 import (
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/awstesting"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/ec2query"
 	"github.com/alice02/nifcloud-sdk-go/service/ec2"
@@ -14,42 +14,42 @@ import (
 
 func BenchmarkEC2QueryBuild_Complex_ec2AuthorizeSecurityGroupEgress(b *testing.B) {
 	params := &ec2.AuthorizeSecurityGroupEgressInput{
-		GroupId:  aws.String("String"), // Required
-		CidrIp:   aws.String("String"),
-		DryRun:   aws.Bool(true),
-		FromPort: aws.Int64(1),
+		GroupId:  nifcloud.String("String"), // Required
+		CidrIp:   nifcloud.String("String"),
+		DryRun:   nifcloud.Bool(true),
+		FromPort: nifcloud.Int64(1),
 		IpPermissions: []*ec2.IpPermission{
 			{ // Required
-				FromPort:   aws.Int64(1),
-				IpProtocol: aws.String("String"),
+				FromPort:   nifcloud.Int64(1),
+				IpProtocol: nifcloud.String("String"),
 				IpRanges: []*ec2.IpRange{
 					{ // Required
-						CidrIp: aws.String("String"),
+						CidrIp: nifcloud.String("String"),
 					},
 					// More values...
 				},
 				PrefixListIds: []*ec2.PrefixListId{
 					{ // Required
-						PrefixListId: aws.String("String"),
+						PrefixListId: nifcloud.String("String"),
 					},
 					// More values...
 				},
-				ToPort: aws.Int64(1),
+				ToPort: nifcloud.Int64(1),
 				UserIdGroupPairs: []*ec2.UserIdGroupPair{
 					{ // Required
-						GroupId:   aws.String("String"),
-						GroupName: aws.String("String"),
-						UserId:    aws.String("String"),
+						GroupId:   nifcloud.String("String"),
+						GroupName: nifcloud.String("String"),
+						UserId:    nifcloud.String("String"),
 					},
 					// More values...
 				},
 			},
 			// More values...
 		},
-		IpProtocol:                 aws.String("String"),
-		SourceSecurityGroupName:    aws.String("String"),
-		SourceSecurityGroupOwnerId: aws.String("String"),
-		ToPort: aws.Int64(1),
+		IpProtocol:                 nifcloud.String("String"),
+		SourceSecurityGroupName:    nifcloud.String("String"),
+		SourceSecurityGroupOwnerId: nifcloud.String("String"),
+		ToPort: nifcloud.Int64(1),
 	}
 
 	benchEC2QueryBuild(b, "AuthorizeSecurityGroupEgress", params)
@@ -57,10 +57,10 @@ func BenchmarkEC2QueryBuild_Complex_ec2AuthorizeSecurityGroupEgress(b *testing.B
 
 func BenchmarkEC2QueryBuild_Simple_ec2AttachNetworkInterface(b *testing.B) {
 	params := &ec2.AttachNetworkInterfaceInput{
-		DeviceIndex:        aws.Int64(1),         // Required
-		InstanceId:         aws.String("String"), // Required
-		NetworkInterfaceId: aws.String("String"), // Required
-		DryRun:             aws.Bool(true),
+		DeviceIndex:        nifcloud.Int64(1),         // Required
+		InstanceId:         nifcloud.String("String"), // Required
+		NetworkInterfaceId: nifcloud.String("String"), // Required
+		DryRun:             nifcloud.Bool(true),
 	}
 
 	benchEC2QueryBuild(b, "AttachNetworkInterface", params)

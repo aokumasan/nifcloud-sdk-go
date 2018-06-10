@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awsutil"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awsutil"
 )
 
 type mockBody struct {
@@ -76,21 +76,21 @@ func TestUnmarshal(t *testing.T) {
 </MockResponse>`
 
 	expect := mockOutput{
-		String:  aws.String("string value"),
-		Integer: aws.Int64(123),
+		String:  nifcloud.String("string value"),
+		Integer: nifcloud.Int64(123),
 		Closed: &mockClosedTags{
-			Attr: aws.String("attr value"),
+			Attr: nifcloud.String("attr value"),
 		},
 		Nested: &mockNestedStruct{
-			NestedString: aws.String("nested string value"),
-			NestedInt:    aws.Int64(321),
+			NestedString: nifcloud.String("nested string value"),
+			NestedInt:    nifcloud.Int64(321),
 		},
 		List: []*mockListElem{
 			{
-				String: aws.String("elem string value"),
+				String: nifcloud.String("elem string value"),
 				NestedElem: &mockNestedListElem{
-					String: aws.String("nested elem string value"),
-					Type:   aws.String("type"),
+					String: nifcloud.String("nested elem string value"),
+					Type:   nifcloud.String("type"),
 				},
 			},
 		},
@@ -120,8 +120,8 @@ func TestUnmarshal_UnexpectedEOF(t *testing.T) {
 	}{}
 
 	expect := out
-	expect.First = aws.String("first")
-	expect.Second = aws.String("second")
+	expect.First = nifcloud.String("first")
+	expect.Second = nifcloud.String("second")
 
 	expectErr := fmt.Errorf("expected read error")
 

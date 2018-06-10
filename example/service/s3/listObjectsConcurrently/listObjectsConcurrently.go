@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 )
 
@@ -113,8 +113,8 @@ func getAccountBuckets(sess *session.Session, bucketCh chan<- *Bucket, owner str
 			continue
 		}
 
-		bckSvc := s3.New(sess, &aws.Config{
-			Region:      aws.String(bucket.Region),
+		bckSvc := s3.New(sess, &nifcloud.Config{
+			Region:      nifcloud.String(bucket.Region),
 			Credentials: svc.Config.Credentials,
 		})
 		bucketDetails(bckSvc, bucket)

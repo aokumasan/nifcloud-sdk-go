@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/credentials"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/credentials"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/awstesting"
 )
 
@@ -47,8 +47,8 @@ func (sb signerBuilder) BuildSigner() signer {
 	}
 
 	if os.Getenv("DEBUG") != "" {
-		sig.Debug = aws.LogDebug
-		sig.Logger = aws.NewDefaultLogger()
+		sig.Debug = nifcloud.LogDebug
+		sig.Logger = nifcloud.NewDefaultLogger()
 	}
 
 	return sig
@@ -178,9 +178,9 @@ func TestMoreComplexSignRequest(t *testing.T) {
 }
 
 func TestGet(t *testing.T) {
-	svc := awstesting.NewClient(&aws.Config{
+	svc := awstesting.NewClient(&nifcloud.Config{
 		Credentials: credentials.NewStaticCredentials("AKID", "SECRET", "SESSION"),
-		Region:      aws.String("ap-southeast-2"),
+		Region:      nifcloud.String("ap-southeast-2"),
 	})
 	r := svc.NewRequest(
 		&request.Operation{
@@ -211,9 +211,9 @@ func TestGet(t *testing.T) {
 }
 
 func TestAnonymousCredentials(t *testing.T) {
-	svc := awstesting.NewClient(&aws.Config{
+	svc := awstesting.NewClient(&nifcloud.Config{
 		Credentials: credentials.AnonymousCredentials,
-		Region:      aws.String("ap-southeast-2"),
+		Region:      nifcloud.String("ap-southeast-2"),
 	})
 	r := svc.NewRequest(
 		&request.Operation{

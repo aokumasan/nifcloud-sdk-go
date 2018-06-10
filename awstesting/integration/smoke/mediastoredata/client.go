@@ -6,7 +6,7 @@ package mediastoredata
 import (
 	"fmt"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 	"github.com/alice02/nifcloud-sdk-go/awstesting/integration/smoke"
 	"github.com/alice02/nifcloud-sdk-go/service/mediastore"
 	"github.com/alice02/nifcloud-sdk-go/service/mediastoredata"
@@ -20,14 +20,14 @@ func init() {
 		mediastoreSvc := mediastore.New(smoke.Session)
 
 		resp, err := mediastoreSvc.DescribeContainer(&mediastore.DescribeContainerInput{
-			ContainerName: aws.String(containerName),
+			ContainerName: nifcloud.String(containerName),
 		})
 		if err != nil {
 			gucumber.World["error"] = fmt.Errorf("failed to get mediastore container endpoint for test, %v", err)
 			return
 		}
 
-		gucumber.World["client"] = mediastoredata.New(smoke.Session, &aws.Config{
+		gucumber.World["client"] = mediastoredata.New(smoke.Session, &nifcloud.Config{
 			Endpoint: resp.Container.Endpoint,
 		})
 	})

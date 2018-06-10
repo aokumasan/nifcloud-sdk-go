@@ -46,7 +46,7 @@ func (o *Operation) HasOutput() bool {
 
 func (o *Operation) GetSigner() string {
 	if o.AuthType == "v4-unsigned-body" {
-		o.API.imports["github.com/alice02/nifcloud-sdk-go/aws/signer/v4"] = true
+		o.API.imports["github.com/alice02/nifcloud-sdk-go/nifcloud/signer/v4"] = true
 	}
 
 	buf := bytes.NewBuffer(nil)
@@ -71,7 +71,7 @@ var tplOperation = template.Must(template.New("operation").Funcs(template.FuncMa
 }).Parse(`
 const op{{ .ExportedName }} = "{{ .Name }}"
 
-// {{ .ExportedName }}Request generates a "aws/request.Request" representing the
+// {{ .ExportedName }}Request generates a "nifcloud/request.Request" representing the
 // client's request for the {{ .ExportedName }} operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -171,7 +171,7 @@ func (c *{{ .API.StructName }}) {{ .ExportedName }}(` +
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
 func (c *{{ .API.StructName }}) {{ .ExportedName }}WithContext(` +
-	`ctx aws.Context, input {{ .InputRef.GoType }}, opts ...request.Option) ` +
+	`ctx nifcloud.Context, input {{ .InputRef.GoType }}, opts ...request.Option) ` +
 	`({{ .OutputRef.GoType }}, error) {
 	req, out := c.{{ .ExportedName }}Request(input)
 	req.SetContext(ctx)
@@ -199,7 +199,7 @@ func (c *{{ .API.StructName }}) {{ .ExportedName }}WithContext(` +
 //
 func (c *{{ .API.StructName }}) {{ .ExportedName }}Pages(` +
 	`input {{ .InputRef.GoType }}, fn func({{ .OutputRef.GoType }}, bool) bool) error {
-	return c.{{ .ExportedName }}PagesWithContext(aws.BackgroundContext(), input, fn)
+	return c.{{ .ExportedName }}PagesWithContext(nifcloud.BackgroundContext(), input, fn)
 }
 
 // {{ .ExportedName }}PagesWithContext same as {{ .ExportedName }}Pages except
@@ -210,7 +210,7 @@ func (c *{{ .API.StructName }}) {{ .ExportedName }}Pages(` +
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
 func (c *{{ .API.StructName }}) {{ .ExportedName }}PagesWithContext(` +
-	`ctx aws.Context, ` +
+	`ctx nifcloud.Context, ` +
 	`input {{ .InputRef.GoType }}, ` +
 	`fn func({{ .OutputRef.GoType }}, bool) bool, ` +
 	`opts ...request.Option) error {
@@ -253,12 +253,12 @@ func (o *Operation) GoCode() string {
 // tplInfSig defines the template for rendering an Operation's signature within an Interface definition.
 var tplInfSig = template.Must(template.New("opsig").Parse(`
 {{ .ExportedName }}({{ .InputRef.GoTypeWithPkgName }}) ({{ .OutputRef.GoTypeWithPkgName }}, error)
-{{ .ExportedName }}WithContext(aws.Context, {{ .InputRef.GoTypeWithPkgName }}, ...request.Option) ({{ .OutputRef.GoTypeWithPkgName }}, error)
+{{ .ExportedName }}WithContext(nifcloud.Context, {{ .InputRef.GoTypeWithPkgName }}, ...request.Option) ({{ .OutputRef.GoTypeWithPkgName }}, error)
 {{ .ExportedName }}Request({{ .InputRef.GoTypeWithPkgName }}) (*request.Request, {{ .OutputRef.GoTypeWithPkgName }})
 
 {{ if .Paginator -}}
 {{ .ExportedName }}Pages({{ .InputRef.GoTypeWithPkgName }}, func({{ .OutputRef.GoTypeWithPkgName }}, bool) bool) error
-{{ .ExportedName }}PagesWithContext(aws.Context, {{ .InputRef.GoTypeWithPkgName }}, func({{ .OutputRef.GoTypeWithPkgName }}, bool) bool, ...request.Option) error
+{{ .ExportedName }}PagesWithContext(nifcloud.Context, {{ .InputRef.GoTypeWithPkgName }}, func({{ .OutputRef.GoTypeWithPkgName }}, bool) bool, ...request.Option) error
 {{- end }}
 `))
 
@@ -340,7 +340,7 @@ func (e *example) traverseAny(s *Shape, required, payload bool) string {
 	case "map":
 		str = e.traverseMap(s, required, payload)
 	case "jsonvalue":
-		str = "aws.JSONValue{\"key\": \"value\"}"
+		str = "nifcloud.JSONValue{\"key\": \"value\"}"
 		if required {
 			str += " // Required"
 		}
@@ -472,11 +472,11 @@ func (e *example) traverseScalar(s *Shape, required, payload bool) string {
 	str := ""
 	switch s.Type {
 	case "integer", "long":
-		str = `aws.Int64(1)`
+		str = `nifcloud.Int64(1)`
 	case "float", "double":
-		str = `aws.Float64(1.0)`
+		str = `nifcloud.Float64(1.0)`
 	case "string", "character":
-		str = `aws.String("` + s.ShapeName + `")`
+		str = `nifcloud.String("` + s.ShapeName + `")`
 	case "blob":
 		if payload {
 			str = `bytes.NewReader([]byte("PAYLOAD"))`
@@ -484,9 +484,9 @@ func (e *example) traverseScalar(s *Shape, required, payload bool) string {
 			str = `[]byte("PAYLOAD")`
 		}
 	case "boolean":
-		str = `aws.Bool(true)`
+		str = `nifcloud.Bool(true)`
 	case "timestamp":
-		str = `aws.Time(time.Now())`
+		str = `nifcloud.Time(time.Now())`
 	default:
 		panic("unsupported shape " + s.Type)
 	}

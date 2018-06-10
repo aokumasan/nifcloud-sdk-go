@@ -3,7 +3,7 @@
 // Command gen-endpoints parses a JSON description of the AWS endpoint
 // discovery logic and generates a Go file which returns an endpoint.
 //
-//     aws-gen-goendpoints apis/_endpoints.json aws/endpoints_map.go
+//     aws-gen-goendpoints apis/_endpoints.json nifcloud/endpoints_map.go
 package main
 
 import (
@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/alice02/nifcloud-sdk-go/aws/endpoints"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/endpoints"
 )
 
 // Generates the endpoints from json description

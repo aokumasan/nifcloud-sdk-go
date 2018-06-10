@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 )
 
 // EscapeMode is the mode that should be use for escaping a value
@@ -23,7 +23,7 @@ const (
 // encodes the string before returning it.
 //
 // Will panic if the escape mode is unknown.
-func EncodeJSONValue(v aws.JSONValue, escape EscapeMode) (string, error) {
+func EncodeJSONValue(v nifcloud.JSONValue, escape EscapeMode) (string, error) {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return "", err
@@ -45,7 +45,7 @@ func EncodeJSONValue(v aws.JSONValue, escape EscapeMode) (string, error) {
 // Optionally decoding base64 the value first before JSON unmarshaling.
 //
 // Will panic if the escape mode is unknown.
-func DecodeJSONValue(v string, escape EscapeMode) (aws.JSONValue, error) {
+func DecodeJSONValue(v string, escape EscapeMode) (nifcloud.JSONValue, error) {
 	var b []byte
 	var err error
 
@@ -66,7 +66,7 @@ func DecodeJSONValue(v string, escape EscapeMode) (aws.JSONValue, error) {
 		return nil, err
 	}
 
-	m := aws.JSONValue{}
+	m := nifcloud.JSONValue{}
 	err = json.Unmarshal(b, &m)
 	if err != nil {
 		return nil, err

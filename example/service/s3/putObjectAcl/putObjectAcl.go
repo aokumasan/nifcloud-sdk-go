@@ -6,8 +6,8 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 )
 
@@ -54,7 +54,7 @@ func main() {
 		emailPtr, userPtr = nil, nil
 	}
 
-	sess := session.Must(session.NewSession(&aws.Config{
+	sess := session.Must(session.NewSession(&nifcloud.Config{
 		Region: regionPtr,
 	}))
 
@@ -77,7 +77,7 @@ func main() {
 						EmailAddress: emailPtr,
 						ID:           userPtr,
 					},
-					Permission: aws.String(s3.BucketLogsPermissionFullControl),
+					Permission: nifcloud.String(s3.BucketLogsPermissionFullControl),
 				},
 			},
 		},

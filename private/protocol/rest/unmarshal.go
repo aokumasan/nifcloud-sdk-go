@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol"
 )
 
@@ -203,7 +203,7 @@ func unmarshalHeader(v reflect.Value, header string, tag reflect.StructTag) erro
 			return err
 		}
 		v.Set(reflect.ValueOf(&t))
-	case aws.JSONValue:
+	case nifcloud.JSONValue:
 		escaping := protocol.NoEscape
 		if tag.Get("location") == "header" {
 			escaping = protocol.Base64Escape

@@ -13,9 +13,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/endpoints"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/endpoints"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 	"github.com/alice02/nifcloud-sdk-go/service/s3/s3iface"
 	"github.com/alice02/nifcloud-sdk-go/service/s3/s3manager"
@@ -50,7 +50,7 @@ func main() {
 	// to look in those partitions instead of AWS.
 	if len(region) == 0 {
 		var err error
-		region, err = s3manager.GetBucketRegion(aws.BackgroundContext(), sess, bucket, endpoints.UsWest2RegionID)
+		region, err = s3manager.GetBucketRegion(nifcloud.BackgroundContext(), sess, bucket, endpoints.UsWest2RegionID)
 		if err != nil {
 			exitError(fmt.Errorf("failed to get bucket region, %v", err))
 		}
@@ -60,8 +60,8 @@ func main() {
 	// presigned URLs with. Not actual API requests will be made with this client.
 	// The credentials loaded when the Session was created above will be used
 	// to sign the requests with.
-	s3Svc := s3.New(sess, &aws.Config{
-		Region: aws.String(region),
+	s3Svc := s3.New(sess, &nifcloud.Config{
+		Region: nifcloud.String(region),
 	})
 
 	// Start the server listening and serve presigned URLs for GetObject and
@@ -131,19 +131,19 @@ func listenAndServe(addr, bucket string, svc s3iface.S3API) error {
 			// For creating PutObject presigned URLs
 			fmt.Println("Received request to presign PutObject for,", key)
 			sdkReq, _ := svc.PutObjectRequest(&s3.PutObjectInput{
-				Bucket: aws.String(bucket),
-				Key:    aws.String(key),
+				Bucket: nifcloud.String(bucket),
+				Key:    nifcloud.String(key),
 
 				// If ContentLength is 0 the header will not be included in the signature.
-				ContentLength: aws.Int64(contentLen),
+				ContentLength: nifcloud.Int64(contentLen),
 			})
 			u, signedHeaders, err = sdkReq.PresignRequest(15 * time.Minute)
 		case "GET":
 			// For creating GetObject presigned URLs
 			fmt.Println("Received request to presign GetObject for,", key)
 			sdkReq, _ := svc.GetObjectRequest(&s3.GetObjectInput{
-				Bucket: aws.String(bucket),
-				Key:    aws.String(key),
+				Bucket: nifcloud.String(bucket),
+				Key:    nifcloud.String(key),
 			})
 			u, signedHeaders, err = sdkReq.PresignRequest(15 * time.Minute)
 		default:

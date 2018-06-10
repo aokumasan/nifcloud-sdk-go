@@ -11,11 +11,11 @@ import (
 	"bytes"
 	"encoding/xml"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/credentials"
-	"github.com/alice02/nifcloud-sdk-go/aws/endpoints"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/credentials"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/endpoints"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/private/protocol/restxml"
 	"github.com/alice02/nifcloud-sdk-go/service/cloudfront"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
@@ -31,12 +31,12 @@ func TestMain(m *testing.M) {
 		w.WriteHeader(http.StatusOK)
 	}))
 
-	sess := session.Must(session.NewSession(&aws.Config{
+	sess := session.Must(session.NewSession(&nifcloud.Config{
 		Credentials:      credentials.NewStaticCredentials("Key", "Secret", "Token"),
-		Endpoint:         aws.String(server.URL),
-		S3ForcePathStyle: aws.Bool(true),
-		DisableSSL:       aws.Bool(true),
-		Region:           aws.String(endpoints.UsWest2RegionID),
+		Endpoint:         nifcloud.String(server.URL),
+		S3ForcePathStyle: nifcloud.Bool(true),
+		DisableSSL:       nifcloud.Bool(true),
+		Region:           nifcloud.String(endpoints.UsWest2RegionID),
 	}))
 	cloudfrontSvc = cloudfront.New(sess)
 	s3Svc = s3.New(sess)
@@ -148,177 +148,177 @@ func benchRESTXMLRequest(b *testing.B, reqFn func() *request.Request) {
 func cloudfrontCreateDistributionInput() *cloudfront.CreateDistributionInput {
 	return &cloudfront.CreateDistributionInput{
 		DistributionConfig: &cloudfront.DistributionConfig{ // Required
-			CallerReference: aws.String("string"), // Required
-			Comment:         aws.String("string"), // Required
+			CallerReference: nifcloud.String("string"), // Required
+			Comment:         nifcloud.String("string"), // Required
 			DefaultCacheBehavior: &cloudfront.DefaultCacheBehavior{ // Required
 				ForwardedValues: &cloudfront.ForwardedValues{ // Required
 					Cookies: &cloudfront.CookiePreference{ // Required
-						Forward: aws.String("ItemSelection"), // Required
+						Forward: nifcloud.String("ItemSelection"), // Required
 						WhitelistedNames: &cloudfront.CookieNames{
-							Quantity: aws.Int64(1), // Required
+							Quantity: nifcloud.Int64(1), // Required
 							Items: []*string{
-								aws.String("string"), // Required
+								nifcloud.String("string"), // Required
 								// More values...
 							},
 						},
 					},
-					QueryString: aws.Bool(true), // Required
+					QueryString: nifcloud.Bool(true), // Required
 					Headers: &cloudfront.Headers{
-						Quantity: aws.Int64(1), // Required
+						Quantity: nifcloud.Int64(1), // Required
 						Items: []*string{
-							aws.String("string"), // Required
+							nifcloud.String("string"), // Required
 							// More values...
 						},
 					},
 				},
-				MinTTL:         aws.Int64(1),         // Required
-				TargetOriginId: aws.String("string"), // Required
+				MinTTL:         nifcloud.Int64(1),         // Required
+				TargetOriginId: nifcloud.String("string"), // Required
 				TrustedSigners: &cloudfront.TrustedSigners{ // Required
-					Enabled:  aws.Bool(true), // Required
-					Quantity: aws.Int64(1),   // Required
+					Enabled:  nifcloud.Bool(true), // Required
+					Quantity: nifcloud.Int64(1),   // Required
 					Items: []*string{
-						aws.String("string"), // Required
+						nifcloud.String("string"), // Required
 						// More values...
 					},
 				},
-				ViewerProtocolPolicy: aws.String("ViewerProtocolPolicy"), // Required
+				ViewerProtocolPolicy: nifcloud.String("ViewerProtocolPolicy"), // Required
 				AllowedMethods: &cloudfront.AllowedMethods{
 					Items: []*string{ // Required
-						aws.String("Method"), // Required
+						nifcloud.String("Method"), // Required
 						// More values...
 					},
-					Quantity: aws.Int64(1), // Required
+					Quantity: nifcloud.Int64(1), // Required
 					CachedMethods: &cloudfront.CachedMethods{
 						Items: []*string{ // Required
-							aws.String("Method"), // Required
+							nifcloud.String("Method"), // Required
 							// More values...
 						},
-						Quantity: aws.Int64(1), // Required
+						Quantity: nifcloud.Int64(1), // Required
 					},
 				},
-				DefaultTTL:      aws.Int64(1),
-				MaxTTL:          aws.Int64(1),
-				SmoothStreaming: aws.Bool(true),
+				DefaultTTL:      nifcloud.Int64(1),
+				MaxTTL:          nifcloud.Int64(1),
+				SmoothStreaming: nifcloud.Bool(true),
 			},
-			Enabled: aws.Bool(true), // Required
+			Enabled: nifcloud.Bool(true), // Required
 			Origins: &cloudfront.Origins{ // Required
-				Quantity: aws.Int64(1), // Required
+				Quantity: nifcloud.Int64(1), // Required
 				Items: []*cloudfront.Origin{
 					{ // Required
-						DomainName: aws.String("string"), // Required
-						Id:         aws.String("string"), // Required
+						DomainName: nifcloud.String("string"), // Required
+						Id:         nifcloud.String("string"), // Required
 						CustomOriginConfig: &cloudfront.CustomOriginConfig{
-							HTTPPort:             aws.Int64(1),                       // Required
-							HTTPSPort:            aws.Int64(1),                       // Required
-							OriginProtocolPolicy: aws.String("OriginProtocolPolicy"), // Required
+							HTTPPort:             nifcloud.Int64(1),                       // Required
+							HTTPSPort:            nifcloud.Int64(1),                       // Required
+							OriginProtocolPolicy: nifcloud.String("OriginProtocolPolicy"), // Required
 						},
-						OriginPath: aws.String("string"),
+						OriginPath: nifcloud.String("string"),
 						S3OriginConfig: &cloudfront.S3OriginConfig{
-							OriginAccessIdentity: aws.String("string"), // Required
+							OriginAccessIdentity: nifcloud.String("string"), // Required
 						},
 					},
 					// More values...
 				},
 			},
 			Aliases: &cloudfront.Aliases{
-				Quantity: aws.Int64(1), // Required
+				Quantity: nifcloud.Int64(1), // Required
 				Items: []*string{
-					aws.String("string"), // Required
+					nifcloud.String("string"), // Required
 					// More values...
 				},
 			},
 			CacheBehaviors: &cloudfront.CacheBehaviors{
-				Quantity: aws.Int64(1), // Required
+				Quantity: nifcloud.Int64(1), // Required
 				Items: []*cloudfront.CacheBehavior{
 					{ // Required
 						ForwardedValues: &cloudfront.ForwardedValues{ // Required
 							Cookies: &cloudfront.CookiePreference{ // Required
-								Forward: aws.String("ItemSelection"), // Required
+								Forward: nifcloud.String("ItemSelection"), // Required
 								WhitelistedNames: &cloudfront.CookieNames{
-									Quantity: aws.Int64(1), // Required
+									Quantity: nifcloud.Int64(1), // Required
 									Items: []*string{
-										aws.String("string"), // Required
+										nifcloud.String("string"), // Required
 										// More values...
 									},
 								},
 							},
-							QueryString: aws.Bool(true), // Required
+							QueryString: nifcloud.Bool(true), // Required
 							Headers: &cloudfront.Headers{
-								Quantity: aws.Int64(1), // Required
+								Quantity: nifcloud.Int64(1), // Required
 								Items: []*string{
-									aws.String("string"), // Required
+									nifcloud.String("string"), // Required
 									// More values...
 								},
 							},
 						},
-						MinTTL:         aws.Int64(1),         // Required
-						PathPattern:    aws.String("string"), // Required
-						TargetOriginId: aws.String("string"), // Required
+						MinTTL:         nifcloud.Int64(1),         // Required
+						PathPattern:    nifcloud.String("string"), // Required
+						TargetOriginId: nifcloud.String("string"), // Required
 						TrustedSigners: &cloudfront.TrustedSigners{ // Required
-							Enabled:  aws.Bool(true), // Required
-							Quantity: aws.Int64(1),   // Required
+							Enabled:  nifcloud.Bool(true), // Required
+							Quantity: nifcloud.Int64(1),   // Required
 							Items: []*string{
-								aws.String("string"), // Required
+								nifcloud.String("string"), // Required
 								// More values...
 							},
 						},
-						ViewerProtocolPolicy: aws.String("ViewerProtocolPolicy"), // Required
+						ViewerProtocolPolicy: nifcloud.String("ViewerProtocolPolicy"), // Required
 						AllowedMethods: &cloudfront.AllowedMethods{
 							Items: []*string{ // Required
-								aws.String("Method"), // Required
+								nifcloud.String("Method"), // Required
 								// More values...
 							},
-							Quantity: aws.Int64(1), // Required
+							Quantity: nifcloud.Int64(1), // Required
 							CachedMethods: &cloudfront.CachedMethods{
 								Items: []*string{ // Required
-									aws.String("Method"), // Required
+									nifcloud.String("Method"), // Required
 									// More values...
 								},
-								Quantity: aws.Int64(1), // Required
+								Quantity: nifcloud.Int64(1), // Required
 							},
 						},
-						DefaultTTL:      aws.Int64(1),
-						MaxTTL:          aws.Int64(1),
-						SmoothStreaming: aws.Bool(true),
+						DefaultTTL:      nifcloud.Int64(1),
+						MaxTTL:          nifcloud.Int64(1),
+						SmoothStreaming: nifcloud.Bool(true),
 					},
 					// More values...
 				},
 			},
 			CustomErrorResponses: &cloudfront.CustomErrorResponses{
-				Quantity: aws.Int64(1), // Required
+				Quantity: nifcloud.Int64(1), // Required
 				Items: []*cloudfront.CustomErrorResponse{
 					{ // Required
-						ErrorCode:          aws.Int64(1), // Required
-						ErrorCachingMinTTL: aws.Int64(1),
-						ResponseCode:       aws.String("string"),
-						ResponsePagePath:   aws.String("string"),
+						ErrorCode:          nifcloud.Int64(1), // Required
+						ErrorCachingMinTTL: nifcloud.Int64(1),
+						ResponseCode:       nifcloud.String("string"),
+						ResponsePagePath:   nifcloud.String("string"),
 					},
 					// More values...
 				},
 			},
-			DefaultRootObject: aws.String("string"),
+			DefaultRootObject: nifcloud.String("string"),
 			Logging: &cloudfront.LoggingConfig{
-				Bucket:         aws.String("string"), // Required
-				Enabled:        aws.Bool(true),       // Required
-				IncludeCookies: aws.Bool(true),       // Required
-				Prefix:         aws.String("string"), // Required
+				Bucket:         nifcloud.String("string"), // Required
+				Enabled:        nifcloud.Bool(true),       // Required
+				IncludeCookies: nifcloud.Bool(true),       // Required
+				Prefix:         nifcloud.String("string"), // Required
 			},
-			PriceClass: aws.String("PriceClass"),
+			PriceClass: nifcloud.String("PriceClass"),
 			Restrictions: &cloudfront.Restrictions{
 				GeoRestriction: &cloudfront.GeoRestriction{ // Required
-					Quantity:        aws.Int64(1),                     // Required
-					RestrictionType: aws.String("GeoRestrictionType"), // Required
+					Quantity:        nifcloud.Int64(1),                     // Required
+					RestrictionType: nifcloud.String("GeoRestrictionType"), // Required
 					Items: []*string{
-						aws.String("string"), // Required
+						nifcloud.String("string"), // Required
 						// More values...
 					},
 				},
 			},
 			ViewerCertificate: &cloudfront.ViewerCertificate{
-				CloudFrontDefaultCertificate: aws.Bool(true),
-				IAMCertificateId:             aws.String("string"),
-				MinimumProtocolVersion:       aws.String("MinimumProtocolVersion"),
-				SSLSupportMethod:             aws.String("SSLSupportMethod"),
+				CloudFrontDefaultCertificate: nifcloud.Bool(true),
+				IAMCertificateId:             nifcloud.String("string"),
+				MinimumProtocolVersion:       nifcloud.String("MinimumProtocolVersion"),
+				SSLSupportMethod:             nifcloud.String("SSLSupportMethod"),
 			},
 		},
 	}
@@ -326,40 +326,40 @@ func cloudfrontCreateDistributionInput() *cloudfront.CreateDistributionInput {
 
 func cloudfrontDeleteDistributionInput() *cloudfront.DeleteDistributionInput {
 	return &cloudfront.DeleteDistributionInput{
-		Id:      aws.String("string"), // Required
-		IfMatch: aws.String("string"),
+		Id:      nifcloud.String("string"), // Required
+		IfMatch: nifcloud.String("string"),
 	}
 }
 
 func s3HeadObjectInput() *s3.HeadObjectInput {
 	return &s3.HeadObjectInput{
-		Bucket:    aws.String("somebucketname"),
-		Key:       aws.String("keyname"),
-		VersionId: aws.String("someVersion"),
-		IfMatch:   aws.String("IfMatch"),
+		Bucket:    nifcloud.String("somebucketname"),
+		Key:       nifcloud.String("keyname"),
+		VersionId: nifcloud.String("someVersion"),
+		IfMatch:   nifcloud.String("IfMatch"),
 	}
 }
 
 func s3PutObjectAclInput() *s3.PutObjectAclInput {
 	return &s3.PutObjectAclInput{
-		Bucket: aws.String("somebucketname"),
-		Key:    aws.String("keyname"),
+		Bucket: nifcloud.String("somebucketname"),
+		Key:    nifcloud.String("keyname"),
 		AccessControlPolicy: &s3.AccessControlPolicy{
 			Grants: []*s3.Grant{
 				{
 					Grantee: &s3.Grantee{
-						DisplayName:  aws.String("someName"),
-						EmailAddress: aws.String("someAddr"),
-						ID:           aws.String("someID"),
-						Type:         aws.String(s3.TypeCanonicalUser),
-						URI:          aws.String("someURI"),
+						DisplayName:  nifcloud.String("someName"),
+						EmailAddress: nifcloud.String("someAddr"),
+						ID:           nifcloud.String("someID"),
+						Type:         nifcloud.String(s3.TypeCanonicalUser),
+						URI:          nifcloud.String("someURI"),
 					},
-					Permission: aws.String(s3.PermissionWrite),
+					Permission: nifcloud.String(s3.PermissionWrite),
 				},
 			},
 			Owner: &s3.Owner{
-				DisplayName: aws.String("howdy"),
-				ID:          aws.String("someID"),
+				DisplayName: nifcloud.String("howdy"),
+				ID:          nifcloud.String("someID"),
 			},
 		},
 	}

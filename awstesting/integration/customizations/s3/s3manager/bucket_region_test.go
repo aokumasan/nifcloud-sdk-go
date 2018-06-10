@@ -5,17 +5,17 @@ package s3manager
 import (
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 	"github.com/alice02/nifcloud-sdk-go/awstesting/integration"
 	"github.com/alice02/nifcloud-sdk-go/service/s3/s3manager"
 )
 
 func TestGetBucketRegion(t *testing.T) {
-	expectRegion := aws.StringValue(integration.Session.Config.Region)
+	expectRegion := nifcloud.StringValue(integration.Session.Config.Region)
 
-	ctx := aws.BackgroundContext()
+	ctx := nifcloud.BackgroundContext()
 	region, err := s3manager.GetBucketRegion(ctx, integration.Session,
-		aws.StringValue(bucketName), expectRegion)
+		nifcloud.StringValue(bucketName), expectRegion)
 
 	if err != nil {
 		t.Fatalf("expect no error, got %v", err)

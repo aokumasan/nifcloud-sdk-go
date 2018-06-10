@@ -13,9 +13,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 	"github.com/alice02/nifcloud-sdk-go/awstesting/integration"
 	"github.com/alice02/nifcloud-sdk-go/service/s3"
 	"github.com/alice02/nifcloud-sdk-go/service/s3/s3manager"
@@ -50,7 +50,7 @@ func setup() error {
 	svc := s3.New(integration.Session)
 
 	// Create a bucket for testing
-	bucketName = aws.String(
+	bucketName = nifcloud.String(
 		fmt.Sprintf("aws-sdk-go-integration-%s", integration.UniqueID()))
 
 	_, err := svc.CreateBucket(&s3.CreateBucketInput{Bucket: bucketName})

@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/session"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 	"github.com/alice02/nifcloud-sdk-go/service/dynamodb"
 	"github.com/alice02/nifcloud-sdk-go/service/dynamodb/expression"
 )
@@ -27,7 +27,7 @@ func main() {
 	// Create the config specifying the Region for the DynamoDB table.
 	// If Config.Region is not set the region must come from the shared
 	// config or AWS_REGION environment variable.
-	awscfg := &aws.Config{}
+	awscfg := &nifcloud.Config{}
 	if len(cfg.Region) > 0 {
 		awscfg.WithRegion(cfg.Region)
 	}
@@ -52,10 +52,10 @@ func main() {
 		ExpressionAttributeValues: expr.Values(),
 		FilterExpression:          expr.Filter(),
 		ProjectionExpression:      expr.Projection(),
-		TableName:                 aws.String(cfg.Table),
+		TableName:                 nifcloud.String(cfg.Table),
 	}
 	if cfg.Limit > 0 {
-		params.Limit = aws.Int64(cfg.Limit)
+		params.Limit = nifcloud.Int64(cfg.Limit)
 	}
 
 	// Make the DynamoDB Query API call

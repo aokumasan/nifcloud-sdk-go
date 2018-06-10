@@ -5,14 +5,14 @@ package computing
 import (
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
-	"github.com/alice02/nifcloud-sdk-go/aws/awsutil"
-	"github.com/alice02/nifcloud-sdk-go/aws/request"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/awsutil"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
 )
 
 const opAllocateAddress = "AllocateAddress"
 
-// AllocateAddressRequest generates a "aws/request.Request" representing the
+// AllocateAddressRequest generates a "nifcloud/request.Request" representing the
 // client's request for the AllocateAddress operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -75,7 +75,7 @@ func (c *Computing) AllocateAddress(input *AllocateAddressInput) (*AllocateAddre
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) AllocateAddressWithContext(ctx aws.Context, input *AllocateAddressInput, opts ...request.Option) (*AllocateAddressOutput, error) {
+func (c *Computing) AllocateAddressWithContext(ctx nifcloud.Context, input *AllocateAddressInput, opts ...request.Option) (*AllocateAddressOutput, error) {
 	req, out := c.AllocateAddressRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -84,7 +84,7 @@ func (c *Computing) AllocateAddressWithContext(ctx aws.Context, input *AllocateA
 
 const opAssociateAddress = "AssociateAddress"
 
-// AssociateAddressRequest generates a "aws/request.Request" representing the
+// AssociateAddressRequest generates a "nifcloud/request.Request" representing the
 // client's request for the AssociateAddress operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -147,7 +147,7 @@ func (c *Computing) AssociateAddress(input *AssociateAddressInput) (*AssociateAd
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) AssociateAddressWithContext(ctx aws.Context, input *AssociateAddressInput, opts ...request.Option) (*AssociateAddressOutput, error) {
+func (c *Computing) AssociateAddressWithContext(ctx nifcloud.Context, input *AssociateAddressInput, opts ...request.Option) (*AssociateAddressOutput, error) {
 	req, out := c.AssociateAddressRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -156,7 +156,7 @@ func (c *Computing) AssociateAddressWithContext(ctx aws.Context, input *Associat
 
 const opAssociateRouteTable = "AssociateRouteTable"
 
-// AssociateRouteTableRequest generates a "aws/request.Request" representing the
+// AssociateRouteTableRequest generates a "nifcloud/request.Request" representing the
 // client's request for the AssociateRouteTable operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -219,7 +219,7 @@ func (c *Computing) AssociateRouteTable(input *AssociateRouteTableInput) (*Assoc
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) AssociateRouteTableWithContext(ctx aws.Context, input *AssociateRouteTableInput, opts ...request.Option) (*AssociateRouteTableOutput, error) {
+func (c *Computing) AssociateRouteTableWithContext(ctx nifcloud.Context, input *AssociateRouteTableInput, opts ...request.Option) (*AssociateRouteTableOutput, error) {
 	req, out := c.AssociateRouteTableRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -228,7 +228,7 @@ func (c *Computing) AssociateRouteTableWithContext(ctx aws.Context, input *Assoc
 
 const opAssociateUsers = "AssociateUsers"
 
-// AssociateUsersRequest generates a "aws/request.Request" representing the
+// AssociateUsersRequest generates a "nifcloud/request.Request" representing the
 // client's request for the AssociateUsers operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -291,7 +291,7 @@ func (c *Computing) AssociateUsers(input *AssociateUsersInput) (*AssociateUsersO
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) AssociateUsersWithContext(ctx aws.Context, input *AssociateUsersInput, opts ...request.Option) (*AssociateUsersOutput, error) {
+func (c *Computing) AssociateUsersWithContext(ctx nifcloud.Context, input *AssociateUsersInput, opts ...request.Option) (*AssociateUsersOutput, error) {
 	req, out := c.AssociateUsersRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -300,7 +300,7 @@ func (c *Computing) AssociateUsersWithContext(ctx aws.Context, input *AssociateU
 
 const opAttachVolume = "AttachVolume"
 
-// AttachVolumeRequest generates a "aws/request.Request" representing the
+// AttachVolumeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the AttachVolume operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -363,7 +363,7 @@ func (c *Computing) AttachVolume(input *AttachVolumeInput) (*AttachVolumeOutput,
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) AttachVolumeWithContext(ctx aws.Context, input *AttachVolumeInput, opts ...request.Option) (*AttachVolumeOutput, error) {
+func (c *Computing) AttachVolumeWithContext(ctx nifcloud.Context, input *AttachVolumeInput, opts ...request.Option) (*AttachVolumeOutput, error) {
 	req, out := c.AttachVolumeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -372,7 +372,7 @@ func (c *Computing) AttachVolumeWithContext(ctx aws.Context, input *AttachVolume
 
 const opAuthorizeSecurityGroupIngress = "AuthorizeSecurityGroupIngress"
 
-// AuthorizeSecurityGroupIngressRequest generates a "aws/request.Request" representing the
+// AuthorizeSecurityGroupIngressRequest generates a "nifcloud/request.Request" representing the
 // client's request for the AuthorizeSecurityGroupIngress operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -435,7 +435,7 @@ func (c *Computing) AuthorizeSecurityGroupIngress(input *AuthorizeSecurityGroupI
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) AuthorizeSecurityGroupIngressWithContext(ctx aws.Context, input *AuthorizeSecurityGroupIngressInput, opts ...request.Option) (*AuthorizeSecurityGroupIngressOutput, error) {
+func (c *Computing) AuthorizeSecurityGroupIngressWithContext(ctx nifcloud.Context, input *AuthorizeSecurityGroupIngressInput, opts ...request.Option) (*AuthorizeSecurityGroupIngressOutput, error) {
 	req, out := c.AuthorizeSecurityGroupIngressRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -444,7 +444,7 @@ func (c *Computing) AuthorizeSecurityGroupIngressWithContext(ctx aws.Context, in
 
 const opCancelCopyInstances = "CancelCopyInstances"
 
-// CancelCopyInstancesRequest generates a "aws/request.Request" representing the
+// CancelCopyInstancesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CancelCopyInstances operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -507,7 +507,7 @@ func (c *Computing) CancelCopyInstances(input *CancelCopyInstancesInput) (*Cance
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CancelCopyInstancesWithContext(ctx aws.Context, input *CancelCopyInstancesInput, opts ...request.Option) (*CancelCopyInstancesOutput, error) {
+func (c *Computing) CancelCopyInstancesWithContext(ctx nifcloud.Context, input *CancelCopyInstancesInput, opts ...request.Option) (*CancelCopyInstancesOutput, error) {
 	req, out := c.CancelCopyInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -516,7 +516,7 @@ func (c *Computing) CancelCopyInstancesWithContext(ctx aws.Context, input *Cance
 
 const opCancelUpload = "CancelUpload"
 
-// CancelUploadRequest generates a "aws/request.Request" representing the
+// CancelUploadRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CancelUpload operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -579,7 +579,7 @@ func (c *Computing) CancelUpload(input *CancelUploadInput) (*CancelUploadOutput,
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CancelUploadWithContext(ctx aws.Context, input *CancelUploadInput, opts ...request.Option) (*CancelUploadOutput, error) {
+func (c *Computing) CancelUploadWithContext(ctx nifcloud.Context, input *CancelUploadInput, opts ...request.Option) (*CancelUploadOutput, error) {
 	req, out := c.CancelUploadRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -588,7 +588,7 @@ func (c *Computing) CancelUploadWithContext(ctx aws.Context, input *CancelUpload
 
 const opClearLoadBalancerSession = "ClearLoadBalancerSession"
 
-// ClearLoadBalancerSessionRequest generates a "aws/request.Request" representing the
+// ClearLoadBalancerSessionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ClearLoadBalancerSession operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -651,7 +651,7 @@ func (c *Computing) ClearLoadBalancerSession(input *ClearLoadBalancerSessionInpu
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) ClearLoadBalancerSessionWithContext(ctx aws.Context, input *ClearLoadBalancerSessionInput, opts ...request.Option) (*ClearLoadBalancerSessionOutput, error) {
+func (c *Computing) ClearLoadBalancerSessionWithContext(ctx nifcloud.Context, input *ClearLoadBalancerSessionInput, opts ...request.Option) (*ClearLoadBalancerSessionOutput, error) {
 	req, out := c.ClearLoadBalancerSessionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -660,7 +660,7 @@ func (c *Computing) ClearLoadBalancerSessionWithContext(ctx aws.Context, input *
 
 const opConfigureHealthCheck = "ConfigureHealthCheck"
 
-// ConfigureHealthCheckRequest generates a "aws/request.Request" representing the
+// ConfigureHealthCheckRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ConfigureHealthCheck operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -723,7 +723,7 @@ func (c *Computing) ConfigureHealthCheck(input *ConfigureHealthCheckInput) (*Con
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) ConfigureHealthCheckWithContext(ctx aws.Context, input *ConfigureHealthCheckInput, opts ...request.Option) (*ConfigureHealthCheckOutput, error) {
+func (c *Computing) ConfigureHealthCheckWithContext(ctx nifcloud.Context, input *ConfigureHealthCheckInput, opts ...request.Option) (*ConfigureHealthCheckOutput, error) {
 	req, out := c.ConfigureHealthCheckRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -732,7 +732,7 @@ func (c *Computing) ConfigureHealthCheckWithContext(ctx aws.Context, input *Conf
 
 const opCopyInstances = "CopyInstances"
 
-// CopyInstancesRequest generates a "aws/request.Request" representing the
+// CopyInstancesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CopyInstances operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -795,7 +795,7 @@ func (c *Computing) CopyInstances(input *CopyInstancesInput) (*CopyInstancesOutp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CopyInstancesWithContext(ctx aws.Context, input *CopyInstancesInput, opts ...request.Option) (*CopyInstancesOutput, error) {
+func (c *Computing) CopyInstancesWithContext(ctx nifcloud.Context, input *CopyInstancesInput, opts ...request.Option) (*CopyInstancesOutput, error) {
 	req, out := c.CopyInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -804,7 +804,7 @@ func (c *Computing) CopyInstancesWithContext(ctx aws.Context, input *CopyInstanc
 
 const opCreateCustomerGateway = "CreateCustomerGateway"
 
-// CreateCustomerGatewayRequest generates a "aws/request.Request" representing the
+// CreateCustomerGatewayRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateCustomerGateway operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -867,7 +867,7 @@ func (c *Computing) CreateCustomerGateway(input *CreateCustomerGatewayInput) (*C
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateCustomerGatewayWithContext(ctx aws.Context, input *CreateCustomerGatewayInput, opts ...request.Option) (*CreateCustomerGatewayOutput, error) {
+func (c *Computing) CreateCustomerGatewayWithContext(ctx nifcloud.Context, input *CreateCustomerGatewayInput, opts ...request.Option) (*CreateCustomerGatewayOutput, error) {
 	req, out := c.CreateCustomerGatewayRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -876,7 +876,7 @@ func (c *Computing) CreateCustomerGatewayWithContext(ctx aws.Context, input *Cre
 
 const opCreateDhcpOptions = "CreateDhcpOptions"
 
-// CreateDhcpOptionsRequest generates a "aws/request.Request" representing the
+// CreateDhcpOptionsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateDhcpOptions operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -939,7 +939,7 @@ func (c *Computing) CreateDhcpOptions(input *CreateDhcpOptionsInput) (*CreateDhc
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateDhcpOptionsWithContext(ctx aws.Context, input *CreateDhcpOptionsInput, opts ...request.Option) (*CreateDhcpOptionsOutput, error) {
+func (c *Computing) CreateDhcpOptionsWithContext(ctx nifcloud.Context, input *CreateDhcpOptionsInput, opts ...request.Option) (*CreateDhcpOptionsOutput, error) {
 	req, out := c.CreateDhcpOptionsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -948,7 +948,7 @@ func (c *Computing) CreateDhcpOptionsWithContext(ctx aws.Context, input *CreateD
 
 const opCreateImage = "CreateImage"
 
-// CreateImageRequest generates a "aws/request.Request" representing the
+// CreateImageRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateImage operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1011,7 +1011,7 @@ func (c *Computing) CreateImage(input *CreateImageInput) (*CreateImageOutput, er
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateImageWithContext(ctx aws.Context, input *CreateImageInput, opts ...request.Option) (*CreateImageOutput, error) {
+func (c *Computing) CreateImageWithContext(ctx nifcloud.Context, input *CreateImageInput, opts ...request.Option) (*CreateImageOutput, error) {
 	req, out := c.CreateImageRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1020,7 +1020,7 @@ func (c *Computing) CreateImageWithContext(ctx aws.Context, input *CreateImageIn
 
 const opCreateKeyPair = "CreateKeyPair"
 
-// CreateKeyPairRequest generates a "aws/request.Request" representing the
+// CreateKeyPairRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateKeyPair operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1083,7 +1083,7 @@ func (c *Computing) CreateKeyPair(input *CreateKeyPairInput) (*CreateKeyPairOutp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateKeyPairWithContext(ctx aws.Context, input *CreateKeyPairInput, opts ...request.Option) (*CreateKeyPairOutput, error) {
+func (c *Computing) CreateKeyPairWithContext(ctx nifcloud.Context, input *CreateKeyPairInput, opts ...request.Option) (*CreateKeyPairOutput, error) {
 	req, out := c.CreateKeyPairRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1092,7 +1092,7 @@ func (c *Computing) CreateKeyPairWithContext(ctx aws.Context, input *CreateKeyPa
 
 const opCreateLoadBalancer = "CreateLoadBalancer"
 
-// CreateLoadBalancerRequest generates a "aws/request.Request" representing the
+// CreateLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1155,7 +1155,7 @@ func (c *Computing) CreateLoadBalancer(input *CreateLoadBalancerInput) (*CreateL
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateLoadBalancerWithContext(ctx aws.Context, input *CreateLoadBalancerInput, opts ...request.Option) (*CreateLoadBalancerOutput, error) {
+func (c *Computing) CreateLoadBalancerWithContext(ctx nifcloud.Context, input *CreateLoadBalancerInput, opts ...request.Option) (*CreateLoadBalancerOutput, error) {
 	req, out := c.CreateLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1164,7 +1164,7 @@ func (c *Computing) CreateLoadBalancerWithContext(ctx aws.Context, input *Create
 
 const opCreateRoute = "CreateRoute"
 
-// CreateRouteRequest generates a "aws/request.Request" representing the
+// CreateRouteRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateRoute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1227,7 +1227,7 @@ func (c *Computing) CreateRoute(input *CreateRouteInput) (*CreateRouteOutput, er
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateRouteWithContext(ctx aws.Context, input *CreateRouteInput, opts ...request.Option) (*CreateRouteOutput, error) {
+func (c *Computing) CreateRouteWithContext(ctx nifcloud.Context, input *CreateRouteInput, opts ...request.Option) (*CreateRouteOutput, error) {
 	req, out := c.CreateRouteRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1236,7 +1236,7 @@ func (c *Computing) CreateRouteWithContext(ctx aws.Context, input *CreateRouteIn
 
 const opCreateRouteTable = "CreateRouteTable"
 
-// CreateRouteTableRequest generates a "aws/request.Request" representing the
+// CreateRouteTableRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateRouteTable operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1299,7 +1299,7 @@ func (c *Computing) CreateRouteTable(input *CreateRouteTableInput) (*CreateRoute
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateRouteTableWithContext(ctx aws.Context, input *CreateRouteTableInput, opts ...request.Option) (*CreateRouteTableOutput, error) {
+func (c *Computing) CreateRouteTableWithContext(ctx nifcloud.Context, input *CreateRouteTableInput, opts ...request.Option) (*CreateRouteTableOutput, error) {
 	req, out := c.CreateRouteTableRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1308,7 +1308,7 @@ func (c *Computing) CreateRouteTableWithContext(ctx aws.Context, input *CreateRo
 
 const opCreateSecurityGroup = "CreateSecurityGroup"
 
-// CreateSecurityGroupRequest generates a "aws/request.Request" representing the
+// CreateSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1371,7 +1371,7 @@ func (c *Computing) CreateSecurityGroup(input *CreateSecurityGroupInput) (*Creat
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateSecurityGroupWithContext(ctx aws.Context, input *CreateSecurityGroupInput, opts ...request.Option) (*CreateSecurityGroupOutput, error) {
+func (c *Computing) CreateSecurityGroupWithContext(ctx nifcloud.Context, input *CreateSecurityGroupInput, opts ...request.Option) (*CreateSecurityGroupOutput, error) {
 	req, out := c.CreateSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1380,7 +1380,7 @@ func (c *Computing) CreateSecurityGroupWithContext(ctx aws.Context, input *Creat
 
 const opCreateSslCertificate = "CreateSslCertificate"
 
-// CreateSslCertificateRequest generates a "aws/request.Request" representing the
+// CreateSslCertificateRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateSslCertificate operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1443,7 +1443,7 @@ func (c *Computing) CreateSslCertificate(input *CreateSslCertificateInput) (*Cre
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateSslCertificateWithContext(ctx aws.Context, input *CreateSslCertificateInput, opts ...request.Option) (*CreateSslCertificateOutput, error) {
+func (c *Computing) CreateSslCertificateWithContext(ctx nifcloud.Context, input *CreateSslCertificateInput, opts ...request.Option) (*CreateSslCertificateOutput, error) {
 	req, out := c.CreateSslCertificateRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1452,7 +1452,7 @@ func (c *Computing) CreateSslCertificateWithContext(ctx aws.Context, input *Crea
 
 const opCreateVolume = "CreateVolume"
 
-// CreateVolumeRequest generates a "aws/request.Request" representing the
+// CreateVolumeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateVolume operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1515,7 +1515,7 @@ func (c *Computing) CreateVolume(input *CreateVolumeInput) (*CreateVolumeOutput,
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateVolumeWithContext(ctx aws.Context, input *CreateVolumeInput, opts ...request.Option) (*CreateVolumeOutput, error) {
+func (c *Computing) CreateVolumeWithContext(ctx nifcloud.Context, input *CreateVolumeInput, opts ...request.Option) (*CreateVolumeOutput, error) {
 	req, out := c.CreateVolumeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1524,7 +1524,7 @@ func (c *Computing) CreateVolumeWithContext(ctx aws.Context, input *CreateVolume
 
 const opCreateVpnConnection = "CreateVpnConnection"
 
-// CreateVpnConnectionRequest generates a "aws/request.Request" representing the
+// CreateVpnConnectionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateVpnConnection operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1587,7 +1587,7 @@ func (c *Computing) CreateVpnConnection(input *CreateVpnConnectionInput) (*Creat
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateVpnConnectionWithContext(ctx aws.Context, input *CreateVpnConnectionInput, opts ...request.Option) (*CreateVpnConnectionOutput, error) {
+func (c *Computing) CreateVpnConnectionWithContext(ctx nifcloud.Context, input *CreateVpnConnectionInput, opts ...request.Option) (*CreateVpnConnectionOutput, error) {
 	req, out := c.CreateVpnConnectionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1596,7 +1596,7 @@ func (c *Computing) CreateVpnConnectionWithContext(ctx aws.Context, input *Creat
 
 const opCreateVpnGateway = "CreateVpnGateway"
 
-// CreateVpnGatewayRequest generates a "aws/request.Request" representing the
+// CreateVpnGatewayRequest generates a "nifcloud/request.Request" representing the
 // client's request for the CreateVpnGateway operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1659,7 +1659,7 @@ func (c *Computing) CreateVpnGateway(input *CreateVpnGatewayInput) (*CreateVpnGa
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) CreateVpnGatewayWithContext(ctx aws.Context, input *CreateVpnGatewayInput, opts ...request.Option) (*CreateVpnGatewayOutput, error) {
+func (c *Computing) CreateVpnGatewayWithContext(ctx nifcloud.Context, input *CreateVpnGatewayInput, opts ...request.Option) (*CreateVpnGatewayOutput, error) {
 	req, out := c.CreateVpnGatewayRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1668,7 +1668,7 @@ func (c *Computing) CreateVpnGatewayWithContext(ctx aws.Context, input *CreateVp
 
 const opDeleteCustomerGateway = "DeleteCustomerGateway"
 
-// DeleteCustomerGatewayRequest generates a "aws/request.Request" representing the
+// DeleteCustomerGatewayRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteCustomerGateway operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1731,7 +1731,7 @@ func (c *Computing) DeleteCustomerGateway(input *DeleteCustomerGatewayInput) (*D
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteCustomerGatewayWithContext(ctx aws.Context, input *DeleteCustomerGatewayInput, opts ...request.Option) (*DeleteCustomerGatewayOutput, error) {
+func (c *Computing) DeleteCustomerGatewayWithContext(ctx nifcloud.Context, input *DeleteCustomerGatewayInput, opts ...request.Option) (*DeleteCustomerGatewayOutput, error) {
 	req, out := c.DeleteCustomerGatewayRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1740,7 +1740,7 @@ func (c *Computing) DeleteCustomerGatewayWithContext(ctx aws.Context, input *Del
 
 const opDeleteDhcpOptions = "DeleteDhcpOptions"
 
-// DeleteDhcpOptionsRequest generates a "aws/request.Request" representing the
+// DeleteDhcpOptionsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteDhcpOptions operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1803,7 +1803,7 @@ func (c *Computing) DeleteDhcpOptions(input *DeleteDhcpOptionsInput) (*DeleteDhc
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteDhcpOptionsWithContext(ctx aws.Context, input *DeleteDhcpOptionsInput, opts ...request.Option) (*DeleteDhcpOptionsOutput, error) {
+func (c *Computing) DeleteDhcpOptionsWithContext(ctx nifcloud.Context, input *DeleteDhcpOptionsInput, opts ...request.Option) (*DeleteDhcpOptionsOutput, error) {
 	req, out := c.DeleteDhcpOptionsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1812,7 +1812,7 @@ func (c *Computing) DeleteDhcpOptionsWithContext(ctx aws.Context, input *DeleteD
 
 const opDeleteImage = "DeleteImage"
 
-// DeleteImageRequest generates a "aws/request.Request" representing the
+// DeleteImageRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteImage operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1875,7 +1875,7 @@ func (c *Computing) DeleteImage(input *DeleteImageInput) (*DeleteImageOutput, er
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteImageWithContext(ctx aws.Context, input *DeleteImageInput, opts ...request.Option) (*DeleteImageOutput, error) {
+func (c *Computing) DeleteImageWithContext(ctx nifcloud.Context, input *DeleteImageInput, opts ...request.Option) (*DeleteImageOutput, error) {
 	req, out := c.DeleteImageRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1884,7 +1884,7 @@ func (c *Computing) DeleteImageWithContext(ctx aws.Context, input *DeleteImageIn
 
 const opDeleteKeyPair = "DeleteKeyPair"
 
-// DeleteKeyPairRequest generates a "aws/request.Request" representing the
+// DeleteKeyPairRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteKeyPair operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -1947,7 +1947,7 @@ func (c *Computing) DeleteKeyPair(input *DeleteKeyPairInput) (*DeleteKeyPairOutp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteKeyPairWithContext(ctx aws.Context, input *DeleteKeyPairInput, opts ...request.Option) (*DeleteKeyPairOutput, error) {
+func (c *Computing) DeleteKeyPairWithContext(ctx nifcloud.Context, input *DeleteKeyPairInput, opts ...request.Option) (*DeleteKeyPairOutput, error) {
 	req, out := c.DeleteKeyPairRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -1956,7 +1956,7 @@ func (c *Computing) DeleteKeyPairWithContext(ctx aws.Context, input *DeleteKeyPa
 
 const opDeleteLoadBalancer = "DeleteLoadBalancer"
 
-// DeleteLoadBalancerRequest generates a "aws/request.Request" representing the
+// DeleteLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2019,7 +2019,7 @@ func (c *Computing) DeleteLoadBalancer(input *DeleteLoadBalancerInput) (*DeleteL
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteLoadBalancerWithContext(ctx aws.Context, input *DeleteLoadBalancerInput, opts ...request.Option) (*DeleteLoadBalancerOutput, error) {
+func (c *Computing) DeleteLoadBalancerWithContext(ctx nifcloud.Context, input *DeleteLoadBalancerInput, opts ...request.Option) (*DeleteLoadBalancerOutput, error) {
 	req, out := c.DeleteLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2028,7 +2028,7 @@ func (c *Computing) DeleteLoadBalancerWithContext(ctx aws.Context, input *Delete
 
 const opDeleteRoute = "DeleteRoute"
 
-// DeleteRouteRequest generates a "aws/request.Request" representing the
+// DeleteRouteRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteRoute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2091,7 +2091,7 @@ func (c *Computing) DeleteRoute(input *DeleteRouteInput) (*DeleteRouteOutput, er
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteRouteWithContext(ctx aws.Context, input *DeleteRouteInput, opts ...request.Option) (*DeleteRouteOutput, error) {
+func (c *Computing) DeleteRouteWithContext(ctx nifcloud.Context, input *DeleteRouteInput, opts ...request.Option) (*DeleteRouteOutput, error) {
 	req, out := c.DeleteRouteRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2100,7 +2100,7 @@ func (c *Computing) DeleteRouteWithContext(ctx aws.Context, input *DeleteRouteIn
 
 const opDeleteRouteTable = "DeleteRouteTable"
 
-// DeleteRouteTableRequest generates a "aws/request.Request" representing the
+// DeleteRouteTableRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteRouteTable operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2163,7 +2163,7 @@ func (c *Computing) DeleteRouteTable(input *DeleteRouteTableInput) (*DeleteRoute
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteRouteTableWithContext(ctx aws.Context, input *DeleteRouteTableInput, opts ...request.Option) (*DeleteRouteTableOutput, error) {
+func (c *Computing) DeleteRouteTableWithContext(ctx nifcloud.Context, input *DeleteRouteTableInput, opts ...request.Option) (*DeleteRouteTableOutput, error) {
 	req, out := c.DeleteRouteTableRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2172,7 +2172,7 @@ func (c *Computing) DeleteRouteTableWithContext(ctx aws.Context, input *DeleteRo
 
 const opDeleteSecurityGroup = "DeleteSecurityGroup"
 
-// DeleteSecurityGroupRequest generates a "aws/request.Request" representing the
+// DeleteSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2235,7 +2235,7 @@ func (c *Computing) DeleteSecurityGroup(input *DeleteSecurityGroupInput) (*Delet
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteSecurityGroupWithContext(ctx aws.Context, input *DeleteSecurityGroupInput, opts ...request.Option) (*DeleteSecurityGroupOutput, error) {
+func (c *Computing) DeleteSecurityGroupWithContext(ctx nifcloud.Context, input *DeleteSecurityGroupInput, opts ...request.Option) (*DeleteSecurityGroupOutput, error) {
 	req, out := c.DeleteSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2244,7 +2244,7 @@ func (c *Computing) DeleteSecurityGroupWithContext(ctx aws.Context, input *Delet
 
 const opDeleteSslCertificate = "DeleteSslCertificate"
 
-// DeleteSslCertificateRequest generates a "aws/request.Request" representing the
+// DeleteSslCertificateRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteSslCertificate operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2307,7 +2307,7 @@ func (c *Computing) DeleteSslCertificate(input *DeleteSslCertificateInput) (*Del
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteSslCertificateWithContext(ctx aws.Context, input *DeleteSslCertificateInput, opts ...request.Option) (*DeleteSslCertificateOutput, error) {
+func (c *Computing) DeleteSslCertificateWithContext(ctx nifcloud.Context, input *DeleteSslCertificateInput, opts ...request.Option) (*DeleteSslCertificateOutput, error) {
 	req, out := c.DeleteSslCertificateRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2316,7 +2316,7 @@ func (c *Computing) DeleteSslCertificateWithContext(ctx aws.Context, input *Dele
 
 const opDeleteVolume = "DeleteVolume"
 
-// DeleteVolumeRequest generates a "aws/request.Request" representing the
+// DeleteVolumeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteVolume operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2379,7 +2379,7 @@ func (c *Computing) DeleteVolume(input *DeleteVolumeInput) (*DeleteVolumeOutput,
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteVolumeWithContext(ctx aws.Context, input *DeleteVolumeInput, opts ...request.Option) (*DeleteVolumeOutput, error) {
+func (c *Computing) DeleteVolumeWithContext(ctx nifcloud.Context, input *DeleteVolumeInput, opts ...request.Option) (*DeleteVolumeOutput, error) {
 	req, out := c.DeleteVolumeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2388,7 +2388,7 @@ func (c *Computing) DeleteVolumeWithContext(ctx aws.Context, input *DeleteVolume
 
 const opDeleteVpnConnection = "DeleteVpnConnection"
 
-// DeleteVpnConnectionRequest generates a "aws/request.Request" representing the
+// DeleteVpnConnectionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteVpnConnection operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2451,7 +2451,7 @@ func (c *Computing) DeleteVpnConnection(input *DeleteVpnConnectionInput) (*Delet
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteVpnConnectionWithContext(ctx aws.Context, input *DeleteVpnConnectionInput, opts ...request.Option) (*DeleteVpnConnectionOutput, error) {
+func (c *Computing) DeleteVpnConnectionWithContext(ctx nifcloud.Context, input *DeleteVpnConnectionInput, opts ...request.Option) (*DeleteVpnConnectionOutput, error) {
 	req, out := c.DeleteVpnConnectionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2460,7 +2460,7 @@ func (c *Computing) DeleteVpnConnectionWithContext(ctx aws.Context, input *Delet
 
 const opDeleteVpnGateway = "DeleteVpnGateway"
 
-// DeleteVpnGatewayRequest generates a "aws/request.Request" representing the
+// DeleteVpnGatewayRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeleteVpnGateway operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2523,7 +2523,7 @@ func (c *Computing) DeleteVpnGateway(input *DeleteVpnGatewayInput) (*DeleteVpnGa
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeleteVpnGatewayWithContext(ctx aws.Context, input *DeleteVpnGatewayInput, opts ...request.Option) (*DeleteVpnGatewayOutput, error) {
+func (c *Computing) DeleteVpnGatewayWithContext(ctx nifcloud.Context, input *DeleteVpnGatewayInput, opts ...request.Option) (*DeleteVpnGatewayOutput, error) {
 	req, out := c.DeleteVpnGatewayRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2532,7 +2532,7 @@ func (c *Computing) DeleteVpnGatewayWithContext(ctx aws.Context, input *DeleteVp
 
 const opDeregisterInstancesFromLoadBalancer = "DeregisterInstancesFromLoadBalancer"
 
-// DeregisterInstancesFromLoadBalancerRequest generates a "aws/request.Request" representing the
+// DeregisterInstancesFromLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeregisterInstancesFromLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2595,7 +2595,7 @@ func (c *Computing) DeregisterInstancesFromLoadBalancer(input *DeregisterInstanc
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeregisterInstancesFromLoadBalancerWithContext(ctx aws.Context, input *DeregisterInstancesFromLoadBalancerInput, opts ...request.Option) (*DeregisterInstancesFromLoadBalancerOutput, error) {
+func (c *Computing) DeregisterInstancesFromLoadBalancerWithContext(ctx nifcloud.Context, input *DeregisterInstancesFromLoadBalancerInput, opts ...request.Option) (*DeregisterInstancesFromLoadBalancerOutput, error) {
 	req, out := c.DeregisterInstancesFromLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2604,7 +2604,7 @@ func (c *Computing) DeregisterInstancesFromLoadBalancerWithContext(ctx aws.Conte
 
 const opDeregisterInstancesFromSecurityGroup = "DeregisterInstancesFromSecurityGroup"
 
-// DeregisterInstancesFromSecurityGroupRequest generates a "aws/request.Request" representing the
+// DeregisterInstancesFromSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DeregisterInstancesFromSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2667,7 +2667,7 @@ func (c *Computing) DeregisterInstancesFromSecurityGroup(input *DeregisterInstan
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DeregisterInstancesFromSecurityGroupWithContext(ctx aws.Context, input *DeregisterInstancesFromSecurityGroupInput, opts ...request.Option) (*DeregisterInstancesFromSecurityGroupOutput, error) {
+func (c *Computing) DeregisterInstancesFromSecurityGroupWithContext(ctx nifcloud.Context, input *DeregisterInstancesFromSecurityGroupInput, opts ...request.Option) (*DeregisterInstancesFromSecurityGroupOutput, error) {
 	req, out := c.DeregisterInstancesFromSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2676,7 +2676,7 @@ func (c *Computing) DeregisterInstancesFromSecurityGroupWithContext(ctx aws.Cont
 
 const opDescribeAddresses = "DescribeAddresses"
 
-// DescribeAddressesRequest generates a "aws/request.Request" representing the
+// DescribeAddressesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeAddresses operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2739,7 +2739,7 @@ func (c *Computing) DescribeAddresses(input *DescribeAddressesInput) (*DescribeA
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeAddressesWithContext(ctx aws.Context, input *DescribeAddressesInput, opts ...request.Option) (*DescribeAddressesOutput, error) {
+func (c *Computing) DescribeAddressesWithContext(ctx nifcloud.Context, input *DescribeAddressesInput, opts ...request.Option) (*DescribeAddressesOutput, error) {
 	req, out := c.DescribeAddressesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2748,7 +2748,7 @@ func (c *Computing) DescribeAddressesWithContext(ctx aws.Context, input *Describ
 
 const opDescribeAssociatedUsers = "DescribeAssociatedUsers"
 
-// DescribeAssociatedUsersRequest generates a "aws/request.Request" representing the
+// DescribeAssociatedUsersRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeAssociatedUsers operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2811,7 +2811,7 @@ func (c *Computing) DescribeAssociatedUsers(input *DescribeAssociatedUsersInput)
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeAssociatedUsersWithContext(ctx aws.Context, input *DescribeAssociatedUsersInput, opts ...request.Option) (*DescribeAssociatedUsersOutput, error) {
+func (c *Computing) DescribeAssociatedUsersWithContext(ctx nifcloud.Context, input *DescribeAssociatedUsersInput, opts ...request.Option) (*DescribeAssociatedUsersOutput, error) {
 	req, out := c.DescribeAssociatedUsersRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2820,7 +2820,7 @@ func (c *Computing) DescribeAssociatedUsersWithContext(ctx aws.Context, input *D
 
 const opDescribeAvailabilityZones = "DescribeAvailabilityZones"
 
-// DescribeAvailabilityZonesRequest generates a "aws/request.Request" representing the
+// DescribeAvailabilityZonesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeAvailabilityZones operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2883,7 +2883,7 @@ func (c *Computing) DescribeAvailabilityZones(input *DescribeAvailabilityZonesIn
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeAvailabilityZonesWithContext(ctx aws.Context, input *DescribeAvailabilityZonesInput, opts ...request.Option) (*DescribeAvailabilityZonesOutput, error) {
+func (c *Computing) DescribeAvailabilityZonesWithContext(ctx nifcloud.Context, input *DescribeAvailabilityZonesInput, opts ...request.Option) (*DescribeAvailabilityZonesOutput, error) {
 	req, out := c.DescribeAvailabilityZonesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2892,7 +2892,7 @@ func (c *Computing) DescribeAvailabilityZonesWithContext(ctx aws.Context, input 
 
 const opDescribeCustomerGateways = "DescribeCustomerGateways"
 
-// DescribeCustomerGatewaysRequest generates a "aws/request.Request" representing the
+// DescribeCustomerGatewaysRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeCustomerGateways operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -2955,7 +2955,7 @@ func (c *Computing) DescribeCustomerGateways(input *DescribeCustomerGatewaysInpu
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeCustomerGatewaysWithContext(ctx aws.Context, input *DescribeCustomerGatewaysInput, opts ...request.Option) (*DescribeCustomerGatewaysOutput, error) {
+func (c *Computing) DescribeCustomerGatewaysWithContext(ctx nifcloud.Context, input *DescribeCustomerGatewaysInput, opts ...request.Option) (*DescribeCustomerGatewaysOutput, error) {
 	req, out := c.DescribeCustomerGatewaysRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -2964,7 +2964,7 @@ func (c *Computing) DescribeCustomerGatewaysWithContext(ctx aws.Context, input *
 
 const opDescribeDhcpOptions = "DescribeDhcpOptions"
 
-// DescribeDhcpOptionsRequest generates a "aws/request.Request" representing the
+// DescribeDhcpOptionsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeDhcpOptions operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3027,7 +3027,7 @@ func (c *Computing) DescribeDhcpOptions(input *DescribeDhcpOptionsInput) (*Descr
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeDhcpOptionsWithContext(ctx aws.Context, input *DescribeDhcpOptionsInput, opts ...request.Option) (*DescribeDhcpOptionsOutput, error) {
+func (c *Computing) DescribeDhcpOptionsWithContext(ctx nifcloud.Context, input *DescribeDhcpOptionsInput, opts ...request.Option) (*DescribeDhcpOptionsOutput, error) {
 	req, out := c.DescribeDhcpOptionsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3036,7 +3036,7 @@ func (c *Computing) DescribeDhcpOptionsWithContext(ctx aws.Context, input *Descr
 
 const opDescribeImages = "DescribeImages"
 
-// DescribeImagesRequest generates a "aws/request.Request" representing the
+// DescribeImagesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeImages operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3099,7 +3099,7 @@ func (c *Computing) DescribeImages(input *DescribeImagesInput) (*DescribeImagesO
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeImagesWithContext(ctx aws.Context, input *DescribeImagesInput, opts ...request.Option) (*DescribeImagesOutput, error) {
+func (c *Computing) DescribeImagesWithContext(ctx nifcloud.Context, input *DescribeImagesInput, opts ...request.Option) (*DescribeImagesOutput, error) {
 	req, out := c.DescribeImagesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3108,7 +3108,7 @@ func (c *Computing) DescribeImagesWithContext(ctx aws.Context, input *DescribeIm
 
 const opDescribeInstanceAttribute = "DescribeInstanceAttribute"
 
-// DescribeInstanceAttributeRequest generates a "aws/request.Request" representing the
+// DescribeInstanceAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeInstanceAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3171,7 +3171,7 @@ func (c *Computing) DescribeInstanceAttribute(input *DescribeInstanceAttributeIn
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeInstanceAttributeWithContext(ctx aws.Context, input *DescribeInstanceAttributeInput, opts ...request.Option) (*DescribeInstanceAttributeOutput, error) {
+func (c *Computing) DescribeInstanceAttributeWithContext(ctx nifcloud.Context, input *DescribeInstanceAttributeInput, opts ...request.Option) (*DescribeInstanceAttributeOutput, error) {
 	req, out := c.DescribeInstanceAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3180,7 +3180,7 @@ func (c *Computing) DescribeInstanceAttributeWithContext(ctx aws.Context, input 
 
 const opDescribeInstanceHealth = "DescribeInstanceHealth"
 
-// DescribeInstanceHealthRequest generates a "aws/request.Request" representing the
+// DescribeInstanceHealthRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeInstanceHealth operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3243,7 +3243,7 @@ func (c *Computing) DescribeInstanceHealth(input *DescribeInstanceHealthInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeInstanceHealthWithContext(ctx aws.Context, input *DescribeInstanceHealthInput, opts ...request.Option) (*DescribeInstanceHealthOutput, error) {
+func (c *Computing) DescribeInstanceHealthWithContext(ctx nifcloud.Context, input *DescribeInstanceHealthInput, opts ...request.Option) (*DescribeInstanceHealthOutput, error) {
 	req, out := c.DescribeInstanceHealthRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3252,7 +3252,7 @@ func (c *Computing) DescribeInstanceHealthWithContext(ctx aws.Context, input *De
 
 const opDescribeInstances = "DescribeInstances"
 
-// DescribeInstancesRequest generates a "aws/request.Request" representing the
+// DescribeInstancesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeInstances operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3315,7 +3315,7 @@ func (c *Computing) DescribeInstances(input *DescribeInstancesInput) (*DescribeI
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeInstancesWithContext(ctx aws.Context, input *DescribeInstancesInput, opts ...request.Option) (*DescribeInstancesOutput, error) {
+func (c *Computing) DescribeInstancesWithContext(ctx nifcloud.Context, input *DescribeInstancesInput, opts ...request.Option) (*DescribeInstancesOutput, error) {
 	req, out := c.DescribeInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3324,7 +3324,7 @@ func (c *Computing) DescribeInstancesWithContext(ctx aws.Context, input *Describ
 
 const opDescribeKeyPairs = "DescribeKeyPairs"
 
-// DescribeKeyPairsRequest generates a "aws/request.Request" representing the
+// DescribeKeyPairsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeKeyPairs operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3387,7 +3387,7 @@ func (c *Computing) DescribeKeyPairs(input *DescribeKeyPairsInput) (*DescribeKey
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeKeyPairsWithContext(ctx aws.Context, input *DescribeKeyPairsInput, opts ...request.Option) (*DescribeKeyPairsOutput, error) {
+func (c *Computing) DescribeKeyPairsWithContext(ctx nifcloud.Context, input *DescribeKeyPairsInput, opts ...request.Option) (*DescribeKeyPairsOutput, error) {
 	req, out := c.DescribeKeyPairsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3396,7 +3396,7 @@ func (c *Computing) DescribeKeyPairsWithContext(ctx aws.Context, input *Describe
 
 const opDescribeLoadBalancers = "DescribeLoadBalancers"
 
-// DescribeLoadBalancersRequest generates a "aws/request.Request" representing the
+// DescribeLoadBalancersRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeLoadBalancers operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3459,7 +3459,7 @@ func (c *Computing) DescribeLoadBalancers(input *DescribeLoadBalancersInput) (*D
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeLoadBalancersWithContext(ctx aws.Context, input *DescribeLoadBalancersInput, opts ...request.Option) (*DescribeLoadBalancersOutput, error) {
+func (c *Computing) DescribeLoadBalancersWithContext(ctx nifcloud.Context, input *DescribeLoadBalancersInput, opts ...request.Option) (*DescribeLoadBalancersOutput, error) {
 	req, out := c.DescribeLoadBalancersRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3468,7 +3468,7 @@ func (c *Computing) DescribeLoadBalancersWithContext(ctx aws.Context, input *Des
 
 const opDescribeRegions = "DescribeRegions"
 
-// DescribeRegionsRequest generates a "aws/request.Request" representing the
+// DescribeRegionsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeRegions operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3531,7 +3531,7 @@ func (c *Computing) DescribeRegions(input *DescribeRegionsInput) (*DescribeRegio
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeRegionsWithContext(ctx aws.Context, input *DescribeRegionsInput, opts ...request.Option) (*DescribeRegionsOutput, error) {
+func (c *Computing) DescribeRegionsWithContext(ctx nifcloud.Context, input *DescribeRegionsInput, opts ...request.Option) (*DescribeRegionsOutput, error) {
 	req, out := c.DescribeRegionsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3540,7 +3540,7 @@ func (c *Computing) DescribeRegionsWithContext(ctx aws.Context, input *DescribeR
 
 const opDescribeResources = "DescribeResources"
 
-// DescribeResourcesRequest generates a "aws/request.Request" representing the
+// DescribeResourcesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeResources operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3603,7 +3603,7 @@ func (c *Computing) DescribeResources(input *DescribeResourcesInput) (*DescribeR
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeResourcesWithContext(ctx aws.Context, input *DescribeResourcesInput, opts ...request.Option) (*DescribeResourcesOutput, error) {
+func (c *Computing) DescribeResourcesWithContext(ctx nifcloud.Context, input *DescribeResourcesInput, opts ...request.Option) (*DescribeResourcesOutput, error) {
 	req, out := c.DescribeResourcesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3612,7 +3612,7 @@ func (c *Computing) DescribeResourcesWithContext(ctx aws.Context, input *Describ
 
 const opDescribeRouteTables = "DescribeRouteTables"
 
-// DescribeRouteTablesRequest generates a "aws/request.Request" representing the
+// DescribeRouteTablesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeRouteTables operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3675,7 +3675,7 @@ func (c *Computing) DescribeRouteTables(input *DescribeRouteTablesInput) (*Descr
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeRouteTablesWithContext(ctx aws.Context, input *DescribeRouteTablesInput, opts ...request.Option) (*DescribeRouteTablesOutput, error) {
+func (c *Computing) DescribeRouteTablesWithContext(ctx nifcloud.Context, input *DescribeRouteTablesInput, opts ...request.Option) (*DescribeRouteTablesOutput, error) {
 	req, out := c.DescribeRouteTablesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3684,7 +3684,7 @@ func (c *Computing) DescribeRouteTablesWithContext(ctx aws.Context, input *Descr
 
 const opDescribeSecurityActivities = "DescribeSecurityActivities"
 
-// DescribeSecurityActivitiesRequest generates a "aws/request.Request" representing the
+// DescribeSecurityActivitiesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeSecurityActivities operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3747,7 +3747,7 @@ func (c *Computing) DescribeSecurityActivities(input *DescribeSecurityActivities
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeSecurityActivitiesWithContext(ctx aws.Context, input *DescribeSecurityActivitiesInput, opts ...request.Option) (*DescribeSecurityActivitiesOutput, error) {
+func (c *Computing) DescribeSecurityActivitiesWithContext(ctx nifcloud.Context, input *DescribeSecurityActivitiesInput, opts ...request.Option) (*DescribeSecurityActivitiesOutput, error) {
 	req, out := c.DescribeSecurityActivitiesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3756,7 +3756,7 @@ func (c *Computing) DescribeSecurityActivitiesWithContext(ctx aws.Context, input
 
 const opDescribeSecurityGroupOption = "DescribeSecurityGroupOption"
 
-// DescribeSecurityGroupOptionRequest generates a "aws/request.Request" representing the
+// DescribeSecurityGroupOptionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeSecurityGroupOption operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3819,7 +3819,7 @@ func (c *Computing) DescribeSecurityGroupOption(input *DescribeSecurityGroupOpti
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeSecurityGroupOptionWithContext(ctx aws.Context, input *DescribeSecurityGroupOptionInput, opts ...request.Option) (*DescribeSecurityGroupOptionOutput, error) {
+func (c *Computing) DescribeSecurityGroupOptionWithContext(ctx nifcloud.Context, input *DescribeSecurityGroupOptionInput, opts ...request.Option) (*DescribeSecurityGroupOptionOutput, error) {
 	req, out := c.DescribeSecurityGroupOptionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3828,7 +3828,7 @@ func (c *Computing) DescribeSecurityGroupOptionWithContext(ctx aws.Context, inpu
 
 const opDescribeSecurityGroups = "DescribeSecurityGroups"
 
-// DescribeSecurityGroupsRequest generates a "aws/request.Request" representing the
+// DescribeSecurityGroupsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeSecurityGroups operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3891,7 +3891,7 @@ func (c *Computing) DescribeSecurityGroups(input *DescribeSecurityGroupsInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeSecurityGroupsWithContext(ctx aws.Context, input *DescribeSecurityGroupsInput, opts ...request.Option) (*DescribeSecurityGroupsOutput, error) {
+func (c *Computing) DescribeSecurityGroupsWithContext(ctx nifcloud.Context, input *DescribeSecurityGroupsInput, opts ...request.Option) (*DescribeSecurityGroupsOutput, error) {
 	req, out := c.DescribeSecurityGroupsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3900,7 +3900,7 @@ func (c *Computing) DescribeSecurityGroupsWithContext(ctx aws.Context, input *De
 
 const opDescribeServiceStatus = "DescribeServiceStatus"
 
-// DescribeServiceStatusRequest generates a "aws/request.Request" representing the
+// DescribeServiceStatusRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeServiceStatus operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -3963,7 +3963,7 @@ func (c *Computing) DescribeServiceStatus(input *DescribeServiceStatusInput) (*D
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeServiceStatusWithContext(ctx aws.Context, input *DescribeServiceStatusInput, opts ...request.Option) (*DescribeServiceStatusOutput, error) {
+func (c *Computing) DescribeServiceStatusWithContext(ctx nifcloud.Context, input *DescribeServiceStatusInput, opts ...request.Option) (*DescribeServiceStatusOutput, error) {
 	req, out := c.DescribeServiceStatusRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -3972,7 +3972,7 @@ func (c *Computing) DescribeServiceStatusWithContext(ctx aws.Context, input *Des
 
 const opDescribeSslCertificateAttribute = "DescribeSslCertificateAttribute"
 
-// DescribeSslCertificateAttributeRequest generates a "aws/request.Request" representing the
+// DescribeSslCertificateAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeSslCertificateAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4035,7 +4035,7 @@ func (c *Computing) DescribeSslCertificateAttribute(input *DescribeSslCertificat
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeSslCertificateAttributeWithContext(ctx aws.Context, input *DescribeSslCertificateAttributeInput, opts ...request.Option) (*DescribeSslCertificateAttributeOutput, error) {
+func (c *Computing) DescribeSslCertificateAttributeWithContext(ctx nifcloud.Context, input *DescribeSslCertificateAttributeInput, opts ...request.Option) (*DescribeSslCertificateAttributeOutput, error) {
 	req, out := c.DescribeSslCertificateAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4044,7 +4044,7 @@ func (c *Computing) DescribeSslCertificateAttributeWithContext(ctx aws.Context, 
 
 const opDescribeSslCertificates = "DescribeSslCertificates"
 
-// DescribeSslCertificatesRequest generates a "aws/request.Request" representing the
+// DescribeSslCertificatesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeSslCertificates operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4107,7 +4107,7 @@ func (c *Computing) DescribeSslCertificates(input *DescribeSslCertificatesInput)
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeSslCertificatesWithContext(ctx aws.Context, input *DescribeSslCertificatesInput, opts ...request.Option) (*DescribeSslCertificatesOutput, error) {
+func (c *Computing) DescribeSslCertificatesWithContext(ctx nifcloud.Context, input *DescribeSslCertificatesInput, opts ...request.Option) (*DescribeSslCertificatesOutput, error) {
 	req, out := c.DescribeSslCertificatesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4116,7 +4116,7 @@ func (c *Computing) DescribeSslCertificatesWithContext(ctx aws.Context, input *D
 
 const opDescribeUploads = "DescribeUploads"
 
-// DescribeUploadsRequest generates a "aws/request.Request" representing the
+// DescribeUploadsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeUploads operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4179,7 +4179,7 @@ func (c *Computing) DescribeUploads(input *DescribeUploadsInput) (*DescribeUploa
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeUploadsWithContext(ctx aws.Context, input *DescribeUploadsInput, opts ...request.Option) (*DescribeUploadsOutput, error) {
+func (c *Computing) DescribeUploadsWithContext(ctx nifcloud.Context, input *DescribeUploadsInput, opts ...request.Option) (*DescribeUploadsOutput, error) {
 	req, out := c.DescribeUploadsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4188,7 +4188,7 @@ func (c *Computing) DescribeUploadsWithContext(ctx aws.Context, input *DescribeU
 
 const opDescribeUsage = "DescribeUsage"
 
-// DescribeUsageRequest generates a "aws/request.Request" representing the
+// DescribeUsageRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeUsage operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4251,7 +4251,7 @@ func (c *Computing) DescribeUsage(input *DescribeUsageInput) (*DescribeUsageOutp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeUsageWithContext(ctx aws.Context, input *DescribeUsageInput, opts ...request.Option) (*DescribeUsageOutput, error) {
+func (c *Computing) DescribeUsageWithContext(ctx nifcloud.Context, input *DescribeUsageInput, opts ...request.Option) (*DescribeUsageOutput, error) {
 	req, out := c.DescribeUsageRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4260,7 +4260,7 @@ func (c *Computing) DescribeUsageWithContext(ctx aws.Context, input *DescribeUsa
 
 const opDescribeUserActivities = "DescribeUserActivities"
 
-// DescribeUserActivitiesRequest generates a "aws/request.Request" representing the
+// DescribeUserActivitiesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeUserActivities operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4323,7 +4323,7 @@ func (c *Computing) DescribeUserActivities(input *DescribeUserActivitiesInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeUserActivitiesWithContext(ctx aws.Context, input *DescribeUserActivitiesInput, opts ...request.Option) (*DescribeUserActivitiesOutput, error) {
+func (c *Computing) DescribeUserActivitiesWithContext(ctx nifcloud.Context, input *DescribeUserActivitiesInput, opts ...request.Option) (*DescribeUserActivitiesOutput, error) {
 	req, out := c.DescribeUserActivitiesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4332,7 +4332,7 @@ func (c *Computing) DescribeUserActivitiesWithContext(ctx aws.Context, input *De
 
 const opDescribeVolumes = "DescribeVolumes"
 
-// DescribeVolumesRequest generates a "aws/request.Request" representing the
+// DescribeVolumesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeVolumes operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4395,7 +4395,7 @@ func (c *Computing) DescribeVolumes(input *DescribeVolumesInput) (*DescribeVolum
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeVolumesWithContext(ctx aws.Context, input *DescribeVolumesInput, opts ...request.Option) (*DescribeVolumesOutput, error) {
+func (c *Computing) DescribeVolumesWithContext(ctx nifcloud.Context, input *DescribeVolumesInput, opts ...request.Option) (*DescribeVolumesOutput, error) {
 	req, out := c.DescribeVolumesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4404,7 +4404,7 @@ func (c *Computing) DescribeVolumesWithContext(ctx aws.Context, input *DescribeV
 
 const opDescribeVpnConnections = "DescribeVpnConnections"
 
-// DescribeVpnConnectionsRequest generates a "aws/request.Request" representing the
+// DescribeVpnConnectionsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeVpnConnections operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4467,7 +4467,7 @@ func (c *Computing) DescribeVpnConnections(input *DescribeVpnConnectionsInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeVpnConnectionsWithContext(ctx aws.Context, input *DescribeVpnConnectionsInput, opts ...request.Option) (*DescribeVpnConnectionsOutput, error) {
+func (c *Computing) DescribeVpnConnectionsWithContext(ctx nifcloud.Context, input *DescribeVpnConnectionsInput, opts ...request.Option) (*DescribeVpnConnectionsOutput, error) {
 	req, out := c.DescribeVpnConnectionsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4476,7 +4476,7 @@ func (c *Computing) DescribeVpnConnectionsWithContext(ctx aws.Context, input *De
 
 const opDescribeVpnGateways = "DescribeVpnGateways"
 
-// DescribeVpnGatewaysRequest generates a "aws/request.Request" representing the
+// DescribeVpnGatewaysRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DescribeVpnGateways operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4539,7 +4539,7 @@ func (c *Computing) DescribeVpnGateways(input *DescribeVpnGatewaysInput) (*Descr
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DescribeVpnGatewaysWithContext(ctx aws.Context, input *DescribeVpnGatewaysInput, opts ...request.Option) (*DescribeVpnGatewaysOutput, error) {
+func (c *Computing) DescribeVpnGatewaysWithContext(ctx nifcloud.Context, input *DescribeVpnGatewaysInput, opts ...request.Option) (*DescribeVpnGatewaysOutput, error) {
 	req, out := c.DescribeVpnGatewaysRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4548,7 +4548,7 @@ func (c *Computing) DescribeVpnGatewaysWithContext(ctx aws.Context, input *Descr
 
 const opDetachVolume = "DetachVolume"
 
-// DetachVolumeRequest generates a "aws/request.Request" representing the
+// DetachVolumeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DetachVolume operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4611,7 +4611,7 @@ func (c *Computing) DetachVolume(input *DetachVolumeInput) (*DetachVolumeOutput,
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DetachVolumeWithContext(ctx aws.Context, input *DetachVolumeInput, opts ...request.Option) (*DetachVolumeOutput, error) {
+func (c *Computing) DetachVolumeWithContext(ctx nifcloud.Context, input *DetachVolumeInput, opts ...request.Option) (*DetachVolumeOutput, error) {
 	req, out := c.DetachVolumeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4620,7 +4620,7 @@ func (c *Computing) DetachVolumeWithContext(ctx aws.Context, input *DetachVolume
 
 const opDisassociateAddress = "DisassociateAddress"
 
-// DisassociateAddressRequest generates a "aws/request.Request" representing the
+// DisassociateAddressRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DisassociateAddress operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4683,7 +4683,7 @@ func (c *Computing) DisassociateAddress(input *DisassociateAddressInput) (*Disas
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DisassociateAddressWithContext(ctx aws.Context, input *DisassociateAddressInput, opts ...request.Option) (*DisassociateAddressOutput, error) {
+func (c *Computing) DisassociateAddressWithContext(ctx nifcloud.Context, input *DisassociateAddressInput, opts ...request.Option) (*DisassociateAddressOutput, error) {
 	req, out := c.DisassociateAddressRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4692,7 +4692,7 @@ func (c *Computing) DisassociateAddressWithContext(ctx aws.Context, input *Disas
 
 const opDisassociateRouteTable = "DisassociateRouteTable"
 
-// DisassociateRouteTableRequest generates a "aws/request.Request" representing the
+// DisassociateRouteTableRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DisassociateRouteTable operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4755,7 +4755,7 @@ func (c *Computing) DisassociateRouteTable(input *DisassociateRouteTableInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DisassociateRouteTableWithContext(ctx aws.Context, input *DisassociateRouteTableInput, opts ...request.Option) (*DisassociateRouteTableOutput, error) {
+func (c *Computing) DisassociateRouteTableWithContext(ctx nifcloud.Context, input *DisassociateRouteTableInput, opts ...request.Option) (*DisassociateRouteTableOutput, error) {
 	req, out := c.DisassociateRouteTableRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4764,7 +4764,7 @@ func (c *Computing) DisassociateRouteTableWithContext(ctx aws.Context, input *Di
 
 const opDissociateUsers = "DissociateUsers"
 
-// DissociateUsersRequest generates a "aws/request.Request" representing the
+// DissociateUsersRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DissociateUsers operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4827,7 +4827,7 @@ func (c *Computing) DissociateUsers(input *DissociateUsersInput) (*DissociateUse
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DissociateUsersWithContext(ctx aws.Context, input *DissociateUsersInput, opts ...request.Option) (*DissociateUsersOutput, error) {
+func (c *Computing) DissociateUsersWithContext(ctx nifcloud.Context, input *DissociateUsersInput, opts ...request.Option) (*DissociateUsersOutput, error) {
 	req, out := c.DissociateUsersRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4836,7 +4836,7 @@ func (c *Computing) DissociateUsersWithContext(ctx aws.Context, input *Dissociat
 
 const opDownloadSslCertificate = "DownloadSslCertificate"
 
-// DownloadSslCertificateRequest generates a "aws/request.Request" representing the
+// DownloadSslCertificateRequest generates a "nifcloud/request.Request" representing the
 // client's request for the DownloadSslCertificate operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4899,7 +4899,7 @@ func (c *Computing) DownloadSslCertificate(input *DownloadSslCertificateInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) DownloadSslCertificateWithContext(ctx aws.Context, input *DownloadSslCertificateInput, opts ...request.Option) (*DownloadSslCertificateOutput, error) {
+func (c *Computing) DownloadSslCertificateWithContext(ctx nifcloud.Context, input *DownloadSslCertificateInput, opts ...request.Option) (*DownloadSslCertificateOutput, error) {
 	req, out := c.DownloadSslCertificateRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4908,7 +4908,7 @@ func (c *Computing) DownloadSslCertificateWithContext(ctx aws.Context, input *Do
 
 const opImportInstance = "ImportInstance"
 
-// ImportInstanceRequest generates a "aws/request.Request" representing the
+// ImportInstanceRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ImportInstance operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -4971,7 +4971,7 @@ func (c *Computing) ImportInstance(input *ImportInstanceInput) (*ImportInstanceO
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) ImportInstanceWithContext(ctx aws.Context, input *ImportInstanceInput, opts ...request.Option) (*ImportInstanceOutput, error) {
+func (c *Computing) ImportInstanceWithContext(ctx nifcloud.Context, input *ImportInstanceInput, opts ...request.Option) (*ImportInstanceOutput, error) {
 	req, out := c.ImportInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -4980,7 +4980,7 @@ func (c *Computing) ImportInstanceWithContext(ctx aws.Context, input *ImportInst
 
 const opImportKeyPair = "ImportKeyPair"
 
-// ImportKeyPairRequest generates a "aws/request.Request" representing the
+// ImportKeyPairRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ImportKeyPair operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5043,7 +5043,7 @@ func (c *Computing) ImportKeyPair(input *ImportKeyPairInput) (*ImportKeyPairOutp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) ImportKeyPairWithContext(ctx aws.Context, input *ImportKeyPairInput, opts ...request.Option) (*ImportKeyPairOutput, error) {
+func (c *Computing) ImportKeyPairWithContext(ctx nifcloud.Context, input *ImportKeyPairInput, opts ...request.Option) (*ImportKeyPairOutput, error) {
 	req, out := c.ImportKeyPairRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5052,7 +5052,7 @@ func (c *Computing) ImportKeyPairWithContext(ctx aws.Context, input *ImportKeyPa
 
 const opModifyImageAttribute = "ModifyImageAttribute"
 
-// ModifyImageAttributeRequest generates a "aws/request.Request" representing the
+// ModifyImageAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ModifyImageAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5115,7 +5115,7 @@ func (c *Computing) ModifyImageAttribute(input *ModifyImageAttributeInput) (*Mod
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) ModifyImageAttributeWithContext(ctx aws.Context, input *ModifyImageAttributeInput, opts ...request.Option) (*ModifyImageAttributeOutput, error) {
+func (c *Computing) ModifyImageAttributeWithContext(ctx nifcloud.Context, input *ModifyImageAttributeInput, opts ...request.Option) (*ModifyImageAttributeOutput, error) {
 	req, out := c.ModifyImageAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5124,7 +5124,7 @@ func (c *Computing) ModifyImageAttributeWithContext(ctx aws.Context, input *Modi
 
 const opModifyInstanceAttribute = "ModifyInstanceAttribute"
 
-// ModifyInstanceAttributeRequest generates a "aws/request.Request" representing the
+// ModifyInstanceAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ModifyInstanceAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5187,7 +5187,7 @@ func (c *Computing) ModifyInstanceAttribute(input *ModifyInstanceAttributeInput)
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) ModifyInstanceAttributeWithContext(ctx aws.Context, input *ModifyInstanceAttributeInput, opts ...request.Option) (*ModifyInstanceAttributeOutput, error) {
+func (c *Computing) ModifyInstanceAttributeWithContext(ctx nifcloud.Context, input *ModifyInstanceAttributeInput, opts ...request.Option) (*ModifyInstanceAttributeOutput, error) {
 	req, out := c.ModifyInstanceAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5196,7 +5196,7 @@ func (c *Computing) ModifyInstanceAttributeWithContext(ctx aws.Context, input *M
 
 const opModifySslCertificateAttribute = "ModifySslCertificateAttribute"
 
-// ModifySslCertificateAttributeRequest generates a "aws/request.Request" representing the
+// ModifySslCertificateAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ModifySslCertificateAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5259,7 +5259,7 @@ func (c *Computing) ModifySslCertificateAttribute(input *ModifySslCertificateAtt
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) ModifySslCertificateAttributeWithContext(ctx aws.Context, input *ModifySslCertificateAttributeInput, opts ...request.Option) (*ModifySslCertificateAttributeOutput, error) {
+func (c *Computing) ModifySslCertificateAttributeWithContext(ctx nifcloud.Context, input *ModifySslCertificateAttributeInput, opts ...request.Option) (*ModifySslCertificateAttributeOutput, error) {
 	req, out := c.ModifySslCertificateAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5268,7 +5268,7 @@ func (c *Computing) ModifySslCertificateAttributeWithContext(ctx aws.Context, in
 
 const opModifyVolumeAttribute = "ModifyVolumeAttribute"
 
-// ModifyVolumeAttributeRequest generates a "aws/request.Request" representing the
+// ModifyVolumeAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ModifyVolumeAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5331,7 +5331,7 @@ func (c *Computing) ModifyVolumeAttribute(input *ModifyVolumeAttributeInput) (*M
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) ModifyVolumeAttributeWithContext(ctx aws.Context, input *ModifyVolumeAttributeInput, opts ...request.Option) (*ModifyVolumeAttributeOutput, error) {
+func (c *Computing) ModifyVolumeAttributeWithContext(ctx nifcloud.Context, input *ModifyVolumeAttributeInput, opts ...request.Option) (*ModifyVolumeAttributeOutput, error) {
 	req, out := c.ModifyVolumeAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5340,7 +5340,7 @@ func (c *Computing) ModifyVolumeAttributeWithContext(ctx aws.Context, input *Mod
 
 const opNiftyAssociateImage = "NiftyAssociateImage"
 
-// NiftyAssociateImageRequest generates a "aws/request.Request" representing the
+// NiftyAssociateImageRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyAssociateImage operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5403,7 +5403,7 @@ func (c *Computing) NiftyAssociateImage(input *NiftyAssociateImageInput) (*Nifty
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyAssociateImageWithContext(ctx aws.Context, input *NiftyAssociateImageInput, opts ...request.Option) (*NiftyAssociateImageOutput, error) {
+func (c *Computing) NiftyAssociateImageWithContext(ctx nifcloud.Context, input *NiftyAssociateImageInput, opts ...request.Option) (*NiftyAssociateImageOutput, error) {
 	req, out := c.NiftyAssociateImageRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5412,7 +5412,7 @@ func (c *Computing) NiftyAssociateImageWithContext(ctx aws.Context, input *Nifty
 
 const opNiftyAssociateNatTable = "NiftyAssociateNatTable"
 
-// NiftyAssociateNatTableRequest generates a "aws/request.Request" representing the
+// NiftyAssociateNatTableRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyAssociateNatTable operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5475,7 +5475,7 @@ func (c *Computing) NiftyAssociateNatTable(input *NiftyAssociateNatTableInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyAssociateNatTableWithContext(ctx aws.Context, input *NiftyAssociateNatTableInput, opts ...request.Option) (*NiftyAssociateNatTableOutput, error) {
+func (c *Computing) NiftyAssociateNatTableWithContext(ctx nifcloud.Context, input *NiftyAssociateNatTableInput, opts ...request.Option) (*NiftyAssociateNatTableOutput, error) {
 	req, out := c.NiftyAssociateNatTableRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5484,7 +5484,7 @@ func (c *Computing) NiftyAssociateNatTableWithContext(ctx aws.Context, input *Ni
 
 const opNiftyAssociateRouteTableWithVpnGateway = "NiftyAssociateRouteTableWithVpnGateway"
 
-// NiftyAssociateRouteTableWithVpnGatewayRequest generates a "aws/request.Request" representing the
+// NiftyAssociateRouteTableWithVpnGatewayRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyAssociateRouteTableWithVpnGateway operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5547,7 +5547,7 @@ func (c *Computing) NiftyAssociateRouteTableWithVpnGateway(input *NiftyAssociate
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyAssociateRouteTableWithVpnGatewayWithContext(ctx aws.Context, input *NiftyAssociateRouteTableWithVpnGatewayInput, opts ...request.Option) (*NiftyAssociateRouteTableWithVpnGatewayOutput, error) {
+func (c *Computing) NiftyAssociateRouteTableWithVpnGatewayWithContext(ctx nifcloud.Context, input *NiftyAssociateRouteTableWithVpnGatewayInput, opts ...request.Option) (*NiftyAssociateRouteTableWithVpnGatewayOutput, error) {
 	req, out := c.NiftyAssociateRouteTableWithVpnGatewayRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5556,7 +5556,7 @@ func (c *Computing) NiftyAssociateRouteTableWithVpnGatewayWithContext(ctx aws.Co
 
 const opNiftyConfigureElasticLoadBalancerHealthCheck = "NiftyConfigureElasticLoadBalancerHealthCheck"
 
-// NiftyConfigureElasticLoadBalancerHealthCheckRequest generates a "aws/request.Request" representing the
+// NiftyConfigureElasticLoadBalancerHealthCheckRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyConfigureElasticLoadBalancerHealthCheck operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5619,7 +5619,7 @@ func (c *Computing) NiftyConfigureElasticLoadBalancerHealthCheck(input *NiftyCon
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyConfigureElasticLoadBalancerHealthCheckWithContext(ctx aws.Context, input *NiftyConfigureElasticLoadBalancerHealthCheckInput, opts ...request.Option) (*NiftyConfigureElasticLoadBalancerHealthCheckOutput, error) {
+func (c *Computing) NiftyConfigureElasticLoadBalancerHealthCheckWithContext(ctx nifcloud.Context, input *NiftyConfigureElasticLoadBalancerHealthCheckInput, opts ...request.Option) (*NiftyConfigureElasticLoadBalancerHealthCheckOutput, error) {
 	req, out := c.NiftyConfigureElasticLoadBalancerHealthCheckRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5628,7 +5628,7 @@ func (c *Computing) NiftyConfigureElasticLoadBalancerHealthCheckWithContext(ctx 
 
 const opNiftyCreateAlarm = "NiftyCreateAlarm"
 
-// NiftyCreateAlarmRequest generates a "aws/request.Request" representing the
+// NiftyCreateAlarmRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateAlarm operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5691,7 +5691,7 @@ func (c *Computing) NiftyCreateAlarm(input *NiftyCreateAlarmInput) (*NiftyCreate
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateAlarmWithContext(ctx aws.Context, input *NiftyCreateAlarmInput, opts ...request.Option) (*NiftyCreateAlarmOutput, error) {
+func (c *Computing) NiftyCreateAlarmWithContext(ctx nifcloud.Context, input *NiftyCreateAlarmInput, opts ...request.Option) (*NiftyCreateAlarmOutput, error) {
 	req, out := c.NiftyCreateAlarmRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5700,7 +5700,7 @@ func (c *Computing) NiftyCreateAlarmWithContext(ctx aws.Context, input *NiftyCre
 
 const opNiftyCreateAutoScalingGroup = "NiftyCreateAutoScalingGroup"
 
-// NiftyCreateAutoScalingGroupRequest generates a "aws/request.Request" representing the
+// NiftyCreateAutoScalingGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateAutoScalingGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5763,7 +5763,7 @@ func (c *Computing) NiftyCreateAutoScalingGroup(input *NiftyCreateAutoScalingGro
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateAutoScalingGroupWithContext(ctx aws.Context, input *NiftyCreateAutoScalingGroupInput, opts ...request.Option) (*NiftyCreateAutoScalingGroupOutput, error) {
+func (c *Computing) NiftyCreateAutoScalingGroupWithContext(ctx nifcloud.Context, input *NiftyCreateAutoScalingGroupInput, opts ...request.Option) (*NiftyCreateAutoScalingGroupOutput, error) {
 	req, out := c.NiftyCreateAutoScalingGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5772,7 +5772,7 @@ func (c *Computing) NiftyCreateAutoScalingGroupWithContext(ctx aws.Context, inpu
 
 const opNiftyCreateDhcpConfig = "NiftyCreateDhcpConfig"
 
-// NiftyCreateDhcpConfigRequest generates a "aws/request.Request" representing the
+// NiftyCreateDhcpConfigRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateDhcpConfig operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5835,7 +5835,7 @@ func (c *Computing) NiftyCreateDhcpConfig(input *NiftyCreateDhcpConfigInput) (*N
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateDhcpConfigWithContext(ctx aws.Context, input *NiftyCreateDhcpConfigInput, opts ...request.Option) (*NiftyCreateDhcpConfigOutput, error) {
+func (c *Computing) NiftyCreateDhcpConfigWithContext(ctx nifcloud.Context, input *NiftyCreateDhcpConfigInput, opts ...request.Option) (*NiftyCreateDhcpConfigOutput, error) {
 	req, out := c.NiftyCreateDhcpConfigRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5844,7 +5844,7 @@ func (c *Computing) NiftyCreateDhcpConfigWithContext(ctx aws.Context, input *Nif
 
 const opNiftyCreateDhcpIpAddressPool = "NiftyCreateDhcpIpAddressPool"
 
-// NiftyCreateDhcpIpAddressPoolRequest generates a "aws/request.Request" representing the
+// NiftyCreateDhcpIpAddressPoolRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateDhcpIpAddressPool operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5907,7 +5907,7 @@ func (c *Computing) NiftyCreateDhcpIpAddressPool(input *NiftyCreateDhcpIpAddress
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateDhcpIpAddressPoolWithContext(ctx aws.Context, input *NiftyCreateDhcpIpAddressPoolInput, opts ...request.Option) (*NiftyCreateDhcpIpAddressPoolOutput, error) {
+func (c *Computing) NiftyCreateDhcpIpAddressPoolWithContext(ctx nifcloud.Context, input *NiftyCreateDhcpIpAddressPoolInput, opts ...request.Option) (*NiftyCreateDhcpIpAddressPoolOutput, error) {
 	req, out := c.NiftyCreateDhcpIpAddressPoolRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5916,7 +5916,7 @@ func (c *Computing) NiftyCreateDhcpIpAddressPoolWithContext(ctx aws.Context, inp
 
 const opNiftyCreateDhcpStaticMapping = "NiftyCreateDhcpStaticMapping"
 
-// NiftyCreateDhcpStaticMappingRequest generates a "aws/request.Request" representing the
+// NiftyCreateDhcpStaticMappingRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateDhcpStaticMapping operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -5979,7 +5979,7 @@ func (c *Computing) NiftyCreateDhcpStaticMapping(input *NiftyCreateDhcpStaticMap
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateDhcpStaticMappingWithContext(ctx aws.Context, input *NiftyCreateDhcpStaticMappingInput, opts ...request.Option) (*NiftyCreateDhcpStaticMappingOutput, error) {
+func (c *Computing) NiftyCreateDhcpStaticMappingWithContext(ctx nifcloud.Context, input *NiftyCreateDhcpStaticMappingInput, opts ...request.Option) (*NiftyCreateDhcpStaticMappingOutput, error) {
 	req, out := c.NiftyCreateDhcpStaticMappingRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -5988,7 +5988,7 @@ func (c *Computing) NiftyCreateDhcpStaticMappingWithContext(ctx aws.Context, inp
 
 const opNiftyCreateElasticLoadBalancer = "NiftyCreateElasticLoadBalancer"
 
-// NiftyCreateElasticLoadBalancerRequest generates a "aws/request.Request" representing the
+// NiftyCreateElasticLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateElasticLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6051,7 +6051,7 @@ func (c *Computing) NiftyCreateElasticLoadBalancer(input *NiftyCreateElasticLoad
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateElasticLoadBalancerWithContext(ctx aws.Context, input *NiftyCreateElasticLoadBalancerInput, opts ...request.Option) (*NiftyCreateElasticLoadBalancerOutput, error) {
+func (c *Computing) NiftyCreateElasticLoadBalancerWithContext(ctx nifcloud.Context, input *NiftyCreateElasticLoadBalancerInput, opts ...request.Option) (*NiftyCreateElasticLoadBalancerOutput, error) {
 	req, out := c.NiftyCreateElasticLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6060,7 +6060,7 @@ func (c *Computing) NiftyCreateElasticLoadBalancerWithContext(ctx aws.Context, i
 
 const opNiftyCreateInstanceSnapshot = "NiftyCreateInstanceSnapshot"
 
-// NiftyCreateInstanceSnapshotRequest generates a "aws/request.Request" representing the
+// NiftyCreateInstanceSnapshotRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateInstanceSnapshot operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6123,7 +6123,7 @@ func (c *Computing) NiftyCreateInstanceSnapshot(input *NiftyCreateInstanceSnapsh
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateInstanceSnapshotWithContext(ctx aws.Context, input *NiftyCreateInstanceSnapshotInput, opts ...request.Option) (*NiftyCreateInstanceSnapshotOutput, error) {
+func (c *Computing) NiftyCreateInstanceSnapshotWithContext(ctx nifcloud.Context, input *NiftyCreateInstanceSnapshotInput, opts ...request.Option) (*NiftyCreateInstanceSnapshotOutput, error) {
 	req, out := c.NiftyCreateInstanceSnapshotRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6132,7 +6132,7 @@ func (c *Computing) NiftyCreateInstanceSnapshotWithContext(ctx aws.Context, inpu
 
 const opNiftyCreateNatRule = "NiftyCreateNatRule"
 
-// NiftyCreateNatRuleRequest generates a "aws/request.Request" representing the
+// NiftyCreateNatRuleRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateNatRule operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6195,7 +6195,7 @@ func (c *Computing) NiftyCreateNatRule(input *NiftyCreateNatRuleInput) (*NiftyCr
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateNatRuleWithContext(ctx aws.Context, input *NiftyCreateNatRuleInput, opts ...request.Option) (*NiftyCreateNatRuleOutput, error) {
+func (c *Computing) NiftyCreateNatRuleWithContext(ctx nifcloud.Context, input *NiftyCreateNatRuleInput, opts ...request.Option) (*NiftyCreateNatRuleOutput, error) {
 	req, out := c.NiftyCreateNatRuleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6204,7 +6204,7 @@ func (c *Computing) NiftyCreateNatRuleWithContext(ctx aws.Context, input *NiftyC
 
 const opNiftyCreateNatTable = "NiftyCreateNatTable"
 
-// NiftyCreateNatTableRequest generates a "aws/request.Request" representing the
+// NiftyCreateNatTableRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateNatTable operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6267,7 +6267,7 @@ func (c *Computing) NiftyCreateNatTable(input *NiftyCreateNatTableInput) (*Nifty
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateNatTableWithContext(ctx aws.Context, input *NiftyCreateNatTableInput, opts ...request.Option) (*NiftyCreateNatTableOutput, error) {
+func (c *Computing) NiftyCreateNatTableWithContext(ctx nifcloud.Context, input *NiftyCreateNatTableInput, opts ...request.Option) (*NiftyCreateNatTableOutput, error) {
 	req, out := c.NiftyCreateNatTableRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6276,7 +6276,7 @@ func (c *Computing) NiftyCreateNatTableWithContext(ctx aws.Context, input *Nifty
 
 const opNiftyCreatePrivateLan = "NiftyCreatePrivateLan"
 
-// NiftyCreatePrivateLanRequest generates a "aws/request.Request" representing the
+// NiftyCreatePrivateLanRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreatePrivateLan operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6339,7 +6339,7 @@ func (c *Computing) NiftyCreatePrivateLan(input *NiftyCreatePrivateLanInput) (*N
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreatePrivateLanWithContext(ctx aws.Context, input *NiftyCreatePrivateLanInput, opts ...request.Option) (*NiftyCreatePrivateLanOutput, error) {
+func (c *Computing) NiftyCreatePrivateLanWithContext(ctx nifcloud.Context, input *NiftyCreatePrivateLanInput, opts ...request.Option) (*NiftyCreatePrivateLanOutput, error) {
 	req, out := c.NiftyCreatePrivateLanRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6348,7 +6348,7 @@ func (c *Computing) NiftyCreatePrivateLanWithContext(ctx aws.Context, input *Nif
 
 const opNiftyCreateRouter = "NiftyCreateRouter"
 
-// NiftyCreateRouterRequest generates a "aws/request.Request" representing the
+// NiftyCreateRouterRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateRouter operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6411,7 +6411,7 @@ func (c *Computing) NiftyCreateRouter(input *NiftyCreateRouterInput) (*NiftyCrea
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateRouterWithContext(ctx aws.Context, input *NiftyCreateRouterInput, opts ...request.Option) (*NiftyCreateRouterOutput, error) {
+func (c *Computing) NiftyCreateRouterWithContext(ctx nifcloud.Context, input *NiftyCreateRouterInput, opts ...request.Option) (*NiftyCreateRouterOutput, error) {
 	req, out := c.NiftyCreateRouterRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6420,7 +6420,7 @@ func (c *Computing) NiftyCreateRouterWithContext(ctx aws.Context, input *NiftyCr
 
 const opNiftyCreateSeparateInstanceRule = "NiftyCreateSeparateInstanceRule"
 
-// NiftyCreateSeparateInstanceRuleRequest generates a "aws/request.Request" representing the
+// NiftyCreateSeparateInstanceRuleRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateSeparateInstanceRule operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6483,7 +6483,7 @@ func (c *Computing) NiftyCreateSeparateInstanceRule(input *NiftyCreateSeparateIn
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateSeparateInstanceRuleWithContext(ctx aws.Context, input *NiftyCreateSeparateInstanceRuleInput, opts ...request.Option) (*NiftyCreateSeparateInstanceRuleOutput, error) {
+func (c *Computing) NiftyCreateSeparateInstanceRuleWithContext(ctx nifcloud.Context, input *NiftyCreateSeparateInstanceRuleInput, opts ...request.Option) (*NiftyCreateSeparateInstanceRuleOutput, error) {
 	req, out := c.NiftyCreateSeparateInstanceRuleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6492,7 +6492,7 @@ func (c *Computing) NiftyCreateSeparateInstanceRuleWithContext(ctx aws.Context, 
 
 const opNiftyCreateWebProxy = "NiftyCreateWebProxy"
 
-// NiftyCreateWebProxyRequest generates a "aws/request.Request" representing the
+// NiftyCreateWebProxyRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyCreateWebProxy operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6555,7 +6555,7 @@ func (c *Computing) NiftyCreateWebProxy(input *NiftyCreateWebProxyInput) (*Nifty
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyCreateWebProxyWithContext(ctx aws.Context, input *NiftyCreateWebProxyInput, opts ...request.Option) (*NiftyCreateWebProxyOutput, error) {
+func (c *Computing) NiftyCreateWebProxyWithContext(ctx nifcloud.Context, input *NiftyCreateWebProxyInput, opts ...request.Option) (*NiftyCreateWebProxyOutput, error) {
 	req, out := c.NiftyCreateWebProxyRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6564,7 +6564,7 @@ func (c *Computing) NiftyCreateWebProxyWithContext(ctx aws.Context, input *Nifty
 
 const opNiftyDeleteAlarm = "NiftyDeleteAlarm"
 
-// NiftyDeleteAlarmRequest generates a "aws/request.Request" representing the
+// NiftyDeleteAlarmRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteAlarm operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6627,7 +6627,7 @@ func (c *Computing) NiftyDeleteAlarm(input *NiftyDeleteAlarmInput) (*NiftyDelete
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteAlarmWithContext(ctx aws.Context, input *NiftyDeleteAlarmInput, opts ...request.Option) (*NiftyDeleteAlarmOutput, error) {
+func (c *Computing) NiftyDeleteAlarmWithContext(ctx nifcloud.Context, input *NiftyDeleteAlarmInput, opts ...request.Option) (*NiftyDeleteAlarmOutput, error) {
 	req, out := c.NiftyDeleteAlarmRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6636,7 +6636,7 @@ func (c *Computing) NiftyDeleteAlarmWithContext(ctx aws.Context, input *NiftyDel
 
 const opNiftyDeleteAutoScalingGroup = "NiftyDeleteAutoScalingGroup"
 
-// NiftyDeleteAutoScalingGroupRequest generates a "aws/request.Request" representing the
+// NiftyDeleteAutoScalingGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteAutoScalingGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6699,7 +6699,7 @@ func (c *Computing) NiftyDeleteAutoScalingGroup(input *NiftyDeleteAutoScalingGro
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteAutoScalingGroupWithContext(ctx aws.Context, input *NiftyDeleteAutoScalingGroupInput, opts ...request.Option) (*NiftyDeleteAutoScalingGroupOutput, error) {
+func (c *Computing) NiftyDeleteAutoScalingGroupWithContext(ctx nifcloud.Context, input *NiftyDeleteAutoScalingGroupInput, opts ...request.Option) (*NiftyDeleteAutoScalingGroupOutput, error) {
 	req, out := c.NiftyDeleteAutoScalingGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6708,7 +6708,7 @@ func (c *Computing) NiftyDeleteAutoScalingGroupWithContext(ctx aws.Context, inpu
 
 const opNiftyDeleteDhcpConfig = "NiftyDeleteDhcpConfig"
 
-// NiftyDeleteDhcpConfigRequest generates a "aws/request.Request" representing the
+// NiftyDeleteDhcpConfigRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteDhcpConfig operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6771,7 +6771,7 @@ func (c *Computing) NiftyDeleteDhcpConfig(input *NiftyDeleteDhcpConfigInput) (*N
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteDhcpConfigWithContext(ctx aws.Context, input *NiftyDeleteDhcpConfigInput, opts ...request.Option) (*NiftyDeleteDhcpConfigOutput, error) {
+func (c *Computing) NiftyDeleteDhcpConfigWithContext(ctx nifcloud.Context, input *NiftyDeleteDhcpConfigInput, opts ...request.Option) (*NiftyDeleteDhcpConfigOutput, error) {
 	req, out := c.NiftyDeleteDhcpConfigRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6780,7 +6780,7 @@ func (c *Computing) NiftyDeleteDhcpConfigWithContext(ctx aws.Context, input *Nif
 
 const opNiftyDeleteDhcpIpAddressPool = "NiftyDeleteDhcpIpAddressPool"
 
-// NiftyDeleteDhcpIpAddressPoolRequest generates a "aws/request.Request" representing the
+// NiftyDeleteDhcpIpAddressPoolRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteDhcpIpAddressPool operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6843,7 +6843,7 @@ func (c *Computing) NiftyDeleteDhcpIpAddressPool(input *NiftyDeleteDhcpIpAddress
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteDhcpIpAddressPoolWithContext(ctx aws.Context, input *NiftyDeleteDhcpIpAddressPoolInput, opts ...request.Option) (*NiftyDeleteDhcpIpAddressPoolOutput, error) {
+func (c *Computing) NiftyDeleteDhcpIpAddressPoolWithContext(ctx nifcloud.Context, input *NiftyDeleteDhcpIpAddressPoolInput, opts ...request.Option) (*NiftyDeleteDhcpIpAddressPoolOutput, error) {
 	req, out := c.NiftyDeleteDhcpIpAddressPoolRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6852,7 +6852,7 @@ func (c *Computing) NiftyDeleteDhcpIpAddressPoolWithContext(ctx aws.Context, inp
 
 const opNiftyDeleteDhcpStaticMapping = "NiftyDeleteDhcpStaticMapping"
 
-// NiftyDeleteDhcpStaticMappingRequest generates a "aws/request.Request" representing the
+// NiftyDeleteDhcpStaticMappingRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteDhcpStaticMapping operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6915,7 +6915,7 @@ func (c *Computing) NiftyDeleteDhcpStaticMapping(input *NiftyDeleteDhcpStaticMap
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteDhcpStaticMappingWithContext(ctx aws.Context, input *NiftyDeleteDhcpStaticMappingInput, opts ...request.Option) (*NiftyDeleteDhcpStaticMappingOutput, error) {
+func (c *Computing) NiftyDeleteDhcpStaticMappingWithContext(ctx nifcloud.Context, input *NiftyDeleteDhcpStaticMappingInput, opts ...request.Option) (*NiftyDeleteDhcpStaticMappingOutput, error) {
 	req, out := c.NiftyDeleteDhcpStaticMappingRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6924,7 +6924,7 @@ func (c *Computing) NiftyDeleteDhcpStaticMappingWithContext(ctx aws.Context, inp
 
 const opNiftyDeleteElasticLoadBalancer = "NiftyDeleteElasticLoadBalancer"
 
-// NiftyDeleteElasticLoadBalancerRequest generates a "aws/request.Request" representing the
+// NiftyDeleteElasticLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteElasticLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -6987,7 +6987,7 @@ func (c *Computing) NiftyDeleteElasticLoadBalancer(input *NiftyDeleteElasticLoad
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteElasticLoadBalancerWithContext(ctx aws.Context, input *NiftyDeleteElasticLoadBalancerInput, opts ...request.Option) (*NiftyDeleteElasticLoadBalancerOutput, error) {
+func (c *Computing) NiftyDeleteElasticLoadBalancerWithContext(ctx nifcloud.Context, input *NiftyDeleteElasticLoadBalancerInput, opts ...request.Option) (*NiftyDeleteElasticLoadBalancerOutput, error) {
 	req, out := c.NiftyDeleteElasticLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -6996,7 +6996,7 @@ func (c *Computing) NiftyDeleteElasticLoadBalancerWithContext(ctx aws.Context, i
 
 const opNiftyDeleteInstanceSnapshot = "NiftyDeleteInstanceSnapshot"
 
-// NiftyDeleteInstanceSnapshotRequest generates a "aws/request.Request" representing the
+// NiftyDeleteInstanceSnapshotRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteInstanceSnapshot operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7059,7 +7059,7 @@ func (c *Computing) NiftyDeleteInstanceSnapshot(input *NiftyDeleteInstanceSnapsh
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteInstanceSnapshotWithContext(ctx aws.Context, input *NiftyDeleteInstanceSnapshotInput, opts ...request.Option) (*NiftyDeleteInstanceSnapshotOutput, error) {
+func (c *Computing) NiftyDeleteInstanceSnapshotWithContext(ctx nifcloud.Context, input *NiftyDeleteInstanceSnapshotInput, opts ...request.Option) (*NiftyDeleteInstanceSnapshotOutput, error) {
 	req, out := c.NiftyDeleteInstanceSnapshotRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7068,7 +7068,7 @@ func (c *Computing) NiftyDeleteInstanceSnapshotWithContext(ctx aws.Context, inpu
 
 const opNiftyDeleteNatRule = "NiftyDeleteNatRule"
 
-// NiftyDeleteNatRuleRequest generates a "aws/request.Request" representing the
+// NiftyDeleteNatRuleRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteNatRule operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7131,7 +7131,7 @@ func (c *Computing) NiftyDeleteNatRule(input *NiftyDeleteNatRuleInput) (*NiftyDe
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteNatRuleWithContext(ctx aws.Context, input *NiftyDeleteNatRuleInput, opts ...request.Option) (*NiftyDeleteNatRuleOutput, error) {
+func (c *Computing) NiftyDeleteNatRuleWithContext(ctx nifcloud.Context, input *NiftyDeleteNatRuleInput, opts ...request.Option) (*NiftyDeleteNatRuleOutput, error) {
 	req, out := c.NiftyDeleteNatRuleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7140,7 +7140,7 @@ func (c *Computing) NiftyDeleteNatRuleWithContext(ctx aws.Context, input *NiftyD
 
 const opNiftyDeleteNatTable = "NiftyDeleteNatTable"
 
-// NiftyDeleteNatTableRequest generates a "aws/request.Request" representing the
+// NiftyDeleteNatTableRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteNatTable operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7203,7 +7203,7 @@ func (c *Computing) NiftyDeleteNatTable(input *NiftyDeleteNatTableInput) (*Nifty
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteNatTableWithContext(ctx aws.Context, input *NiftyDeleteNatTableInput, opts ...request.Option) (*NiftyDeleteNatTableOutput, error) {
+func (c *Computing) NiftyDeleteNatTableWithContext(ctx nifcloud.Context, input *NiftyDeleteNatTableInput, opts ...request.Option) (*NiftyDeleteNatTableOutput, error) {
 	req, out := c.NiftyDeleteNatTableRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7212,7 +7212,7 @@ func (c *Computing) NiftyDeleteNatTableWithContext(ctx aws.Context, input *Nifty
 
 const opNiftyDeletePrivateLan = "NiftyDeletePrivateLan"
 
-// NiftyDeletePrivateLanRequest generates a "aws/request.Request" representing the
+// NiftyDeletePrivateLanRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeletePrivateLan operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7275,7 +7275,7 @@ func (c *Computing) NiftyDeletePrivateLan(input *NiftyDeletePrivateLanInput) (*N
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeletePrivateLanWithContext(ctx aws.Context, input *NiftyDeletePrivateLanInput, opts ...request.Option) (*NiftyDeletePrivateLanOutput, error) {
+func (c *Computing) NiftyDeletePrivateLanWithContext(ctx nifcloud.Context, input *NiftyDeletePrivateLanInput, opts ...request.Option) (*NiftyDeletePrivateLanOutput, error) {
 	req, out := c.NiftyDeletePrivateLanRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7284,7 +7284,7 @@ func (c *Computing) NiftyDeletePrivateLanWithContext(ctx aws.Context, input *Nif
 
 const opNiftyDeleteRouter = "NiftyDeleteRouter"
 
-// NiftyDeleteRouterRequest generates a "aws/request.Request" representing the
+// NiftyDeleteRouterRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteRouter operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7347,7 +7347,7 @@ func (c *Computing) NiftyDeleteRouter(input *NiftyDeleteRouterInput) (*NiftyDele
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteRouterWithContext(ctx aws.Context, input *NiftyDeleteRouterInput, opts ...request.Option) (*NiftyDeleteRouterOutput, error) {
+func (c *Computing) NiftyDeleteRouterWithContext(ctx nifcloud.Context, input *NiftyDeleteRouterInput, opts ...request.Option) (*NiftyDeleteRouterOutput, error) {
 	req, out := c.NiftyDeleteRouterRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7356,7 +7356,7 @@ func (c *Computing) NiftyDeleteRouterWithContext(ctx aws.Context, input *NiftyDe
 
 const opNiftyDeleteSeparateInstanceRule = "NiftyDeleteSeparateInstanceRule"
 
-// NiftyDeleteSeparateInstanceRuleRequest generates a "aws/request.Request" representing the
+// NiftyDeleteSeparateInstanceRuleRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteSeparateInstanceRule operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7419,7 +7419,7 @@ func (c *Computing) NiftyDeleteSeparateInstanceRule(input *NiftyDeleteSeparateIn
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteSeparateInstanceRuleWithContext(ctx aws.Context, input *NiftyDeleteSeparateInstanceRuleInput, opts ...request.Option) (*NiftyDeleteSeparateInstanceRuleOutput, error) {
+func (c *Computing) NiftyDeleteSeparateInstanceRuleWithContext(ctx nifcloud.Context, input *NiftyDeleteSeparateInstanceRuleInput, opts ...request.Option) (*NiftyDeleteSeparateInstanceRuleOutput, error) {
 	req, out := c.NiftyDeleteSeparateInstanceRuleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7428,7 +7428,7 @@ func (c *Computing) NiftyDeleteSeparateInstanceRuleWithContext(ctx aws.Context, 
 
 const opNiftyDeleteWebProxy = "NiftyDeleteWebProxy"
 
-// NiftyDeleteWebProxyRequest generates a "aws/request.Request" representing the
+// NiftyDeleteWebProxyRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeleteWebProxy operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7491,7 +7491,7 @@ func (c *Computing) NiftyDeleteWebProxy(input *NiftyDeleteWebProxyInput) (*Nifty
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeleteWebProxyWithContext(ctx aws.Context, input *NiftyDeleteWebProxyInput, opts ...request.Option) (*NiftyDeleteWebProxyOutput, error) {
+func (c *Computing) NiftyDeleteWebProxyWithContext(ctx nifcloud.Context, input *NiftyDeleteWebProxyInput, opts ...request.Option) (*NiftyDeleteWebProxyOutput, error) {
 	req, out := c.NiftyDeleteWebProxyRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7500,7 +7500,7 @@ func (c *Computing) NiftyDeleteWebProxyWithContext(ctx aws.Context, input *Nifty
 
 const opNiftyDeregisterInstancesFromElasticLoadBalancer = "NiftyDeregisterInstancesFromElasticLoadBalancer"
 
-// NiftyDeregisterInstancesFromElasticLoadBalancerRequest generates a "aws/request.Request" representing the
+// NiftyDeregisterInstancesFromElasticLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeregisterInstancesFromElasticLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7563,7 +7563,7 @@ func (c *Computing) NiftyDeregisterInstancesFromElasticLoadBalancer(input *Nifty
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeregisterInstancesFromElasticLoadBalancerWithContext(ctx aws.Context, input *NiftyDeregisterInstancesFromElasticLoadBalancerInput, opts ...request.Option) (*NiftyDeregisterInstancesFromElasticLoadBalancerOutput, error) {
+func (c *Computing) NiftyDeregisterInstancesFromElasticLoadBalancerWithContext(ctx nifcloud.Context, input *NiftyDeregisterInstancesFromElasticLoadBalancerInput, opts ...request.Option) (*NiftyDeregisterInstancesFromElasticLoadBalancerOutput, error) {
 	req, out := c.NiftyDeregisterInstancesFromElasticLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7572,7 +7572,7 @@ func (c *Computing) NiftyDeregisterInstancesFromElasticLoadBalancerWithContext(c
 
 const opNiftyDeregisterInstancesFromSeparateInstanceRule = "NiftyDeregisterInstancesFromSeparateInstanceRule"
 
-// NiftyDeregisterInstancesFromSeparateInstanceRuleRequest generates a "aws/request.Request" representing the
+// NiftyDeregisterInstancesFromSeparateInstanceRuleRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeregisterInstancesFromSeparateInstanceRule operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7635,7 +7635,7 @@ func (c *Computing) NiftyDeregisterInstancesFromSeparateInstanceRule(input *Nift
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeregisterInstancesFromSeparateInstanceRuleWithContext(ctx aws.Context, input *NiftyDeregisterInstancesFromSeparateInstanceRuleInput, opts ...request.Option) (*NiftyDeregisterInstancesFromSeparateInstanceRuleOutput, error) {
+func (c *Computing) NiftyDeregisterInstancesFromSeparateInstanceRuleWithContext(ctx nifcloud.Context, input *NiftyDeregisterInstancesFromSeparateInstanceRuleInput, opts ...request.Option) (*NiftyDeregisterInstancesFromSeparateInstanceRuleOutput, error) {
 	req, out := c.NiftyDeregisterInstancesFromSeparateInstanceRuleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7644,7 +7644,7 @@ func (c *Computing) NiftyDeregisterInstancesFromSeparateInstanceRuleWithContext(
 
 const opNiftyDeregisterRoutersFromSecurityGroup = "NiftyDeregisterRoutersFromSecurityGroup"
 
-// NiftyDeregisterRoutersFromSecurityGroupRequest generates a "aws/request.Request" representing the
+// NiftyDeregisterRoutersFromSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeregisterRoutersFromSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7707,7 +7707,7 @@ func (c *Computing) NiftyDeregisterRoutersFromSecurityGroup(input *NiftyDeregist
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeregisterRoutersFromSecurityGroupWithContext(ctx aws.Context, input *NiftyDeregisterRoutersFromSecurityGroupInput, opts ...request.Option) (*NiftyDeregisterRoutersFromSecurityGroupOutput, error) {
+func (c *Computing) NiftyDeregisterRoutersFromSecurityGroupWithContext(ctx nifcloud.Context, input *NiftyDeregisterRoutersFromSecurityGroupInput, opts ...request.Option) (*NiftyDeregisterRoutersFromSecurityGroupOutput, error) {
 	req, out := c.NiftyDeregisterRoutersFromSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7716,7 +7716,7 @@ func (c *Computing) NiftyDeregisterRoutersFromSecurityGroupWithContext(ctx aws.C
 
 const opNiftyDeregisterVpnGatewaysFromSecurityGroup = "NiftyDeregisterVpnGatewaysFromSecurityGroup"
 
-// NiftyDeregisterVpnGatewaysFromSecurityGroupRequest generates a "aws/request.Request" representing the
+// NiftyDeregisterVpnGatewaysFromSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDeregisterVpnGatewaysFromSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7779,7 +7779,7 @@ func (c *Computing) NiftyDeregisterVpnGatewaysFromSecurityGroup(input *NiftyDere
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDeregisterVpnGatewaysFromSecurityGroupWithContext(ctx aws.Context, input *NiftyDeregisterVpnGatewaysFromSecurityGroupInput, opts ...request.Option) (*NiftyDeregisterVpnGatewaysFromSecurityGroupOutput, error) {
+func (c *Computing) NiftyDeregisterVpnGatewaysFromSecurityGroupWithContext(ctx nifcloud.Context, input *NiftyDeregisterVpnGatewaysFromSecurityGroupInput, opts ...request.Option) (*NiftyDeregisterVpnGatewaysFromSecurityGroupOutput, error) {
 	req, out := c.NiftyDeregisterVpnGatewaysFromSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7788,7 +7788,7 @@ func (c *Computing) NiftyDeregisterVpnGatewaysFromSecurityGroupWithContext(ctx a
 
 const opNiftyDescribeAlarmHistory = "NiftyDescribeAlarmHistory"
 
-// NiftyDescribeAlarmHistoryRequest generates a "aws/request.Request" representing the
+// NiftyDescribeAlarmHistoryRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeAlarmHistory operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7851,7 +7851,7 @@ func (c *Computing) NiftyDescribeAlarmHistory(input *NiftyDescribeAlarmHistoryIn
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeAlarmHistoryWithContext(ctx aws.Context, input *NiftyDescribeAlarmHistoryInput, opts ...request.Option) (*NiftyDescribeAlarmHistoryOutput, error) {
+func (c *Computing) NiftyDescribeAlarmHistoryWithContext(ctx nifcloud.Context, input *NiftyDescribeAlarmHistoryInput, opts ...request.Option) (*NiftyDescribeAlarmHistoryOutput, error) {
 	req, out := c.NiftyDescribeAlarmHistoryRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7860,7 +7860,7 @@ func (c *Computing) NiftyDescribeAlarmHistoryWithContext(ctx aws.Context, input 
 
 const opNiftyDescribeAlarmRulesActivities = "NiftyDescribeAlarmRulesActivities"
 
-// NiftyDescribeAlarmRulesActivitiesRequest generates a "aws/request.Request" representing the
+// NiftyDescribeAlarmRulesActivitiesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeAlarmRulesActivities operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7923,7 +7923,7 @@ func (c *Computing) NiftyDescribeAlarmRulesActivities(input *NiftyDescribeAlarmR
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeAlarmRulesActivitiesWithContext(ctx aws.Context, input *NiftyDescribeAlarmRulesActivitiesInput, opts ...request.Option) (*NiftyDescribeAlarmRulesActivitiesOutput, error) {
+func (c *Computing) NiftyDescribeAlarmRulesActivitiesWithContext(ctx nifcloud.Context, input *NiftyDescribeAlarmRulesActivitiesInput, opts ...request.Option) (*NiftyDescribeAlarmRulesActivitiesOutput, error) {
 	req, out := c.NiftyDescribeAlarmRulesActivitiesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -7932,7 +7932,7 @@ func (c *Computing) NiftyDescribeAlarmRulesActivitiesWithContext(ctx aws.Context
 
 const opNiftyDescribeAlarms = "NiftyDescribeAlarms"
 
-// NiftyDescribeAlarmsRequest generates a "aws/request.Request" representing the
+// NiftyDescribeAlarmsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeAlarms operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -7995,7 +7995,7 @@ func (c *Computing) NiftyDescribeAlarms(input *NiftyDescribeAlarmsInput) (*Nifty
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeAlarmsWithContext(ctx aws.Context, input *NiftyDescribeAlarmsInput, opts ...request.Option) (*NiftyDescribeAlarmsOutput, error) {
+func (c *Computing) NiftyDescribeAlarmsWithContext(ctx nifcloud.Context, input *NiftyDescribeAlarmsInput, opts ...request.Option) (*NiftyDescribeAlarmsOutput, error) {
 	req, out := c.NiftyDescribeAlarmsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8004,7 +8004,7 @@ func (c *Computing) NiftyDescribeAlarmsWithContext(ctx aws.Context, input *Nifty
 
 const opNiftyDescribeAlarmsPartitions = "NiftyDescribeAlarmsPartitions"
 
-// NiftyDescribeAlarmsPartitionsRequest generates a "aws/request.Request" representing the
+// NiftyDescribeAlarmsPartitionsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeAlarmsPartitions operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8067,7 +8067,7 @@ func (c *Computing) NiftyDescribeAlarmsPartitions(input *NiftyDescribeAlarmsPart
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeAlarmsPartitionsWithContext(ctx aws.Context, input *NiftyDescribeAlarmsPartitionsInput, opts ...request.Option) (*NiftyDescribeAlarmsPartitionsOutput, error) {
+func (c *Computing) NiftyDescribeAlarmsPartitionsWithContext(ctx nifcloud.Context, input *NiftyDescribeAlarmsPartitionsInput, opts ...request.Option) (*NiftyDescribeAlarmsPartitionsOutput, error) {
 	req, out := c.NiftyDescribeAlarmsPartitionsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8076,7 +8076,7 @@ func (c *Computing) NiftyDescribeAlarmsPartitionsWithContext(ctx aws.Context, in
 
 const opNiftyDescribeAutoScalingGroups = "NiftyDescribeAutoScalingGroups"
 
-// NiftyDescribeAutoScalingGroupsRequest generates a "aws/request.Request" representing the
+// NiftyDescribeAutoScalingGroupsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeAutoScalingGroups operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8139,7 +8139,7 @@ func (c *Computing) NiftyDescribeAutoScalingGroups(input *NiftyDescribeAutoScali
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeAutoScalingGroupsWithContext(ctx aws.Context, input *NiftyDescribeAutoScalingGroupsInput, opts ...request.Option) (*NiftyDescribeAutoScalingGroupsOutput, error) {
+func (c *Computing) NiftyDescribeAutoScalingGroupsWithContext(ctx nifcloud.Context, input *NiftyDescribeAutoScalingGroupsInput, opts ...request.Option) (*NiftyDescribeAutoScalingGroupsOutput, error) {
 	req, out := c.NiftyDescribeAutoScalingGroupsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8148,7 +8148,7 @@ func (c *Computing) NiftyDescribeAutoScalingGroupsWithContext(ctx aws.Context, i
 
 const opNiftyDescribeCorporateInfoForCertificate = "NiftyDescribeCorporateInfoForCertificate"
 
-// NiftyDescribeCorporateInfoForCertificateRequest generates a "aws/request.Request" representing the
+// NiftyDescribeCorporateInfoForCertificateRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeCorporateInfoForCertificate operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8211,7 +8211,7 @@ func (c *Computing) NiftyDescribeCorporateInfoForCertificate(input *NiftyDescrib
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeCorporateInfoForCertificateWithContext(ctx aws.Context, input *NiftyDescribeCorporateInfoForCertificateInput, opts ...request.Option) (*NiftyDescribeCorporateInfoForCertificateOutput, error) {
+func (c *Computing) NiftyDescribeCorporateInfoForCertificateWithContext(ctx nifcloud.Context, input *NiftyDescribeCorporateInfoForCertificateInput, opts ...request.Option) (*NiftyDescribeCorporateInfoForCertificateOutput, error) {
 	req, out := c.NiftyDescribeCorporateInfoForCertificateRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8220,7 +8220,7 @@ func (c *Computing) NiftyDescribeCorporateInfoForCertificateWithContext(ctx aws.
 
 const opNiftyDescribeDhcpConfigs = "NiftyDescribeDhcpConfigs"
 
-// NiftyDescribeDhcpConfigsRequest generates a "aws/request.Request" representing the
+// NiftyDescribeDhcpConfigsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeDhcpConfigs operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8283,7 +8283,7 @@ func (c *Computing) NiftyDescribeDhcpConfigs(input *NiftyDescribeDhcpConfigsInpu
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeDhcpConfigsWithContext(ctx aws.Context, input *NiftyDescribeDhcpConfigsInput, opts ...request.Option) (*NiftyDescribeDhcpConfigsOutput, error) {
+func (c *Computing) NiftyDescribeDhcpConfigsWithContext(ctx nifcloud.Context, input *NiftyDescribeDhcpConfigsInput, opts ...request.Option) (*NiftyDescribeDhcpConfigsOutput, error) {
 	req, out := c.NiftyDescribeDhcpConfigsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8292,7 +8292,7 @@ func (c *Computing) NiftyDescribeDhcpConfigsWithContext(ctx aws.Context, input *
 
 const opNiftyDescribeDhcpStatus = "NiftyDescribeDhcpStatus"
 
-// NiftyDescribeDhcpStatusRequest generates a "aws/request.Request" representing the
+// NiftyDescribeDhcpStatusRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeDhcpStatus operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8355,7 +8355,7 @@ func (c *Computing) NiftyDescribeDhcpStatus(input *NiftyDescribeDhcpStatusInput)
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeDhcpStatusWithContext(ctx aws.Context, input *NiftyDescribeDhcpStatusInput, opts ...request.Option) (*NiftyDescribeDhcpStatusOutput, error) {
+func (c *Computing) NiftyDescribeDhcpStatusWithContext(ctx nifcloud.Context, input *NiftyDescribeDhcpStatusInput, opts ...request.Option) (*NiftyDescribeDhcpStatusOutput, error) {
 	req, out := c.NiftyDescribeDhcpStatusRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8364,7 +8364,7 @@ func (c *Computing) NiftyDescribeDhcpStatusWithContext(ctx aws.Context, input *N
 
 const opNiftyDescribeElasticLoadBalancers = "NiftyDescribeElasticLoadBalancers"
 
-// NiftyDescribeElasticLoadBalancersRequest generates a "aws/request.Request" representing the
+// NiftyDescribeElasticLoadBalancersRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeElasticLoadBalancers operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8427,7 +8427,7 @@ func (c *Computing) NiftyDescribeElasticLoadBalancers(input *NiftyDescribeElasti
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeElasticLoadBalancersWithContext(ctx aws.Context, input *NiftyDescribeElasticLoadBalancersInput, opts ...request.Option) (*NiftyDescribeElasticLoadBalancersOutput, error) {
+func (c *Computing) NiftyDescribeElasticLoadBalancersWithContext(ctx nifcloud.Context, input *NiftyDescribeElasticLoadBalancersInput, opts ...request.Option) (*NiftyDescribeElasticLoadBalancersOutput, error) {
 	req, out := c.NiftyDescribeElasticLoadBalancersRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8436,7 +8436,7 @@ func (c *Computing) NiftyDescribeElasticLoadBalancersWithContext(ctx aws.Context
 
 const opNiftyDescribeInstanceElasticLoadBalancerHealth = "NiftyDescribeInstanceElasticLoadBalancerHealth"
 
-// NiftyDescribeInstanceElasticLoadBalancerHealthRequest generates a "aws/request.Request" representing the
+// NiftyDescribeInstanceElasticLoadBalancerHealthRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeInstanceElasticLoadBalancerHealth operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8499,7 +8499,7 @@ func (c *Computing) NiftyDescribeInstanceElasticLoadBalancerHealth(input *NiftyD
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeInstanceElasticLoadBalancerHealthWithContext(ctx aws.Context, input *NiftyDescribeInstanceElasticLoadBalancerHealthInput, opts ...request.Option) (*NiftyDescribeInstanceElasticLoadBalancerHealthOutput, error) {
+func (c *Computing) NiftyDescribeInstanceElasticLoadBalancerHealthWithContext(ctx nifcloud.Context, input *NiftyDescribeInstanceElasticLoadBalancerHealthInput, opts ...request.Option) (*NiftyDescribeInstanceElasticLoadBalancerHealthOutput, error) {
 	req, out := c.NiftyDescribeInstanceElasticLoadBalancerHealthRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8508,7 +8508,7 @@ func (c *Computing) NiftyDescribeInstanceElasticLoadBalancerHealthWithContext(ct
 
 const opNiftyDescribeInstanceSnapshots = "NiftyDescribeInstanceSnapshots"
 
-// NiftyDescribeInstanceSnapshotsRequest generates a "aws/request.Request" representing the
+// NiftyDescribeInstanceSnapshotsRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeInstanceSnapshots operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8571,7 +8571,7 @@ func (c *Computing) NiftyDescribeInstanceSnapshots(input *NiftyDescribeInstanceS
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeInstanceSnapshotsWithContext(ctx aws.Context, input *NiftyDescribeInstanceSnapshotsInput, opts ...request.Option) (*NiftyDescribeInstanceSnapshotsOutput, error) {
+func (c *Computing) NiftyDescribeInstanceSnapshotsWithContext(ctx nifcloud.Context, input *NiftyDescribeInstanceSnapshotsInput, opts ...request.Option) (*NiftyDescribeInstanceSnapshotsOutput, error) {
 	req, out := c.NiftyDescribeInstanceSnapshotsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8580,7 +8580,7 @@ func (c *Computing) NiftyDescribeInstanceSnapshotsWithContext(ctx aws.Context, i
 
 const opNiftyDescribeNatTables = "NiftyDescribeNatTables"
 
-// NiftyDescribeNatTablesRequest generates a "aws/request.Request" representing the
+// NiftyDescribeNatTablesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeNatTables operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8643,7 +8643,7 @@ func (c *Computing) NiftyDescribeNatTables(input *NiftyDescribeNatTablesInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeNatTablesWithContext(ctx aws.Context, input *NiftyDescribeNatTablesInput, opts ...request.Option) (*NiftyDescribeNatTablesOutput, error) {
+func (c *Computing) NiftyDescribeNatTablesWithContext(ctx nifcloud.Context, input *NiftyDescribeNatTablesInput, opts ...request.Option) (*NiftyDescribeNatTablesOutput, error) {
 	req, out := c.NiftyDescribeNatTablesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8652,7 +8652,7 @@ func (c *Computing) NiftyDescribeNatTablesWithContext(ctx aws.Context, input *Ni
 
 const opNiftyDescribePerformanceChart = "NiftyDescribePerformanceChart"
 
-// NiftyDescribePerformanceChartRequest generates a "aws/request.Request" representing the
+// NiftyDescribePerformanceChartRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribePerformanceChart operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8715,7 +8715,7 @@ func (c *Computing) NiftyDescribePerformanceChart(input *NiftyDescribePerformanc
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribePerformanceChartWithContext(ctx aws.Context, input *NiftyDescribePerformanceChartInput, opts ...request.Option) (*NiftyDescribePerformanceChartOutput, error) {
+func (c *Computing) NiftyDescribePerformanceChartWithContext(ctx nifcloud.Context, input *NiftyDescribePerformanceChartInput, opts ...request.Option) (*NiftyDescribePerformanceChartOutput, error) {
 	req, out := c.NiftyDescribePerformanceChartRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8724,7 +8724,7 @@ func (c *Computing) NiftyDescribePerformanceChartWithContext(ctx aws.Context, in
 
 const opNiftyDescribePrivateLans = "NiftyDescribePrivateLans"
 
-// NiftyDescribePrivateLansRequest generates a "aws/request.Request" representing the
+// NiftyDescribePrivateLansRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribePrivateLans operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8787,7 +8787,7 @@ func (c *Computing) NiftyDescribePrivateLans(input *NiftyDescribePrivateLansInpu
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribePrivateLansWithContext(ctx aws.Context, input *NiftyDescribePrivateLansInput, opts ...request.Option) (*NiftyDescribePrivateLansOutput, error) {
+func (c *Computing) NiftyDescribePrivateLansWithContext(ctx nifcloud.Context, input *NiftyDescribePrivateLansInput, opts ...request.Option) (*NiftyDescribePrivateLansOutput, error) {
 	req, out := c.NiftyDescribePrivateLansRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8796,7 +8796,7 @@ func (c *Computing) NiftyDescribePrivateLansWithContext(ctx aws.Context, input *
 
 const opNiftyDescribeRouters = "NiftyDescribeRouters"
 
-// NiftyDescribeRoutersRequest generates a "aws/request.Request" representing the
+// NiftyDescribeRoutersRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeRouters operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8859,7 +8859,7 @@ func (c *Computing) NiftyDescribeRouters(input *NiftyDescribeRoutersInput) (*Nif
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeRoutersWithContext(ctx aws.Context, input *NiftyDescribeRoutersInput, opts ...request.Option) (*NiftyDescribeRoutersOutput, error) {
+func (c *Computing) NiftyDescribeRoutersWithContext(ctx nifcloud.Context, input *NiftyDescribeRoutersInput, opts ...request.Option) (*NiftyDescribeRoutersOutput, error) {
 	req, out := c.NiftyDescribeRoutersRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8868,7 +8868,7 @@ func (c *Computing) NiftyDescribeRoutersWithContext(ctx aws.Context, input *Nift
 
 const opNiftyDescribeScalingActivities = "NiftyDescribeScalingActivities"
 
-// NiftyDescribeScalingActivitiesRequest generates a "aws/request.Request" representing the
+// NiftyDescribeScalingActivitiesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeScalingActivities operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -8931,7 +8931,7 @@ func (c *Computing) NiftyDescribeScalingActivities(input *NiftyDescribeScalingAc
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeScalingActivitiesWithContext(ctx aws.Context, input *NiftyDescribeScalingActivitiesInput, opts ...request.Option) (*NiftyDescribeScalingActivitiesOutput, error) {
+func (c *Computing) NiftyDescribeScalingActivitiesWithContext(ctx nifcloud.Context, input *NiftyDescribeScalingActivitiesInput, opts ...request.Option) (*NiftyDescribeScalingActivitiesOutput, error) {
 	req, out := c.NiftyDescribeScalingActivitiesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -8940,7 +8940,7 @@ func (c *Computing) NiftyDescribeScalingActivitiesWithContext(ctx aws.Context, i
 
 const opNiftyDescribeSeparateInstanceRules = "NiftyDescribeSeparateInstanceRules"
 
-// NiftyDescribeSeparateInstanceRulesRequest generates a "aws/request.Request" representing the
+// NiftyDescribeSeparateInstanceRulesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeSeparateInstanceRules operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9003,7 +9003,7 @@ func (c *Computing) NiftyDescribeSeparateInstanceRules(input *NiftyDescribeSepar
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeSeparateInstanceRulesWithContext(ctx aws.Context, input *NiftyDescribeSeparateInstanceRulesInput, opts ...request.Option) (*NiftyDescribeSeparateInstanceRulesOutput, error) {
+func (c *Computing) NiftyDescribeSeparateInstanceRulesWithContext(ctx nifcloud.Context, input *NiftyDescribeSeparateInstanceRulesInput, opts ...request.Option) (*NiftyDescribeSeparateInstanceRulesOutput, error) {
 	req, out := c.NiftyDescribeSeparateInstanceRulesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9012,7 +9012,7 @@ func (c *Computing) NiftyDescribeSeparateInstanceRulesWithContext(ctx aws.Contex
 
 const opNiftyDescribeVpnGatewayActivities = "NiftyDescribeVpnGatewayActivities"
 
-// NiftyDescribeVpnGatewayActivitiesRequest generates a "aws/request.Request" representing the
+// NiftyDescribeVpnGatewayActivitiesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeVpnGatewayActivities operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9075,7 +9075,7 @@ func (c *Computing) NiftyDescribeVpnGatewayActivities(input *NiftyDescribeVpnGat
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeVpnGatewayActivitiesWithContext(ctx aws.Context, input *NiftyDescribeVpnGatewayActivitiesInput, opts ...request.Option) (*NiftyDescribeVpnGatewayActivitiesOutput, error) {
+func (c *Computing) NiftyDescribeVpnGatewayActivitiesWithContext(ctx nifcloud.Context, input *NiftyDescribeVpnGatewayActivitiesInput, opts ...request.Option) (*NiftyDescribeVpnGatewayActivitiesOutput, error) {
 	req, out := c.NiftyDescribeVpnGatewayActivitiesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9084,7 +9084,7 @@ func (c *Computing) NiftyDescribeVpnGatewayActivitiesWithContext(ctx aws.Context
 
 const opNiftyDescribeWebProxies = "NiftyDescribeWebProxies"
 
-// NiftyDescribeWebProxiesRequest generates a "aws/request.Request" representing the
+// NiftyDescribeWebProxiesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDescribeWebProxies operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9147,7 +9147,7 @@ func (c *Computing) NiftyDescribeWebProxies(input *NiftyDescribeWebProxiesInput)
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDescribeWebProxiesWithContext(ctx aws.Context, input *NiftyDescribeWebProxiesInput, opts ...request.Option) (*NiftyDescribeWebProxiesOutput, error) {
+func (c *Computing) NiftyDescribeWebProxiesWithContext(ctx nifcloud.Context, input *NiftyDescribeWebProxiesInput, opts ...request.Option) (*NiftyDescribeWebProxiesOutput, error) {
 	req, out := c.NiftyDescribeWebProxiesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9156,7 +9156,7 @@ func (c *Computing) NiftyDescribeWebProxiesWithContext(ctx aws.Context, input *N
 
 const opNiftyDisableDhcp = "NiftyDisableDhcp"
 
-// NiftyDisableDhcpRequest generates a "aws/request.Request" representing the
+// NiftyDisableDhcpRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDisableDhcp operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9219,7 +9219,7 @@ func (c *Computing) NiftyDisableDhcp(input *NiftyDisableDhcpInput) (*NiftyDisabl
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDisableDhcpWithContext(ctx aws.Context, input *NiftyDisableDhcpInput, opts ...request.Option) (*NiftyDisableDhcpOutput, error) {
+func (c *Computing) NiftyDisableDhcpWithContext(ctx nifcloud.Context, input *NiftyDisableDhcpInput, opts ...request.Option) (*NiftyDisableDhcpOutput, error) {
 	req, out := c.NiftyDisableDhcpRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9228,7 +9228,7 @@ func (c *Computing) NiftyDisableDhcpWithContext(ctx aws.Context, input *NiftyDis
 
 const opNiftyDisassociateNatTable = "NiftyDisassociateNatTable"
 
-// NiftyDisassociateNatTableRequest generates a "aws/request.Request" representing the
+// NiftyDisassociateNatTableRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDisassociateNatTable operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9291,7 +9291,7 @@ func (c *Computing) NiftyDisassociateNatTable(input *NiftyDisassociateNatTableIn
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDisassociateNatTableWithContext(ctx aws.Context, input *NiftyDisassociateNatTableInput, opts ...request.Option) (*NiftyDisassociateNatTableOutput, error) {
+func (c *Computing) NiftyDisassociateNatTableWithContext(ctx nifcloud.Context, input *NiftyDisassociateNatTableInput, opts ...request.Option) (*NiftyDisassociateNatTableOutput, error) {
 	req, out := c.NiftyDisassociateNatTableRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9300,7 +9300,7 @@ func (c *Computing) NiftyDisassociateNatTableWithContext(ctx aws.Context, input 
 
 const opNiftyDisassociateRouteTableFromVpnGateway = "NiftyDisassociateRouteTableFromVpnGateway"
 
-// NiftyDisassociateRouteTableFromVpnGatewayRequest generates a "aws/request.Request" representing the
+// NiftyDisassociateRouteTableFromVpnGatewayRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyDisassociateRouteTableFromVpnGateway operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9363,7 +9363,7 @@ func (c *Computing) NiftyDisassociateRouteTableFromVpnGateway(input *NiftyDisass
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyDisassociateRouteTableFromVpnGatewayWithContext(ctx aws.Context, input *NiftyDisassociateRouteTableFromVpnGatewayInput, opts ...request.Option) (*NiftyDisassociateRouteTableFromVpnGatewayOutput, error) {
+func (c *Computing) NiftyDisassociateRouteTableFromVpnGatewayWithContext(ctx nifcloud.Context, input *NiftyDisassociateRouteTableFromVpnGatewayInput, opts ...request.Option) (*NiftyDisassociateRouteTableFromVpnGatewayOutput, error) {
 	req, out := c.NiftyDisassociateRouteTableFromVpnGatewayRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9372,7 +9372,7 @@ func (c *Computing) NiftyDisassociateRouteTableFromVpnGatewayWithContext(ctx aws
 
 const opNiftyEnableDhcp = "NiftyEnableDhcp"
 
-// NiftyEnableDhcpRequest generates a "aws/request.Request" representing the
+// NiftyEnableDhcpRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyEnableDhcp operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9435,7 +9435,7 @@ func (c *Computing) NiftyEnableDhcp(input *NiftyEnableDhcpInput) (*NiftyEnableDh
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyEnableDhcpWithContext(ctx aws.Context, input *NiftyEnableDhcpInput, opts ...request.Option) (*NiftyEnableDhcpOutput, error) {
+func (c *Computing) NiftyEnableDhcpWithContext(ctx nifcloud.Context, input *NiftyEnableDhcpInput, opts ...request.Option) (*NiftyEnableDhcpOutput, error) {
 	req, out := c.NiftyEnableDhcpRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9444,7 +9444,7 @@ func (c *Computing) NiftyEnableDhcpWithContext(ctx aws.Context, input *NiftyEnab
 
 const opNiftyModifyAddressAttribute = "NiftyModifyAddressAttribute"
 
-// NiftyModifyAddressAttributeRequest generates a "aws/request.Request" representing the
+// NiftyModifyAddressAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyModifyAddressAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9507,7 +9507,7 @@ func (c *Computing) NiftyModifyAddressAttribute(input *NiftyModifyAddressAttribu
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyModifyAddressAttributeWithContext(ctx aws.Context, input *NiftyModifyAddressAttributeInput, opts ...request.Option) (*NiftyModifyAddressAttributeOutput, error) {
+func (c *Computing) NiftyModifyAddressAttributeWithContext(ctx nifcloud.Context, input *NiftyModifyAddressAttributeInput, opts ...request.Option) (*NiftyModifyAddressAttributeOutput, error) {
 	req, out := c.NiftyModifyAddressAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9516,7 +9516,7 @@ func (c *Computing) NiftyModifyAddressAttributeWithContext(ctx aws.Context, inpu
 
 const opNiftyModifyCustomerGatewayAttribute = "NiftyModifyCustomerGatewayAttribute"
 
-// NiftyModifyCustomerGatewayAttributeRequest generates a "aws/request.Request" representing the
+// NiftyModifyCustomerGatewayAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyModifyCustomerGatewayAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9579,7 +9579,7 @@ func (c *Computing) NiftyModifyCustomerGatewayAttribute(input *NiftyModifyCustom
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyModifyCustomerGatewayAttributeWithContext(ctx aws.Context, input *NiftyModifyCustomerGatewayAttributeInput, opts ...request.Option) (*NiftyModifyCustomerGatewayAttributeOutput, error) {
+func (c *Computing) NiftyModifyCustomerGatewayAttributeWithContext(ctx nifcloud.Context, input *NiftyModifyCustomerGatewayAttributeInput, opts ...request.Option) (*NiftyModifyCustomerGatewayAttributeOutput, error) {
 	req, out := c.NiftyModifyCustomerGatewayAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9588,7 +9588,7 @@ func (c *Computing) NiftyModifyCustomerGatewayAttributeWithContext(ctx aws.Conte
 
 const opNiftyModifyElasticLoadBalancerAttributes = "NiftyModifyElasticLoadBalancerAttributes"
 
-// NiftyModifyElasticLoadBalancerAttributesRequest generates a "aws/request.Request" representing the
+// NiftyModifyElasticLoadBalancerAttributesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyModifyElasticLoadBalancerAttributes operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9651,7 +9651,7 @@ func (c *Computing) NiftyModifyElasticLoadBalancerAttributes(input *NiftyModifyE
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyModifyElasticLoadBalancerAttributesWithContext(ctx aws.Context, input *NiftyModifyElasticLoadBalancerAttributesInput, opts ...request.Option) (*NiftyModifyElasticLoadBalancerAttributesOutput, error) {
+func (c *Computing) NiftyModifyElasticLoadBalancerAttributesWithContext(ctx nifcloud.Context, input *NiftyModifyElasticLoadBalancerAttributesInput, opts ...request.Option) (*NiftyModifyElasticLoadBalancerAttributesOutput, error) {
 	req, out := c.NiftyModifyElasticLoadBalancerAttributesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9660,7 +9660,7 @@ func (c *Computing) NiftyModifyElasticLoadBalancerAttributesWithContext(ctx aws.
 
 const opNiftyModifyInstanceSnapshotAttribute = "NiftyModifyInstanceSnapshotAttribute"
 
-// NiftyModifyInstanceSnapshotAttributeRequest generates a "aws/request.Request" representing the
+// NiftyModifyInstanceSnapshotAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyModifyInstanceSnapshotAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9723,7 +9723,7 @@ func (c *Computing) NiftyModifyInstanceSnapshotAttribute(input *NiftyModifyInsta
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyModifyInstanceSnapshotAttributeWithContext(ctx aws.Context, input *NiftyModifyInstanceSnapshotAttributeInput, opts ...request.Option) (*NiftyModifyInstanceSnapshotAttributeOutput, error) {
+func (c *Computing) NiftyModifyInstanceSnapshotAttributeWithContext(ctx nifcloud.Context, input *NiftyModifyInstanceSnapshotAttributeInput, opts ...request.Option) (*NiftyModifyInstanceSnapshotAttributeOutput, error) {
 	req, out := c.NiftyModifyInstanceSnapshotAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9732,7 +9732,7 @@ func (c *Computing) NiftyModifyInstanceSnapshotAttributeWithContext(ctx aws.Cont
 
 const opNiftyModifyKeyPairAttribute = "NiftyModifyKeyPairAttribute"
 
-// NiftyModifyKeyPairAttributeRequest generates a "aws/request.Request" representing the
+// NiftyModifyKeyPairAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyModifyKeyPairAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9795,7 +9795,7 @@ func (c *Computing) NiftyModifyKeyPairAttribute(input *NiftyModifyKeyPairAttribu
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyModifyKeyPairAttributeWithContext(ctx aws.Context, input *NiftyModifyKeyPairAttributeInput, opts ...request.Option) (*NiftyModifyKeyPairAttributeOutput, error) {
+func (c *Computing) NiftyModifyKeyPairAttributeWithContext(ctx nifcloud.Context, input *NiftyModifyKeyPairAttributeInput, opts ...request.Option) (*NiftyModifyKeyPairAttributeOutput, error) {
 	req, out := c.NiftyModifyKeyPairAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9804,7 +9804,7 @@ func (c *Computing) NiftyModifyKeyPairAttributeWithContext(ctx aws.Context, inpu
 
 const opNiftyModifyPrivateLanAttribute = "NiftyModifyPrivateLanAttribute"
 
-// NiftyModifyPrivateLanAttributeRequest generates a "aws/request.Request" representing the
+// NiftyModifyPrivateLanAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyModifyPrivateLanAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9867,7 +9867,7 @@ func (c *Computing) NiftyModifyPrivateLanAttribute(input *NiftyModifyPrivateLanA
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyModifyPrivateLanAttributeWithContext(ctx aws.Context, input *NiftyModifyPrivateLanAttributeInput, opts ...request.Option) (*NiftyModifyPrivateLanAttributeOutput, error) {
+func (c *Computing) NiftyModifyPrivateLanAttributeWithContext(ctx nifcloud.Context, input *NiftyModifyPrivateLanAttributeInput, opts ...request.Option) (*NiftyModifyPrivateLanAttributeOutput, error) {
 	req, out := c.NiftyModifyPrivateLanAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9876,7 +9876,7 @@ func (c *Computing) NiftyModifyPrivateLanAttributeWithContext(ctx aws.Context, i
 
 const opNiftyModifyRouterAttribute = "NiftyModifyRouterAttribute"
 
-// NiftyModifyRouterAttributeRequest generates a "aws/request.Request" representing the
+// NiftyModifyRouterAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyModifyRouterAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -9939,7 +9939,7 @@ func (c *Computing) NiftyModifyRouterAttribute(input *NiftyModifyRouterAttribute
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyModifyRouterAttributeWithContext(ctx aws.Context, input *NiftyModifyRouterAttributeInput, opts ...request.Option) (*NiftyModifyRouterAttributeOutput, error) {
+func (c *Computing) NiftyModifyRouterAttributeWithContext(ctx nifcloud.Context, input *NiftyModifyRouterAttributeInput, opts ...request.Option) (*NiftyModifyRouterAttributeOutput, error) {
 	req, out := c.NiftyModifyRouterAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -9948,7 +9948,7 @@ func (c *Computing) NiftyModifyRouterAttributeWithContext(ctx aws.Context, input
 
 const opNiftyModifyVpnGatewayAttribute = "NiftyModifyVpnGatewayAttribute"
 
-// NiftyModifyVpnGatewayAttributeRequest generates a "aws/request.Request" representing the
+// NiftyModifyVpnGatewayAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyModifyVpnGatewayAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10011,7 +10011,7 @@ func (c *Computing) NiftyModifyVpnGatewayAttribute(input *NiftyModifyVpnGatewayA
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyModifyVpnGatewayAttributeWithContext(ctx aws.Context, input *NiftyModifyVpnGatewayAttributeInput, opts ...request.Option) (*NiftyModifyVpnGatewayAttributeOutput, error) {
+func (c *Computing) NiftyModifyVpnGatewayAttributeWithContext(ctx nifcloud.Context, input *NiftyModifyVpnGatewayAttributeInput, opts ...request.Option) (*NiftyModifyVpnGatewayAttributeOutput, error) {
 	req, out := c.NiftyModifyVpnGatewayAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10020,7 +10020,7 @@ func (c *Computing) NiftyModifyVpnGatewayAttributeWithContext(ctx aws.Context, i
 
 const opNiftyModifyWebProxyAttribute = "NiftyModifyWebProxyAttribute"
 
-// NiftyModifyWebProxyAttributeRequest generates a "aws/request.Request" representing the
+// NiftyModifyWebProxyAttributeRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyModifyWebProxyAttribute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10083,7 +10083,7 @@ func (c *Computing) NiftyModifyWebProxyAttribute(input *NiftyModifyWebProxyAttri
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyModifyWebProxyAttributeWithContext(ctx aws.Context, input *NiftyModifyWebProxyAttributeInput, opts ...request.Option) (*NiftyModifyWebProxyAttributeOutput, error) {
+func (c *Computing) NiftyModifyWebProxyAttributeWithContext(ctx nifcloud.Context, input *NiftyModifyWebProxyAttributeInput, opts ...request.Option) (*NiftyModifyWebProxyAttributeOutput, error) {
 	req, out := c.NiftyModifyWebProxyAttributeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10092,7 +10092,7 @@ func (c *Computing) NiftyModifyWebProxyAttributeWithContext(ctx aws.Context, inp
 
 const opNiftyRebootRouters = "NiftyRebootRouters"
 
-// NiftyRebootRoutersRequest generates a "aws/request.Request" representing the
+// NiftyRebootRoutersRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyRebootRouters operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10155,7 +10155,7 @@ func (c *Computing) NiftyRebootRouters(input *NiftyRebootRoutersInput) (*NiftyRe
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyRebootRoutersWithContext(ctx aws.Context, input *NiftyRebootRoutersInput, opts ...request.Option) (*NiftyRebootRoutersOutput, error) {
+func (c *Computing) NiftyRebootRoutersWithContext(ctx nifcloud.Context, input *NiftyRebootRoutersInput, opts ...request.Option) (*NiftyRebootRoutersOutput, error) {
 	req, out := c.NiftyRebootRoutersRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10164,7 +10164,7 @@ func (c *Computing) NiftyRebootRoutersWithContext(ctx aws.Context, input *NiftyR
 
 const opNiftyRebootVpnGateways = "NiftyRebootVpnGateways"
 
-// NiftyRebootVpnGatewaysRequest generates a "aws/request.Request" representing the
+// NiftyRebootVpnGatewaysRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyRebootVpnGateways operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10227,7 +10227,7 @@ func (c *Computing) NiftyRebootVpnGateways(input *NiftyRebootVpnGatewaysInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyRebootVpnGatewaysWithContext(ctx aws.Context, input *NiftyRebootVpnGatewaysInput, opts ...request.Option) (*NiftyRebootVpnGatewaysOutput, error) {
+func (c *Computing) NiftyRebootVpnGatewaysWithContext(ctx nifcloud.Context, input *NiftyRebootVpnGatewaysInput, opts ...request.Option) (*NiftyRebootVpnGatewaysOutput, error) {
 	req, out := c.NiftyRebootVpnGatewaysRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10236,7 +10236,7 @@ func (c *Computing) NiftyRebootVpnGatewaysWithContext(ctx aws.Context, input *Ni
 
 const opNiftyRegisterInstancesWithElasticLoadBalancer = "NiftyRegisterInstancesWithElasticLoadBalancer"
 
-// NiftyRegisterInstancesWithElasticLoadBalancerRequest generates a "aws/request.Request" representing the
+// NiftyRegisterInstancesWithElasticLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyRegisterInstancesWithElasticLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10299,7 +10299,7 @@ func (c *Computing) NiftyRegisterInstancesWithElasticLoadBalancer(input *NiftyRe
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyRegisterInstancesWithElasticLoadBalancerWithContext(ctx aws.Context, input *NiftyRegisterInstancesWithElasticLoadBalancerInput, opts ...request.Option) (*NiftyRegisterInstancesWithElasticLoadBalancerOutput, error) {
+func (c *Computing) NiftyRegisterInstancesWithElasticLoadBalancerWithContext(ctx nifcloud.Context, input *NiftyRegisterInstancesWithElasticLoadBalancerInput, opts ...request.Option) (*NiftyRegisterInstancesWithElasticLoadBalancerOutput, error) {
 	req, out := c.NiftyRegisterInstancesWithElasticLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10308,7 +10308,7 @@ func (c *Computing) NiftyRegisterInstancesWithElasticLoadBalancerWithContext(ctx
 
 const opNiftyRegisterInstancesWithSeparateInstanceRule = "NiftyRegisterInstancesWithSeparateInstanceRule"
 
-// NiftyRegisterInstancesWithSeparateInstanceRuleRequest generates a "aws/request.Request" representing the
+// NiftyRegisterInstancesWithSeparateInstanceRuleRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyRegisterInstancesWithSeparateInstanceRule operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10371,7 +10371,7 @@ func (c *Computing) NiftyRegisterInstancesWithSeparateInstanceRule(input *NiftyR
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyRegisterInstancesWithSeparateInstanceRuleWithContext(ctx aws.Context, input *NiftyRegisterInstancesWithSeparateInstanceRuleInput, opts ...request.Option) (*NiftyRegisterInstancesWithSeparateInstanceRuleOutput, error) {
+func (c *Computing) NiftyRegisterInstancesWithSeparateInstanceRuleWithContext(ctx nifcloud.Context, input *NiftyRegisterInstancesWithSeparateInstanceRuleInput, opts ...request.Option) (*NiftyRegisterInstancesWithSeparateInstanceRuleOutput, error) {
 	req, out := c.NiftyRegisterInstancesWithSeparateInstanceRuleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10380,7 +10380,7 @@ func (c *Computing) NiftyRegisterInstancesWithSeparateInstanceRuleWithContext(ct
 
 const opNiftyRegisterPortWithElasticLoadBalancer = "NiftyRegisterPortWithElasticLoadBalancer"
 
-// NiftyRegisterPortWithElasticLoadBalancerRequest generates a "aws/request.Request" representing the
+// NiftyRegisterPortWithElasticLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyRegisterPortWithElasticLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10443,7 +10443,7 @@ func (c *Computing) NiftyRegisterPortWithElasticLoadBalancer(input *NiftyRegiste
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyRegisterPortWithElasticLoadBalancerWithContext(ctx aws.Context, input *NiftyRegisterPortWithElasticLoadBalancerInput, opts ...request.Option) (*NiftyRegisterPortWithElasticLoadBalancerOutput, error) {
+func (c *Computing) NiftyRegisterPortWithElasticLoadBalancerWithContext(ctx nifcloud.Context, input *NiftyRegisterPortWithElasticLoadBalancerInput, opts ...request.Option) (*NiftyRegisterPortWithElasticLoadBalancerOutput, error) {
 	req, out := c.NiftyRegisterPortWithElasticLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10452,7 +10452,7 @@ func (c *Computing) NiftyRegisterPortWithElasticLoadBalancerWithContext(ctx aws.
 
 const opNiftyRegisterRoutersWithSecurityGroup = "NiftyRegisterRoutersWithSecurityGroup"
 
-// NiftyRegisterRoutersWithSecurityGroupRequest generates a "aws/request.Request" representing the
+// NiftyRegisterRoutersWithSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyRegisterRoutersWithSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10515,7 +10515,7 @@ func (c *Computing) NiftyRegisterRoutersWithSecurityGroup(input *NiftyRegisterRo
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyRegisterRoutersWithSecurityGroupWithContext(ctx aws.Context, input *NiftyRegisterRoutersWithSecurityGroupInput, opts ...request.Option) (*NiftyRegisterRoutersWithSecurityGroupOutput, error) {
+func (c *Computing) NiftyRegisterRoutersWithSecurityGroupWithContext(ctx nifcloud.Context, input *NiftyRegisterRoutersWithSecurityGroupInput, opts ...request.Option) (*NiftyRegisterRoutersWithSecurityGroupOutput, error) {
 	req, out := c.NiftyRegisterRoutersWithSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10524,7 +10524,7 @@ func (c *Computing) NiftyRegisterRoutersWithSecurityGroupWithContext(ctx aws.Con
 
 const opNiftyRegisterVpnGatewaysWithSecurityGroup = "NiftyRegisterVpnGatewaysWithSecurityGroup"
 
-// NiftyRegisterVpnGatewaysWithSecurityGroupRequest generates a "aws/request.Request" representing the
+// NiftyRegisterVpnGatewaysWithSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyRegisterVpnGatewaysWithSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10587,7 +10587,7 @@ func (c *Computing) NiftyRegisterVpnGatewaysWithSecurityGroup(input *NiftyRegist
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyRegisterVpnGatewaysWithSecurityGroupWithContext(ctx aws.Context, input *NiftyRegisterVpnGatewaysWithSecurityGroupInput, opts ...request.Option) (*NiftyRegisterVpnGatewaysWithSecurityGroupOutput, error) {
+func (c *Computing) NiftyRegisterVpnGatewaysWithSecurityGroupWithContext(ctx nifcloud.Context, input *NiftyRegisterVpnGatewaysWithSecurityGroupInput, opts ...request.Option) (*NiftyRegisterVpnGatewaysWithSecurityGroupOutput, error) {
 	req, out := c.NiftyRegisterVpnGatewaysWithSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10596,7 +10596,7 @@ func (c *Computing) NiftyRegisterVpnGatewaysWithSecurityGroupWithContext(ctx aws
 
 const opNiftyReleaseRouterBackupState = "NiftyReleaseRouterBackupState"
 
-// NiftyReleaseRouterBackupStateRequest generates a "aws/request.Request" representing the
+// NiftyReleaseRouterBackupStateRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyReleaseRouterBackupState operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10659,7 +10659,7 @@ func (c *Computing) NiftyReleaseRouterBackupState(input *NiftyReleaseRouterBacku
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyReleaseRouterBackupStateWithContext(ctx aws.Context, input *NiftyReleaseRouterBackupStateInput, opts ...request.Option) (*NiftyReleaseRouterBackupStateOutput, error) {
+func (c *Computing) NiftyReleaseRouterBackupStateWithContext(ctx nifcloud.Context, input *NiftyReleaseRouterBackupStateInput, opts ...request.Option) (*NiftyReleaseRouterBackupStateOutput, error) {
 	req, out := c.NiftyReleaseRouterBackupStateRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10668,7 +10668,7 @@ func (c *Computing) NiftyReleaseRouterBackupStateWithContext(ctx aws.Context, in
 
 const opNiftyReleaseVpnGatewayBackupState = "NiftyReleaseVpnGatewayBackupState"
 
-// NiftyReleaseVpnGatewayBackupStateRequest generates a "aws/request.Request" representing the
+// NiftyReleaseVpnGatewayBackupStateRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyReleaseVpnGatewayBackupState operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10731,7 +10731,7 @@ func (c *Computing) NiftyReleaseVpnGatewayBackupState(input *NiftyReleaseVpnGate
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyReleaseVpnGatewayBackupStateWithContext(ctx aws.Context, input *NiftyReleaseVpnGatewayBackupStateInput, opts ...request.Option) (*NiftyReleaseVpnGatewayBackupStateOutput, error) {
+func (c *Computing) NiftyReleaseVpnGatewayBackupStateWithContext(ctx nifcloud.Context, input *NiftyReleaseVpnGatewayBackupStateInput, opts ...request.Option) (*NiftyReleaseVpnGatewayBackupStateOutput, error) {
 	req, out := c.NiftyReleaseVpnGatewayBackupStateRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10740,7 +10740,7 @@ func (c *Computing) NiftyReleaseVpnGatewayBackupStateWithContext(ctx aws.Context
 
 const opNiftyReplaceDhcpConfig = "NiftyReplaceDhcpConfig"
 
-// NiftyReplaceDhcpConfigRequest generates a "aws/request.Request" representing the
+// NiftyReplaceDhcpConfigRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyReplaceDhcpConfig operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10803,7 +10803,7 @@ func (c *Computing) NiftyReplaceDhcpConfig(input *NiftyReplaceDhcpConfigInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyReplaceDhcpConfigWithContext(ctx aws.Context, input *NiftyReplaceDhcpConfigInput, opts ...request.Option) (*NiftyReplaceDhcpConfigOutput, error) {
+func (c *Computing) NiftyReplaceDhcpConfigWithContext(ctx nifcloud.Context, input *NiftyReplaceDhcpConfigInput, opts ...request.Option) (*NiftyReplaceDhcpConfigOutput, error) {
 	req, out := c.NiftyReplaceDhcpConfigRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10812,7 +10812,7 @@ func (c *Computing) NiftyReplaceDhcpConfigWithContext(ctx aws.Context, input *Ni
 
 const opNiftyReplaceDhcpOption = "NiftyReplaceDhcpOption"
 
-// NiftyReplaceDhcpOptionRequest generates a "aws/request.Request" representing the
+// NiftyReplaceDhcpOptionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyReplaceDhcpOption operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10875,7 +10875,7 @@ func (c *Computing) NiftyReplaceDhcpOption(input *NiftyReplaceDhcpOptionInput) (
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyReplaceDhcpOptionWithContext(ctx aws.Context, input *NiftyReplaceDhcpOptionInput, opts ...request.Option) (*NiftyReplaceDhcpOptionOutput, error) {
+func (c *Computing) NiftyReplaceDhcpOptionWithContext(ctx nifcloud.Context, input *NiftyReplaceDhcpOptionInput, opts ...request.Option) (*NiftyReplaceDhcpOptionOutput, error) {
 	req, out := c.NiftyReplaceDhcpOptionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10884,7 +10884,7 @@ func (c *Computing) NiftyReplaceDhcpOptionWithContext(ctx aws.Context, input *Ni
 
 const opNiftyReplaceElasticLoadBalancerLatestVersion = "NiftyReplaceElasticLoadBalancerLatestVersion"
 
-// NiftyReplaceElasticLoadBalancerLatestVersionRequest generates a "aws/request.Request" representing the
+// NiftyReplaceElasticLoadBalancerLatestVersionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyReplaceElasticLoadBalancerLatestVersion operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -10947,7 +10947,7 @@ func (c *Computing) NiftyReplaceElasticLoadBalancerLatestVersion(input *NiftyRep
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyReplaceElasticLoadBalancerLatestVersionWithContext(ctx aws.Context, input *NiftyReplaceElasticLoadBalancerLatestVersionInput, opts ...request.Option) (*NiftyReplaceElasticLoadBalancerLatestVersionOutput, error) {
+func (c *Computing) NiftyReplaceElasticLoadBalancerLatestVersionWithContext(ctx nifcloud.Context, input *NiftyReplaceElasticLoadBalancerLatestVersionInput, opts ...request.Option) (*NiftyReplaceElasticLoadBalancerLatestVersionOutput, error) {
 	req, out := c.NiftyReplaceElasticLoadBalancerLatestVersionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -10956,7 +10956,7 @@ func (c *Computing) NiftyReplaceElasticLoadBalancerLatestVersionWithContext(ctx 
 
 const opNiftyReplaceNatRule = "NiftyReplaceNatRule"
 
-// NiftyReplaceNatRuleRequest generates a "aws/request.Request" representing the
+// NiftyReplaceNatRuleRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyReplaceNatRule operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11019,7 +11019,7 @@ func (c *Computing) NiftyReplaceNatRule(input *NiftyReplaceNatRuleInput) (*Nifty
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyReplaceNatRuleWithContext(ctx aws.Context, input *NiftyReplaceNatRuleInput, opts ...request.Option) (*NiftyReplaceNatRuleOutput, error) {
+func (c *Computing) NiftyReplaceNatRuleWithContext(ctx nifcloud.Context, input *NiftyReplaceNatRuleInput, opts ...request.Option) (*NiftyReplaceNatRuleOutput, error) {
 	req, out := c.NiftyReplaceNatRuleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11028,7 +11028,7 @@ func (c *Computing) NiftyReplaceNatRuleWithContext(ctx aws.Context, input *Nifty
 
 const opNiftyReplaceNatTableAssociation = "NiftyReplaceNatTableAssociation"
 
-// NiftyReplaceNatTableAssociationRequest generates a "aws/request.Request" representing the
+// NiftyReplaceNatTableAssociationRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyReplaceNatTableAssociation operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11091,7 +11091,7 @@ func (c *Computing) NiftyReplaceNatTableAssociation(input *NiftyReplaceNatTableA
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyReplaceNatTableAssociationWithContext(ctx aws.Context, input *NiftyReplaceNatTableAssociationInput, opts ...request.Option) (*NiftyReplaceNatTableAssociationOutput, error) {
+func (c *Computing) NiftyReplaceNatTableAssociationWithContext(ctx nifcloud.Context, input *NiftyReplaceNatTableAssociationInput, opts ...request.Option) (*NiftyReplaceNatTableAssociationOutput, error) {
 	req, out := c.NiftyReplaceNatTableAssociationRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11100,7 +11100,7 @@ func (c *Computing) NiftyReplaceNatTableAssociationWithContext(ctx aws.Context, 
 
 const opNiftyReplaceRouteTableAssociationWithVpnGateway = "NiftyReplaceRouteTableAssociationWithVpnGateway"
 
-// NiftyReplaceRouteTableAssociationWithVpnGatewayRequest generates a "aws/request.Request" representing the
+// NiftyReplaceRouteTableAssociationWithVpnGatewayRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyReplaceRouteTableAssociationWithVpnGateway operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11163,7 +11163,7 @@ func (c *Computing) NiftyReplaceRouteTableAssociationWithVpnGateway(input *Nifty
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyReplaceRouteTableAssociationWithVpnGatewayWithContext(ctx aws.Context, input *NiftyReplaceRouteTableAssociationWithVpnGatewayInput, opts ...request.Option) (*NiftyReplaceRouteTableAssociationWithVpnGatewayOutput, error) {
+func (c *Computing) NiftyReplaceRouteTableAssociationWithVpnGatewayWithContext(ctx nifcloud.Context, input *NiftyReplaceRouteTableAssociationWithVpnGatewayInput, opts ...request.Option) (*NiftyReplaceRouteTableAssociationWithVpnGatewayOutput, error) {
 	req, out := c.NiftyReplaceRouteTableAssociationWithVpnGatewayRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11172,7 +11172,7 @@ func (c *Computing) NiftyReplaceRouteTableAssociationWithVpnGatewayWithContext(c
 
 const opNiftyReplaceRouterLatestVersion = "NiftyReplaceRouterLatestVersion"
 
-// NiftyReplaceRouterLatestVersionRequest generates a "aws/request.Request" representing the
+// NiftyReplaceRouterLatestVersionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyReplaceRouterLatestVersion operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11235,7 +11235,7 @@ func (c *Computing) NiftyReplaceRouterLatestVersion(input *NiftyReplaceRouterLat
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyReplaceRouterLatestVersionWithContext(ctx aws.Context, input *NiftyReplaceRouterLatestVersionInput, opts ...request.Option) (*NiftyReplaceRouterLatestVersionOutput, error) {
+func (c *Computing) NiftyReplaceRouterLatestVersionWithContext(ctx nifcloud.Context, input *NiftyReplaceRouterLatestVersionInput, opts ...request.Option) (*NiftyReplaceRouterLatestVersionOutput, error) {
 	req, out := c.NiftyReplaceRouterLatestVersionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11244,7 +11244,7 @@ func (c *Computing) NiftyReplaceRouterLatestVersionWithContext(ctx aws.Context, 
 
 const opNiftyReplaceVpnGatewayLatestVersion = "NiftyReplaceVpnGatewayLatestVersion"
 
-// NiftyReplaceVpnGatewayLatestVersionRequest generates a "aws/request.Request" representing the
+// NiftyReplaceVpnGatewayLatestVersionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyReplaceVpnGatewayLatestVersion operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11307,7 +11307,7 @@ func (c *Computing) NiftyReplaceVpnGatewayLatestVersion(input *NiftyReplaceVpnGa
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyReplaceVpnGatewayLatestVersionWithContext(ctx aws.Context, input *NiftyReplaceVpnGatewayLatestVersionInput, opts ...request.Option) (*NiftyReplaceVpnGatewayLatestVersionOutput, error) {
+func (c *Computing) NiftyReplaceVpnGatewayLatestVersionWithContext(ctx nifcloud.Context, input *NiftyReplaceVpnGatewayLatestVersionInput, opts ...request.Option) (*NiftyReplaceVpnGatewayLatestVersionOutput, error) {
 	req, out := c.NiftyReplaceVpnGatewayLatestVersionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11316,7 +11316,7 @@ func (c *Computing) NiftyReplaceVpnGatewayLatestVersionWithContext(ctx aws.Conte
 
 const opNiftyRestoreInstanceSnapshot = "NiftyRestoreInstanceSnapshot"
 
-// NiftyRestoreInstanceSnapshotRequest generates a "aws/request.Request" representing the
+// NiftyRestoreInstanceSnapshotRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyRestoreInstanceSnapshot operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11379,7 +11379,7 @@ func (c *Computing) NiftyRestoreInstanceSnapshot(input *NiftyRestoreInstanceSnap
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyRestoreInstanceSnapshotWithContext(ctx aws.Context, input *NiftyRestoreInstanceSnapshotInput, opts ...request.Option) (*NiftyRestoreInstanceSnapshotOutput, error) {
+func (c *Computing) NiftyRestoreInstanceSnapshotWithContext(ctx nifcloud.Context, input *NiftyRestoreInstanceSnapshotInput, opts ...request.Option) (*NiftyRestoreInstanceSnapshotOutput, error) {
 	req, out := c.NiftyRestoreInstanceSnapshotRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11388,7 +11388,7 @@ func (c *Computing) NiftyRestoreInstanceSnapshotWithContext(ctx aws.Context, inp
 
 const opNiftyRestoreRouterPreviousVersion = "NiftyRestoreRouterPreviousVersion"
 
-// NiftyRestoreRouterPreviousVersionRequest generates a "aws/request.Request" representing the
+// NiftyRestoreRouterPreviousVersionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyRestoreRouterPreviousVersion operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11451,7 +11451,7 @@ func (c *Computing) NiftyRestoreRouterPreviousVersion(input *NiftyRestoreRouterP
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyRestoreRouterPreviousVersionWithContext(ctx aws.Context, input *NiftyRestoreRouterPreviousVersionInput, opts ...request.Option) (*NiftyRestoreRouterPreviousVersionOutput, error) {
+func (c *Computing) NiftyRestoreRouterPreviousVersionWithContext(ctx nifcloud.Context, input *NiftyRestoreRouterPreviousVersionInput, opts ...request.Option) (*NiftyRestoreRouterPreviousVersionOutput, error) {
 	req, out := c.NiftyRestoreRouterPreviousVersionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11460,7 +11460,7 @@ func (c *Computing) NiftyRestoreRouterPreviousVersionWithContext(ctx aws.Context
 
 const opNiftyRestoreVpnGatewayPreviousVersion = "NiftyRestoreVpnGatewayPreviousVersion"
 
-// NiftyRestoreVpnGatewayPreviousVersionRequest generates a "aws/request.Request" representing the
+// NiftyRestoreVpnGatewayPreviousVersionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyRestoreVpnGatewayPreviousVersion operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11523,7 +11523,7 @@ func (c *Computing) NiftyRestoreVpnGatewayPreviousVersion(input *NiftyRestoreVpn
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyRestoreVpnGatewayPreviousVersionWithContext(ctx aws.Context, input *NiftyRestoreVpnGatewayPreviousVersionInput, opts ...request.Option) (*NiftyRestoreVpnGatewayPreviousVersionOutput, error) {
+func (c *Computing) NiftyRestoreVpnGatewayPreviousVersionWithContext(ctx nifcloud.Context, input *NiftyRestoreVpnGatewayPreviousVersionInput, opts ...request.Option) (*NiftyRestoreVpnGatewayPreviousVersionOutput, error) {
 	req, out := c.NiftyRestoreVpnGatewayPreviousVersionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11532,7 +11532,7 @@ func (c *Computing) NiftyRestoreVpnGatewayPreviousVersionWithContext(ctx aws.Con
 
 const opNiftyRetryImportInstance = "NiftyRetryImportInstance"
 
-// NiftyRetryImportInstanceRequest generates a "aws/request.Request" representing the
+// NiftyRetryImportInstanceRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyRetryImportInstance operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11595,7 +11595,7 @@ func (c *Computing) NiftyRetryImportInstance(input *NiftyRetryImportInstanceInpu
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyRetryImportInstanceWithContext(ctx aws.Context, input *NiftyRetryImportInstanceInput, opts ...request.Option) (*NiftyRetryImportInstanceOutput, error) {
+func (c *Computing) NiftyRetryImportInstanceWithContext(ctx nifcloud.Context, input *NiftyRetryImportInstanceInput, opts ...request.Option) (*NiftyRetryImportInstanceOutput, error) {
 	req, out := c.NiftyRetryImportInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11604,7 +11604,7 @@ func (c *Computing) NiftyRetryImportInstanceWithContext(ctx aws.Context, input *
 
 const opNiftyUpdateAlarm = "NiftyUpdateAlarm"
 
-// NiftyUpdateAlarmRequest generates a "aws/request.Request" representing the
+// NiftyUpdateAlarmRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyUpdateAlarm operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11667,7 +11667,7 @@ func (c *Computing) NiftyUpdateAlarm(input *NiftyUpdateAlarmInput) (*NiftyUpdate
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyUpdateAlarmWithContext(ctx aws.Context, input *NiftyUpdateAlarmInput, opts ...request.Option) (*NiftyUpdateAlarmOutput, error) {
+func (c *Computing) NiftyUpdateAlarmWithContext(ctx nifcloud.Context, input *NiftyUpdateAlarmInput, opts ...request.Option) (*NiftyUpdateAlarmOutput, error) {
 	req, out := c.NiftyUpdateAlarmRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11676,7 +11676,7 @@ func (c *Computing) NiftyUpdateAlarmWithContext(ctx aws.Context, input *NiftyUpd
 
 const opNiftyUpdateAutoScalingGroup = "NiftyUpdateAutoScalingGroup"
 
-// NiftyUpdateAutoScalingGroupRequest generates a "aws/request.Request" representing the
+// NiftyUpdateAutoScalingGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyUpdateAutoScalingGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11739,7 +11739,7 @@ func (c *Computing) NiftyUpdateAutoScalingGroup(input *NiftyUpdateAutoScalingGro
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyUpdateAutoScalingGroupWithContext(ctx aws.Context, input *NiftyUpdateAutoScalingGroupInput, opts ...request.Option) (*NiftyUpdateAutoScalingGroupOutput, error) {
+func (c *Computing) NiftyUpdateAutoScalingGroupWithContext(ctx nifcloud.Context, input *NiftyUpdateAutoScalingGroupInput, opts ...request.Option) (*NiftyUpdateAutoScalingGroupOutput, error) {
 	req, out := c.NiftyUpdateAutoScalingGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11748,7 +11748,7 @@ func (c *Computing) NiftyUpdateAutoScalingGroupWithContext(ctx aws.Context, inpu
 
 const opNiftyUpdateElasticLoadBalancer = "NiftyUpdateElasticLoadBalancer"
 
-// NiftyUpdateElasticLoadBalancerRequest generates a "aws/request.Request" representing the
+// NiftyUpdateElasticLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyUpdateElasticLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11811,7 +11811,7 @@ func (c *Computing) NiftyUpdateElasticLoadBalancer(input *NiftyUpdateElasticLoad
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyUpdateElasticLoadBalancerWithContext(ctx aws.Context, input *NiftyUpdateElasticLoadBalancerInput, opts ...request.Option) (*NiftyUpdateElasticLoadBalancerOutput, error) {
+func (c *Computing) NiftyUpdateElasticLoadBalancerWithContext(ctx nifcloud.Context, input *NiftyUpdateElasticLoadBalancerInput, opts ...request.Option) (*NiftyUpdateElasticLoadBalancerOutput, error) {
 	req, out := c.NiftyUpdateElasticLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11820,7 +11820,7 @@ func (c *Computing) NiftyUpdateElasticLoadBalancerWithContext(ctx aws.Context, i
 
 const opNiftyUpdateInstanceNetworkInterfaces = "NiftyUpdateInstanceNetworkInterfaces"
 
-// NiftyUpdateInstanceNetworkInterfacesRequest generates a "aws/request.Request" representing the
+// NiftyUpdateInstanceNetworkInterfacesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyUpdateInstanceNetworkInterfaces operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11883,7 +11883,7 @@ func (c *Computing) NiftyUpdateInstanceNetworkInterfaces(input *NiftyUpdateInsta
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyUpdateInstanceNetworkInterfacesWithContext(ctx aws.Context, input *NiftyUpdateInstanceNetworkInterfacesInput, opts ...request.Option) (*NiftyUpdateInstanceNetworkInterfacesOutput, error) {
+func (c *Computing) NiftyUpdateInstanceNetworkInterfacesWithContext(ctx nifcloud.Context, input *NiftyUpdateInstanceNetworkInterfacesInput, opts ...request.Option) (*NiftyUpdateInstanceNetworkInterfacesOutput, error) {
 	req, out := c.NiftyUpdateInstanceNetworkInterfacesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11892,7 +11892,7 @@ func (c *Computing) NiftyUpdateInstanceNetworkInterfacesWithContext(ctx aws.Cont
 
 const opNiftyUpdateRouterNetworkInterfaces = "NiftyUpdateRouterNetworkInterfaces"
 
-// NiftyUpdateRouterNetworkInterfacesRequest generates a "aws/request.Request" representing the
+// NiftyUpdateRouterNetworkInterfacesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyUpdateRouterNetworkInterfaces operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -11955,7 +11955,7 @@ func (c *Computing) NiftyUpdateRouterNetworkInterfaces(input *NiftyUpdateRouterN
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyUpdateRouterNetworkInterfacesWithContext(ctx aws.Context, input *NiftyUpdateRouterNetworkInterfacesInput, opts ...request.Option) (*NiftyUpdateRouterNetworkInterfacesOutput, error) {
+func (c *Computing) NiftyUpdateRouterNetworkInterfacesWithContext(ctx nifcloud.Context, input *NiftyUpdateRouterNetworkInterfacesInput, opts ...request.Option) (*NiftyUpdateRouterNetworkInterfacesOutput, error) {
 	req, out := c.NiftyUpdateRouterNetworkInterfacesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -11964,7 +11964,7 @@ func (c *Computing) NiftyUpdateRouterNetworkInterfacesWithContext(ctx aws.Contex
 
 const opNiftyUpdateSeparateInstanceRule = "NiftyUpdateSeparateInstanceRule"
 
-// NiftyUpdateSeparateInstanceRuleRequest generates a "aws/request.Request" representing the
+// NiftyUpdateSeparateInstanceRuleRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyUpdateSeparateInstanceRule operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12027,7 +12027,7 @@ func (c *Computing) NiftyUpdateSeparateInstanceRule(input *NiftyUpdateSeparateIn
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyUpdateSeparateInstanceRuleWithContext(ctx aws.Context, input *NiftyUpdateSeparateInstanceRuleInput, opts ...request.Option) (*NiftyUpdateSeparateInstanceRuleOutput, error) {
+func (c *Computing) NiftyUpdateSeparateInstanceRuleWithContext(ctx nifcloud.Context, input *NiftyUpdateSeparateInstanceRuleInput, opts ...request.Option) (*NiftyUpdateSeparateInstanceRuleOutput, error) {
 	req, out := c.NiftyUpdateSeparateInstanceRuleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12036,7 +12036,7 @@ func (c *Computing) NiftyUpdateSeparateInstanceRuleWithContext(ctx aws.Context, 
 
 const opNiftyUpdateVpnGatewayNetworkInterfaces = "NiftyUpdateVpnGatewayNetworkInterfaces"
 
-// NiftyUpdateVpnGatewayNetworkInterfacesRequest generates a "aws/request.Request" representing the
+// NiftyUpdateVpnGatewayNetworkInterfacesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the NiftyUpdateVpnGatewayNetworkInterfaces operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12099,7 +12099,7 @@ func (c *Computing) NiftyUpdateVpnGatewayNetworkInterfaces(input *NiftyUpdateVpn
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) NiftyUpdateVpnGatewayNetworkInterfacesWithContext(ctx aws.Context, input *NiftyUpdateVpnGatewayNetworkInterfacesInput, opts ...request.Option) (*NiftyUpdateVpnGatewayNetworkInterfacesOutput, error) {
+func (c *Computing) NiftyUpdateVpnGatewayNetworkInterfacesWithContext(ctx nifcloud.Context, input *NiftyUpdateVpnGatewayNetworkInterfacesInput, opts ...request.Option) (*NiftyUpdateVpnGatewayNetworkInterfacesOutput, error) {
 	req, out := c.NiftyUpdateVpnGatewayNetworkInterfacesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12108,7 +12108,7 @@ func (c *Computing) NiftyUpdateVpnGatewayNetworkInterfacesWithContext(ctx aws.Co
 
 const opRebootInstances = "RebootInstances"
 
-// RebootInstancesRequest generates a "aws/request.Request" representing the
+// RebootInstancesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RebootInstances operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12171,7 +12171,7 @@ func (c *Computing) RebootInstances(input *RebootInstancesInput) (*RebootInstanc
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) RebootInstancesWithContext(ctx aws.Context, input *RebootInstancesInput, opts ...request.Option) (*RebootInstancesOutput, error) {
+func (c *Computing) RebootInstancesWithContext(ctx nifcloud.Context, input *RebootInstancesInput, opts ...request.Option) (*RebootInstancesOutput, error) {
 	req, out := c.RebootInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12180,7 +12180,7 @@ func (c *Computing) RebootInstancesWithContext(ctx aws.Context, input *RebootIns
 
 const opRegisterCorporateInfoForCertificate = "RegisterCorporateInfoForCertificate"
 
-// RegisterCorporateInfoForCertificateRequest generates a "aws/request.Request" representing the
+// RegisterCorporateInfoForCertificateRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RegisterCorporateInfoForCertificate operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12243,7 +12243,7 @@ func (c *Computing) RegisterCorporateInfoForCertificate(input *RegisterCorporate
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) RegisterCorporateInfoForCertificateWithContext(ctx aws.Context, input *RegisterCorporateInfoForCertificateInput, opts ...request.Option) (*RegisterCorporateInfoForCertificateOutput, error) {
+func (c *Computing) RegisterCorporateInfoForCertificateWithContext(ctx nifcloud.Context, input *RegisterCorporateInfoForCertificateInput, opts ...request.Option) (*RegisterCorporateInfoForCertificateOutput, error) {
 	req, out := c.RegisterCorporateInfoForCertificateRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12252,7 +12252,7 @@ func (c *Computing) RegisterCorporateInfoForCertificateWithContext(ctx aws.Conte
 
 const opRegisterInstancesWithLoadBalancer = "RegisterInstancesWithLoadBalancer"
 
-// RegisterInstancesWithLoadBalancerRequest generates a "aws/request.Request" representing the
+// RegisterInstancesWithLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RegisterInstancesWithLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12315,7 +12315,7 @@ func (c *Computing) RegisterInstancesWithLoadBalancer(input *RegisterInstancesWi
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) RegisterInstancesWithLoadBalancerWithContext(ctx aws.Context, input *RegisterInstancesWithLoadBalancerInput, opts ...request.Option) (*RegisterInstancesWithLoadBalancerOutput, error) {
+func (c *Computing) RegisterInstancesWithLoadBalancerWithContext(ctx nifcloud.Context, input *RegisterInstancesWithLoadBalancerInput, opts ...request.Option) (*RegisterInstancesWithLoadBalancerOutput, error) {
 	req, out := c.RegisterInstancesWithLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12324,7 +12324,7 @@ func (c *Computing) RegisterInstancesWithLoadBalancerWithContext(ctx aws.Context
 
 const opRegisterInstancesWithSecurityGroup = "RegisterInstancesWithSecurityGroup"
 
-// RegisterInstancesWithSecurityGroupRequest generates a "aws/request.Request" representing the
+// RegisterInstancesWithSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RegisterInstancesWithSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12387,7 +12387,7 @@ func (c *Computing) RegisterInstancesWithSecurityGroup(input *RegisterInstancesW
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) RegisterInstancesWithSecurityGroupWithContext(ctx aws.Context, input *RegisterInstancesWithSecurityGroupInput, opts ...request.Option) (*RegisterInstancesWithSecurityGroupOutput, error) {
+func (c *Computing) RegisterInstancesWithSecurityGroupWithContext(ctx nifcloud.Context, input *RegisterInstancesWithSecurityGroupInput, opts ...request.Option) (*RegisterInstancesWithSecurityGroupOutput, error) {
 	req, out := c.RegisterInstancesWithSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12396,7 +12396,7 @@ func (c *Computing) RegisterInstancesWithSecurityGroupWithContext(ctx aws.Contex
 
 const opRegisterPortWithLoadBalancer = "RegisterPortWithLoadBalancer"
 
-// RegisterPortWithLoadBalancerRequest generates a "aws/request.Request" representing the
+// RegisterPortWithLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RegisterPortWithLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12459,7 +12459,7 @@ func (c *Computing) RegisterPortWithLoadBalancer(input *RegisterPortWithLoadBala
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) RegisterPortWithLoadBalancerWithContext(ctx aws.Context, input *RegisterPortWithLoadBalancerInput, opts ...request.Option) (*RegisterPortWithLoadBalancerOutput, error) {
+func (c *Computing) RegisterPortWithLoadBalancerWithContext(ctx nifcloud.Context, input *RegisterPortWithLoadBalancerInput, opts ...request.Option) (*RegisterPortWithLoadBalancerOutput, error) {
 	req, out := c.RegisterPortWithLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12468,7 +12468,7 @@ func (c *Computing) RegisterPortWithLoadBalancerWithContext(ctx aws.Context, inp
 
 const opReleaseAddress = "ReleaseAddress"
 
-// ReleaseAddressRequest generates a "aws/request.Request" representing the
+// ReleaseAddressRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ReleaseAddress operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12531,7 +12531,7 @@ func (c *Computing) ReleaseAddress(input *ReleaseAddressInput) (*ReleaseAddressO
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) ReleaseAddressWithContext(ctx aws.Context, input *ReleaseAddressInput, opts ...request.Option) (*ReleaseAddressOutput, error) {
+func (c *Computing) ReleaseAddressWithContext(ctx nifcloud.Context, input *ReleaseAddressInput, opts ...request.Option) (*ReleaseAddressOutput, error) {
 	req, out := c.ReleaseAddressRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12540,7 +12540,7 @@ func (c *Computing) ReleaseAddressWithContext(ctx aws.Context, input *ReleaseAdd
 
 const opReplaceRoute = "ReplaceRoute"
 
-// ReplaceRouteRequest generates a "aws/request.Request" representing the
+// ReplaceRouteRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ReplaceRoute operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12603,7 +12603,7 @@ func (c *Computing) ReplaceRoute(input *ReplaceRouteInput) (*ReplaceRouteOutput,
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) ReplaceRouteWithContext(ctx aws.Context, input *ReplaceRouteInput, opts ...request.Option) (*ReplaceRouteOutput, error) {
+func (c *Computing) ReplaceRouteWithContext(ctx nifcloud.Context, input *ReplaceRouteInput, opts ...request.Option) (*ReplaceRouteOutput, error) {
 	req, out := c.ReplaceRouteRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12612,7 +12612,7 @@ func (c *Computing) ReplaceRouteWithContext(ctx aws.Context, input *ReplaceRoute
 
 const opReplaceRouteTableAssociation = "ReplaceRouteTableAssociation"
 
-// ReplaceRouteTableAssociationRequest generates a "aws/request.Request" representing the
+// ReplaceRouteTableAssociationRequest generates a "nifcloud/request.Request" representing the
 // client's request for the ReplaceRouteTableAssociation operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12675,7 +12675,7 @@ func (c *Computing) ReplaceRouteTableAssociation(input *ReplaceRouteTableAssocia
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) ReplaceRouteTableAssociationWithContext(ctx aws.Context, input *ReplaceRouteTableAssociationInput, opts ...request.Option) (*ReplaceRouteTableAssociationOutput, error) {
+func (c *Computing) ReplaceRouteTableAssociationWithContext(ctx nifcloud.Context, input *ReplaceRouteTableAssociationInput, opts ...request.Option) (*ReplaceRouteTableAssociationOutput, error) {
 	req, out := c.ReplaceRouteTableAssociationRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12684,7 +12684,7 @@ func (c *Computing) ReplaceRouteTableAssociationWithContext(ctx aws.Context, inp
 
 const opRevokeSecurityGroupIngress = "RevokeSecurityGroupIngress"
 
-// RevokeSecurityGroupIngressRequest generates a "aws/request.Request" representing the
+// RevokeSecurityGroupIngressRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RevokeSecurityGroupIngress operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12747,7 +12747,7 @@ func (c *Computing) RevokeSecurityGroupIngress(input *RevokeSecurityGroupIngress
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) RevokeSecurityGroupIngressWithContext(ctx aws.Context, input *RevokeSecurityGroupIngressInput, opts ...request.Option) (*RevokeSecurityGroupIngressOutput, error) {
+func (c *Computing) RevokeSecurityGroupIngressWithContext(ctx nifcloud.Context, input *RevokeSecurityGroupIngressInput, opts ...request.Option) (*RevokeSecurityGroupIngressOutput, error) {
 	req, out := c.RevokeSecurityGroupIngressRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12756,7 +12756,7 @@ func (c *Computing) RevokeSecurityGroupIngressWithContext(ctx aws.Context, input
 
 const opRunInstances = "RunInstances"
 
-// RunInstancesRequest generates a "aws/request.Request" representing the
+// RunInstancesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the RunInstances operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12819,7 +12819,7 @@ func (c *Computing) RunInstances(input *RunInstancesInput) (*RunInstancesOutput,
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) RunInstancesWithContext(ctx aws.Context, input *RunInstancesInput, opts ...request.Option) (*RunInstancesOutput, error) {
+func (c *Computing) RunInstancesWithContext(ctx nifcloud.Context, input *RunInstancesInput, opts ...request.Option) (*RunInstancesOutput, error) {
 	req, out := c.RunInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12828,7 +12828,7 @@ func (c *Computing) RunInstancesWithContext(ctx aws.Context, input *RunInstances
 
 const opSetFilterForLoadBalancer = "SetFilterForLoadBalancer"
 
-// SetFilterForLoadBalancerRequest generates a "aws/request.Request" representing the
+// SetFilterForLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the SetFilterForLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12891,7 +12891,7 @@ func (c *Computing) SetFilterForLoadBalancer(input *SetFilterForLoadBalancerInpu
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) SetFilterForLoadBalancerWithContext(ctx aws.Context, input *SetFilterForLoadBalancerInput, opts ...request.Option) (*SetFilterForLoadBalancerOutput, error) {
+func (c *Computing) SetFilterForLoadBalancerWithContext(ctx nifcloud.Context, input *SetFilterForLoadBalancerInput, opts ...request.Option) (*SetFilterForLoadBalancerOutput, error) {
 	req, out := c.SetFilterForLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12900,7 +12900,7 @@ func (c *Computing) SetFilterForLoadBalancerWithContext(ctx aws.Context, input *
 
 const opStartInstances = "StartInstances"
 
-// StartInstancesRequest generates a "aws/request.Request" representing the
+// StartInstancesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the StartInstances operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -12963,7 +12963,7 @@ func (c *Computing) StartInstances(input *StartInstancesInput) (*StartInstancesO
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) StartInstancesWithContext(ctx aws.Context, input *StartInstancesInput, opts ...request.Option) (*StartInstancesOutput, error) {
+func (c *Computing) StartInstancesWithContext(ctx nifcloud.Context, input *StartInstancesInput, opts ...request.Option) (*StartInstancesOutput, error) {
 	req, out := c.StartInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -12972,7 +12972,7 @@ func (c *Computing) StartInstancesWithContext(ctx aws.Context, input *StartInsta
 
 const opStopInstances = "StopInstances"
 
-// StopInstancesRequest generates a "aws/request.Request" representing the
+// StopInstancesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the StopInstances operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -13035,7 +13035,7 @@ func (c *Computing) StopInstances(input *StopInstancesInput) (*StopInstancesOutp
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) StopInstancesWithContext(ctx aws.Context, input *StopInstancesInput, opts ...request.Option) (*StopInstancesOutput, error) {
+func (c *Computing) StopInstancesWithContext(ctx nifcloud.Context, input *StopInstancesInput, opts ...request.Option) (*StopInstancesOutput, error) {
 	req, out := c.StopInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -13044,7 +13044,7 @@ func (c *Computing) StopInstancesWithContext(ctx aws.Context, input *StopInstanc
 
 const opTerminateInstances = "TerminateInstances"
 
-// TerminateInstancesRequest generates a "aws/request.Request" representing the
+// TerminateInstancesRequest generates a "nifcloud/request.Request" representing the
 // client's request for the TerminateInstances operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -13107,7 +13107,7 @@ func (c *Computing) TerminateInstances(input *TerminateInstancesInput) (*Termina
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) TerminateInstancesWithContext(ctx aws.Context, input *TerminateInstancesInput, opts ...request.Option) (*TerminateInstancesOutput, error) {
+func (c *Computing) TerminateInstancesWithContext(ctx nifcloud.Context, input *TerminateInstancesInput, opts ...request.Option) (*TerminateInstancesOutput, error) {
 	req, out := c.TerminateInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -13116,7 +13116,7 @@ func (c *Computing) TerminateInstancesWithContext(ctx aws.Context, input *Termin
 
 const opUpdateLoadBalancer = "UpdateLoadBalancer"
 
-// UpdateLoadBalancerRequest generates a "aws/request.Request" representing the
+// UpdateLoadBalancerRequest generates a "nifcloud/request.Request" representing the
 // client's request for the UpdateLoadBalancer operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -13179,7 +13179,7 @@ func (c *Computing) UpdateLoadBalancer(input *UpdateLoadBalancerInput) (*UpdateL
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) UpdateLoadBalancerWithContext(ctx aws.Context, input *UpdateLoadBalancerInput, opts ...request.Option) (*UpdateLoadBalancerOutput, error) {
+func (c *Computing) UpdateLoadBalancerWithContext(ctx nifcloud.Context, input *UpdateLoadBalancerInput, opts ...request.Option) (*UpdateLoadBalancerOutput, error) {
 	req, out := c.UpdateLoadBalancerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -13188,7 +13188,7 @@ func (c *Computing) UpdateLoadBalancerWithContext(ctx aws.Context, input *Update
 
 const opUpdateLoadBalancerOption = "UpdateLoadBalancerOption"
 
-// UpdateLoadBalancerOptionRequest generates a "aws/request.Request" representing the
+// UpdateLoadBalancerOptionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the UpdateLoadBalancerOption operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -13251,7 +13251,7 @@ func (c *Computing) UpdateLoadBalancerOption(input *UpdateLoadBalancerOptionInpu
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) UpdateLoadBalancerOptionWithContext(ctx aws.Context, input *UpdateLoadBalancerOptionInput, opts ...request.Option) (*UpdateLoadBalancerOptionOutput, error) {
+func (c *Computing) UpdateLoadBalancerOptionWithContext(ctx nifcloud.Context, input *UpdateLoadBalancerOptionInput, opts ...request.Option) (*UpdateLoadBalancerOptionOutput, error) {
 	req, out := c.UpdateLoadBalancerOptionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -13260,7 +13260,7 @@ func (c *Computing) UpdateLoadBalancerOptionWithContext(ctx aws.Context, input *
 
 const opUpdateSecurityGroup = "UpdateSecurityGroup"
 
-// UpdateSecurityGroupRequest generates a "aws/request.Request" representing the
+// UpdateSecurityGroupRequest generates a "nifcloud/request.Request" representing the
 // client's request for the UpdateSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -13323,7 +13323,7 @@ func (c *Computing) UpdateSecurityGroup(input *UpdateSecurityGroupInput) (*Updat
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) UpdateSecurityGroupWithContext(ctx aws.Context, input *UpdateSecurityGroupInput, opts ...request.Option) (*UpdateSecurityGroupOutput, error) {
+func (c *Computing) UpdateSecurityGroupWithContext(ctx nifcloud.Context, input *UpdateSecurityGroupInput, opts ...request.Option) (*UpdateSecurityGroupOutput, error) {
 	req, out := c.UpdateSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -13332,7 +13332,7 @@ func (c *Computing) UpdateSecurityGroupWithContext(ctx aws.Context, input *Updat
 
 const opUpdateSecurityGroupOption = "UpdateSecurityGroupOption"
 
-// UpdateSecurityGroupOptionRequest generates a "aws/request.Request" representing the
+// UpdateSecurityGroupOptionRequest generates a "nifcloud/request.Request" representing the
 // client's request for the UpdateSecurityGroupOption operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -13395,7 +13395,7 @@ func (c *Computing) UpdateSecurityGroupOption(input *UpdateSecurityGroupOptionIn
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) UpdateSecurityGroupOptionWithContext(ctx aws.Context, input *UpdateSecurityGroupOptionInput, opts ...request.Option) (*UpdateSecurityGroupOptionOutput, error) {
+func (c *Computing) UpdateSecurityGroupOptionWithContext(ctx nifcloud.Context, input *UpdateSecurityGroupOptionInput, opts ...request.Option) (*UpdateSecurityGroupOptionOutput, error) {
 	req, out := c.UpdateSecurityGroupOptionRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
@@ -13404,7 +13404,7 @@ func (c *Computing) UpdateSecurityGroupOptionWithContext(ctx aws.Context, input 
 
 const opUploadSslCertificate = "UploadSslCertificate"
 
-// UploadSslCertificateRequest generates a "aws/request.Request" representing the
+// UploadSslCertificateRequest generates a "nifcloud/request.Request" representing the
 // client's request for the UploadSslCertificate operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfuly.
@@ -13467,7 +13467,7 @@ func (c *Computing) UploadSslCertificate(input *UploadSslCertificateInput) (*Upl
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Computing) UploadSslCertificateWithContext(ctx aws.Context, input *UploadSslCertificateInput, opts ...request.Option) (*UploadSslCertificateOutput, error) {
+func (c *Computing) UploadSslCertificateWithContext(ctx nifcloud.Context, input *UploadSslCertificateInput, opts ...request.Option) (*UploadSslCertificateOutput, error) {
 	req, out := c.UploadSslCertificateRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)

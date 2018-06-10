@@ -9,7 +9,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/alice02/nifcloud-sdk-go/aws"
+	"github.com/alice02/nifcloud-sdk-go/nifcloud"
 	"github.com/alice02/nifcloud-sdk-go/awstesting/unit"
 	"github.com/alice02/nifcloud-sdk-go/service/dynamodb"
 	"github.com/alice02/nifcloud-sdk-go/service/dynamodb/dynamodbattribute"
@@ -87,7 +87,7 @@ func newDynamodbOut(table, region string) *dynamodbOut {
 
 	out.db = dynamodb.New(
 		unit.Session,
-		&aws.Config{Region: &out.region},
+		&nifcloud.Config{Region: &out.region},
 	)
 	return &out
 }
@@ -95,7 +95,7 @@ func newDynamodbOut(table, region string) *dynamodbOut {
 // output just writes to dynamodb
 func (out dynamodbOut) output(data record) error {
 	input := &dynamodb.PutItemInput{
-		TableName: aws.String(out.table),
+		TableName: nifcloud.String(out.table),
 	}
 
 	item, err := dynamodbattribute.ConvertToMap(data)

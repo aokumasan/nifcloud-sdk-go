@@ -78,7 +78,7 @@
 // When creating a client for an AWS service you'll first need to have a Session
 // value constructed. The Session provides shared configuration that can be shared
 // between your service clients. When service clients are created you can pass
-// in additional configuration via the aws.Config type to override configuration
+// in additional configuration via the nifcloud.Config type to override configuration
 // provided by in the Session to create service client instances with custom
 // configuration.
 //
@@ -99,11 +99,11 @@
 //
 // See the session package documentation for more information on how to use Session
 // with the SDK.
-// https://docs.aws.amazon.com/sdk-for-go/api/aws/session/
+// https://docs.aws.amazon.com/sdk-for-go/api/nifcloud/session/
 //
 // See the Config type in the aws package for more information on configuration
 // options.
-// https://docs.aws.amazon.com/sdk-for-go/api/aws/#Config
+// https://docs.aws.amazon.com/sdk-for-go/api/nifcloud/#Config
 //
 // Configuring Credentials
 //
@@ -117,7 +117,7 @@
 //   * Environment Credentials - Set of environment variables that are useful
 //     when sub processes are created for specific roles.
 //
-//   * Shared Credentials file (~/.aws/credentials) - This file stores your
+//   * Shared Credentials file (~/.nifcloud/credentials) - This file stores your
 //     credentials based on a profile name and is useful for local development.
 //
 //   * EC2 Instance Role Credentials - Use EC2 Instance Role to assign credentials
@@ -134,7 +134,7 @@
 // and configures the S3 service client to use that role for API requests.
 //
 //   // Initial credentials loaded from SDK's default credential chain. Such as
-//   // the environment, shared credentials (~/.aws/credentials), or EC2 Instance
+//   // the environment, shared credentials (~/.nifcloud/credentials), or EC2 Instance
 //   // Role. These credentials will be used to to make the STS Assume Role API.
 //   sess := session.Must(session.NewSession())
 //
@@ -144,14 +144,14 @@
 //
 //   // Create service client value configured for credentials
 //   // from assumed role.
-//   svc := s3.New(sess, &aws.Config{Credentials: creds})/
+//   svc := s3.New(sess, &nifcloud.Config{Credentials: creds})/
 //
 // See the credentials package documentation for more information on credential
 // providers included with the SDK, and how to customize the SDK's usage of
 // credentials.
-// https://docs.aws.amazon.com/sdk-for-go/api/aws/credentials
+// https://docs.aws.amazon.com/sdk-for-go/api/nifcloud/credentials
 //
-// The SDK has support for the shared configuration file (~/.aws/config). This
+// The SDK has support for the shared configuration file (~/.nifcloud/config). This
 // support can be enabled by setting the environment variable, "AWS_SDK_LOAD_CONFIG=1",
 // or enabling the feature in code when creating a Session via the
 // Option's SharedConfigState parameter.
@@ -184,25 +184,25 @@
 // use. This is helpful when you want to create multiple service clients, and
 // all of the clients make API requests to the same region.
 //
-//   sess := session.Must(session.NewSession(&aws.Config{
-//       Region: aws.String(endpoints.UsWest2RegionID),
+//   sess := session.Must(session.NewSession(&nifcloud.Config{
+//       Region: nifcloud.String(endpoints.UsWest2RegionID),
 //   }))
 //
 // See the endpoints package for the AWS Regions and Endpoints metadata.
-// https://docs.aws.amazon.com/sdk-for-go/api/aws/endpoints/
+// https://docs.aws.amazon.com/sdk-for-go/api/nifcloud/endpoints/
 //
 // In addition to setting the region when creating a Session you can also set
 // the region on a per service client bases. This overrides the region of a
 // Session. This is helpful when you want to create service clients in specific
 // regions different from the Session's region.
 //
-//   svc := s3.New(sess, &aws.Config{
-//       Region: aws.String(endpoints.UsWest2RegionID),
+//   svc := s3.New(sess, &nifcloud.Config{
+//       Region: nifcloud.String(endpoints.UsWest2RegionID),
 //   })
 //
 // See the Config type in the aws package for more information and additional
 // options such as setting the Endpoint, and other service client configuration options.
-// https://docs.aws.amazon.com/sdk-for-go/api/aws/#Config
+// https://docs.aws.amazon.com/sdk-for-go/api/nifcloud/#Config
 //
 // Making API Requests
 //
@@ -257,8 +257,8 @@
 //   ctx := context.Background()
 //
 //   result, err := svc.GetObjectWithContext(ctx, &s3.GetObjectInput{
-//       Bucket: aws.String("my-bucket"),
-//       Key: aws.String("my-key"),
+//       Bucket: nifcloud.String("my-bucket"),
+//       Key: nifcloud.String("my-key"),
 //   })
 //   if err != nil {
 //       // Cast err to awserr.Error to handle specific error codes.
@@ -273,7 +273,7 @@
 //   // will leak connections.
 //   defer result.Body.Close()
 //
-//   fmt.Println("Object Size:", aws.StringValue(result.ContentLength))
+//   fmt.Println("Object Size:", nifcloud.StringValue(result.ContentLength))
 //
 // API Request Pagination and Resource Waiters
 //
@@ -283,10 +283,10 @@
 //
 //    objects := []string{}
 //    err := svc.ListObjectsPagesWithContext(ctx, &s3.ListObjectsInput{
-//        Bucket: aws.String(myBucket),
+//        Bucket: nifcloud.String(myBucket),
 //    }, func(p *s3.ListObjectsOutput, lastPage bool) bool {
 //        for _, o := range p.Contents {
-//            objects = append(objects, aws.StringValue(o.Key))
+//            objects = append(objects, nifcloud.StringValue(o.Key))
 //        }
 //        return true // continue paging
 //    })
@@ -304,7 +304,7 @@
 // be request.WaiterResourceNotReadyErrorCode.
 //
 //   err := svc.WaitUntilBucketExistsWithContext(ctx, &s3.HeadBucketInput{
-//       Bucket: aws.String(myBucket),
+//       Bucket: nifcloud.String(myBucket),
 //   })
 //   if err != nil {
 //       aerr, ok := err.(awserr.Error)
@@ -332,10 +332,10 @@
 //   	"os"
 //   	"time"
 //
-//   	"github.com/alice02/nifcloud-sdk-go/aws"
-//   	"github.com/alice02/nifcloud-sdk-go/aws/awserr"
-//   	"github.com/alice02/nifcloud-sdk-go/aws/request"
-//   	"github.com/alice02/nifcloud-sdk-go/aws/session"
+//   	"github.com/alice02/nifcloud-sdk-go/nifcloud"
+//   	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
+//   	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
+//   	"github.com/alice02/nifcloud-sdk-go/nifcloud/session"
 //   	"github.com/alice02/nifcloud-sdk-go/service/s3"
 //   )
 //
@@ -366,7 +366,7 @@
 //   	sess := session.Must(session.NewSession())
 //
 //  	// Create a new instance of the service's client with a Session.
-//  	// Optional aws.Config values can also be provided as variadic arguments
+//  	// Optional nifcloud.Config values can also be provided as variadic arguments
 //  	// to the New function. This option allows you to provide service
 //  	// specific configuration.
 //   	svc := s3.New(sess)
@@ -385,8 +385,8 @@
 //   	// Uploads the object to S3. The Context will interrupt the request if the
 //   	// timeout expires.
 //   	_, err := svc.PutObjectWithContext(ctx, &s3.PutObjectInput{
-//   		Bucket: aws.String(bucket),
-//   		Key:    aws.String(key),
+//   		Bucket: nifcloud.String(bucket),
+//   		Key:    nifcloud.String(key),
 //   		Body:   os.Stdin,
 //   	})
 //   	if err != nil {
