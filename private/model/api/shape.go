@@ -202,7 +202,7 @@ func (s *Shape) GoStructType(name string, ref *ShapeRef) string {
 	}
 
 	if ref.JSONValue {
-		s.API.imports["github.com/alice02/nifcloud-sdk-go/aws"] = true
+		s.API.imports["github.com/alice02/nifcloud-sdk-go/nifcloud"] = true
 		return "nifcloud.JSONValue"
 	}
 

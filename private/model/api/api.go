@@ -240,7 +240,7 @@ func (a *API) ShapeListErrors() []*Shape {
 // resetImports resets the import map to default values.
 func (a *API) resetImports() {
 	a.imports = map[string]bool{
-		"github.com/alice02/nifcloud-sdk-go/aws": true,
+		"github.com/alice02/nifcloud-sdk-go/nifcloud": true,
 	}
 }
 
@@ -621,7 +621,7 @@ func (a *API) ExampleGoCode() string {
 		"bytes",
 		"fmt",
 		"time",
-		"github.com/alice02/nifcloud-sdk-go/aws",
+		"github.com/alice02/nifcloud-sdk-go/nifcloud",
 		"github.com/alice02/nifcloud-sdk-go/nifcloud/session",
 		path.Join(a.SvcClientImportPath, a.PackageName()),
 	)
@@ -699,9 +699,9 @@ var _ {{ .StructName }}API = (*{{ .PackageName }}.{{ .StructName }})(nil)
 func (a *API) InterfaceGoCode() string {
 	a.resetImports()
 	a.imports = map[string]bool{
-		"github.com/alice02/nifcloud-sdk-go/aws":          true,
-		"github.com/alice02/nifcloud-sdk-go/nifcloud/request":  true,
-		path.Join(a.SvcClientImportPath, a.PackageName()): true,
+		"github.com/alice02/nifcloud-sdk-go/nifcloud":         true,
+		"github.com/alice02/nifcloud-sdk-go/nifcloud/request": true,
+		path.Join(a.SvcClientImportPath, a.PackageName()):     true,
 	}
 
 	var buf bytes.Buffer

@@ -47,7 +47,7 @@ func (a *API) WaitersGoCode() string {
 	var buf bytes.Buffer
 	fmt.Fprintf(&buf, "import (\n%q\n\n%q\n%q\n)",
 		"time",
-		"github.com/alice02/nifcloud-sdk-go/aws",
+		"github.com/alice02/nifcloud-sdk-go/nifcloud",
 		"github.com/alice02/nifcloud-sdk-go/nifcloud/request",
 	)
 
