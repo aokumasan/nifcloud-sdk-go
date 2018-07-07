@@ -3611,9 +3611,9 @@ type DBInstance struct {
 
 	DBName *string `type:"string"`
 
-	DBParameterGroups []*DBParameterGroup `type:"list"`
+	DBParameterGroups []*DBParameterGroup `locationNameList:"DBParameterGroup" type:"list"`
 
-	DBSecurityGroups []*DBSecurityGroup `type:"list"`
+	DBSecurityGroups []*DBSecurityGroup `locationNameList:"DBSecurityGroup" type:"list"`
 
 	Endpoint *Endpoint `type:"structure"`
 
@@ -3641,7 +3641,7 @@ type DBInstance struct {
 
 	NiftyStorageType *int64 `type:"integer"`
 
-	OptionGroupMemberships []*OptionGroupMembership `type:"list"`
+	OptionGroupMemberships []*OptionGroupMembership `locationNameList:"OptionGroupMembership" type:"list"`
 
 	PendingModifiedValues *PendingModifiedValues `type:"structure"`
 
@@ -3651,15 +3651,15 @@ type DBInstance struct {
 
 	PubliclyAccessible *bool `type:"boolean"`
 
-	ReadReplicaDBInstanceIdentifiers []*ReadReplicaDBInstanceIdentifier `type:"list"`
+	ReadReplicaDBInstanceIdentifiers []*ReadReplicaDBInstanceIdentifier `locationNameList:"ReadReplicaDBInstanceIdentifier" type:"list"`
 
 	ReadReplicaSourceDBInstanceIdentifier *string `type:"string"`
 
 	SecondaryAvailabilityZone *string `type:"string"`
 
-	StatusInfos []*DBInstanceStatusInfo `type:"list"`
+	StatusInfos []*DBInstanceStatusInfo `locationNameList:"DBInstanceStatusInfo" type:"list"`
 
-	VpcSecurityGroups []*VpcSecurityGroup `type:"list"`
+	VpcSecurityGroups []*VpcSecurityGroup `locationNameList:"VpcSecurityGroup" type:"list"`
 }
 
 // String returns the string representation
@@ -3961,9 +3961,9 @@ type DBSecurityGroup struct {
 
 	DBSecurityGroupName *string `type:"string"`
 
-	EC2SecurityGroups []*EC2SecurityGroup `type:"list"`
+	EC2SecurityGroups []*EC2SecurityGroup `locationNameList:"EC2SecurityGroup" type:"list"`
 
-	IPRanges []*IPRange `type:"list"`
+	IPRanges []*IPRange `locationNameList:"IPRange" type:"list"`
 
 	NiftyAvailabilityZone *string `type:"string"`
 
@@ -4427,7 +4427,7 @@ func (s *DescribeDBEngineVersionsInput) SetMaxRecords(v int64) *DescribeDBEngine
 type DescribeDBEngineVersionsOutput struct {
 	_ struct{} `type:"structure"`
 
-	DBEngineVersions []*DBEngineVersion `type:"list"`
+	DBEngineVersions []*DBEngineVersion `locationNameList:"DBEngineVersion" type:"list"`
 
 	Marker *string `type:"string"`
 }
@@ -4495,7 +4495,7 @@ func (s *DescribeDBInstancesInput) SetMaxRecords(v int64) *DescribeDBInstancesIn
 type DescribeDBInstancesOutput struct {
 	_ struct{} `type:"structure"`
 
-	DBInstances []*DBInstance `type:"list"`
+	DBInstances []*DBInstance `locationNameList:"DBInstance" type:"list"`
 
 	Marker *string `type:"string"`
 }
@@ -4625,7 +4625,7 @@ func (s *DescribeDBLogFilesInput) SetMaxRecords(v int64) *DescribeDBLogFilesInpu
 type DescribeDBLogFilesOutput struct {
 	_ struct{} `type:"structure"`
 
-	DescribeDBLogFiles []*DescribeDBLogFilesDetails `type:"list"`
+	DescribeDBLogFiles []*DescribeDBLogFilesDetails `locationNameList:"DescribeDBLogFilesDetails" type:"list"`
 
 	Marker *string `type:"string"`
 }
@@ -4693,7 +4693,7 @@ func (s *DescribeDBParameterGroupsInput) SetMaxRecords(v int64) *DescribeDBParam
 type DescribeDBParameterGroupsOutput struct {
 	_ struct{} `type:"structure"`
 
-	DBParameterGroups []*DBParameterGroup `type:"list"`
+	DBParameterGroups []*DBParameterGroup `locationNameList:"DBParameterGroup" type:"list"`
 
 	Marker *string `type:"string"`
 }
@@ -4771,7 +4771,7 @@ type DescribeDBParametersOutput struct {
 
 	Marker *string `type:"string"`
 
-	Parameters []*Parameter `type:"list"`
+	Parameters []*Parameter `locationNameList:"Parameter" type:"list"`
 }
 
 // String returns the string representation
@@ -4837,7 +4837,7 @@ func (s *DescribeDBSecurityGroupsInput) SetMaxRecords(v int64) *DescribeDBSecuri
 type DescribeDBSecurityGroupsOutput struct {
 	_ struct{} `type:"structure"`
 
-	DBSecurityGroups []*DBSecurityGroup `type:"list"`
+	DBSecurityGroups []*DBSecurityGroup `locationNameList:"DBSecurityGroup" type:"list"`
 
 	Marker *string `type:"string"`
 }
@@ -4921,7 +4921,7 @@ func (s *DescribeDBSnapshotsInput) SetSnapshotType(v string) *DescribeDBSnapshot
 type DescribeDBSnapshotsOutput struct {
 	_ struct{} `type:"structure"`
 
-	DBSnapshots []*DBSnapshot `type:"list"`
+	DBSnapshots []*DBSnapshot `locationNameList:"DBSnapshot" type:"list"`
 
 	Marker *string `type:"string"`
 }
@@ -5033,7 +5033,7 @@ func (s *DescribeEventCategoriesInput) SetSourceType(v string) *DescribeEventCat
 type DescribeEventCategoriesOutput struct {
 	_ struct{} `type:"structure"`
 
-	EventCategoriesMapList []*EventCategoriesMap `type:"list"`
+	EventCategoriesMapList []*EventCategoriesMap `locationNameList:"EventCategoriesMap" type:"list"`
 }
 
 // String returns the string representation
@@ -5093,7 +5093,7 @@ func (s *DescribeEventSubscriptionsInput) SetSubscriptionName(v string) *Describ
 type DescribeEventSubscriptionsOutput struct {
 	_ struct{} `type:"structure"`
 
-	EventSubscriptionsList []*EventSubscription `type:"list"`
+	EventSubscriptionsList []*EventSubscription `locationNameList:"EventSubscription" type:"list"`
 
 	Marker *string `type:"string"`
 }
@@ -5201,7 +5201,7 @@ func (s *DescribeEventsInput) SetStartTime(v time.Time) *DescribeEventsInput {
 type DescribeEventsOutput struct {
 	_ struct{} `type:"structure"`
 
-	Events []*Event `type:"list"`
+	Events []*Event `locationNameList:"Event" type:"list"`
 
 	Marker *string `type:"string"`
 }
@@ -5295,7 +5295,7 @@ type DescribeOrderableDBInstanceOptionsOutput struct {
 
 	Marker *string `type:"string"`
 
-	OrderableDBInstanceOptions []*OrderableDBInstanceOption `type:"list"`
+	OrderableDBInstanceOptions []*OrderableDBInstanceOption `locationNameList:"OrderableDBInstanceOption" type:"list"`
 }
 
 // String returns the string representation
@@ -5487,7 +5487,7 @@ type EngineDefaults struct {
 
 	Marker *string `type:"string"`
 
-	Parameters []*Parameter `type:"list"`
+	Parameters []*Parameter `locationNameList:"Parameter" type:"list"`
 }
 
 // String returns the string representation
@@ -5933,7 +5933,7 @@ type ModifyDBParameterGroupInput struct {
 
 	DBParameterGroupName *string `locationName:"DBParameterGroupName" type:"string"`
 
-	Parameters *RequestParametersStruct `locationName:"Parameters" type:"structure"`
+	Parameters []*RequestParametersStruct `locationName:"Parameters" locationNameList:"member" type:"list"`
 }
 
 // String returns the string representation
@@ -5953,7 +5953,7 @@ func (s *ModifyDBParameterGroupInput) SetDBParameterGroupName(v string) *ModifyD
 }
 
 // SetParameters sets the Parameters field's value.
-func (s *ModifyDBParameterGroupInput) SetParameters(v *RequestParametersStruct) *ModifyDBParameterGroupInput {
+func (s *ModifyDBParameterGroupInput) SetParameters(v []*RequestParametersStruct) *ModifyDBParameterGroupInput {
 	s.Parameters = v
 	return s
 }
@@ -6157,7 +6157,7 @@ func (s *NiftyGetMetricStatisticsInput) SetStartTime(v time.Time) *NiftyGetMetri
 type NiftyGetMetricStatisticsOutput struct {
 	_ struct{} `type:"structure"`
 
-	Datapoints []*Member `type:"list"`
+	Datapoints []*Member `locationNameList:"member" type:"list"`
 
 	Label *string `type:"string"`
 }
@@ -6217,7 +6217,7 @@ func (s *OptionGroupMembership) SetStatus(v string) *OptionGroupMembership {
 type OrderableDBInstanceOption struct {
 	_ struct{} `type:"structure"`
 
-	AvailabilityZones []*AvailabilityZone `type:"list"`
+	AvailabilityZones []*AvailabilityZone `locationNameList:"AvailabilityZone" type:"list"`
 
 	DBInstanceClass *string `type:"string"`
 
@@ -6636,7 +6636,7 @@ func (s *RequestDimensionsStruct) SetValue(v string) *RequestDimensionsStruct {
 	return s
 }
 
-type RequestParameterStruct struct {
+type RequestParametersStruct struct {
 	_ struct{} `type:"structure"`
 
 	ApplyMethod *string `locationName:"ApplyMethod" type:"string"`
@@ -6644,40 +6644,6 @@ type RequestParameterStruct struct {
 	ParameterName *string `locationName:"ParameterName" type:"string"`
 
 	ParameterValue *string `locationName:"ParameterValue" type:"string"`
-}
-
-// String returns the string representation
-func (s RequestParameterStruct) String() string {
-	return awsutil.Prettify(s)
-}
-
-// GoString returns the string representation
-func (s RequestParameterStruct) GoString() string {
-	return s.String()
-}
-
-// SetApplyMethod sets the ApplyMethod field's value.
-func (s *RequestParameterStruct) SetApplyMethod(v string) *RequestParameterStruct {
-	s.ApplyMethod = &v
-	return s
-}
-
-// SetParameterName sets the ParameterName field's value.
-func (s *RequestParameterStruct) SetParameterName(v string) *RequestParameterStruct {
-	s.ParameterName = &v
-	return s
-}
-
-// SetParameterValue sets the ParameterValue field's value.
-func (s *RequestParameterStruct) SetParameterValue(v string) *RequestParameterStruct {
-	s.ParameterValue = &v
-	return s
-}
-
-type RequestParametersStruct struct {
-	_ struct{} `type:"structure"`
-
-	RequestParameter []*RequestParameterStruct `locationName:"Parameter" type:"list"`
 }
 
 // String returns the string representation
@@ -6690,9 +6656,21 @@ func (s RequestParametersStruct) GoString() string {
 	return s.String()
 }
 
-// SetRequestParameter sets the RequestParameter field's value.
-func (s *RequestParametersStruct) SetRequestParameter(v []*RequestParameterStruct) *RequestParametersStruct {
-	s.RequestParameter = v
+// SetApplyMethod sets the ApplyMethod field's value.
+func (s *RequestParametersStruct) SetApplyMethod(v string) *RequestParametersStruct {
+	s.ApplyMethod = &v
+	return s
+}
+
+// SetParameterName sets the ParameterName field's value.
+func (s *RequestParametersStruct) SetParameterName(v string) *RequestParametersStruct {
+	s.ParameterName = &v
+	return s
+}
+
+// SetParameterValue sets the ParameterValue field's value.
+func (s *RequestParametersStruct) SetParameterValue(v string) *RequestParametersStruct {
+	s.ParameterValue = &v
 	return s
 }
 
@@ -6701,7 +6679,7 @@ type ResetDBParameterGroupInput struct {
 
 	DBParameterGroupName *string `locationName:"DBParameterGroupName" type:"string"`
 
-	Parameters *RequestParametersStruct `locationName:"Parameters" type:"structure"`
+	Parameters []*RequestParametersStruct `locationName:"Parameters" locationNameList:"member" type:"list"`
 
 	ResetAllParameters *bool `locationName:"ResetAllParameters" type:"boolean"`
 }
@@ -6723,7 +6701,7 @@ func (s *ResetDBParameterGroupInput) SetDBParameterGroupName(v string) *ResetDBP
 }
 
 // SetParameters sets the Parameters field's value.
-func (s *ResetDBParameterGroupInput) SetParameters(v *RequestParametersStruct) *ResetDBParameterGroupInput {
+func (s *ResetDBParameterGroupInput) SetParameters(v []*RequestParametersStruct) *ResetDBParameterGroupInput {
 	s.Parameters = v
 	return s
 }

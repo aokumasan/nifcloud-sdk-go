@@ -847,7 +847,7 @@ func (s *AuthorizeNASSecurityGroupIngressInput) SetSecurityGroupName(v string) *
 type AuthorizeNASSecurityGroupIngressOutput struct {
 	_ struct{} `type:"structure"`
 
-	NASSecurityGroup *NASSecurityGroupResult `type:"structure"`
+	NASSecurityGroup *NASSecurityGroup `type:"structure"`
 }
 
 // String returns the string representation
@@ -861,7 +861,7 @@ func (s AuthorizeNASSecurityGroupIngressOutput) GoString() string {
 }
 
 // SetNASSecurityGroup sets the NASSecurityGroup field's value.
-func (s *AuthorizeNASSecurityGroupIngressOutput) SetNASSecurityGroup(v *NASSecurityGroupResult) *AuthorizeNASSecurityGroupIngressOutput {
+func (s *AuthorizeNASSecurityGroupIngressOutput) SetNASSecurityGroup(v *NASSecurityGroup) *AuthorizeNASSecurityGroupIngressOutput {
 	s.NASSecurityGroup = v
 	return s
 }
@@ -971,7 +971,7 @@ func (s *CreateNASInstanceInput) SetProtocol(v string) *CreateNASInstanceInput {
 type CreateNASInstanceOutput struct {
 	_ struct{} `type:"structure"`
 
-	NASInstance *NASInstanceResult `type:"structure"`
+	NASInstance *NASInstance `type:"structure"`
 }
 
 // String returns the string representation
@@ -985,7 +985,7 @@ func (s CreateNASInstanceOutput) GoString() string {
 }
 
 // SetNASInstance sets the NASInstance field's value.
-func (s *CreateNASInstanceOutput) SetNASInstance(v *NASInstanceResult) *CreateNASInstanceOutput {
+func (s *CreateNASInstanceOutput) SetNASInstance(v *NASInstance) *CreateNASInstanceOutput {
 	s.NASInstance = v
 	return s
 }
@@ -1031,7 +1031,7 @@ func (s *CreateNASSecurityGroupInput) SetNASSecurityGroupName(v string) *CreateN
 type CreateNASSecurityGroupOutput struct {
 	_ struct{} `type:"structure"`
 
-	NASSecurityGroup *NASSecurityGroupResult `type:"structure"`
+	NASSecurityGroup *NASSecurityGroup `type:"structure"`
 }
 
 // String returns the string representation
@@ -1045,7 +1045,7 @@ func (s CreateNASSecurityGroupOutput) GoString() string {
 }
 
 // SetNASSecurityGroup sets the NASSecurityGroup field's value.
-func (s *CreateNASSecurityGroupOutput) SetNASSecurityGroup(v *NASSecurityGroupResult) *CreateNASSecurityGroupOutput {
+func (s *CreateNASSecurityGroupOutput) SetNASSecurityGroup(v *NASSecurityGroup) *CreateNASSecurityGroupOutput {
 	s.NASSecurityGroup = v
 	return s
 }
@@ -1091,7 +1091,7 @@ func (s *DeleteNASInstanceInput) SetNASInstanceIdentifier(v string) *DeleteNASIn
 type DeleteNASInstanceOutput struct {
 	_ struct{} `type:"structure"`
 
-	NASInstance *NASInstanceResult `type:"structure"`
+	NASInstance *NASInstance `type:"structure"`
 }
 
 // String returns the string representation
@@ -1105,7 +1105,7 @@ func (s DeleteNASInstanceOutput) GoString() string {
 }
 
 // SetNASInstance sets the NASInstance field's value.
-func (s *DeleteNASInstanceOutput) SetNASInstance(v *NASInstanceResult) *DeleteNASInstanceOutput {
+func (s *DeleteNASInstanceOutput) SetNASInstance(v *NASInstance) *DeleteNASInstanceOutput {
 	s.NASInstance = v
 	return s
 }
@@ -1171,7 +1171,7 @@ func (s *DescribeNASInstancesInput) SetNASInstanceIdentifier(v string) *Describe
 type DescribeNASInstancesOutput struct {
 	_ struct{} `type:"structure"`
 
-	NASInstances []*NASInstanceResult `type:"list"`
+	NASInstances []*NASInstance `locationNameList:"NASInstance" type:"list"`
 }
 
 // String returns the string representation
@@ -1185,7 +1185,7 @@ func (s DescribeNASInstancesOutput) GoString() string {
 }
 
 // SetNASInstances sets the NASInstances field's value.
-func (s *DescribeNASInstancesOutput) SetNASInstances(v []*NASInstanceResult) *DescribeNASInstancesOutput {
+func (s *DescribeNASInstancesOutput) SetNASInstances(v []*NASInstance) *DescribeNASInstancesOutput {
 	s.NASInstances = v
 	return s
 }
@@ -1215,7 +1215,7 @@ func (s *DescribeNASSecurityGroupsInput) SetNASSecurityGroupName(v string) *Desc
 type DescribeNASSecurityGroupsOutput struct {
 	_ struct{} `type:"structure"`
 
-	NASSecurityGroups []*NASSecurityGroupResult `type:"list"`
+	NASSecurityGroups []*NASSecurityGroup `locationNameList:"NASSecurityGroup" type:"list"`
 }
 
 // String returns the string representation
@@ -1229,12 +1229,12 @@ func (s DescribeNASSecurityGroupsOutput) GoString() string {
 }
 
 // SetNASSecurityGroups sets the NASSecurityGroups field's value.
-func (s *DescribeNASSecurityGroupsOutput) SetNASSecurityGroups(v []*NASSecurityGroupResult) *DescribeNASSecurityGroupsOutput {
+func (s *DescribeNASSecurityGroupsOutput) SetNASSecurityGroups(v []*NASSecurityGroup) *DescribeNASSecurityGroupsOutput {
 	s.NASSecurityGroups = v
 	return s
 }
 
-type DomainControllerResult struct {
+type DomainController struct {
 	_ struct{} `type:"structure"`
 
 	Hostname *string `type:"string"`
@@ -1243,28 +1243,28 @@ type DomainControllerResult struct {
 }
 
 // String returns the string representation
-func (s DomainControllerResult) String() string {
+func (s DomainController) String() string {
 	return awsutil.Prettify(s)
 }
 
 // GoString returns the string representation
-func (s DomainControllerResult) GoString() string {
+func (s DomainController) GoString() string {
 	return s.String()
 }
 
 // SetHostname sets the Hostname field's value.
-func (s *DomainControllerResult) SetHostname(v string) *DomainControllerResult {
+func (s *DomainController) SetHostname(v string) *DomainController {
 	s.Hostname = &v
 	return s
 }
 
 // SetIPAddress sets the IPAddress field's value.
-func (s *DomainControllerResult) SetIPAddress(v string) *DomainControllerResult {
+func (s *DomainController) SetIPAddress(v string) *DomainController {
 	s.IPAddress = &v
 	return s
 }
 
-type EndpointResult struct {
+type Endpoint struct {
 	_ struct{} `type:"structure"`
 
 	Address *string `type:"string"`
@@ -1273,23 +1273,23 @@ type EndpointResult struct {
 }
 
 // String returns the string representation
-func (s EndpointResult) String() string {
+func (s Endpoint) String() string {
 	return awsutil.Prettify(s)
 }
 
 // GoString returns the string representation
-func (s EndpointResult) GoString() string {
+func (s Endpoint) GoString() string {
 	return s.String()
 }
 
 // SetAddress sets the Address field's value.
-func (s *EndpointResult) SetAddress(v string) *EndpointResult {
+func (s *Endpoint) SetAddress(v string) *Endpoint {
 	s.Address = &v
 	return s
 }
 
 // SetPrivateAddress sets the PrivateAddress field's value.
-func (s *EndpointResult) SetPrivateAddress(v string) *EndpointResult {
+func (s *Endpoint) SetPrivateAddress(v string) *Endpoint {
 	s.PrivateAddress = &v
 	return s
 }
@@ -1343,7 +1343,7 @@ func (s *GetMetricStatisticsInput) SetStartTime(v time.Time) *GetMetricStatistic
 type GetMetricStatisticsOutput struct {
 	_ struct{} `type:"structure"`
 
-	Datapoints []*MemberResult `type:"list"`
+	Datapoints []*Member `locationNameList:"member" type:"list"`
 
 	Label *string `type:"string"`
 }
@@ -1359,7 +1359,7 @@ func (s GetMetricStatisticsOutput) GoString() string {
 }
 
 // SetDatapoints sets the Datapoints field's value.
-func (s *GetMetricStatisticsOutput) SetDatapoints(v []*MemberResult) *GetMetricStatisticsOutput {
+func (s *GetMetricStatisticsOutput) SetDatapoints(v []*Member) *GetMetricStatisticsOutput {
 	s.Datapoints = v
 	return s
 }
@@ -1370,7 +1370,7 @@ func (s *GetMetricStatisticsOutput) SetLabel(v string) *GetMetricStatisticsOutpu
 	return s
 }
 
-type IPRangeResult struct {
+type IPRange struct {
 	_ struct{} `type:"structure"`
 
 	CIDRIP *string `type:"string"`
@@ -1379,28 +1379,28 @@ type IPRangeResult struct {
 }
 
 // String returns the string representation
-func (s IPRangeResult) String() string {
+func (s IPRange) String() string {
 	return awsutil.Prettify(s)
 }
 
 // GoString returns the string representation
-func (s IPRangeResult) GoString() string {
+func (s IPRange) GoString() string {
 	return s.String()
 }
 
 // SetCIDRIP sets the CIDRIP field's value.
-func (s *IPRangeResult) SetCIDRIP(v string) *IPRangeResult {
+func (s *IPRange) SetCIDRIP(v string) *IPRange {
 	s.CIDRIP = &v
 	return s
 }
 
 // SetStatus sets the Status field's value.
-func (s *IPRangeResult) SetStatus(v string) *IPRangeResult {
+func (s *IPRange) SetStatus(v string) *IPRange {
 	s.Status = &v
 	return s
 }
 
-type MemberResult struct {
+type Member struct {
 	_ struct{} `type:"structure"`
 
 	SampleCount *string `type:"string"`
@@ -1413,35 +1413,35 @@ type MemberResult struct {
 }
 
 // String returns the string representation
-func (s MemberResult) String() string {
+func (s Member) String() string {
 	return awsutil.Prettify(s)
 }
 
 // GoString returns the string representation
-func (s MemberResult) GoString() string {
+func (s Member) GoString() string {
 	return s.String()
 }
 
 // SetSampleCount sets the SampleCount field's value.
-func (s *MemberResult) SetSampleCount(v string) *MemberResult {
+func (s *Member) SetSampleCount(v string) *Member {
 	s.SampleCount = &v
 	return s
 }
 
 // SetSum sets the Sum field's value.
-func (s *MemberResult) SetSum(v string) *MemberResult {
+func (s *Member) SetSum(v string) *Member {
 	s.Sum = &v
 	return s
 }
 
 // SetTargetName sets the TargetName field's value.
-func (s *MemberResult) SetTargetName(v string) *MemberResult {
+func (s *Member) SetTargetName(v string) *Member {
 	s.TargetName = &v
 	return s
 }
 
 // SetTimestamp sets the Timestamp field's value.
-func (s *MemberResult) SetTimestamp(v string) *MemberResult {
+func (s *Member) SetTimestamp(v string) *Member {
 	s.Timestamp = &v
 	return s
 }
@@ -1567,7 +1567,7 @@ func (s *ModifyNASInstanceInput) SetNewNASInstanceIdentifier(v string) *ModifyNA
 type ModifyNASInstanceOutput struct {
 	_ struct{} `type:"structure"`
 
-	NASInstance *NASInstanceResult `type:"structure"`
+	NASInstance *NASInstance `type:"structure"`
 }
 
 // String returns the string representation
@@ -1581,7 +1581,7 @@ func (s ModifyNASInstanceOutput) GoString() string {
 }
 
 // SetNASInstance sets the NASInstance field's value.
-func (s *ModifyNASInstanceOutput) SetNASInstance(v *NASInstanceResult) *ModifyNASInstanceOutput {
+func (s *ModifyNASInstanceOutput) SetNASInstance(v *NASInstance) *ModifyNASInstanceOutput {
 	s.NASInstance = v
 	return s
 }
@@ -1627,7 +1627,7 @@ func (s *ModifyNASSecurityGroupInput) SetNewNASSecurityGroupName(v string) *Modi
 type ModifyNASSecurityGroupOutput struct {
 	_ struct{} `type:"structure"`
 
-	NASSecurityGroup *NASSecurityGroupResult `type:"structure"`
+	NASSecurityGroup *NASSecurityGroup `type:"structure"`
 }
 
 // String returns the string representation
@@ -1641,42 +1641,12 @@ func (s ModifyNASSecurityGroupOutput) GoString() string {
 }
 
 // SetNASSecurityGroup sets the NASSecurityGroup field's value.
-func (s *ModifyNASSecurityGroupOutput) SetNASSecurityGroup(v *NASSecurityGroupResult) *ModifyNASSecurityGroupOutput {
+func (s *ModifyNASSecurityGroupOutput) SetNASSecurityGroup(v *NASSecurityGroup) *ModifyNASSecurityGroupOutput {
 	s.NASSecurityGroup = v
 	return s
 }
 
-type NASInstanceErrorInfoResult struct {
-	_ struct{} `type:"structure"`
-
-	NASInstanceErrorCode *string `type:"string"`
-
-	NASInstanceErrorMessage *string `type:"string"`
-}
-
-// String returns the string representation
-func (s NASInstanceErrorInfoResult) String() string {
-	return awsutil.Prettify(s)
-}
-
-// GoString returns the string representation
-func (s NASInstanceErrorInfoResult) GoString() string {
-	return s.String()
-}
-
-// SetNASInstanceErrorCode sets the NASInstanceErrorCode field's value.
-func (s *NASInstanceErrorInfoResult) SetNASInstanceErrorCode(v string) *NASInstanceErrorInfoResult {
-	s.NASInstanceErrorCode = &v
-	return s
-}
-
-// SetNASInstanceErrorMessage sets the NASInstanceErrorMessage field's value.
-func (s *NASInstanceErrorInfoResult) SetNASInstanceErrorMessage(v string) *NASInstanceErrorInfoResult {
-	s.NASInstanceErrorMessage = &v
-	return s
-}
-
-type NASInstanceResult struct {
+type NASInstance struct {
 	_ struct{} `type:"structure"`
 
 	AllocatedStorage *string `type:"string"`
@@ -1689,9 +1659,9 @@ type NASInstanceResult struct {
 
 	DirectoryServiceDomainName *string `type:"string"`
 
-	DomainControllers []*DomainControllerResult `type:"list"`
+	DomainControllers []*DomainController `locationNameList:"DomainController" type:"list"`
 
-	Endpoint *EndpointResult `type:"structure"`
+	Endpoint *Endpoint `type:"structure"`
 
 	MasterUsername *string `type:"string"`
 
@@ -1699,7 +1669,7 @@ type NASInstanceResult struct {
 
 	NASInstanceDescription *string `type:"string"`
 
-	NASInstanceErrorInfo *NASInstanceErrorInfoResult `type:"structure"`
+	NASInstanceErrorInfo *NASInstanceErrorInfo `type:"structure"`
 
 	NASInstanceIdentifier *string `type:"string"`
 
@@ -1707,7 +1677,7 @@ type NASInstanceResult struct {
 
 	NASInstanceType *int64 `type:"integer"`
 
-	NASSecurityGroups []*NASSecurityGroupResult `type:"list"`
+	NASSecurityGroups []*NASSecurityGroup `locationNameList:"NASSecurityGroup" type:"list"`
 
 	NetworkId *string `type:"string"`
 
@@ -1719,135 +1689,165 @@ type NASInstanceResult struct {
 }
 
 // String returns the string representation
-func (s NASInstanceResult) String() string {
+func (s NASInstance) String() string {
 	return awsutil.Prettify(s)
 }
 
 // GoString returns the string representation
-func (s NASInstanceResult) GoString() string {
+func (s NASInstance) GoString() string {
 	return s.String()
 }
 
 // SetAllocatedStorage sets the AllocatedStorage field's value.
-func (s *NASInstanceResult) SetAllocatedStorage(v string) *NASInstanceResult {
+func (s *NASInstance) SetAllocatedStorage(v string) *NASInstance {
 	s.AllocatedStorage = &v
 	return s
 }
 
 // SetAuthenticationType sets the AuthenticationType field's value.
-func (s *NASInstanceResult) SetAuthenticationType(v int64) *NASInstanceResult {
+func (s *NASInstance) SetAuthenticationType(v int64) *NASInstance {
 	s.AuthenticationType = &v
 	return s
 }
 
 // SetAvailabilityZone sets the AvailabilityZone field's value.
-func (s *NASInstanceResult) SetAvailabilityZone(v string) *NASInstanceResult {
+func (s *NASInstance) SetAvailabilityZone(v string) *NASInstance {
 	s.AvailabilityZone = &v
 	return s
 }
 
 // SetCreateTime sets the CreateTime field's value.
-func (s *NASInstanceResult) SetCreateTime(v string) *NASInstanceResult {
+func (s *NASInstance) SetCreateTime(v string) *NASInstance {
 	s.CreateTime = &v
 	return s
 }
 
 // SetDirectoryServiceDomainName sets the DirectoryServiceDomainName field's value.
-func (s *NASInstanceResult) SetDirectoryServiceDomainName(v string) *NASInstanceResult {
+func (s *NASInstance) SetDirectoryServiceDomainName(v string) *NASInstance {
 	s.DirectoryServiceDomainName = &v
 	return s
 }
 
 // SetDomainControllers sets the DomainControllers field's value.
-func (s *NASInstanceResult) SetDomainControllers(v []*DomainControllerResult) *NASInstanceResult {
+func (s *NASInstance) SetDomainControllers(v []*DomainController) *NASInstance {
 	s.DomainControllers = v
 	return s
 }
 
 // SetEndpoint sets the Endpoint field's value.
-func (s *NASInstanceResult) SetEndpoint(v *EndpointResult) *NASInstanceResult {
+func (s *NASInstance) SetEndpoint(v *Endpoint) *NASInstance {
 	s.Endpoint = v
 	return s
 }
 
 // SetMasterUsername sets the MasterUsername field's value.
-func (s *NASInstanceResult) SetMasterUsername(v string) *NASInstanceResult {
+func (s *NASInstance) SetMasterUsername(v string) *NASInstance {
 	s.MasterUsername = &v
 	return s
 }
 
 // SetNASInstanceClass sets the NASInstanceClass field's value.
-func (s *NASInstanceResult) SetNASInstanceClass(v string) *NASInstanceResult {
+func (s *NASInstance) SetNASInstanceClass(v string) *NASInstance {
 	s.NASInstanceClass = &v
 	return s
 }
 
 // SetNASInstanceDescription sets the NASInstanceDescription field's value.
-func (s *NASInstanceResult) SetNASInstanceDescription(v string) *NASInstanceResult {
+func (s *NASInstance) SetNASInstanceDescription(v string) *NASInstance {
 	s.NASInstanceDescription = &v
 	return s
 }
 
 // SetNASInstanceErrorInfo sets the NASInstanceErrorInfo field's value.
-func (s *NASInstanceResult) SetNASInstanceErrorInfo(v *NASInstanceErrorInfoResult) *NASInstanceResult {
+func (s *NASInstance) SetNASInstanceErrorInfo(v *NASInstanceErrorInfo) *NASInstance {
 	s.NASInstanceErrorInfo = v
 	return s
 }
 
 // SetNASInstanceIdentifier sets the NASInstanceIdentifier field's value.
-func (s *NASInstanceResult) SetNASInstanceIdentifier(v string) *NASInstanceResult {
+func (s *NASInstance) SetNASInstanceIdentifier(v string) *NASInstance {
 	s.NASInstanceIdentifier = &v
 	return s
 }
 
 // SetNASInstanceStatus sets the NASInstanceStatus field's value.
-func (s *NASInstanceResult) SetNASInstanceStatus(v string) *NASInstanceResult {
+func (s *NASInstance) SetNASInstanceStatus(v string) *NASInstance {
 	s.NASInstanceStatus = &v
 	return s
 }
 
 // SetNASInstanceType sets the NASInstanceType field's value.
-func (s *NASInstanceResult) SetNASInstanceType(v int64) *NASInstanceResult {
+func (s *NASInstance) SetNASInstanceType(v int64) *NASInstance {
 	s.NASInstanceType = &v
 	return s
 }
 
 // SetNASSecurityGroups sets the NASSecurityGroups field's value.
-func (s *NASInstanceResult) SetNASSecurityGroups(v []*NASSecurityGroupResult) *NASInstanceResult {
+func (s *NASInstance) SetNASSecurityGroups(v []*NASSecurityGroup) *NASInstance {
 	s.NASSecurityGroups = v
 	return s
 }
 
 // SetNetworkId sets the NetworkId field's value.
-func (s *NASInstanceResult) SetNetworkId(v string) *NASInstanceResult {
+func (s *NASInstance) SetNetworkId(v string) *NASInstance {
 	s.NetworkId = &v
 	return s
 }
 
 // SetNoRootSquash sets the NoRootSquash field's value.
-func (s *NASInstanceResult) SetNoRootSquash(v string) *NASInstanceResult {
+func (s *NASInstance) SetNoRootSquash(v string) *NASInstance {
 	s.NoRootSquash = &v
 	return s
 }
 
 // SetProtocol sets the Protocol field's value.
-func (s *NASInstanceResult) SetProtocol(v string) *NASInstanceResult {
+func (s *NASInstance) SetProtocol(v string) *NASInstance {
 	s.Protocol = &v
 	return s
 }
 
 // SetStorageType sets the StorageType field's value.
-func (s *NASInstanceResult) SetStorageType(v int64) *NASInstanceResult {
+func (s *NASInstance) SetStorageType(v int64) *NASInstance {
 	s.StorageType = &v
 	return s
 }
 
-type NASSecurityGroupResult struct {
+type NASInstanceErrorInfo struct {
+	_ struct{} `type:"structure"`
+
+	NASInstanceErrorCode *string `type:"string"`
+
+	NASInstanceErrorMessage *string `type:"string"`
+}
+
+// String returns the string representation
+func (s NASInstanceErrorInfo) String() string {
+	return awsutil.Prettify(s)
+}
+
+// GoString returns the string representation
+func (s NASInstanceErrorInfo) GoString() string {
+	return s.String()
+}
+
+// SetNASInstanceErrorCode sets the NASInstanceErrorCode field's value.
+func (s *NASInstanceErrorInfo) SetNASInstanceErrorCode(v string) *NASInstanceErrorInfo {
+	s.NASInstanceErrorCode = &v
+	return s
+}
+
+// SetNASInstanceErrorMessage sets the NASInstanceErrorMessage field's value.
+func (s *NASInstanceErrorInfo) SetNASInstanceErrorMessage(v string) *NASInstanceErrorInfo {
+	s.NASInstanceErrorMessage = &v
+	return s
+}
+
+type NASSecurityGroup struct {
 	_ struct{} `type:"structure"`
 
 	AvailabilityZone *string `type:"string"`
 
-	IPRanges []*IPRangeResult `type:"list"`
+	IPRanges []*IPRange `locationNameList:"IPRange" type:"list"`
 
 	NASSecurityGroupDescription *string `type:"string"`
 
@@ -1855,51 +1855,51 @@ type NASSecurityGroupResult struct {
 
 	OwnerId *string `type:"string"`
 
-	SecurityGroups []*SecurityGroupResult `type:"list"`
+	SecurityGroups []*SecurityGroup `locationNameList:"SecurityGroup" type:"list"`
 }
 
 // String returns the string representation
-func (s NASSecurityGroupResult) String() string {
+func (s NASSecurityGroup) String() string {
 	return awsutil.Prettify(s)
 }
 
 // GoString returns the string representation
-func (s NASSecurityGroupResult) GoString() string {
+func (s NASSecurityGroup) GoString() string {
 	return s.String()
 }
 
 // SetAvailabilityZone sets the AvailabilityZone field's value.
-func (s *NASSecurityGroupResult) SetAvailabilityZone(v string) *NASSecurityGroupResult {
+func (s *NASSecurityGroup) SetAvailabilityZone(v string) *NASSecurityGroup {
 	s.AvailabilityZone = &v
 	return s
 }
 
 // SetIPRanges sets the IPRanges field's value.
-func (s *NASSecurityGroupResult) SetIPRanges(v []*IPRangeResult) *NASSecurityGroupResult {
+func (s *NASSecurityGroup) SetIPRanges(v []*IPRange) *NASSecurityGroup {
 	s.IPRanges = v
 	return s
 }
 
 // SetNASSecurityGroupDescription sets the NASSecurityGroupDescription field's value.
-func (s *NASSecurityGroupResult) SetNASSecurityGroupDescription(v string) *NASSecurityGroupResult {
+func (s *NASSecurityGroup) SetNASSecurityGroupDescription(v string) *NASSecurityGroup {
 	s.NASSecurityGroupDescription = &v
 	return s
 }
 
 // SetNASSecurityGroupName sets the NASSecurityGroupName field's value.
-func (s *NASSecurityGroupResult) SetNASSecurityGroupName(v string) *NASSecurityGroupResult {
+func (s *NASSecurityGroup) SetNASSecurityGroupName(v string) *NASSecurityGroup {
 	s.NASSecurityGroupName = &v
 	return s
 }
 
 // SetOwnerId sets the OwnerId field's value.
-func (s *NASSecurityGroupResult) SetOwnerId(v string) *NASSecurityGroupResult {
+func (s *NASSecurityGroup) SetOwnerId(v string) *NASSecurityGroup {
 	s.OwnerId = &v
 	return s
 }
 
 // SetSecurityGroups sets the SecurityGroups field's value.
-func (s *NASSecurityGroupResult) SetSecurityGroups(v []*SecurityGroupResult) *NASSecurityGroupResult {
+func (s *NASSecurityGroup) SetSecurityGroups(v []*SecurityGroup) *NASSecurityGroup {
 	s.SecurityGroups = v
 	return s
 }
@@ -2005,7 +2005,7 @@ func (s *RevokeNASSecurityGroupIngressInput) SetSecurityGroupName(v string) *Rev
 type RevokeNASSecurityGroupIngressOutput struct {
 	_ struct{} `type:"structure"`
 
-	NASSecurityGroup *NASSecurityGroupResult `type:"structure"`
+	NASSecurityGroup *NASSecurityGroup `type:"structure"`
 }
 
 // String returns the string representation
@@ -2019,12 +2019,12 @@ func (s RevokeNASSecurityGroupIngressOutput) GoString() string {
 }
 
 // SetNASSecurityGroup sets the NASSecurityGroup field's value.
-func (s *RevokeNASSecurityGroupIngressOutput) SetNASSecurityGroup(v *NASSecurityGroupResult) *RevokeNASSecurityGroupIngressOutput {
+func (s *RevokeNASSecurityGroupIngressOutput) SetNASSecurityGroup(v *NASSecurityGroup) *RevokeNASSecurityGroupIngressOutput {
 	s.NASSecurityGroup = v
 	return s
 }
 
-type SecurityGroupResult struct {
+type SecurityGroup struct {
 	_ struct{} `type:"structure"`
 
 	SecurityGroupName *string `type:"string"`
@@ -2035,29 +2035,29 @@ type SecurityGroupResult struct {
 }
 
 // String returns the string representation
-func (s SecurityGroupResult) String() string {
+func (s SecurityGroup) String() string {
 	return awsutil.Prettify(s)
 }
 
 // GoString returns the string representation
-func (s SecurityGroupResult) GoString() string {
+func (s SecurityGroup) GoString() string {
 	return s.String()
 }
 
 // SetSecurityGroupName sets the SecurityGroupName field's value.
-func (s *SecurityGroupResult) SetSecurityGroupName(v string) *SecurityGroupResult {
+func (s *SecurityGroup) SetSecurityGroupName(v string) *SecurityGroup {
 	s.SecurityGroupName = &v
 	return s
 }
 
 // SetSecurityGroupOwnerId sets the SecurityGroupOwnerId field's value.
-func (s *SecurityGroupResult) SetSecurityGroupOwnerId(v string) *SecurityGroupResult {
+func (s *SecurityGroup) SetSecurityGroupOwnerId(v string) *SecurityGroup {
 	s.SecurityGroupOwnerId = &v
 	return s
 }
 
 // SetStatus sets the Status field's value.
-func (s *SecurityGroupResult) SetStatus(v string) *SecurityGroupResult {
+func (s *SecurityGroup) SetStatus(v string) *SecurityGroup {
 	s.Status = &v
 	return s
 }
