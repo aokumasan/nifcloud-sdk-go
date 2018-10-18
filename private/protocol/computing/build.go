@@ -4,7 +4,9 @@ package computing
 //go:generate go run -tags codegen ../../../models/protocol_tests/generate.go ../../../models/protocol_tests/input/computing.json build_test.go
 
 import (
+	"fmt"
 	"net/url"
+	"reflect"
 
 	"github.com/alice02/nifcloud-sdk-go/nifcloud/awserr"
 	"github.com/alice02/nifcloud-sdk-go/nifcloud/request"
@@ -22,6 +24,20 @@ func Build(r *request.Request) {
 	}
 	if err := queryutil.Parse(body, r.Params, true); err != nil {
 		r.Error = awserr.New("SerializationError", "failed encoding COMPUTING Query request", err)
+	}
+
+	// Fix request parameters of DescribeLoadBalancers for NIFCLOUD
+	if r.Operation.Name == "DescribeLoadBalancers" {
+		parameterLength := reflect.ValueOf(r.Params).Elem().FieldByName("LoadBalancerNames").Len()
+		prefix := "LoadBalancerNames"
+		for i := 1; i <= parameterLength; i++ {
+			body[fmt.Sprintf("%s.LoadBalancerPort.%d", prefix, i)] = body[fmt.Sprintf("%s.%d.LoadBalancerPort", prefix, i)]
+			body[fmt.Sprintf("%s.InstancePort.%d", prefix, i)] = body[fmt.Sprintf("%s.%d.InstancePort", prefix, i)]
+			body[fmt.Sprintf("%s.member.%d", prefix, i)] = body[fmt.Sprintf("%s.%d.LoadBalancerName", prefix, i)]
+			delete(body, fmt.Sprintf("%s.%d.LoadBalancerPort", prefix, i))
+			delete(body, fmt.Sprintf("%s.%d.InstancePort", prefix, i))
+			delete(body, fmt.Sprintf("%s.%d.LoadBalancerName", prefix, i))
+		}
 	}
 
 	if !r.IsPresigned() {
