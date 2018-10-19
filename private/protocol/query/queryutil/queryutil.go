@@ -126,11 +126,11 @@ func (q *queryParser) parseList(v url.Values, value reflect.Value, prefix string
 	}
 
 	// check for unflattened list member
-	if !q.isEC2 && tag.Get("flattened") == "" {
-		if listName := tag.Get("locationNameList"); listName == "" {
-			prefix += ".member"
-		} else {
+	if tag.Get("flattened") == "" {
+		if listName := tag.Get("locationNameList"); listName != "" {
 			prefix += "." + listName
+		} else if !q.isEC2 {
+			prefix += ".member"
 		}
 	}
 

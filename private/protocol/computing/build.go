@@ -31,12 +31,10 @@ func Build(r *request.Request) {
 		parameterLength := reflect.ValueOf(r.Params).Elem().FieldByName("LoadBalancerNames").Len()
 		prefix := "LoadBalancerNames"
 		for i := 1; i <= parameterLength; i++ {
-			body[fmt.Sprintf("%s.LoadBalancerPort.%d", prefix, i)] = body[fmt.Sprintf("%s.%d.LoadBalancerPort", prefix, i)]
-			body[fmt.Sprintf("%s.InstancePort.%d", prefix, i)] = body[fmt.Sprintf("%s.%d.InstancePort", prefix, i)]
-			body[fmt.Sprintf("%s.member.%d", prefix, i)] = body[fmt.Sprintf("%s.%d.LoadBalancerName", prefix, i)]
-			delete(body, fmt.Sprintf("%s.%d.LoadBalancerPort", prefix, i))
-			delete(body, fmt.Sprintf("%s.%d.InstancePort", prefix, i))
-			delete(body, fmt.Sprintf("%s.%d.LoadBalancerName", prefix, i))
+			body[fmt.Sprintf("%s.LoadBalancerPort.%d", prefix, i)] = body[fmt.Sprintf("%s.member.%d.LoadBalancerPort", prefix, i)]
+			body[fmt.Sprintf("%s.InstancePort.%d", prefix, i)] = body[fmt.Sprintf("%s.member.%d.InstancePort", prefix, i)]
+			delete(body, fmt.Sprintf("%s.member.%d.LoadBalancerPort", prefix, i))
+			delete(body, fmt.Sprintf("%s.member.%d.InstancePort", prefix, i))
 		}
 	}
 
