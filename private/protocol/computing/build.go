@@ -33,8 +33,10 @@ func Build(r *request.Request) {
 		for i := 1; i <= parameterLength; i++ {
 			body[fmt.Sprintf("%s.LoadBalancerPort.%d", prefix, i)] = body[fmt.Sprintf("%s.member.%d.LoadBalancerPort", prefix, i)]
 			body[fmt.Sprintf("%s.InstancePort.%d", prefix, i)] = body[fmt.Sprintf("%s.member.%d.InstancePort", prefix, i)]
+			body[fmt.Sprintf("%s.member.%d", prefix, i)] = body[fmt.Sprintf("%s.member.%d.LoadBalancerName", prefix, i)]
 			delete(body, fmt.Sprintf("%s.member.%d.LoadBalancerPort", prefix, i))
 			delete(body, fmt.Sprintf("%s.member.%d.InstancePort", prefix, i))
+			delete(body, fmt.Sprintf("%s.member.%d.LoadBalancerName", prefix, i))
 		}
 	}
 
