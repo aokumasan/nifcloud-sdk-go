@@ -61,7 +61,7 @@ func NifcloudPartition() Partition {
 var nifcloudPartition = partition{
 	ID:        "nifcloud",
 	Name:      "NIFCLOUD Standard",
-	DNSSuffix: "api.cloud.nifty.com",
+	DNSSuffix: "api.nifcloud.com",
 	RegionRegex: regionRegex{
 		Regexp: func() *regexp.Regexp {
 			reg, _ := regexp.Compile("^(us|jp)\\-\\w+\\-\\d+$")
@@ -144,7 +144,7 @@ var nifcloudPartition = partition{
 
 			Endpoints: endpoints{
 				"aws-global": endpoint{
-					Hostname: "script.api.cloud.nifty.com",
+					Hostname: "script.api.nifcloud.com",
 					CredentialScope: credentialScope{
 						Region: "jp-east-1",
 					},
