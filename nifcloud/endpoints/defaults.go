@@ -69,7 +69,7 @@ var nifcloudPartition = partition{
 		}(),
 	},
 	Defaults: endpoint{
-		Hostname:          "{service}.{region}.{dnsSuffix}",
+		Hostname:          "{region}.{service}.{dnsSuffix}",
 		Protocols:         []string{"https"},
 		SignatureVersions: []string{"v4", "v3", "v2-computing"},
 	},
