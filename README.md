@@ -1,3 +1,5 @@
+**DEPRECATED**: This repository is DEPRECATED. Switch to https://github.com/aokumasan/nifcloud-sdk-go-v2
+
 # NIFCLOUD SDK for Go
 
 nifcloud-sdk-go is the **UNOFFICIAL** NIFCLOUD SDK for the Go programming language.
